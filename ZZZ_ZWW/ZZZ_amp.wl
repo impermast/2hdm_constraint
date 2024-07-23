@@ -1,26 +1,19 @@
 (* ::Package:: *)
 
 (* ::Title:: *)
-(*Neutralino-electron scattering*)
+(*ZZZ in 2hdm*)
 
 
-description="Mnel El -> Mnel El, MSSM, matrix element squared, tree";
-If[ $FrontEnd === Null,
-	$FeynCalcStartupMessages = False;
-	Print[description];
-];
-If[ $Notebooks === False,
-	$FeynCalcStartupMessages = False
-];
 (*$LoadAddOns={"FeynArts", "FeynHelpers"};*)
 $LoadAddOns={"FeynArts"};
 <<FeynCalc`
 $FAVerbose = 0;
 
 FCCheckVersion[9,3,0];
-
+(*
 Needs["CollierLink`"]
-Needs["X`"]
+Needs["X`"]*)
+AppendTo[$ModelPath, "/home/kds/.Mathematica/Applications/FeynArts/Models/"];
 Install["LoopTools"]
 Needs["LoopTools`"]
 
@@ -227,7 +220,7 @@ str
 (*Save func to file*)
 
 
-Export["ZZZ/F1Z.txt",str,"Text"]
+Export["/home/kds/sci/zzz/2hdm_constraint/F1Z.txt",str,"Text"]
 
 
 (* ::Section:: *)

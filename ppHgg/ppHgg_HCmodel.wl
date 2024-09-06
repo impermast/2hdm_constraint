@@ -129,41 +129,6 @@ Show[theoryPlot, experimentalPlot, PlotRange -> All,
 Abs[15.01-4*10^8*CrossSectionEEAA[100^2]]/15.01
 
 
-(* ::Subsection:: *)
-(*g a -> q ~q. Check pdf with one object*)
-
-
-diags = InsertFields[CreateTopologies[0, 2 -> 2], {F[3, {1}], V[1]} -> 
-            {V[5], F[3, {1}]}, InsertionLevel -> {Classes}, Model -> "SMQCD"]; 
- 
-Paint[diags, ColumnsXRows -> {2, 1}, Numbering -> Simple, 
-    SheetHeader -> None, ImageSize -> {256, 128}];
-
-
-ampQA[0] = FCFAConvert[CreateFeynAmp[diags], IncomingMomenta -> {p1, p2}, 
-    OutgoingMomenta -> {k1, k2}, UndoChiralSplittings -> True, ChangeDimension -> 4, 
-    TransversePolarizationVectors -> {k1}, List -> False, SMP -> True, 
-    Contract -> True, DropSumOver -> True, Prefactor -> 3/2 SMP["e_Q"]]
-    
-FCClearScalarProducts[];
-SetMandelstam[s, t, u, p1, p2, -k1, -k2, SMP["m_u"], qQ, 0, SMP["m_u"]];
-
-
-
-ampQA[1] = 1/(SUNN) (ampQA[0] (ComplexConjugate[ampQA[0]])) // 
-            FeynAmpDenominatorExplicit // SUNSimplify[#, Explicit -> True, 
-            SUNNToCACF -> False] & // FermionSpinSum[#, ExtraFactor -> 1/2] & // 
-        DiracSimplify // DoPolarizationSums[#, p2, 0, 
-        VirtualBoson -> True] & // DoPolarizationSums[#, k1, p2] & // 
-    TrickMandelstam[#, {s, t, u, 2 SMP["m_u"]^2 + qQ^2}] & // Simplify
-
-
-ampQA[2] = ampQA[1] // ReplaceAll[#, {SMP["m_u"] -> 0}] & // 
-    TrickMandelstam[#, {s, t, u, qQ^2}] &
-ampQA[3] = 
-    Simplify[ampQA[2] /. SUNN -> 3 /. u -> qQ^2 - s - t /. qQ -> I Q]
-
-
 (* ::Section:: *)
 (*Obtain the amplitude bb x0 aa*)
 
@@ -185,7 +150,7 @@ amp[0] = FCFAConvert[CreateFeynAmp[diagrams],
         UndoChiralSplittings->True]
 
 
-FCClearScalarProducts[]
+FCClearScalarProducts[];
 SetMandelstam[s, t, u, p1, p2, -k1, -k2 , MB,MB, 0, 0];
 amp[0]=amp[0]//Contract//DiracSimplify
 (*\:0422\:0443\:0442 \:043b\:0435\:0436\:0430\:0442 \:0432\:0441\:0435 \:043a\:0430\:043f\:043b\:0438\:043d\:0433\:0438 \:0447\:0435\:0440\:0435\:0437 \:043f\:0430\:0440\:0430\:043c\:0435\:0442\:0440\:044b \:043c\:043e\:0434\:0435\:043b\:0438*)

@@ -89,7 +89,7 @@ diagramEEAA = DiagramExtract[diagrams,{2,3}];
 Paint[diagramEEAA, ColumnsXRows -> {1, 1}, Numbering -> Simple, SheetHeader -> None, ImageSize -> {800, 90}]
 
 
-Print["Amplitude creating for bb-x-aa"]
+Print["Amplitude creating for e~e-aa"]
 ampEEAA[0] = FCFAConvert[CreateFeynAmp[diagramEEAA], 
         IncomingMomenta -> {p1, p2}, OutgoingMomenta -> {k1, k2},
         LorentzIndexNames->{\[Mu],\[Nu]}, ChangeDimension -> 4,
@@ -113,9 +113,9 @@ ampEEAA[1]=(ampEEAA[0]*ComplexConjugate[ampEEAA[0]])//
 
 ampEEAA[2]=ampEEAA[1]/.{ME->0}
 Pref = 1/(64 Pi^2 s);
-Pref * ampEEAA[2]/.{Th->Th,u->-s/2(1+Cos[Th]),t->-s/2(1-cos[Th])}//Simplify
-int = 2 Pi Integrate[Sin[Th]((Cos[Th])^2+1)/((Cos[Th])^2-1),{Th,0.05,Pi-0.05}]
-CrossSectionEEAA[s_] := int*EL^4/(-16 Pi^2 s)/.{EL^4 ->4 Pi alpha^2}/.{alpha->1/137}
+ampEEAA[2]/.{Th->Th,u->-s/2(1+Cos[Th]),t->-s/2(1-Cos[Th])}//Simplify
+CrossSectionEEAA[s_] :=2 Pi Integrate[Sin[Th]*Pref * ampEEAA[2]/.{u->-s/2(1+Cos[Th]),t->-s/2(1-Cos[Th])}//Simplify,{Th,0.05,Pi-0.05}]/.{EL^4 ->4 Pi alpha^2}/.{alpha->1/137}
+CrossSectionEEAA[s]
 
 
 CrossSectionEEAA[s]
@@ -261,7 +261,7 @@ PDFALL[x_, id_Integer] := Module[{data, interpolated, index},
 index = 5
 place = Position[idList, index][[1, 1]] + 1;
 
-p1 = ListLogLogPlot[
+P1 = ListLogLogPlot[
   Transpose[{xValues, Tpdfdata[[place]]}],
   PlotStyle -> {Red, PointSize[Small]},
   GridLines -> Automatic,
@@ -269,13 +269,13 @@ p1 = ListLogLogPlot[
   FrameLabel -> {"x", "PDF"},
   PlotLegends -> {"Data Points"}];
 
-p2 = LogLogPlot[
+P2 = LogLogPlot[
   PDFALL[x, index],
   {x, 0.0001, 1},
   PlotStyle -> Blue,
   PlotLegends -> {"Interpolated Function"}];
 
-Show[p1, p2];
+Show[P1, P2]
 
  
 

@@ -30,7 +30,7 @@ NumberOfPoints = 20;
 
 
 diags = InsertFields[CreateTopologies[0, 2 -> 2], {F[3, {1}], V[1]} -> 
-            {V[5], F[3, {1}]}, InsertionLevel -> {Classes}, Model -> "SMQCD"]; 
+            {V[1], F[3, {1}]}, InsertionLevel -> {Classes}, Model -> "SMQCD"]; 
  
 Paint[diags, ColumnsXRows -> {2, 1}, Numbering -> Simple, 
     SheetHeader -> None, ImageSize -> {256, 128}];
@@ -39,29 +39,41 @@ Paint[diags, ColumnsXRows -> {2, 1}, Numbering -> Simple,
 ampQA[0] = FCFAConvert[CreateFeynAmp[diags], IncomingMomenta -> {p1, p2}, 
     OutgoingMomenta -> {k1, k2}, UndoChiralSplittings -> True, ChangeDimension -> 4, 
     TransversePolarizationVectors -> {k1}, List -> False, SMP -> True, 
-    Contract -> True, DropSumOver -> True, Prefactor -> 3/2 SMP["e_Q"]]
+    Contract -> True, DropSumOver -> True, Prefactor -> 3/2*SMP["e_Q"]]
     
 FCClearScalarProducts[];
-SetMandelstam[s, t, u, p1, p2, -k1, -k2, SMP["m_u"], qQ, 0, SMP["m_u"]];
+SetMandelstam[s, t, u, p1, p2, -k1, -k2, SMP["m_u"], 0, 0, SMP["m_u"]];
 
 
 
-ampQA[1] = 1/(SUNN) (ampQA[0] (ComplexConjugate[ampQA[0]])) // 
+ampQA[1] = (ampQA[0] (ComplexConjugate[ampQA[0]])) // 
             FeynAmpDenominatorExplicit // SUNSimplify[#, Explicit -> True, 
             SUNNToCACF -> False] & // FermionSpinSum[#, ExtraFactor -> 1/2] & // 
         DiracSimplify // DoPolarizationSums[#, p2, 0, 
         VirtualBoson -> True] & // DoPolarizationSums[#, k1, p2] & // 
-    TrickMandelstam[#, {s, t, u, 2 SMP["m_u"]^2 + qQ^2}] & // Simplify
+    TrickMandelstam[#, {s, t, u, 2 SMP["m_u"]^2}] & // Simplify
 
 
 ampQA[2] = ampQA[1] // ReplaceAll[#, {SMP["m_u"] -> 0}] & // 
-    TrickMandelstam[#, {s, t, u, qQ^2}] &
+    TrickMandelstam[#, {s, t, u, 0}] &
 ampQA[3] = 
-    Simplify[ampQA[2] /. SUNN -> 3 /. u -> qQ^2 - s - t /. qQ -> I Q]
+    Simplify[ampQA[2] /. SUNN -> 3 /. u -> - s - t]
 
 
-NampQA[Q_,s_,t_] = ampQA[3]/.{SMP["e"]->0.313,SMP["g_s"]->1.22,SMP["e_Q"]->2/3}/.{Q->Q,s->s,t->t};
-NampQA[q,S,T]
+NampQA[s_,t_] = ampQA[3]/.{SMP["e"]->0.313,SMP["g_s"]->1.22,SMP["e_Q"]->2/3}/.{s->s,t->t};
+NampQA[S,T]
+
+
+Plot1=LogPlot[
+  17/60*NampQA[x0*s0, -x^2], 
+  {x, 60, 100}, 
+  GridLines -> Automatic
+];
+Plot2=LogPlot[MADGRAPHmatrix ,{x,60,100},PlotStyle->Red];
+Show[Plot1,Plot2]
+
+
+Sqrt[0^2-(166^2+667^2+(750+299)^2)]//N
 
 
 (* ::Section:: *)
@@ -87,10 +99,10 @@ PDFALL[x_, id_Integer] := Module[{data, interpolated, index},
 ]
 
 
-index = 5
+index = 1
 place = Position[idList, index][[1, 1]] + 1;
 
-p1 = ListLogLogPlot[
+P1 = ListLogLogPlot[
   Transpose[{xValues, Tpdfdata[[place]]}],
   PlotStyle -> {Red, PointSize[Small]},
   GridLines -> Automatic,
@@ -98,17 +110,17 @@ p1 = ListLogLogPlot[
   FrameLabel -> {"x", "PDF"},
   PlotLegends -> {"Data Points"}];
 
-p2 = LogLogPlot[
+P2 = LogLogPlot[
   PDFALL[x, index],
   {x, 0.000001, 1},
   PlotStyle -> Blue,
   PlotLegends -> {"Interpolated Function"}];
 
-Show[p1, p2,PlotLabel->"Check interpolation"]
+Show[P1, P2,PlotLabel->"Check interpolation"]
 
 
 (* ::Section:: *)
-(*kinematic prefactor*)
+(*Crosssection prefactor*)
 
 
 (* ::Text:: *)
@@ -116,12 +128,45 @@ Show[p1, p2,PlotLabel->"Check interpolation"]
 (*t = -s/2(1-cos(th))*)
 
 
-Pref = 1/(64 Pi^2 s);
-NampQA[Q,s,t]/.{t->-s/2(1-cos[Th])}
-Int = 2 Pi*Integrate[Sin[Th]*(a+b(1-Cos[Th])+c (1-Cos[Th])^2)/(1-Cos[Th]),{Th,0+0.05,Pi-0.05}]
-Sigma = Pref*(0.6912808751407405/s^2)*Int/.{a->(2Q^4+Q^2s+s^2), b->-s*Q^2, c->s^2/4}
-CrossSectionQA[s] = Sigma/.{Q->0}//Simplify
-CrossSectionQA[100]
+Pref[x_] := 1/(32 Pi*x);
+Matrix[s,Th] = NampQA[s,t]/.{t->-s/2(1-Cos[Th])}
+MatrixPrefactor = Simplify[Matrix[s,Th]/((1+ (1/4)(1-2*Cos[Th]+Cos[Th]*Cos[Th]))/(1-Cos[Th]))]
+Print["Integrate on theta"]
+CrossPB = 4*10^8*Integrate[Sin[Th]*Matrix[s,Th]*Pref[s],{Th,0+0.05,Pi-0.05}]
+Print["Integte by theta without params"]
+Int = Integrate[Sin[Th]*(1+ (1/4)(1-2*Cos[Th]+Cos[Th]*Cos[Th]))/(1-Cos[Th]),{Th,0+0.05,Pi-0.05}];
+Sigma[x_] := Pref[x]*MatrixPrefactor*Int;
+Sigma[s]
+CrossPB/.{s->91^2}
+Sigma[91^2]
+
+
+
+CrossT = 4*10^8(1/(64 Pi^2 s0^2))*NIntegrate[PDFALL[-t/s0,1]NampQA[s0,t],{t,-s0,0-0.05}]
+
+
+(* ::Section:: *)
+(*Correction with MG*)
+
+
+(* ::Text:: *)
+(*MADGRAPH qa>qa, Matrix element = 1.289355 e - 02 GeV^0*)
+(*Cross = 4.1 pb*)
+
+
+MADGRAPHmatrix = 1.289355*10^-2;
+mZ = 91;
+s0=13000^2;
+t0=-mZ^2;
+x0=-t0/(s0+t0)//N;
+
+Print["x0=",x0,"  PDF(x0)=",PDFALL[x0,1]]
+Print["Approximation of Matrix element to madgraph. Matrix[s=x0*s0,t=-Q^2=-mZ^2]"]
+NampQA[x0*s0,t0]
+Print["Calculation of crosssection, using MG matrix element and PDF, pb"]
+2*4*10^8*PDFALL[x0,1]*MADGRAPHmatrix/(128 Pi^2 x0 s0)
+
+4*10^8*PDFALL[x0,1]*NampQA[x0*s0,t0]/(128 Pi^2 x0 s0)//N
 
 
 

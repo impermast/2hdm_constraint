@@ -96,9 +96,11 @@ def testgraph():
 
 
 df_set = "NNPDF30_nnlo_as_0118"
-q = 125
+q = 91
 id_list = [-5,-4,-3,-2,-1,1,2,3,4,5]
 x_values = np.logspace(-6, 0, 1000)  # Диапазон от очень малых значений x до 1
+
+print("\n\n q = ", q," PDF = ", df_set,"\n\n")
 
 pdf_table = get_pdf_table(id_list,x_values,q)
 filename = f"/root/output/output_{q}.csv"

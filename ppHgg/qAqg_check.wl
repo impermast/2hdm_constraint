@@ -26,7 +26,7 @@ NumberOfPoints = 20;
 
 
 (* ::Section:: *)
-(*g a -> q ~q. Gain matrix element*)
+(*q a -> q a. Gain matrix element*)
 
 
 diags = InsertFields[CreateTopologies[0, 2 -> 2], {F[3, {1}], V[1]} -> 
@@ -48,7 +48,7 @@ SetMandelstam[s, t, u, p1, p2, -k1, -k2, SMP["m_u"], 0, 0, SMP["m_u"]];
 
 ampQA[1] = (ampQA[0] (ComplexConjugate[ampQA[0]])) // 
             FeynAmpDenominatorExplicit // SUNSimplify[#, Explicit -> True, 
-            SUNNToCACF -> False] & // FermionSpinSum[#, ExtraFactor -> 1/2] & // 
+            SUNNToCACF -> False] & // FermionSpinSum[#, ExtraFactor -> 1/2^2] & // 
         DiracSimplify // DoPolarizationSums[#, p2, 0, 
         VirtualBoson -> True] & // DoPolarizationSums[#, k1, p2] & // 
     TrickMandelstam[#, {s, t, u, 2 SMP["m_u"]^2}] & // Simplify
@@ -64,16 +64,7 @@ NampQA[s_,t_] = ampQA[3]/.{SMP["e"]->0.313,SMP["g_s"]->1.22,SMP["e_Q"]->2/3}/.{s
 NampQA[S,T]
 
 
-Plot1=LogPlot[
-  17/60*NampQA[x0*s0, -x^2], 
-  {x, 60, 100}, 
-  GridLines -> Automatic
-];
-Plot2=LogPlot[MADGRAPHmatrix ,{x,60,100},PlotStyle->Red];
-Show[Plot1,Plot2]
 
-
-Sqrt[0^2-(166^2+667^2+(750+299)^2)]//N
 
 
 (* ::Section:: *)
@@ -126,23 +117,27 @@ Show[P1, P2,PlotLabel->"Check interpolation"]
 (* ::Text:: *)
 (*dSIgma/dOmega = 1/(64 pi^2 s) M^2  (massless products)*)
 (*t = -s/2(1-cos(th))*)
+(*dSigma/dt = 1/(16 pi s^2) M^2*)
 
 
 Pref[x_] := 1/(32 Pi*x);
-Matrix[s,Th] = NampQA[s,t]/.{t->-s/2(1-Cos[Th])}
+s1= 91^2;
+Th1 = 0.07846; Th2 = Pi-0.07846;
+t1 = -s1(1-Cos[Th1])/2;
+t2 = -s1(1-Cos[Th2])/2;
+Matrix[s,Th] = NampQA[s,t]/.{t->-s(1-Cos[Th])/2}
 MatrixPrefactor = Simplify[Matrix[s,Th]/((1+ (1/4)(1-2*Cos[Th]+Cos[Th]*Cos[Th]))/(1-Cos[Th]))]
 Print["Integrate on theta"]
-CrossPB = 4*10^8*Integrate[Sin[Th]*Matrix[s,Th]*Pref[s],{Th,0+0.05,Pi-0.05}]
+CrossPB = 4*10^8*Integrate[Sin[Th]*Matrix[s,Th]*Pref[s],{Th,Th1,Th2}]
 Print["Integte by theta without params"]
-Int = Integrate[Sin[Th]*(1+ (1/4)(1-2*Cos[Th]+Cos[Th]*Cos[Th]))/(1-Cos[Th]),{Th,0+0.05,Pi-0.05}];
+Int = Integrate[Sin[Th]*(1+ (1/4)(1-2*Cos[Th]+Cos[Th]*Cos[Th]))/(1-Cos[Th]),{Th,Th1,Th2}];
 Sigma[x_] := Pref[x]*MatrixPrefactor*Int;
 Sigma[s]
-CrossPB/.{s->91^2}
-Sigma[91^2]
-
-
-
-CrossT = 4*10^8(1/(64 Pi^2 s0^2))*NIntegrate[PDFALL[-t/s0,1]NampQA[s0,t],{t,-s0,0-0.05}]
+CrossPB/.{s->s1}
+Print["Corection of calcs:"]
+Sigma[s1]*4*10^8
+SigmaT = Integrate[NampQA[s,t]/(16 Pi (s)^2),{t,t2,t1}];
+4*10^8*SigmaT/.{s->s1}
 
 
 (* ::Section:: *)
@@ -159,14 +154,40 @@ mZ = 91;
 s0=13000^2;
 t0=-mZ^2;
 x0=-t0/(s0+t0)//N;
+Print["cuts in MG"]
+ptj = 10
+pta = 10
+NampQA[s,t]
 
-Print["x0=",x0,"  PDF(x0)=",PDFALL[x0,1]]
-Print["Approximation of Matrix element to madgraph. Matrix[s=x0*s0,t=-Q^2=-mZ^2]"]
-NampQA[x0*s0,t0]
-Print["Calculation of crosssection, using MG matrix element and PDF, pb"]
-2*4*10^8*PDFALL[x0,1]*MADGRAPHmatrix/(128 Pi^2 x0 s0)
 
-4*10^8*PDFALL[x0,1]*NampQA[x0*s0,t0]/(128 Pi^2 x0 s0)//N
+(* ::Text:: *)
+(*\:0422\:0443\:0442 \:0438\:043d\:0442\:0435\:0433\:0440\:0438\:0440\:0443\:0435\:043c \:0441 \:043d\:0435\:0438\:0437\:043c\:0435\:043d\:043d\:044b\:043c\:0438 \:043f\:0440\:0435\:0434\:0435\:043b\:0430\:043c\:0438.*)
+
+
+IntGev = NIntegrate[Sigma[s0 x] PDFALL[x,1],{x,2 pta / Sqrt[s0],1}]
+IntGev *4*10^8
+
+
+(* ::Text:: *)
+(*p_t^2 = (s+t)^2/4s => tmin = -s+sqrt(4s pt^2) -- limit from left side from cut*)
+
+
+
+th1 = ArcCos[ 1-2*Sqrt[4 pta^2/s0]] // N
+th2 = ArcCos[ -1+2*Sqrt[4 pta^2/s0]] // N
+
+SigmaT = Integrate[PDFALL[x,1]*NampQA[x*s0,t]/(16 Pi (x*s0)^2),
+	{t,-s0-Sqrt[4 pta^2 *(x*s0)],-Sqrt[4 x*s0 pta^2]},
+	{x,2*pta/Sqrt[s0],1}] //N
+	
+SigmaTh = NIntegrate[PDFALL[x,1]*Matrix[s0*x,ArcCos[y]]*Pref[s0*x],
+{y,N[1-2*Sqrt[4 pta^2/(x*s0)]],N[-1+2*Sqrt[4 pta^2/(x*s0)]]},
+{x,2*pta/Sqrt[s0],1}];
+
+
+IntPbT = SigmaT * 4* 10^8
+Print["Cross t: ",IntPbT," pb.        MG cross = 40.4 pb"]
+Abs[IntPbT-40.4]
 
 
 

@@ -157,6 +157,9 @@ x0=-t0/(s0+t0)//N;
 Print["cuts in MG"]
 ptj = 10
 pta = 10
+y1=-5
+y2=5
+
 NampQA[s,t]
 
 
@@ -169,25 +172,49 @@ IntGev *4*10^8
 
 
 (* ::Text:: *)
-(*p_t^2 = (s+t)^2/4s => tmin = -s+sqrt(4s pt^2) -- limit from left side from cut*)
-
+(*p_t^2 = ut/s = -t(s+t)/s => pt_max = s/4 => no need of lim*)
+(*lims on psevdorapidity*)
+(*y = 1/2 ln (s+t/-t); t=0 => y = inf,  t=-s  y=-inf => cut up and down*)
+(**)
+(*abs(t)=xs/(e^2y -1)*)
+(**)
+(*(pp->qq )*)
+(*S sin^2th=4pt^2; t=-s/2(1-cos th)*)
+(*cos th = 1+ 2t/s => sin^2 = 1-cos^2 = t(t/s-2) => pt^2 = s/4(4t^2/s^2-8t/s)   pt^2 = -t(2-t/s) {-s<t<0}*)
 
 
 th1 = ArcCos[ 1-2*Sqrt[4 pta^2/s0]] // N
 th2 = ArcCos[ -1+2*Sqrt[4 pta^2/s0]] // N
+Tlim2[u_]:= u*s0/(Exp[2 y1]+1)
+Tlim1[u_]:= u*s0/(Exp[2 y2]+1)
+Sqrt[Tlim1[1]]//N
+Sqrt[Tlim2[1]]//N
+
+
+
 
 SigmaT = Integrate[PDFALL[x,1]*NampQA[x*s0,t]/(16 Pi (x*s0)^2),
 	{t,-s0-Sqrt[4 pta^2 *(x*s0)],-Sqrt[4 x*s0 pta^2]},
 	{x,2*pta/Sqrt[s0],1}] //N
+SigmaTwithY = Integrate[PDFALL[x,1]*NampQA[x*s0,t]/(16 Pi (x*s0)^2),
+	{t,-Tlim2[x],-Tlim1[x]},
+	{x,0,1}] //N
 	
-SigmaTh = NIntegrate[PDFALL[x,1]*Matrix[s0*x,ArcCos[y]]*Pref[s0*x],
+(*SigmaTh = NIntegrate[PDFALL[x,1]*Matrix[s0*x,ArcCos[y]]*Pref[s0*x],
 {y,N[1-2*Sqrt[4 pta^2/(x*s0)]],N[-1+2*Sqrt[4 pta^2/(x*s0)]]},
-{x,2*pta/Sqrt[s0],1}];
+{x,2*pta/Sqrt[s0],1}];*)
 
 
 IntPbT = SigmaT * 4* 10^8
-Print["Cross t: ",IntPbT," pb.        MG cross = 40.4 pb"]
+Print["Cross t, pt cuts: ",IntPbT," pb.        MG cross = 40.4 pb   Y cuts MGcross = 493pb;   Cross = ", SigmaTwithY * 4* 10^8]
 Abs[IntPbT-40.4]
 
 
 
+
+
+DsigmaDx[x_]:=Integrate[PDFALL[x,1]*NampQA[x*s0,t]/(16 Pi (x*s0)^2),
+	{t,-Tlim2[x],-Tlim1[x]}]//N
+	
+LogLogPlot[DsigmaDx[x],{x,0.001,0.1},
+	PlotPoints -> 30]

@@ -30,7 +30,7 @@ NumberOfPoints = 20;
 
 
 (* ::Section:: *)
-(*q q -> ee. Gain matrix element*)
+(*qq -> ee. Gain matrix element*)
 
 
 diags = InsertFields[CreateTopologies[0, 2 -> 2], {-F[3, {1}], F[3, {1}]} -> 
@@ -199,6 +199,14 @@ y=-Log[Tan[theta/2]]
 (*\:0421\:0432\:0435\:0440\:0442\:043a\:0430*)
 
 
+WidthCross1[s_] :=FullSimplify[NampQQEE[s, t]/.{(s - MZ^2)->((s - MZ^2)^2 + MZ^2 * wZ^2)^(1/2)}]
+WidthCross2[s_] :=FullSimplify[NampQQEE[s, t]*(s - MZ^2)^2  / ((s - MZ^2)^2 + MZ^2 * wZ^2)]
+WidthCross1[s]
+WidthCross2[s]
+WidthCross1[MZ^2]
+WidthCross2[MZ^2]
+
+
 s0 = 13000^2;
 MZ=91.1;
 wZ=2.5;
@@ -221,7 +229,7 @@ P2 = LogLogPlot[
 
 
 smin = 800;
-L[t_]:=Integrate[(1/(t*x)) *PDFALL[x,1]*PDFALL[t/x,-1],{x,t,0.1}]
+L[t_]:=Integrate[(1/(t*x)) *PDFALL[x,1]*PDFALL[t/x,-1],{x,t,0.1}];
 
 
 Plot3 = LogLogPlot[
@@ -232,10 +240,12 @@ Plot3 = LogLogPlot[
 
 "\:0421\:0432\:0435\:0440\:0442\:043a\:0430 \:0441 L[t]"
 xmin = smin/s0
-L[xmin]//N
+
+(*L[xmin]//N*)
 
 
-Integrate[WidthCross[s0*t]*PDFALL[x,1]*PDFALL[t/x,-1]/(t*x),{x,t,0.01},{t,xmin,0.01}]
+NIntegrate[WidthCross[s0*t]*PDFALL[x,1]*PDFALL[t/x,-1]/(t*x)
+		,{x,t,0.001},{t,xmin,0.001}]
 
 
 

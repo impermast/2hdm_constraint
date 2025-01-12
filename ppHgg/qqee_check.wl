@@ -26,7 +26,7 @@ SetDirectory[]*)
 
 
 LogRange[a_, b_, n_] := Exp[Range[Log[a], Log[b], (Log[b] - Log[a])/(n - 1)]]//N
-NumberOfPoints = 20;
+NumberOfPoints = 50;
 
 
 (* ::Section:: *)
@@ -64,8 +64,14 @@ Massless_check = ampQQEE[1] /. SUNN -> 3 /. SMP["m_u"]->0/. SMP["m_d"]->0/. SMP[
 
 (* Me=0.0005; Mu = 0.0023; *)
  Me=0; Mu=0;
- MZ=91.1;
+ MZ=91.188;
 wZ=2.5;
+
+ptmin = 20;
+s0 = 13000^2;
+smin = 4*ptmin^2;  
+xmin = Sqrt[smin/s0];
+
 MW = 81; cosW=0.894; sinW=0.463; e=0.313;
 NampQQEE[s_,t_] = ampQQEE[2]/.{SMP["e"]->0.313,SMP["m_e"]->Me,SMP["m_u"]->Mu,SMP["m_d"]->0,SMP["e_Q"]->2/3,SMP["cos_W"]->cosW,SMP["sin_W"]->cosW,SMP["m_Z"]->MZ}/.{s->s,u->-s-t,t->t};
 NampQQEE[S,T]//Simplify
@@ -76,15 +82,19 @@ NampQQEE[S,T]//Simplify
 (*Importing PDF*)
 
 
-pdfdata = Import["/home/kds/sci/zzz/2hdm_constraint/pdfcode/output125.csv"];
+(* ::Subsubsection:: *)
+(*\:0432\:044b\:0433\:0440\:0443\:0437\:043a\:0430 \:0438\:0437 csv*)
+
+
+(*pdfdata = Import["/home/kds/sci/zzz/2hdm_constraint/pdfcode/output125.csv"];
 idList={-5,-4,-3,-2,-1,1,2,3,4,5};
 pdfdata = Delete[pdfdata,1];
 Tpdfdata= Transpose[pdfdata];
 
-xValues = Tpdfdata[[1]];
+xValues = Tpdfdata[[1]];*)
 
 
-PDFALL[x_, id_Integer] := Module[{data, interpolated, index},
+(*PDFALL[x_, id_Integer] := Module[{data, interpolated, index},
   index = Position[idList, id];
   If[Length[index] == 0, (* \:0415\:0441\:043b\:0438 \:0438\:043d\:0434\:0435\:043a\:0441 \:043d\:0435 \:043d\:0430\:0439\:0434\:0435\:043d *)
     Return[Table[0, Length[x]]], (* \:0412\:043e\:0437\:0432\:0440\:0430\:0449\:0430\:0435\:043c \:0441\:043f\:0438\:0441\:043e\:043a \:043d\:0443\:043b\:0435\:0439 \:0442\:0430\:043a\:043e\:0439 \:0436\:0435 \:0434\:043b\:0438\:043d\:044b, \:043a\:0430\:043a \:0438 x *)
@@ -92,34 +102,64 @@ PDFALL[x_, id_Integer] := Module[{data, interpolated, index},
     interpolated = Interpolation[Transpose[{xValues, data}]]; (* \:0421\:043e\:0437\:0434\:0430\:0435\:043c \:0438\:043d\:0442\:0435\:0440\:043f\:043e\:043b\:0438\:0440\:043e\:0432\:0430\:043d\:043d\:0443\:044e \:0444\:0443\:043d\:043a\:0446\:0438\:044e *)
     Return[interpolated[x]]; (* \:0412\:043e\:0437\:0432\:0440\:0430\:0449\:0430\:0435\:043c \:0437\:043d\:0430\:0447\:0435\:043d\:0438\:0435 \:0438\:043d\:0442\:0435\:0440\:043f\:043e\:043b\:0438\:0440\:043e\:0432\:0430\:043d\:043d\:043e\:0439 \:0444\:0443\:043d\:043a\:0446\:0438\:0438 \:0434\:043b\:044f \:0437\:0430\:0434\:0430\:043d\:043d\:043e\:0433\:043e x *)
   ]
+]*)
+
+
+(* ::Subsubsection:: *)
+(*\:0432\:044b\:0433\:0440\:0443\:0437\:043a\:0430 \:0438\:0437 csv*)
+
+
+xPDF[x_, Q_, id_] := Module[{result, scriptPath, output},
+  scriptPath = FileNameJoin[{NotebookDirectory[],"../pdfcode/", "xPDF.py"}];
+  result = RunProcess[{"sh", "-c", 
+    "LD_LIBRARY_PATH=/usr/local/lib python3 " <> scriptPath <> " " <> ToString[x] <> " " <> ToString[Q] <> " " <> ToString[id]
+  }];
+  output = StringTrim[result["StandardOutput"]];
+  If[StringMatchQ[output, NumberString], ToExpression[output], Null]
 ]
+testPDF = AbsoluteTiming[xPDF[0.1,125,1]];
+Print["\:0412\:0440\:0435\:043c\:044f \:0432\:044b\:043f\:043e\:043b\:043d\:0435\:043d\:0438\:044f: ", testPDF[[1]]]
+Abs[testPDF[[2]]]
 
 
-index = 1
-place = Position[idList, index][[1, 1]] + 1;
-"PDF/x:"
-Integrate[PDFALL[x,index]/x,{x,0.00001,1}]//N 
-"PDF:"
-Integrate[PDFALL[x,index],{x,0.00001,1}] 
-"Conclusion:"
+Print["PDF check"]
+index = 1;
+Q2=125;
+Print["PDF/x:"]
+Integrate[xPDF[x,Q2,index]/x,{x,0.0001,1}] 
+
+Print["PDF:"]
+Integrate[xPDF[x,Q2,index],{x,0.0001,1}] 
+
+"Conclusion: int xPDF = 1 = int x*PDF"
 "PDF is x*f(x)"
 
 
+NumberOfPoints = 20;
+xVal = LogRange[0.0001, 0.9, NumberOfPoints];
+xPDFval = Table[xPDF[i, Q2, index], {i, xVal}];
+PDFval = Table[xPDF[i, Q2, index]/i, {i, xVal}];
+
+
+xVal
+xPDFval
+PDFval
+
+
 P1 = ListLogLogPlot[
-  Transpose[{xValues, Tpdfdata[[place]]}],
-  PlotStyle -> {Red, PointSize[Small]},
+  {PDFval, xVal},
+  PlotStyle -> {Red, PointSize[Small],Dashed},
   GridLines -> Automatic,
-  Frame -> True,
+  Frame -> Automatic,
   FrameLabel -> {"x", "PDF"},
-  PlotLegends -> {"Data Points"}];
-
-P2 = LogLogPlot[
-  PDFALL[x, index],
-  {x, 0.000001, 1},
-  PlotStyle -> Blue,
-  PlotLegends -> {"Interpolated Function"}];
-
-Show[P1, P2,PlotLabel->"Check interpolation"]
+  PlotLegends -> {"PDF"}];
+  
+P2 = ListLogLogPlot[
+  {xPDFval, xVal},
+  PlotStyle -> {Blue, PointSize[Small]},
+  PlotLegends -> {"xPDF"}];
+  
+Show[P1, P2]
 
 
 
@@ -145,20 +185,20 @@ NampQQEE[s,t]
 (*t0(t1)=0-(sqrt(s/4-m1^2) -+ sqrt(s/4-m3^2))^2*)
 
 
-s0=13000^2;
-ptmin = 10
-smin = 800;
-xmin = Sqrt[smin/s0];
-t0[s_]:= - s/2 * (1-Sqrt[1-4*ptmin^2/s])
+t0[s_]:= - s/2 * (1-Sqrt[1-4*ptmin^2/(s)])
 t1[s_]:= - s/2 * (1+Sqrt[1-4*ptmin^2/s])
 t0[s0] 
 t1[s0]
 
 
 
-SigmaT[x_] := Integrate[NampQQEE[x,u]*Pref[x],{u,t1[x],t0[x]}]/.{ s-8299.21`-> Sqrt[(s-8299.21)^2+MZ^2*wZ^2]};
+SigmaT[x_] := Integrate[NampQQEE[x,u]*Pref[x],{u,t1[x],t0[x]}]
 SigmaT[s]//Simplify
-3.96*10^8*Integrate[SigmaT[x1*x2*s0] *PDFALL[x1,1]*PDFALL[x2,-1]/(x1*x2),{x1,xmin,1},{x2,xmin,1}]
+Print["sqrt(s)=",1300,"  sigma_hat(s)=",SigmaT[1300^2]*3.9*10^8," pb"]
+Print["sqrt(s)=",800+800,"  sigma_hat(s)=",SigmaT[(800+800)^2]*3.9*10^8," pb"]
+Print["sqrt(s)=",1000+1000,"  sigma_hat(s)=",SigmaT[(1000+1000)^2]*3.9*10^8," pb"]
+Print["sqrt(s)=",1500+1500,"  sigma_hat(s)=",SigmaT[(1500+1500)^2]*3.9*10^8," pb"]
+Print["sqrt(s)=MZ^2=",45.5+45.5,"  sigma_hat(s)=",SigmaT[91^2]*3.9*10^8," pb"]
 
 
 (* ::Section:: *)
@@ -170,8 +210,9 @@ SigmaT[s]//Simplify
 (*Cross = *)
 
 
+Print["\:0438\:043d\:0442\:0435\:0433\:0440\:0438\:0440\:043e\:0432\:0430\:043d\:0438\:0435 \:0432 \:043b\:043e\:0431 \:0434\:0430\:0435\:0442 \:0447\:0443\:0448\:044c("]
 IntGev = Integrate[
-			NampQQEE[s0*x1*x2,u]*Pref[s0*x1*x2] PDFALL[x1,1]*PDFALL[x2,-1]/(x1*x2),
+			NampQQEE[s0*x1*x2,u]*Pref[s0*x1*x2] xPDF[x1,s0*x1*x2,1]*xPDF[x2,s0*x1*x2,-1]/(x1*x2),
 				{u,t1[s0*x1*x2],t0[s0*x1*x2]},{x1,xmin,1},{x2,xmin,1}]//N
 IntGev *3.96*10^8 "pb"
 
@@ -188,13 +229,6 @@ IntGev *3.96*10^8 "pb"
 (*cos th = 1+ 2t/s => sin^2 = 1-cos^2 = t(t/s-2) => pt^2 = s/4(4t^2/s^2-8t/s)   pt^2 = -t(2-t/s) {-s<t<0}*)
 
 
-ptmin=10
-s1 = 13000^2;
-theta = ArcSin[2*ptmin/Sqrt[s1]]//N
-y=-Log[Tan[theta/2]]
-(*\:041f\:043e\:0447\:0435\:043c\:0443-\:0442\:043e \:043d\:0435 \:0440\:0430\:0431\:043e\:0442\:0430\:0435\:0442 \:0441\:043c\:043e\:0442\:0440\:0435\:0442\:044c QQEE*)
-
-
 (* ::Section:: *)
 (*\:0421\:0432\:0435\:0440\:0442\:043a\:0430*)
 
@@ -207,45 +241,98 @@ WidthCross1[MZ^2]
 WidthCross2[MZ^2]
 
 
-s0 = 13000^2;
-MZ=91.1;
-wZ=2.5;
-E0=Sqrt[s0]/2;
 
 WidthCross[s_] := Integrate[Pref[s] (NampQQEE[s, t]*(s - MZ^2)^2  / ((s - MZ^2)^2 + MZ^2 * wZ^2) ) // Simplify, 
-                                 {t, -s/2 * (1 + Sqrt[1 - (ptmin/E0)^2]), -s/2 * (1 - Sqrt[1 - (ptmin/E0)^2])}];
-"cross on MZ no PDF"
+                                 {t, -s/2 * (1 + Sqrt[1 - (4*ptmin/Sqrt[s0])^2]), -s/2 * (1 - Sqrt[1 - (4*ptmin/Sqrt[s0])^2])}];
+"cross on MZ no PDF(1300 GeV) = 0.002852"
 
 WidthCross[MZ^2]:=WidthCross[MZ^2-0.00001]
-WidthCross[MZ^2]
+WidthCross[s]
+Print["sqrt(s)=",1300,"  sigma_hat(s)=",WidthCross[1300^2]*3.9*10^8," pb"]
+Print["sqrt(s)=",800+800,"  sigma_hat(s)=",WidthCross[(800+800)^2]*3.9*10^8," pb"]
+Print["sqrt(s)=",1000+1000,"  sigma_hat(s)=",WidthCross[(1000+1000)^2]*3.9*10^8," pb"]
+Print["sqrt(s)=",1500+1500,"  sigma_hat(s)=",WidthCross[(1500+1500)^2]*3.9*10^8," pb"]
+Print["sqrt(s)=MZ^2=",45.5+45.5,"  sigma_hat(s)=",WidthCross[91^2]*3.9*10^8," pb"]
 
 
-
-P2 = LogLogPlot[
-  WidthCross[x^2],
-  {x, 0, 2*E0},
+PlotSigmaHat = LogLogPlot[
+  WidthCross[x*s0],
+  {x, xmin*xmin, 1},
   PlotStyle -> Blue,
+  FrameLabel -> {"x", "sigma"},
   PlotLegends -> {"Sigma Partonic"}]
 
 
-smin = 800;
-L[t_]:=Integrate[(1/(t*x)) *PDFALL[x,1]*PDFALL[t/x,-1],{x,t,0.1}];
+L[t_]:=Integrate[(1/x) *xPDF[x,t*s0,-1]*xPDF[t/x,t*s0,1],{x,t,1}]/Null^2;
+Lexp[t_]:=Integrate[xPDF[10^yt,t*s0,1] * xPDF[t*10^(-yt),t*s0,-1] ,{yt, Log10[t],0}]*Log[10]/Null^2;
 
-
-Plot3 = LogLogPlot[
-  L[t],
-  {t, 0, 1},
-  PlotStyle -> Blue,
-  PlotLegends -> {"Luminosity from PDF"}]
 
 "\:0421\:0432\:0435\:0440\:0442\:043a\:0430 \:0441 L[t]"
-xmin = smin/s0
+xPDF[0.001,130,1]xPDF[0.00001,130,-1]
+L[xmin] //N
 
-(*L[xmin]//N*)
+xmin*xmin//N
+xmin//N
+Log10[xmin*xmin]//N
 
 
-NIntegrate[WidthCross[s0*t]*PDFALL[x,1]*PDFALL[t/x,-1]/(t*x)
-		,{x,t,0.001},{t,xmin,0.001}]
+tVal = LogRange[xmin*xmin,1,NumberOfPoints]
+texpVal = Range[Log10[xmin*xmin],0,-Log10[xmin*xmin]/(NumberOfPoints - 1)]//N
+lVal = Table[L[i], {i, tVal}]
+lexpVal = Table[Lexp[10^i], {i, texpVal}]
+crossVal = Table[WidthCross[i*s0]*L[i], {i, tVal}]
+crossValExp = Table[Log[10]*WidthCross[10^i*s0]*Lexp[10^i], {i, texpVal}]
+dataLT = Transpose[{tVal,lVal}];
+dataLexpT = Transpose[{tVal,lexpVal}];
+dataST = Transpose[{tVal,crossVal}];
+dataSTexp = Transpose[{tVal,crossValExp}];
+
+
+Plot3 = ListLogLogPlot[
+  dataLT,
+  PlotStyle -> Blue,
+  FrameLabel -> {"t", "L[t]"},
+  PlotLegends -> {"Luminosity from x"}]
+Plot4 = ListLogLogPlot[
+  dataLexpT,
+  PlotStyle -> Red,
+  FrameLabel -> {"t", "Lexp[t]"},
+  PlotLegends -> {"L from y=ln(x)"}]
+
+
+PlotCross = ListLogLogPlot[
+  dataST,
+  PlotStyle -> Blue,
+  FrameLabel -> {"t", "S[t*s0]*L[t]"},
+  PlotLegends -> {"Sigma from x"}]
+  
+PlotCrossExp = ListLogLogPlot[
+  dataSTexp,
+  PlotStyle -> Red,
+  FrameLabel -> {"t", "S[Exp[y]*s0]*L[Exp[y]]"},
+  PlotLegends -> {"Sigma from y"}]
+
+
+
+(* ::Text:: *)
+(* pp>u ~u> e e+*)
+(*\:0435\:0441\:0442\:044c \:0434\:0432\:0430 \:0432\:0430\:0440\:0438\:0430\:043d\:0442\:0430 u \:0438\:0437 p1 ~u \:0438\:0437 p2 \:0438 \:043d\:0430\:043e\:0431\:043e\:0440\:043e\:0442. u \:043d\:0435 \:0442\:043e\:0436\:0434\:0435\:0441\:0442\:0432\:0435\:043d\:043d\:044b, e \:0442\:043e\:0436\:0435. \:0411\:043e\:043b\:044c\:0448\:0435 \:0441\:0438\:043c\:043c\:0435\:0442\:0440\:0438\:0439\:043d\:044b\:0445 \:043c\:043d\:043e\:0436\:0438\:0442\:0435\:043b\:0435\:0439 \:043d\:0435\:0442.*)
+(*/2*)
+
+
+Print["Integrate log scale"]
+(*correct: log(xmin*xmin),0*)
+Print["s0 = ",s0, ", pt_cut = ",ptmin]
+CrossSvertkaExp  =  AbsoluteTiming[NIntegrate[Log[10]*WidthCross[s0*(10^kt)]*Lexp[10^(kt)], {kt,Log10[xmin*xmin],0}]];
+Print["\:0412\:0440\:0435\:043c\:044f \:0432\:044b\:043f\:043e\:043b\:043d\:0435\:043d\:0438\:044f: ", CrossSvertkaExp[[1]]]
+
+Abs[CrossSvertkaExp[[2]]]*3.9*10^8 "pb"
+
+
+Print["Force without log scale"]
+CrossSvertka  =  AbsoluteTiming[NIntegrate[WidthCross[s0*t]*L[t]/t,{t,xmin*xmin,1}]];
+Print["\:0412\:0440\:0435\:043c\:044f \:0432\:044b\:043f\:043e\:043b\:043d\:0435\:043d\:0438\:044f: ", CrossSvertka[[1]]]
+Abs[CrossSvertka[[2]]]*3.9*10^8 "pb"
 
 
 

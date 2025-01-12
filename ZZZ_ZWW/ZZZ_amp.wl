@@ -73,16 +73,17 @@ ampd1[1] = ampd1[0]//ReplaceAll[#,
 
 
 
-(*Print["Diagrams 1:"]
-Paint[diags1, ColumnsXRows -> {2, 1}, Numbering -> Simple,SheetHeader->None,ImageSize->{512,256}];
+im_size = {512/2,256/2}
+Print["Diagrams 1:"]
+Paint[diags1, ColumnsXRows -> {6, 1}, Numbering -> Simple,SheetHeader->None,ImageSize->{512,256}];
 Print["Diagrams 2:"]
-Paint[diags2, ColumnsXRows -> {2, 1}, Numbering -> Simple,SheetHeader->None,ImageSize->{512,256}];
+Paint[diags2, ColumnsXRows -> {6, 1}, Numbering -> Simple,SheetHeader->None,ImageSize->{512/2,256/2}];
 Print["Diagrams 3:"]
-Paint[diags3, ColumnsXRows -> {2, 1}, Numbering -> Simple,SheetHeader->None,ImageSize->{512,256}];
+Paint[diags3, ColumnsXRows -> {6, 1}, Numbering -> Simple,SheetHeader->None,ImageSize->{512/2,256/2}];
 Print["Diagrams 4:"]
-Paint[diags4, ColumnsXRows -> {2, 1}, Numbering -> Simple,SheetHeader->None,ImageSize->{512,256}];
+Paint[diags4, ColumnsXRows -> {6, 1}, Numbering -> Simple,SheetHeader->None,ImageSize->{512/2,256/2}];
 Print["Diagrams 5:"]
-Paint[diags5, ColumnsXRows -> {2, 1}, Numbering -> Simple,SheetHeader->None,ImageSize->{512,256}];*)
+Paint[diags5, ColumnsXRows -> {6, 1}, Numbering -> Simple,SheetHeader->None,ImageSize->{512/2,256/2}];
 
 
 (* ::Section:: *)
@@ -91,19 +92,19 @@ Paint[diags5, ColumnsXRows -> {2, 1}, Numbering -> Simple,SheetHeader->None,Imag
 
 ampHHZ[0] = FCFAConvert[CreateFeynAmp[diags1,Truncated -> True], 
 		IncomingMomenta->{P}, OutgoingMomenta->{p1,p2},LorentzIndexNames->{\[Mu],\[Alpha],\[Beta]},LoopMomenta->{q},
-		UndoChiralSplittings->True,ChangeDimension->D,List->False, SMP->False]/.q->q+p1+p2
+		UndoChiralSplittings->True,ChangeDimension->D,List->False, SMP->False, Contract-> True, DropSumOver->True]/.q->q+p1+p2;
 ampHHZ[0]+= FCFAConvert[CreateFeynAmp[diags2,Truncated -> True], 
 		IncomingMomenta->{P}, OutgoingMomenta->{p1,p2},LorentzIndexNames->{\[Mu],\[Alpha],\[Beta]},LoopMomenta->{q},
-		UndoChiralSplittings->True,ChangeDimension->D,List->False, SMP->False]/.q->q+p1+p2/.p2->P-p1	
+		UndoChiralSplittings->True,ChangeDimension->D,List->False, SMP->False, Contract-> True, DropSumOver->True]/.q->q+p1+p2/.p2->P-p1;
 ampHHZ[0]+= FCFAConvert[CreateFeynAmp[diags3,Truncated -> True], 
 		IncomingMomenta->{P}, OutgoingMomenta->{p1,p2},LorentzIndexNames->{\[Mu],\[Alpha],\[Beta]},LoopMomenta->{q},
-		UndoChiralSplittings->True,ChangeDimension->D,List->False, SMP->False]/.q->q+p1+p2/.p1->P-p2
+		UndoChiralSplittings->True,ChangeDimension->D,List->False, SMP->False, Contract-> True, DropSumOver->True]/.q->q+p1+p2/.p1->P-p2;
 ampHHH[0]= FCFAConvert[CreateFeynAmp[diags4,Truncated -> True], 
 		IncomingMomenta->{P}, OutgoingMomenta->{p1,p2},LorentzIndexNames->{\[Mu],\[Alpha],\[Beta]},LoopMomenta->{q},
-		UndoChiralSplittings->True,ChangeDimension->D,List->False, SMP->False]/.q->q+p1+p2/.{p2->P-p1};
+		UndoChiralSplittings->True,ChangeDimension->D,List->False, SMP->False, Contract-> True, DropSumOver->True]/.q->q+p1+p2/.{p2->P-p1};
 ampHHG[0]= FCFAConvert[CreateFeynAmp[diags5,Truncated -> True], 
 		IncomingMomenta->{P}, OutgoingMomenta->{p1,p2},LorentzIndexNames->{\[Mu],\[Alpha],\[Beta]},LoopMomenta->{q},
-		UndoChiralSplittings->True,ChangeDimension->D,List->False, SMP->False]/.q->q+p1+p2/.{p2->P-p1};
+		UndoChiralSplittings->True,ChangeDimension->D,List->False, SMP->False, Contract-> True, DropSumOver->True]/.q->q+p1+p2/.{p2->P-p1};
 		
 (* \:0421 \:043f\:0440\:0435\:0444\:0430\:043a\:0442\:043e\:0440\:043e\:043c =1
 ampHHZ[0] = FCFAConvert[CreateFeynAmp[diags1,Truncated -> True,PreFactor->1], 
@@ -123,11 +124,18 @@ ampHHG[0]= FCFAConvert[CreateFeynAmp[diags5,Truncated -> True,PreFactor->1],
 		UndoChiralSplittings->True,ChangeDimension->D,List->False, SMP->False]/.q->q+p1+p2/.{p2->P-p1};
 *)
 ampHHZ[1] = ampHHZ[0]//ReplaceAll[#,
-	Pair[Momentum[Polarization[___],___],___]:>1]&//Contract
+	Pair[Momentum[Polarization[___],___],___]:>1]&//Contract;
 ampHHH[1] = ampHHH[0]//ReplaceAll[#,
 	Pair[Momentum[Polarization[___],___],___]:>1]&//Contract
 ampHHG[1] = ampHHG[0]//ReplaceAll[#,
-	Pair[Momentum[Polarization[___],___],___]:>1]&//Contract
+	Pair[Momentum[Polarization[___],___],___]:>1]&//Contract;
+
+
+
+
+
+(* ::Section:: *)
+(*Fix the kinematics*)
 
 
 FCClearScalarProducts[];
@@ -145,21 +153,34 @@ MW=mW;
 MZ=mZ;
 
 
-(* ::Section:: *)
-(*Fix the kinematics*)
+ampHHZ[2]=ampHHZ[1]//DiracSimplify//TID[#(*/.{p2->P-p1, p1->P-p2}*),q,ToPaVe->True,UsePaVeBasis->True]& //Simplify;
+(*ampHHZ[2] =  ampHHZ[2]/.{Momentum[P,\[Mu]]->0, Momentum[p1,\[Mu]]->0, Momentum[p2,\[Mu]]->0};*)
+ampHHH[2]=ampHHH[1]//DiracSimplify//TID[#(*/.{p2->P-p1, p1->P-p2}*),q,ToPaVe->True,UsePaVeBasis->True]&//Simplify
+(*ampHHH[2] =  ampHHH[2]/.{Momentum[P,\[Mu]]->0, Momentum[p1,\[Mu]]->0, Momentum[p2,\[Mu]]->0}*)
+ampHHG[2]=ampHHG[1]//DiracSimplify//TID[#(*/.{p2->P-p1, p1->P-p2}*),q,ToPaVe->True,UsePaVeBasis->True]& //Simplify;
+(*ampHHG[2] =  ampHHG[2]/.{Momentum[P,\[Mu]]->0, Momentum[p1,\[Mu]]->0, Momentum[p2,\[Mu]]->0};*)
 
 
-ampHHZ[2]=ampHHZ[1]//DiracSimplify//TID[#(*/.{p2->P-p1, p1->P-p2}*),q,ToPaVe->True,UsePaVeBasis->True]&;
-ampHHZ[2] =  ampHHZ[2]/.{Momentum[P,\[Mu]]->0, Momentum[p1,\[Mu]]->0, Momentum[p2,\[Mu]]->0};
-(*\:0422\:043e\:0447\:043a\:0430 \:0441\:043b\:0435\:0448 \:044d\:0442\:043e \:043f\:043e\:0434\:0441\:0442\:0430\:043d\:043e\:0432\:043a\:0430 \:043c\:043e\:043c\:0435\:043d\:0442\:043e\:0432? \:0415\:0441\:043b\:0438 \:0442\:0443\:0442 \:0443\:0441\:0442\:0440\:0435\:043c\:043b\:044f\:0442\:044c \:043d\:0435 \:043a \:043d\:0443\:043b\:044e,\:0430 \:043a \:043a\:043e\:0440\:043d\:044e \:0438\:0437 \:0441?*)
-ampHHH[2]=ampHHH[1]//DiracSimplify//TID[#(*/.{p2->P-p1, p1->P-p2}*),q,ToPaVe->True,UsePaVeBasis->True]&;
-ampHHH[2] =  ampHHH[2]/.{Momentum[P,\[Mu]]->0, Momentum[p1,\[Mu]]->0, Momentum[p2,\[Mu]]->0};
-ampHHG[2]=ampHHG[1]//DiracSimplify//TID[#(*/.{p2->P-p1, p1->P-p2}*),q,ToPaVe->True,UsePaVeBasis->True]&;
-ampHHG[2] =  ampHHG[2]/.{Momentum[P,\[Mu]]->0, Momentum[p1,\[Mu]]->0, Momentum[p2,\[Mu]]->0};
+(* ::Subsubsection:: *)
+(*cross-section*)
+
+
+ampHHH[3] = ampHHH[2]// FCReplaceD[#, D -> 4 - 2 Epsilon] & //
+    Series[#, {Epsilon, 0, 0}] & // Normal
+
+
+ampSqHHH = 1/2 (ampHHH[3]  (ComplexConjugate[ampHHH[3] ]))//Contract //
+        FeynAmpDenominatorExplicit  // Simplify
+
+phaseSpacePrefactor = 1/(16 Pi mZ);
+TotalDecay = phaseSpacePrefactor * ampSqHHH
+
+
+(* ::Subsubsection:: *)
+(*coeficients*)
 
 
 Print["HHZ:"];
-(*\:0427\:0422\:043e \:043f\:0440\:043e\:0438\:0441\:0445\:043e\:0434\:0438\:0442 \:043d\:0438\:0436\:0435, \:043f\:043e\:0441\:043b\:0435 \:0443\:043f\:0440\:0430\:0449\:0435\:043d\:0438\:044f \:043f\:0440\:043e\:0432\:043e\:0434\:0438\:0442\:0441\:044f \:0441\:0432\:0435\:0440\:0442\:043a\:0430 \:0438\:043d\:0434\:0435\:043a\:0441\:043e\:0432?*)
 f4ZHHZ[s_,mh1_,mh2_,mh3_]:= FullSimplify[ Coefficient[ ampHHZ[2], FCI[FVD[P,\[Beta]] MTD[\[Mu],\[Alpha]]] + FCI[FVD[P,\[Alpha]] MTD[\[Mu],\[Beta]]]]];
 FullSimplify[f4ZHHZ[s,mh1,mh2,mh3]]
 (* 
@@ -173,8 +194,26 @@ Print["HHG:"];
 f4ZHHG[s_,mh1_,mh2_,mh3_]:= FullSimplify[ Coefficient[ ampHHG[2], FCI[FVD[P,\[Beta]] MTD[\[Mu],\[Alpha]]] + FCI[FVD[P,\[Alpha]] MTD[\[Mu],\[Beta]]]]];
 FullSimplify[f4ZHHG[s,mh1,mh2,mh3]]
 Print["Summ = "]
-f4Z[s_,mh1_,mh2_,mh3_,pref_]:=f4ZHHZ[s,mh1,mh2,mh3]+f4ZHHH[s,mh1,mh2,mh3]+f4ZHHG[s,mh1,mh2,mh3];
+f4Z[s_,mh1_,mh2_,mh3_,pref_]:=pref*f4ZHHZ[s,mh1,mh2,mh3]+f4ZHHH[s,mh1,mh2,mh3]+f4ZHHG[s,mh1,mh2,mh3];
 FullSimplify[f4Z[s,mh1,mh2,mh3,pref]]
+
+
+(* ::Subsubsection:: *)
+(*cross only for correct VertexFunction*)
+
+
+Amp[0]=I*(FCI[FVD[P,\[Beta]] MTD[\[Mu],\[Alpha]]] + FCI[FVD[P,\[Alpha]] MTD[\[Mu],\[Beta]]])f4Z[s,m1,m2,m3,1]
+
+
+(FCI[FVD[P,\[Beta]] MTD[\[Mu],\[Alpha]]] + FCI[FVD[P,\[Alpha]] MTD[\[Mu],\[Beta]]])*(FCI[FVD[P,\[Beta]] MTD[\[Mu],\[Alpha]]] + FCI[FVD[P,\[Alpha]] MTD[\[Mu],\[Beta]]])//Contract 
+
+
+(* ::Text:: *)
+(*1/2 \:0438\:0437-\:0437\:0430 \:0442\:043e\:0436\:0434\:0435\:0441\:0442\:0432\:0435\:043d\:043d\:043e\:0441\:0442\:0438 \:043a\:043e\:043d\:0435\:0447\:043d\:044b\:0445 \:0441\:043e\:0441\:0442\:043e\:044f\:043d\:0438\:0439*)
+
+
+SqAmp = 1/2 Amp[0]*(ComplexConjugate[Amp[0]])//Contract //Simplify
+DecayRate = phaseSpacePrefactor* SqAmp/.D->4//Simplify
 
 
 (* ::Section:: *)
@@ -220,7 +259,7 @@ str
 (*Save func to file*)
 
 
-Export["/home/kds/sci/zzz/2hdm_constraint/F1Z.txt",str,"Text"]
+(*Export["/home/kds/sci/zzz/2hdm_constraint/F1Z.txt",str,"Text"]*)
 
 
 (* ::Section:: *)

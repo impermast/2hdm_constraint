@@ -1,1 +1,0 @@
-/home/kds/ZZZ/qqH_ME/cch/SubProcesses/check_sa.cpp

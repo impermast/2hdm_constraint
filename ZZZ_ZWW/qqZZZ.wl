@@ -1,6 +1,6 @@
 (* ::Package:: *)
 
-logic = 0; (*1 autoload, 0 calculate*)
+logic = 1; (*1 autoload, 0 calculate*)
 
 
 (* ::Title:: *)
@@ -78,7 +78,7 @@ Paint[diagHHZ, ColumnsXRows -> {6, 3}, Numbering -> Simple,SheetHeader->None,Ima
 SecToMin[AbsoluteTime[] - startTime]
 
 
-(* ::Section:: *)
+(* ::Section::Closed:: *)
 (*Test vertex*)
 
 
@@ -137,6 +137,11 @@ ampHHG[1] = ampHHG[0]//ReplaceAll[#,
 
 
 
+SetDirectory[NotebookDirectory[]]
+Put[ampHHH[1],"BuffAmpHHH1.mx"]
+Get["BuffAmpHHH1.mx"]
+
+
 SecToMin[AbsoluteTime[] - startTime]
 
 
@@ -181,30 +186,55 @@ params = {
 };
 
 
-ampHHZ[2]=ampHHZ[1]/.M$FACouplings/.params//DiracSimplify//TID[#(*/.{p2->P-p1, p1->P-p2}*),q,ToPaVe->True,UsePaVeBasis->True]& //Simplify;
-(*ampHHZ[2] =  ampHHZ[2]/.{Momentum[P,\[Mu]]->0, Momentum[p1,\[Mu]]->0, Momentum[p2,\[Mu]]->0};*)
-ampHHH[2]=ampHHH[1]/.M$FACouplings/.params//DiracSimplify//TID[#(*/.{p2->P-p1, p1->P-p2}*),q,ToPaVe->True,UsePaVeBasis->True]& //Simplify;
-(*ampHHH[2] =  ampHHH[2]/.{Momentum[P,\[Mu]]->0, Momentum[p1,\[Mu]]->0, Momentum[p2,\[Mu]]->0}*)
-ampHHG[2]=ampHHG[1]/.M$FACouplings/.params//DiracSimplify//TID[#(*/.{p2->P-p1, p1->P-p2}*),q,ToPaVe->True,UsePaVeBasis->True]& //Simplify;
-(*ampHHG[2] =  ampHHG[2]/.{Momentum[P,\[Mu]]->0, Momentum[p1,\[Mu]]->0, Momentum[p2,\[Mu]]->0};*)
+
+If[logic === 1,
+	Print["Loading ampHHH from file."];
+    ampHHH[3] = Get["BuffAmpHHH2.mx"],
+    
+    Print["Recomputing ampHHH and saving to file."];
+	ampHHZ[2]=ampHHZ[1]/.M$FACouplings/.params//DiracSimplify//TID[#(*/.{p2->P-p1, p1->P-p2}*),q,ToPaVe->True,UsePaVeBasis->True]& //Simplify;
+	(*ampHHZ[2] =  ampHHZ[2]/.{Momentum[P,\[Mu]]->0, Momentum[p1,\[Mu]]->0, Momentum[p2,\[Mu]]->0};*)
+	ampHHH[2]=ampHHH[1]/.M$FACouplings/.params//DiracSimplify//TID[#(*/.{p2->P-p1, p1->P-p2}*),q,ToPaVe->True,UsePaVeBasis->True]& //Simplify;
+	(*ampHHH[2] =  ampHHH[2]/.{Momentum[P,\[Mu]]->0, Momentum[p1,\[Mu]]->0, Momentum[p2,\[Mu]]->0}*)
+	ampHHG[2]=ampHHG[1]/.M$FACouplings/.params//DiracSimplify//TID[#(*/.{p2->P-p1, p1->P-p2}*),q,ToPaVe->True,UsePaVeBasis->True]& //Simplify;
+	(*ampHHG[2] =  ampHHG[2]/.{Momentum[P,\[Mu]]->0, Momentum[p1,\[Mu]]->0, Momentum[p2,\[Mu]]->0};*)
+	Put[ampHHH[2],"BuffAmpHHH2.mx"]
+	Print["Done."]
+]
 
 
 SecToMin[AbsoluteTime[] - startTime]
 
 
-(* ::Subsubsection:: *)
+(* ::Section:: *)
+(*Coeficients of amp*)
+
+
+(* ::Text:: *)
+(*\:0412\:044b\:0447\:043b\:0435\:043d\:044f\:0435\:043c \:0438\:0437 \:0430\:043c\:043f\:043b\:0438\:0442\:0443\:0434\:044b \:0442\:043e\:043b\:044c\:043a\:043e \:0441\:043b\:0430\:0433\:0430\:0435\:043c\:044b\:0435 \:0441\:043e\:043e\:0442\:0432\:0435\:0442\:0441\:0432\:0443\:044e\:0449\:0438\:0435 f4 \:0432\:0435\:0440\:0448\:0438\:043d\:043d\:044b\:043c \:0444\:0443\:043d\:043a\:0446\:0438\:044f\:043c \:0441 \:043f\:043e\:043c\:043e\:0449\:044c\:044e \:0444\:0443\:043d\:043a\:0446\:0438\:0438 \:043a\:043e\:044d\:0444.*)
+
+
+(* ::Subsection:: *)
+(*Coeficients*)
+
+
+CoefficientList[ampHHH[2],C0i]
+
+
+(* ::Subsection:: *)
 (*cross-section*)
 
 
 If[logic === 1,
     Print["Loading ampHHH from file."];
-    ampHHH[3] = Get["ampHHH.mx"],
-    (* \:041f\:0435\:0440\:0435\:0441\:0447\:0435\:0442 \:0430\:043c\:043f\:043b\:0438\:0442\:0443\:0434\:044b, \:0435\:0441\:043b\:0438 logic = 0 *)
+    ampHHH[3] = Get["ampHHH3.mx"],
+    
     Print["Recomputing ampHHH and saving to file."];
     ampHHH[3] = ampHHH[2]// FCReplaceD[#, D -> 4 - 2 Epsilon] & //
     Series[#, {Epsilon, 0, 0}] & // Normal;
     Amp = ampHHH[3];
-    Put[Amp,"ampHHH.mx"];
+    Put[ampHHH[3],"ampHHH3.mx"];
+    Print["Done."];
 ];
 
 
@@ -220,12 +250,13 @@ If[logic === 1,
         DoPolarizationSums[#, p1, NumberOfPolarizations -> 3] & // 
         DoPolarizationSums[#, p2, NumberOfPolarizations -> 3] & // 
         Simplify;
-    DumpSave[ ampSqHHH, "ampSqHHH.mx"];
+    Put[ ampSqHHH, "ampSqHHH.mx"];
+    Print["Done."] 
 ];
 
 (* \:0412\:044b\:0447\:0438\:0441\:043b\:0435\:043d\:0438\:0435 \:043f\:043e\:043b\:043d\:043e\:0433\:043e \:0440\:0430\:0441\:043f\:0430\:0434\:0430 *)
 Pref[x_] := 1/(16 Pi x^2);
-TotalDecay = Pref[s] * ampSqHHH;
+TotalDecay = Pref[s] * ampSqHHH
 
 
 SecToMin[AbsoluteTime[] - startTime]

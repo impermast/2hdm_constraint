@@ -1,6 +1,7 @@
 (* ::Package:: *)
 
-logic = 1; (*1 autoload, 0 calculate*)
+logic = 0; (*1 autoload, 0 calculate*)
+SetDirectory[NotebookDirectory[]] 
 
 
 (* ::Title:: *)
@@ -78,7 +79,7 @@ Paint[diagHHZ, ColumnsXRows -> {6, 3}, Numbering -> Simple,SheetHeader->None,Ima
 SecToMin[AbsoluteTime[] - startTime]
 
 
-(* ::Section::Closed:: *)
+(* ::Section:: *)
 (*Test vertex*)
 
 
@@ -129,17 +130,12 @@ ampHHG[0]= FCFAConvert[CreateFeynAmp[diags5,Truncated -> True,PreFactor->1],
 		UndoChiralSplittings->True,ChangeDimension->D,List->False, SMP->False]/.q->q+p1+p2/.{p2->P-p1};
 *)
 ampHHZ[1] = ampHHZ[0]//ReplaceAll[#,
-	Pair[Momentum[Polarization[___],___],___]:>1]&//Contract;
+	Pair[Momentum[Polarization[___],___],___]:>1]&;
 ampHHH[1] = ampHHH[0]//ReplaceAll[#,
-	Pair[Momentum[Polarization[___],___],___]:>1]&//Contract
+	Pair[Momentum[Polarization[___],___],___]:>1]&
 ampHHG[1] = ampHHG[0]//ReplaceAll[#,
-	Pair[Momentum[Polarization[___],___],___]:>1]&//Contract;
+	Pair[Momentum[Polarization[___],___],___]:>1]&;
 
-
-
-SetDirectory[NotebookDirectory[]]
-Put[ampHHH[1],"BuffAmpHHH1.mx"]
-Get["BuffAmpHHH1.mx"]
 
 
 SecToMin[AbsoluteTime[] - startTime]
@@ -152,15 +148,13 @@ SecToMin[AbsoluteTime[] - startTime]
 FCClearScalarProducts[];
 
 (*PLEASE TAKE CARE ABOUT THE SIGH WHEN SWITCHING ALL MOMENTA TO BE INCOMING*)
-ScalarProduct[p1,p1]=mZ^2;
-ScalarProduct[p2,p2]=mZ^2;
+ScalarProduct[p1,p1]=MZ^2;
+ScalarProduct[p2,p2]=MZ^2;
 ScalarProduct[Q1,Q1]=mq^2;
 ScalarProduct[Q2,Q2]=mq^2;
-ScalarProduct[p1,p2]= s/2 - mZ^2;
+ScalarProduct[p1,p2]= s/2 - MZ^2;
 ScalarProduct[Q1,Q2]=(s-2*mq^2)/2;
 
-MW=mW;
-MZ=mZ;
 
 
 
@@ -169,34 +163,34 @@ params = {
    mt -> 172.76, (* \:041c\:0430\:0441\:0441\:0430 \:0442\:043e\:043f-\:043a\:0432\:0430\:0440\:043a\:0430 *)
    mb -> 4.18,   (* \:041c\:0430\:0441\:0441\:0430 \:0431\:043e\:0442\:0442\:043e\:043c-\:043a\:0432\:0430\:0440\:043a\:0430 *)  
    (* \:041c\:0430\:0441\:0441\:044b \:043a\:0430\:043b\:0438\:0431\:0440\:043e\:0432\:043e\:0447\:043d\:044b\:0445 \:0431\:043e\:0437\:043e\:043d\:043e\:0432 (GeV) *)
-   mW -> 80.4, (* \:041c\:0430\:0441\:0441\:0430 W-\:0431\:043e\:0437\:043e\:043d\:0430 *)
-   mZ -> 91.2,(* \:041c\:0430\:0441\:0441\:0430 Z-\:0431\:043e\:0437\:043e\:043d\:0430 *)  
-   mh1 -> 125.1 (* \:041c\:0430\:0441\:0441\:0430 \:0425\:0438\:0433\:0433\:0441\:0430 *)
+   MW -> 80.4, (* \:041c\:0430\:0441\:0441\:0430 W-\:0431\:043e\:0437\:043e\:043d\:0430 *)
+   MZ -> 91.2,(* \:041c\:0430\:0441\:0441\:0430 Z-\:0431\:043e\:0437\:043e\:043d\:0430 *)  
+   mh1 -> 125.1, (* \:041c\:0430\:0441\:0441\:0430 \:0425\:0438\:0433\:0433\:0441\:0430 *)
    (* \:0421\:0442\:0430\:043d\:0434\:0430\:0440\:0442\:043d\:0430\:044f \:043c\:043e\:0434\:0435\:043b\:044c: \:0443\:0433\:043b\:044b \:0441\:043c\:0435\:0448\:0438\:0432\:0430\:043d\:0438\:044f *)
-   sw -> Sqrt[1 - (mW/mZ)^2], (* sin(theta_W) *)
-   cw -> Sqrt[(mW/mZ)^2],      (* cos(theta_W) *)
+   sw -> Sqrt[1 - (80.4/91.2)^2], (* sin(theta_W) *)
+   cw -> Sqrt[(80.4/91.2)^2],      (* cos(theta_W) *)
    (* \:041a\:0430\:043b\:0438\:0431\:0440\:043e\:0432\:043e\:0447\:043d\:044b\:0435 \:043a\:043e\:043d\:0441\:0442\:0430\:043d\:0442\:044b *)
    gw -> 0.653, (* \:041a\:0430\:043b\:0438\:0431\:0440\:043e\:0432\:043e\:0447\:043d\:0430\:044f \:043a\:043e\:043d\:0441\:0442\:0430\:043d\:0442\:0430 SU(2)_L *)
    g1 -> 0.357, (* \:041a\:0430\:043b\:0438\:0431\:0440\:043e\:0432\:043e\:0447\:043d\:0430\:044f \:043a\:043e\:043d\:0441\:0442\:0430\:043d\:0442\:0430 U(1)_Y *)
    (* \:0414\:0440\:0443\:0433\:0438\:0435 \:043f\:0430\:0440\:0430\:043c\:0435\:0442\:0440\:044b *)
    v -> 246.22, (* \:0412\:0430\:043a\:0443\:0443\:043c\:043d\:043e\:0435 \:0441\:0440\:0435\:0434\:043d\:0435\:0435 \:0437\:043d\:0430\:0447\:0435\:043d\:0438\:0435 \:0425\:0438\:0433\:0433\:0441\:0430 (GeV) *)
-   e -> Sqrt[4 \[Pi] \[Alpha]e], (* \:042d\:043b\:0435\:043c\:0435\:043d\:0442\:0430\:0440\:043d\:044b\:0439 \:0437\:0430\:0440\:044f\:0434 \:0447\:0435\:0440\:0435\:0437 \[Alpha]e *)
+   e -> Sqrt[4 \[Pi] /137], (* \:042d\:043b\:0435\:043c\:0435\:043d\:0442\:0430\:0440\:043d\:044b\:0439 \:0437\:0430\:0440\:044f\:0434 \:0447\:0435\:0440\:0435\:0437 \[Alpha]e *)
    \[Alpha]e -> 1/137, (* \:042d\:043b\:0435\:043a\:0442\:0440\:043e\:043c\:0430\:0433\:043d\:0438\:0442\:043d\:0430\:044f \:043a\:043e\:043d\:0441\:0442\:0430\:043d\:0442\:0430 *)
-   g -> Sqrt[4 \[Pi] \[Alpha]e]/sw
+   g -> Sqrt[4 \[Pi] 1/137]/Sqrt[1 - (80.4/91.2)^2]
 };
 
 
 
 If[logic === 1,
 	Print["Loading ampHHH from file."];
-    ampHHH[3] = Get["BuffAmpHHH2.mx"],
+    ampHHH[2] = Get["BuffAmpHHH2.mx"],
     
     Print["Recomputing ampHHH and saving to file."];
-	ampHHZ[2]=ampHHZ[1]/.M$FACouplings/.params//DiracSimplify//TID[#(*/.{p2->P-p1, p1->P-p2}*),q,ToPaVe->True,UsePaVeBasis->True]& //Simplify;
+	ampHHZ[2]=ampHHZ[1]/.M$FACouplings/.params//DiracSimplify//TID[#/.{p2->P-p1, p1->P-p2},q,ToPaVe->True,UsePaVeBasis->True]& //Simplify;
 	(*ampHHZ[2] =  ampHHZ[2]/.{Momentum[P,\[Mu]]->0, Momentum[p1,\[Mu]]->0, Momentum[p2,\[Mu]]->0};*)
-	ampHHH[2]=ampHHH[1]/.M$FACouplings/.params//DiracSimplify//TID[#(*/.{p2->P-p1, p1->P-p2}*),q,ToPaVe->True,UsePaVeBasis->True]& //Simplify;
+	ampHHH[2]=ampHHH[1]/.M$FACouplings/.params//DiracSimplify//TID[#/.{p2->P-p1, p1->P-p2},q,ToPaVe->True,UsePaVeBasis->True]& //Simplify;
 	(*ampHHH[2] =  ampHHH[2]/.{Momentum[P,\[Mu]]->0, Momentum[p1,\[Mu]]->0, Momentum[p2,\[Mu]]->0}*)
-	ampHHG[2]=ampHHG[1]/.M$FACouplings/.params//DiracSimplify//TID[#(*/.{p2->P-p1, p1->P-p2}*),q,ToPaVe->True,UsePaVeBasis->True]& //Simplify;
+	ampHHG[2]=ampHHG[1]/.M$FACouplings/.params//DiracSimplify//TID[#/.{p2->P-p1, p1->P-p2},q,ToPaVe->True,UsePaVeBasis->True]& //Simplify;
 	(*ampHHG[2] =  ampHHG[2]/.{Momentum[P,\[Mu]]->0, Momentum[p1,\[Mu]]->0, Momentum[p2,\[Mu]]->0};*)
 	Put[ampHHH[2],"BuffAmpHHH2.mx"]
 	Print["Done."]
@@ -211,34 +205,80 @@ SecToMin[AbsoluteTime[] - startTime]
 
 
 (* ::Text:: *)
-(*\:0412\:044b\:0447\:043b\:0435\:043d\:044f\:0435\:043c \:0438\:0437 \:0430\:043c\:043f\:043b\:0438\:0442\:0443\:0434\:044b \:0442\:043e\:043b\:044c\:043a\:043e \:0441\:043b\:0430\:0433\:0430\:0435\:043c\:044b\:0435 \:0441\:043e\:043e\:0442\:0432\:0435\:0442\:0441\:0432\:0443\:044e\:0449\:0438\:0435 f4 \:0432\:0435\:0440\:0448\:0438\:043d\:043d\:044b\:043c \:0444\:0443\:043d\:043a\:0446\:0438\:044f\:043c \:0441 \:043f\:043e\:043c\:043e\:0449\:044c\:044e \:0444\:0443\:043d\:043a\:0446\:0438\:0438 \:043a\:043e\:044d\:0444.*)
+(*\:0412\:044b\:0447\:043b\:0435\:043d\:044f\:0435\:043c \:0438\:0437 \:0430\:043c\:043f\:043b\:0438\:0442\:0443\:0434\:044b \:0442\:043e\:043b\:044c\:043a\:043e \:0441\:043b\:0430\:0433\:0430\:0435\:043c\:044b\:0435 \:0441\:043e\:043e\:0442\:0432\:0435\:0442\:0441\:0442\:0432\:0443\:044e\:0449\:0438\:0435 f4 \:0432\:0435\:0440\:0448\:0438\:043d\:043d\:044b\:043c \:0444\:0443\:043d\:043a\:0446\:0438\:044f\:043c \:0441 \:043f\:043e\:043c\:043e\:0449\:044c\:044e \:0444\:0443\:043d\:043a\:0446\:0438\:0438 \:043a\:043e\:044d\:0444.*)
 
 
 (* ::Subsection:: *)
 (*Coeficients*)
 
 
-CoefficientList[ampHHH[2],C0i]
+Print["HHH:"];
+(*P = p1+p2
+f4ZHHZ[s_,mh1_,mh2_,mh3_]:= FullSimplify[ Coefficient[ ampHHZ[2], FCI[FVD[P,\[Mu]] MTD[\[Beta],\[Alpha]]] + FCI[FVD[P,\[Alpha]] MTD[\[Mu],\[Beta]]]]];
+FullSimplify[f4ZHHZ[s,mh1,mh2,mh3]]
+
+FVD[P,beta] -- D lorenz vector p^beta|
+MTD[mu,alpha] -- metric with mu alpha indexes
+*)
+Print["PV-func"];
+FeynCalc`PaVe[0,0,1, {mZ^2, s, mZ^2}, 
+	{(125.1*Sqrt[1 - mW^2/mZ^2])^2, mh2^2, mh3^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]/.params
+
+
+expr = ampHHH[2]/.params;
+commonFactor = X1 * X2 * X3/SequenceForm[FeynCalc`Pair[FeynCalc`Momentum[p1, D] + FeynCalc`Momentum[p2, D], FeynCalc`Momentum[p1, D] + FeynCalc`Momentum[p2, D]], "-",8317.44];
+(* \:0418\:0437\:0432\:043b\:0435\:0447\:0435\:043d\:0438\:0435 \:043a\:043e\:044d\:0444\:0444\:0438\:0446\:0438\:0435\:043d\:0442\:043e\:0432 \:043f\:0435\:0440\:0435\:0434 FeynCalc`PaVe *)
+expr = expr / commonFactor;
+expr = ExpandAll[expr];
+
+
+Print["Coef HHH:"];
+terms = List @@ expr;
+Length[terms]
+
+C001terms = Select[terms, 
+ !FreeQ[#, FeynCalc`PaVe[0,0,1, {__, __, __}, {__, __, __}, 
+      PaVeAutoOrder -> True, PaVeAutoReduce -> True]] &
+];
+Length[C001terms]
+
+
+ampHHH[3] = commonFactor*Total[C001terms]
 
 
 (* ::Subsection:: *)
 (*cross-section*)
 
 
-If[logic === 1,
+ampHHH[3] = FeynAmpDenominatorExplicit[ampHHH[3]]//Contract 
+
+
+ampSqHHH = 1/2 *1/(SUNN^2)(ampHHH[3] (ComplexConjugate[ampHHH[3]])) // 
+        SUNSimplify[#, Explicit -> True, SUNNToCACF -> False] &//
+        FermionSpinSum[#, ExtraFactor -> 1/2^2] & // 
+        DiracSimplify // 
+        DoPolarizationSums[#, p1, NumberOfPolarizations -> 3] & // 
+        DoPolarizationSums[#, p2, NumberOfPolarizations -> 3] & // 
+        Simplify
+
+
+
+
+
+(*If[logic === 1,
     Print["Loading ampHHH from file."];
-    ampHHH[3] = Get["ampHHH3.mx"],
+    ampHHH[3] = Get["BuffAmpHHH3.mx"],
     
     Print["Recomputing ampHHH and saving to file."];
     ampHHH[3] = ampHHH[2]// FCReplaceD[#, D -> 4 - 2 Epsilon] & //
     Series[#, {Epsilon, 0, 0}] & // Normal;
     Amp = ampHHH[3];
-    Put[ampHHH[3],"ampHHH3.mx"];
+    Put[ampHHH[3],"BuffAmpHHH3.mx"];
     Print["Done."];
-];
+];*)
 
 
-If[logic === 1,
+(*If[logic === 1,
     Print["Loading ampSqHHH from file."];
     ampSqHHH = Get["ampSqHHH.mx"],
     (* \:041f\:0435\:0440\:0435\:0441\:0447\:0435\:0442 \:0430\:043c\:043f\:043b\:0438\:0442\:0443\:0434\:044b, \:0435\:0441\:043b\:0438 logic = 0 *)
@@ -256,7 +296,7 @@ If[logic === 1,
 
 (* \:0412\:044b\:0447\:0438\:0441\:043b\:0435\:043d\:0438\:0435 \:043f\:043e\:043b\:043d\:043e\:0433\:043e \:0440\:0430\:0441\:043f\:0430\:0434\:0430 *)
 Pref[x_] := 1/(16 Pi x^2);
-TotalDecay = Pref[s] * ampSqHHH
+TotalDecay = Pref[s] * ampSqHHH*)
 
 
 SecToMin[AbsoluteTime[] - startTime]
@@ -264,25 +304,6 @@ SecToMin[AbsoluteTime[] - startTime]
 
 (* ::Subsubsection:: *)
 (*coeficients*)
-
-
-Print["HHZ:"];
-P = p1+p2
-f4ZHHZ[s_,mh1_,mh2_,mh3_]:= FullSimplify[ Coefficient[ ampHHZ[2], FCI[FVD[P,\[Mu]] MTD[\[Beta],\[Alpha]]] + FCI[FVD[P,\[Alpha]] MTD[\[Mu],\[Beta]]]]];
-FullSimplify[f4ZHHZ[s,mh1,mh2,mh3]]
-(* 
-FVD[P,beta] -- D lorenz vector p^beta|
-MTD[mu,alpha] -- metric with mu alpha indexes
-*)
-Print["HHH:"];
-f4ZHHH[s_,mh1_,mh2_,mh3_]:= FullSimplify[ Coefficient[ ampHHH[2], FCI[FVD[P,\[Beta]] MTD[\[Mu],\[Alpha]]] + FCI[FVD[P,\[Alpha]] MTD[\[Mu],\[Beta]]]]];
-FullSimplify[f4ZHHH[s,mh1,mh2,mh3]]
-Print["HHG:"];
-f4ZHHG[s_,mh1_,mh2_,mh3_]:= FullSimplify[ Coefficient[ ampHHG[2], FCI[FVD[P,\[Beta]] MTD[\[Mu],\[Alpha]]] + FCI[FVD[P,\[Alpha]] MTD[\[Mu],\[Beta]]]]];
-FullSimplify[f4ZHHG[s,mh1,mh2,mh3]]
-Print["Summ = "]
-f4Z[s_,mh1_,mh2_,mh3_,pref_]:=pref*f4ZHHZ[s,mh1,mh2,mh3]+f4ZHHH[s,mh1,mh2,mh3]+f4ZHHG[s,mh1,mh2,mh3];
-FullSimplify[f4Z[s,mh1,mh2,mh3,pref]]
 
 
 (* ::Subsubsection:: *)

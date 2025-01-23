@@ -2,6 +2,7 @@
 
 logic = 0; (*1 autoload, 0 calculate*)
 SetDirectory[NotebookDirectory[]] 
+startTime = AbsoluteTime[];
 
 
 (* ::Title:: *)
@@ -9,7 +10,7 @@ SetDirectory[NotebookDirectory[]]
 
 
 (*$LoadAddOns={"FeynArts", "FeynHelpers"};*)
-startTime = AbsoluteTime[];
+
 $LoadAddOns={"FeynArts"};
 <<FeynCalc`
 $FAVerbose = 0;
@@ -91,7 +92,7 @@ Paint[diagscheck, ColumnsXRows -> {2, 1}, Numbering -> Simple,SheetHeader->None,
 d1 = diagscheck;
 ampd1[0] = FCFAConvert[CreateFeynAmp[d1,Truncated -> True], 
 		IncomingMomenta->{P}, OutgoingMomenta->{p1,p2},LorentzIndexNames->{\[Mu],\[Alpha],\[Beta]},
-		UndoChiralSplittings->True,ChangeDimension->D,List->False, SMP->False]/.p->p1+p2;
+		UndoChiralSplittings->True,ChangeDimension->D,List->False, SMP->False]/.P->p1+p2;
 ampd1[1] = ampd1[0]//ReplaceAll[#,
 	Pair[Momentum[Polarization[___],___],___]:>1]&//Contract
 	
@@ -103,14 +104,14 @@ ampd1[1] = ampd1[0]//ReplaceAll[#,
 
 
 ampHHZ[0] = FCFAConvert[CreateFeynAmp[diagHHZ,Truncated -> True], 
-		IncomingMomenta->{Q1,Q2}, OutgoingMomenta->{p1,p2},LorentzIndexNames->{\[Alpha]1,\[Beta]1,\[Mu]1},LoopMomenta->{q},
-		UndoChiralSplittings->True,ChangeDimension->D,List->False, SMP->False, Contract-> False, DropSumOver->True]/.Q1+Q2->P;
+		IncomingMomenta->{Q1,Q2}, OutgoingMomenta->{p1,p2},LorentzIndexNames->{\[Mu]1,\[Mu]2,\[Alpha]1,\[Beta]1},LoopMomenta->{q},
+		TransversePolarizationVectors -> {p1,p2},UndoChiralSplittings->True,ChangeDimension->D,List->False, SMP->False, Contract-> False, DropSumOver->True]/.q->q+p1+p2/.p1->P-p2;
 ampHHH[0]= FCFAConvert[CreateFeynAmp[diagHHH,Truncated -> True], 
-		IncomingMomenta->{Q1,Q2}, OutgoingMomenta->{p1,p2},LorentzIndexNames->{\[Alpha]1,\[Beta]1,\[Mu]1},LoopMomenta->{q},
-		UndoChiralSplittings->True,ChangeDimension->D,List->False, SMP->False, Contract-> False, DropSumOver->True]/.Q1+Q2->P;
+		IncomingMomenta->{Q1,Q2}, OutgoingMomenta->{p1,p2},LorentzIndexNames->{\[Mu]1,\[Mu]2,\[Alpha]1,\[Beta]1},LoopMomenta->{q},
+		TransversePolarizationVectors->{p1,p2}, UndoChiralSplittings->True,ChangeDimension->D,List->False, SMP->False, Contract-> True, DropSumOver->True]/.q->q+p1+p2/.p1->P-p2
 ampHHG[0]= FCFAConvert[CreateFeynAmp[diagHHG,Truncated -> True], 
-		IncomingMomenta->{Q1,Q2}, OutgoingMomenta->{p1,p2},LorentzIndexNames->{\[Alpha]1,\[Beta]1,\[Mu]1},LoopMomenta->{q},
-		UndoChiralSplittings->True,ChangeDimension->D,List->False, SMP->False, Contract-> False, DropSumOver->True]/.Q1+Q2->P;
+		IncomingMomenta->{Q1,Q2}, OutgoingMomenta->{p1,p2},LorentzIndexNames->{\[Mu]1,\[Mu]2,\[Alpha]1,\[Beta]1},LoopMomenta->{q},
+		TransversePolarizationVectors->{p1,p2}, UndoChiralSplittings->True,ChangeDimension->D,List->False, SMP->False, Contract-> False, DropSumOver->True]/.q->q+p1+p2/.p1->P-p2;
 		
 (* \:0421 \:043f\:0440\:0435\:0444\:0430\:043a\:0442\:043e\:0440\:043e\:043c =1
 ampHHZ[0] = FCFAConvert[CreateFeynAmp[diags1,Truncated -> True,PreFactor->1], 
@@ -129,12 +130,15 @@ ampHHG[0]= FCFAConvert[CreateFeynAmp[diags5,Truncated -> True,PreFactor->1],
 		IncomingMomenta->{P}, OutgoingMomenta->{p1,p2},LorentzIndexNames->{\[Mu],\[Alpha],\[Beta]},LoopMomenta->{q},
 		UndoChiralSplittings->True,ChangeDimension->D,List->False, SMP->False]/.q->q+p1+p2/.{p2->P-p1};
 *)
-ampHHZ[1] = ampHHZ[0]//ReplaceAll[#,
+
+ampHHH[1] = ampHHH[0] // FCTraceFactor // SUNSimplify
+
+(*ampHHZ[1] = ampHHZ[1]//ReplaceAll[#,
 	Pair[Momentum[Polarization[___],___],___]:>1]&;
-ampHHH[1] = ampHHH[0]//ReplaceAll[#,
+ampHHH[1] = ampHHH[1]//ReplaceAll[#,
 	Pair[Momentum[Polarization[___],___],___]:>1]&
-ampHHG[1] = ampHHG[0]//ReplaceAll[#,
-	Pair[Momentum[Polarization[___],___],___]:>1]&;
+ampHHG[1] = ampHHG[1]//ReplaceAll[#,
+	Pair[Momentum[Polarization[___],___],___]:>1]&;*)
 
 
 
@@ -148,19 +152,31 @@ SecToMin[AbsoluteTime[] - startTime]
 FCClearScalarProducts[];
 
 (*PLEASE TAKE CARE ABOUT THE SIGH WHEN SWITCHING ALL MOMENTA TO BE INCOMING*)
+(*Q1Q2 -- incom quark
+p1 p2 outcoming Z
+P -- Q1+Q2 -- midle Z not on mass surface
+*)
 ScalarProduct[p1,p1]=MZ^2;
 ScalarProduct[p2,p2]=MZ^2;
+ScalarProduct[p1,p2]=s/2-MZ^2;
+
+ScalarProduct[P,P]=s;
+(*P=p1+p2 => (P-p1)^2 = p2^2=> m2^2 = m1^2+ s - 2p1P = > p1P = s+m1^2-m2^2/2*)
+ScalarProduct[P,p1]=s/2;
+ScalarProduct[P,p2]=s/2;
+
 ScalarProduct[Q1,Q1]=mq^2;
 ScalarProduct[Q2,Q2]=mq^2;
-ScalarProduct[p1,p2]= s/2 - MZ^2;
 ScalarProduct[Q1,Q2]=(s-2*mq^2)/2;
+
+(*DONT WRITE Loop kinematic, PV funcs create own*)
 
 
 
 
 params = {
    (* \:041c\:0430\:0441\:0441\:044b \:043a\:0432\:0430\:0440\:043a\:043e\:0432 (GeV) *)
-   mt -> 172.76, (* \:041c\:0430\:0441\:0441\:0430 \:0442\:043e\:043f-\:043a\:0432\:0430\:0440\:043a\:0430 *)
+   MT -> 172.76, (* \:041c\:0430\:0441\:0441\:0430 \:0442\:043e\:043f-\:043a\:0432\:0430\:0440\:043a\:0430 *)
    mb -> 4.18,   (* \:041c\:0430\:0441\:0441\:0430 \:0431\:043e\:0442\:0442\:043e\:043c-\:043a\:0432\:0430\:0440\:043a\:0430 *)  
    (* \:041c\:0430\:0441\:0441\:044b \:043a\:0430\:043b\:0438\:0431\:0440\:043e\:0432\:043e\:0447\:043d\:044b\:0445 \:0431\:043e\:0437\:043e\:043d\:043e\:0432 (GeV) *)
    MW -> 80.4, (* \:041c\:0430\:0441\:0441\:0430 W-\:0431\:043e\:0437\:043e\:043d\:0430 *)
@@ -186,18 +202,24 @@ If[logic === 1,
     ampHHH[2] = Get["BuffAmpHHH2.mx"],
     
     Print["Recomputing ampHHH and saving to file."];
-	ampHHZ[2]=ampHHZ[1]/.M$FACouplings/.params//DiracSimplify//TID[#/.{p2->P-p1, p1->P-p2},q,ToPaVe->True,UsePaVeBasis->True]& //Simplify;
+	(*ampHHZ[2]=ampHHZ[1]/.M$FACouplings/.params//DiracSimplify//TID[#/.{p2->P-p1, p1->P-p2},q,ToPaVe->True,UsePaVeBasis->True]& //Simplify;*)
 	(*ampHHZ[2] =  ampHHZ[2]/.{Momentum[P,\[Mu]]->0, Momentum[p1,\[Mu]]->0, Momentum[p2,\[Mu]]->0};*)
-	ampHHH[2]=ampHHH[1]/.M$FACouplings/.params//DiracSimplify//TID[#/.{p2->P-p1, p1->P-p2},q,ToPaVe->True,UsePaVeBasis->True]& //Simplify;
-	(*ampHHH[2] =  ampHHH[2]/.{Momentum[P,\[Mu]]->0, Momentum[p1,\[Mu]]->0, Momentum[p2,\[Mu]]->0}*)
-	ampHHG[2]=ampHHG[1]/.M$FACouplings/.params//DiracSimplify//TID[#/.{p2->P-p1, p1->P-p2},q,ToPaVe->True,UsePaVeBasis->True]& //Simplify;
+	ampHHH[2]=ampHHH[1]// DiracSimplify // TID[#/.{p2->P-p1, p1->P-p2}, q, ToPaVe -> True,UsePaVeBasis->True] &//Simplify;
+	(*ampHHH[2] =  ampHHH[2]/.{Momentum[P,___]->0, Momentum[p1,___]->0, Momentum[p2,___]->0}*)
+	(*ampHHG[2]=ampHHG[1]/.M$FACouplings/.params//DiracSimplify//TID[#/.{p2->P-p1, p1->P-p2},q,ToPaVe->True,UsePaVeBasis->True]& //Simplify;*)
 	(*ampHHG[2] =  ampHHG[2]/.{Momentum[P,\[Mu]]->0, Momentum[p1,\[Mu]]->0, Momentum[p2,\[Mu]]->0};*)
-	Put[ampHHH[2],"BuffAmpHHH2.mx"]
+	Put[ampHHH[2],"BuffAmpHHH2.mx"];
 	Print["Done."]
 ]
 
 
 SecToMin[AbsoluteTime[] - startTime]
+
+
+ampHHH[2]
+
+
+ampHHH[3]= (ampHHH[2]/.M$FACouplings/.params)// FCReplaceD[#, D -> 4 ] & // Normal
 
 
 (* ::Section:: *)
@@ -225,8 +247,8 @@ FeynCalc`PaVe[0,0,1, {mZ^2, s, mZ^2},
 	{(125.1*Sqrt[1 - mW^2/mZ^2])^2, mh2^2, mh3^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]/.params
 
 
-expr = ampHHH[2]/.params;
-commonFactor = X1 * X2 * X3/SequenceForm[FeynCalc`Pair[FeynCalc`Momentum[p1, D] + FeynCalc`Momentum[p2, D], FeynCalc`Momentum[p1, D] + FeynCalc`Momentum[p2, D]], "-",8317.44];
+expr = ampHHH[3];
+commonFactor = X1 * X2 * X3/SequenceForm[FeynCalc`Pair[FeynCalc`Momentum[p1, 4] + FeynCalc`Momentum[p2, 4], FeynCalc`Momentum[p1, 4] + FeynCalc`Momentum[p2, 4]], "-",8317.44];
 (* \:0418\:0437\:0432\:043b\:0435\:0447\:0435\:043d\:0438\:0435 \:043a\:043e\:044d\:0444\:0444\:0438\:0446\:0438\:0435\:043d\:0442\:043e\:0432 \:043f\:0435\:0440\:0435\:0434 FeynCalc`PaVe *)
 expr = expr / commonFactor;
 expr = ExpandAll[expr];
@@ -243,24 +265,31 @@ C001terms = Select[terms,
 Length[C001terms]
 
 
-ampHHH[3] = commonFactor*Total[C001terms]
+SubjAmpHHH = commonFactor*FeynAmpDenominatorExplicit[Total[C001terms]]//Contract
 
 
 (* ::Subsection:: *)
 (*cross-section*)
 
 
-ampHHH[3] = FeynAmpDenominatorExplicit[ampHHH[3]]//Contract 
+(*(ampHHH[1](ComplexConjugate[ampHHH[1]]))//Contract//
+SUNSimplify[#, Explicit -> True, SUNNToCACF -> False] &//
+        FermionSpinSum[#, ExtraFactor -> 1/2^2] & // 
+        DiracSimplify // 
+        DoPolarizationSums[#, p1, NumberOfPolarizations -> 3] & // 
+        DoPolarizationSums[#, p2, NumberOfPolarizations -> 3] & // 
+        Simplify*)
 
 
-ampSqHHH = 1/2 *1/(SUNN^2)(ampHHH[3] (ComplexConjugate[ampHHH[3]])) // 
+ampSqHHH = 1/2 *1/(SUNN^2)(SubjAmpHHH (ComplexConjugate[SubjAmpHHH])) // 
+		FeynAmpDenominatorExplicit //
         SUNSimplify[#, Explicit -> True, SUNNToCACF -> False] &//
         FermionSpinSum[#, ExtraFactor -> 1/2^2] & // 
         DiracSimplify // 
         DoPolarizationSums[#, p1, NumberOfPolarizations -> 3] & // 
         DoPolarizationSums[#, p2, NumberOfPolarizations -> 3] & // 
         Simplify
-
+ 
 
 
 
@@ -275,31 +304,34 @@ ampSqHHH = 1/2 *1/(SUNN^2)(ampHHH[3] (ComplexConjugate[ampHHH[3]])) //
     Amp = ampHHH[3];
     Put[ampHHH[3],"BuffAmpHHH3.mx"];
     Print["Done."];
-];*)
+];
+*)
 
-
-(*If[logic === 1,
+If[logic === 1,
     Print["Loading ampSqHHH from file."];
-    ampSqHHH = Get["ampSqHHH.mx"],
+    ampSqHHH = Get["ampSqHHHfull.mx"],
     (* \:041f\:0435\:0440\:0435\:0441\:0447\:0435\:0442 \:0430\:043c\:043f\:043b\:0438\:0442\:0443\:0434\:044b, \:0435\:0441\:043b\:0438 logic = 0 *)
     Print["Recomputing ampSqHHH and saving to file."];
-    ampSqHHH = 1/2 (ampHHH[3] (ComplexConjugate[ampHHH[3]])) //
-        FeynAmpDenominatorExplicit // 
+    (*test with full amp*)
+	ampSqHHH = 1/2 *1/(SUNN^2)(ampHHH[2] (ComplexConjugate[ampHHH[2]])) // 
+        SUNSimplify[#, Explicit -> True, SUNNToCACF -> False] &//
         FermionSpinSum[#, ExtraFactor -> 1/2^2] & // 
         DiracSimplify // 
         DoPolarizationSums[#, p1, NumberOfPolarizations -> 3] & // 
         DoPolarizationSums[#, p2, NumberOfPolarizations -> 3] & // 
-        Simplify;
-    Put[ ampSqHHH, "ampSqHHH.mx"];
+        Simplify
+    Put[ ampSqHHH, "ampSqHHHfull.mx"];
     Print["Done."] 
 ];
 
 (* \:0412\:044b\:0447\:0438\:0441\:043b\:0435\:043d\:0438\:0435 \:043f\:043e\:043b\:043d\:043e\:0433\:043e \:0440\:0430\:0441\:043f\:0430\:0434\:0430 *)
 Pref[x_] := 1/(16 Pi x^2);
-TotalDecay = Pref[s] * ampSqHHH*)
+TotalDecay = Pref[s] * ampSqHHH
 
 
 SecToMin[AbsoluteTime[] - startTime]
+
+
 
 
 (* ::Subsubsection:: *)

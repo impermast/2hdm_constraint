@@ -1,0 +1,1244 @@
+(X1^2*X2^2*X3^2*(8.461841453739691*^-8*s*
+    (DiracGamma[LorentzIndex[\[Mu]2, D], D] . DiracGamma[6])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {15650.009999999998, mh2^2, 
+       mh3^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]^2 - 
+   3.912881607549806*^-7*s*DiracGamma[LorentzIndex[\[Mu]2, D], D] . 
+     DiracGamma[6]*DiracGamma[LorentzIndex[\[Mu]2, D], D] . DiracGamma[7]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {15650.009999999998, mh2^2, 
+       mh3^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]^2 + 
+   4.5234369369846357*^-7*s*(DiracGamma[LorentzIndex[\[Mu]2, D], D] . 
+      DiracGamma[7])^2*FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+      {15650.009999999998, mh2^2, mh3^2}, PaVeAutoOrder -> True, 
+      PaVeAutoReduce -> True]^2 + 5.077104872243814*^-7*
+    (DiracGamma[Momentum[P, D], D] . DiracGamma[6])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {15650.009999999998, mh2^2, 
+       mh3^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]^2 + 
+   8.461841453739691*^-8*D*(DiracGamma[Momentum[P, D], D] . DiracGamma[6])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {15650.009999999998, mh2^2, 
+       mh3^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]^2 - 
+   2.3477289645298835*^-6*DiracGamma[Momentum[P, D], D] . DiracGamma[6]*
+    DiracGamma[Momentum[P, D], D] . DiracGamma[7]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {15650.009999999998, mh2^2, 
+       mh3^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]^2 - 
+   3.912881607549806*^-7*D*DiracGamma[Momentum[P, D], D] . DiracGamma[6]*
+    DiracGamma[Momentum[P, D], D] . DiracGamma[7]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {15650.009999999998, mh2^2, 
+       mh3^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]^2 + 
+   2.7140621621907816*^-6*(DiracGamma[Momentum[P, D], D] . DiracGamma[7])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {15650.009999999998, mh2^2, 
+       mh3^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]^2 + 
+   4.5234369369846357*^-7*D*(DiracGamma[Momentum[P, D], D] . DiracGamma[7])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {15650.009999999998, mh2^2, 
+       mh3^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]^2 - 
+   1.6923682907479381*^-7*s*(DiracGamma[LorentzIndex[\[Mu]2, D], D] . 
+      DiracGamma[6])^2*FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {15650.009999999998, mh2^2, mh3^2}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True]*FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {15650.009999999998, mh3^2, mh2^2}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True] + 7.825763215099612*^-7*s*
+    DiracGamma[LorentzIndex[\[Mu]2, D], D] . DiracGamma[6]*
+    DiracGamma[LorentzIndex[\[Mu]2, D], D] . DiracGamma[7]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {15650.009999999998, mh2^2, 
+      mh3^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {15650.009999999998, mh3^2, 
+      mh2^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True] - 
+   9.046873873969271*^-7*s*(DiracGamma[LorentzIndex[\[Mu]2, D], D] . 
+      DiracGamma[7])^2*FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {15650.009999999998, mh2^2, mh3^2}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True]*FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {15650.009999999998, mh3^2, mh2^2}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True] - 1.0154209744487628*^-6*
+    (DiracGamma[Momentum[P, D], D] . DiracGamma[6])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {15650.009999999998, mh2^2, 
+      mh3^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {15650.009999999998, mh3^2, 
+      mh2^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True] - 
+   1.6923682907479381*^-7*D*(DiracGamma[Momentum[P, D], D] . DiracGamma[6])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {15650.009999999998, mh2^2, 
+      mh3^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {15650.009999999998, mh3^2, 
+      mh2^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True] + 
+   4.695457929059767*^-6*DiracGamma[Momentum[P, D], D] . DiracGamma[6]*
+    DiracGamma[Momentum[P, D], D] . DiracGamma[7]*FeynCalc`PaVe[0, 0, 1, 
+     {8317.44, s, 8317.44}, {15650.009999999998, mh2^2, mh3^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {15650.009999999998, mh3^2, 
+      mh2^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True] + 
+   7.825763215099612*^-7*D*DiracGamma[Momentum[P, D], D] . DiracGamma[6]*
+    DiracGamma[Momentum[P, D], D] . DiracGamma[7]*FeynCalc`PaVe[0, 0, 1, 
+     {8317.44, s, 8317.44}, {15650.009999999998, mh2^2, mh3^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {15650.009999999998, mh3^2, 
+      mh2^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True] - 
+   5.428124324381563*^-6*(DiracGamma[Momentum[P, D], D] . DiracGamma[7])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {15650.009999999998, mh2^2, 
+      mh3^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {15650.009999999998, mh3^2, 
+      mh2^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True] - 
+   9.046873873969271*^-7*D*(DiracGamma[Momentum[P, D], D] . DiracGamma[7])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {15650.009999999998, mh2^2, 
+      mh3^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {15650.009999999998, mh3^2, 
+      mh2^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True] + 
+   8.461841453739691*^-8*s*(DiracGamma[LorentzIndex[\[Mu]2, D], D] . 
+      DiracGamma[6])^2*FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+      {15650.009999999998, mh3^2, mh2^2}, PaVeAutoOrder -> True, 
+      PaVeAutoReduce -> True]^2 - 3.912881607549806*^-7*s*
+    DiracGamma[LorentzIndex[\[Mu]2, D], D] . DiracGamma[6]*
+    DiracGamma[LorentzIndex[\[Mu]2, D], D] . DiracGamma[7]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {15650.009999999998, mh3^2, 
+       mh2^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]^2 + 
+   4.5234369369846357*^-7*s*(DiracGamma[LorentzIndex[\[Mu]2, D], D] . 
+      DiracGamma[7])^2*FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+      {15650.009999999998, mh3^2, mh2^2}, PaVeAutoOrder -> True, 
+      PaVeAutoReduce -> True]^2 + 5.077104872243814*^-7*
+    (DiracGamma[Momentum[P, D], D] . DiracGamma[6])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {15650.009999999998, mh3^2, 
+       mh2^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]^2 + 
+   8.461841453739691*^-8*D*(DiracGamma[Momentum[P, D], D] . DiracGamma[6])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {15650.009999999998, mh3^2, 
+       mh2^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]^2 - 
+   2.3477289645298835*^-6*DiracGamma[Momentum[P, D], D] . DiracGamma[6]*
+    DiracGamma[Momentum[P, D], D] . DiracGamma[7]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {15650.009999999998, mh3^2, 
+       mh2^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]^2 - 
+   3.912881607549806*^-7*D*DiracGamma[Momentum[P, D], D] . DiracGamma[6]*
+    DiracGamma[Momentum[P, D], D] . DiracGamma[7]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {15650.009999999998, mh3^2, 
+       mh2^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]^2 + 
+   2.7140621621907816*^-6*(DiracGamma[Momentum[P, D], D] . DiracGamma[7])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {15650.009999999998, mh3^2, 
+       mh2^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]^2 + 
+   4.5234369369846357*^-7*D*(DiracGamma[Momentum[P, D], D] . DiracGamma[7])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {15650.009999999998, mh3^2, 
+       mh2^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]^2 - 
+   1.6923682907479381*^-7*s*(DiracGamma[LorentzIndex[\[Mu]2, D], D] . 
+      DiracGamma[6])^2*FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {15650.009999999998, mh2^2, mh3^2}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True]*FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh2^2, 15650.009999999998, mh3^2}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True] + 7.825763215099612*^-7*s*
+    DiracGamma[LorentzIndex[\[Mu]2, D], D] . DiracGamma[6]*
+    DiracGamma[LorentzIndex[\[Mu]2, D], D] . DiracGamma[7]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {15650.009999999998, mh2^2, 
+      mh3^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {mh2^2, 15650.009999999998, 
+      mh3^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True] - 
+   9.046873873969271*^-7*s*(DiracGamma[LorentzIndex[\[Mu]2, D], D] . 
+      DiracGamma[7])^2*FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {15650.009999999998, mh2^2, mh3^2}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True]*FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh2^2, 15650.009999999998, mh3^2}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True] - 1.0154209744487628*^-6*
+    (DiracGamma[Momentum[P, D], D] . DiracGamma[6])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {15650.009999999998, mh2^2, 
+      mh3^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {mh2^2, 15650.009999999998, 
+      mh3^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True] - 
+   1.6923682907479381*^-7*D*(DiracGamma[Momentum[P, D], D] . DiracGamma[6])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {15650.009999999998, mh2^2, 
+      mh3^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {mh2^2, 15650.009999999998, 
+      mh3^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True] + 
+   4.695457929059767*^-6*DiracGamma[Momentum[P, D], D] . DiracGamma[6]*
+    DiracGamma[Momentum[P, D], D] . DiracGamma[7]*FeynCalc`PaVe[0, 0, 1, 
+     {8317.44, s, 8317.44}, {15650.009999999998, mh2^2, mh3^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {mh2^2, 15650.009999999998, 
+      mh3^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True] + 
+   7.825763215099612*^-7*D*DiracGamma[Momentum[P, D], D] . DiracGamma[6]*
+    DiracGamma[Momentum[P, D], D] . DiracGamma[7]*FeynCalc`PaVe[0, 0, 1, 
+     {8317.44, s, 8317.44}, {15650.009999999998, mh2^2, mh3^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {mh2^2, 15650.009999999998, 
+      mh3^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True] - 
+   5.428124324381563*^-6*(DiracGamma[Momentum[P, D], D] . DiracGamma[7])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {15650.009999999998, mh2^2, 
+      mh3^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {mh2^2, 15650.009999999998, 
+      mh3^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True] - 
+   9.046873873969271*^-7*D*(DiracGamma[Momentum[P, D], D] . DiracGamma[7])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {15650.009999999998, mh2^2, 
+      mh3^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {mh2^2, 15650.009999999998, 
+      mh3^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True] + 
+   1.6923682907479381*^-7*s*(DiracGamma[LorentzIndex[\[Mu]2, D], D] . 
+      DiracGamma[6])^2*FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {15650.009999999998, mh3^2, mh2^2}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True]*FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh2^2, 15650.009999999998, mh3^2}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True] - 7.825763215099612*^-7*s*
+    DiracGamma[LorentzIndex[\[Mu]2, D], D] . DiracGamma[6]*
+    DiracGamma[LorentzIndex[\[Mu]2, D], D] . DiracGamma[7]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {15650.009999999998, mh3^2, 
+      mh2^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {mh2^2, 15650.009999999998, 
+      mh3^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True] + 
+   9.046873873969271*^-7*s*(DiracGamma[LorentzIndex[\[Mu]2, D], D] . 
+      DiracGamma[7])^2*FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {15650.009999999998, mh3^2, mh2^2}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True]*FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh2^2, 15650.009999999998, mh3^2}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True] + 1.0154209744487628*^-6*
+    (DiracGamma[Momentum[P, D], D] . DiracGamma[6])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {15650.009999999998, mh3^2, 
+      mh2^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {mh2^2, 15650.009999999998, 
+      mh3^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True] + 
+   1.6923682907479381*^-7*D*(DiracGamma[Momentum[P, D], D] . DiracGamma[6])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {15650.009999999998, mh3^2, 
+      mh2^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {mh2^2, 15650.009999999998, 
+      mh3^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True] - 
+   4.695457929059767*^-6*DiracGamma[Momentum[P, D], D] . DiracGamma[6]*
+    DiracGamma[Momentum[P, D], D] . DiracGamma[7]*FeynCalc`PaVe[0, 0, 1, 
+     {8317.44, s, 8317.44}, {15650.009999999998, mh3^2, mh2^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {mh2^2, 15650.009999999998, 
+      mh3^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True] - 
+   7.825763215099612*^-7*D*DiracGamma[Momentum[P, D], D] . DiracGamma[6]*
+    DiracGamma[Momentum[P, D], D] . DiracGamma[7]*FeynCalc`PaVe[0, 0, 1, 
+     {8317.44, s, 8317.44}, {15650.009999999998, mh3^2, mh2^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {mh2^2, 15650.009999999998, 
+      mh3^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True] + 
+   5.428124324381563*^-6*(DiracGamma[Momentum[P, D], D] . DiracGamma[7])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {15650.009999999998, mh3^2, 
+      mh2^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {mh2^2, 15650.009999999998, 
+      mh3^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True] + 
+   9.046873873969271*^-7*D*(DiracGamma[Momentum[P, D], D] . DiracGamma[7])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {15650.009999999998, mh3^2, 
+      mh2^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {mh2^2, 15650.009999999998, 
+      mh3^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True] + 
+   8.461841453739691*^-8*s*(DiracGamma[LorentzIndex[\[Mu]2, D], D] . 
+      DiracGamma[6])^2*FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+      {mh2^2, 15650.009999999998, mh3^2}, PaVeAutoOrder -> True, 
+      PaVeAutoReduce -> True]^2 - 3.912881607549806*^-7*s*
+    DiracGamma[LorentzIndex[\[Mu]2, D], D] . DiracGamma[6]*
+    DiracGamma[LorentzIndex[\[Mu]2, D], D] . DiracGamma[7]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {mh2^2, 15650.009999999998, 
+       mh3^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]^2 + 
+   4.5234369369846357*^-7*s*(DiracGamma[LorentzIndex[\[Mu]2, D], D] . 
+      DiracGamma[7])^2*FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+      {mh2^2, 15650.009999999998, mh3^2}, PaVeAutoOrder -> True, 
+      PaVeAutoReduce -> True]^2 + 5.077104872243814*^-7*
+    (DiracGamma[Momentum[P, D], D] . DiracGamma[6])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {mh2^2, 15650.009999999998, 
+       mh3^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]^2 + 
+   8.461841453739691*^-8*D*(DiracGamma[Momentum[P, D], D] . DiracGamma[6])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {mh2^2, 15650.009999999998, 
+       mh3^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]^2 - 
+   2.3477289645298835*^-6*DiracGamma[Momentum[P, D], D] . DiracGamma[6]*
+    DiracGamma[Momentum[P, D], D] . DiracGamma[7]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {mh2^2, 15650.009999999998, 
+       mh3^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]^2 - 
+   3.912881607549806*^-7*D*DiracGamma[Momentum[P, D], D] . DiracGamma[6]*
+    DiracGamma[Momentum[P, D], D] . DiracGamma[7]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {mh2^2, 15650.009999999998, 
+       mh3^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]^2 + 
+   2.7140621621907816*^-6*(DiracGamma[Momentum[P, D], D] . DiracGamma[7])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {mh2^2, 15650.009999999998, 
+       mh3^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]^2 + 
+   4.5234369369846357*^-7*D*(DiracGamma[Momentum[P, D], D] . DiracGamma[7])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {mh2^2, 15650.009999999998, 
+       mh3^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]^2 + 
+   1.6923682907479381*^-7*s*(DiracGamma[LorentzIndex[\[Mu]2, D], D] . 
+      DiracGamma[6])^2*FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {15650.009999999998, mh2^2, mh3^2}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True]*FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh2^2, mh3^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True] - 7.825763215099612*^-7*s*
+    DiracGamma[LorentzIndex[\[Mu]2, D], D] . DiracGamma[6]*
+    DiracGamma[LorentzIndex[\[Mu]2, D], D] . DiracGamma[7]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {15650.009999999998, mh2^2, 
+      mh3^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh2^2, mh3^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True] + 9.046873873969271*^-7*s*
+    (DiracGamma[LorentzIndex[\[Mu]2, D], D] . DiracGamma[7])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {15650.009999999998, mh2^2, 
+      mh3^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh2^2, mh3^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True] + 1.0154209744487628*^-6*
+    (DiracGamma[Momentum[P, D], D] . DiracGamma[6])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {15650.009999999998, mh2^2, 
+      mh3^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh2^2, mh3^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True] + 1.6923682907479381*^-7*D*
+    (DiracGamma[Momentum[P, D], D] . DiracGamma[6])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {15650.009999999998, mh2^2, 
+      mh3^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh2^2, mh3^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True] - 4.695457929059767*^-6*
+    DiracGamma[Momentum[P, D], D] . DiracGamma[6]*
+    DiracGamma[Momentum[P, D], D] . DiracGamma[7]*FeynCalc`PaVe[0, 0, 1, 
+     {8317.44, s, 8317.44}, {15650.009999999998, mh2^2, mh3^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh2^2, mh3^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True] - 7.825763215099612*^-7*D*
+    DiracGamma[Momentum[P, D], D] . DiracGamma[6]*
+    DiracGamma[Momentum[P, D], D] . DiracGamma[7]*FeynCalc`PaVe[0, 0, 1, 
+     {8317.44, s, 8317.44}, {15650.009999999998, mh2^2, mh3^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh2^2, mh3^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True] + 5.428124324381563*^-6*
+    (DiracGamma[Momentum[P, D], D] . DiracGamma[7])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {15650.009999999998, mh2^2, 
+      mh3^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh2^2, mh3^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True] + 9.046873873969271*^-7*D*
+    (DiracGamma[Momentum[P, D], D] . DiracGamma[7])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {15650.009999999998, mh2^2, 
+      mh3^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh2^2, mh3^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True] - 1.6923682907479381*^-7*s*
+    (DiracGamma[LorentzIndex[\[Mu]2, D], D] . DiracGamma[6])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {15650.009999999998, mh3^2, 
+      mh2^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh2^2, mh3^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True] + 7.825763215099612*^-7*s*
+    DiracGamma[LorentzIndex[\[Mu]2, D], D] . DiracGamma[6]*
+    DiracGamma[LorentzIndex[\[Mu]2, D], D] . DiracGamma[7]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {15650.009999999998, mh3^2, 
+      mh2^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh2^2, mh3^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True] - 9.046873873969271*^-7*s*
+    (DiracGamma[LorentzIndex[\[Mu]2, D], D] . DiracGamma[7])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {15650.009999999998, mh3^2, 
+      mh2^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh2^2, mh3^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True] - 1.0154209744487628*^-6*
+    (DiracGamma[Momentum[P, D], D] . DiracGamma[6])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {15650.009999999998, mh3^2, 
+      mh2^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh2^2, mh3^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True] - 1.6923682907479381*^-7*D*
+    (DiracGamma[Momentum[P, D], D] . DiracGamma[6])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {15650.009999999998, mh3^2, 
+      mh2^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh2^2, mh3^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True] + 4.695457929059767*^-6*
+    DiracGamma[Momentum[P, D], D] . DiracGamma[6]*
+    DiracGamma[Momentum[P, D], D] . DiracGamma[7]*FeynCalc`PaVe[0, 0, 1, 
+     {8317.44, s, 8317.44}, {15650.009999999998, mh3^2, mh2^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh2^2, mh3^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True] + 7.825763215099612*^-7*D*
+    DiracGamma[Momentum[P, D], D] . DiracGamma[6]*
+    DiracGamma[Momentum[P, D], D] . DiracGamma[7]*FeynCalc`PaVe[0, 0, 1, 
+     {8317.44, s, 8317.44}, {15650.009999999998, mh3^2, mh2^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh2^2, mh3^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True] - 5.428124324381563*^-6*
+    (DiracGamma[Momentum[P, D], D] . DiracGamma[7])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {15650.009999999998, mh3^2, 
+      mh2^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh2^2, mh3^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True] - 9.046873873969271*^-7*D*
+    (DiracGamma[Momentum[P, D], D] . DiracGamma[7])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {15650.009999999998, mh3^2, 
+      mh2^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh2^2, mh3^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True] - 1.6923682907479381*^-7*s*
+    (DiracGamma[LorentzIndex[\[Mu]2, D], D] . DiracGamma[6])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {mh2^2, 15650.009999999998, 
+      mh3^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh2^2, mh3^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True] + 7.825763215099612*^-7*s*
+    DiracGamma[LorentzIndex[\[Mu]2, D], D] . DiracGamma[6]*
+    DiracGamma[LorentzIndex[\[Mu]2, D], D] . DiracGamma[7]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {mh2^2, 15650.009999999998, 
+      mh3^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh2^2, mh3^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True] - 9.046873873969271*^-7*s*
+    (DiracGamma[LorentzIndex[\[Mu]2, D], D] . DiracGamma[7])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {mh2^2, 15650.009999999998, 
+      mh3^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh2^2, mh3^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True] - 1.0154209744487628*^-6*
+    (DiracGamma[Momentum[P, D], D] . DiracGamma[6])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {mh2^2, 15650.009999999998, 
+      mh3^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh2^2, mh3^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True] - 1.6923682907479381*^-7*D*
+    (DiracGamma[Momentum[P, D], D] . DiracGamma[6])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {mh2^2, 15650.009999999998, 
+      mh3^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh2^2, mh3^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True] + 4.695457929059767*^-6*
+    DiracGamma[Momentum[P, D], D] . DiracGamma[6]*
+    DiracGamma[Momentum[P, D], D] . DiracGamma[7]*FeynCalc`PaVe[0, 0, 1, 
+     {8317.44, s, 8317.44}, {mh2^2, 15650.009999999998, mh3^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh2^2, mh3^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True] + 7.825763215099612*^-7*D*
+    DiracGamma[Momentum[P, D], D] . DiracGamma[6]*
+    DiracGamma[Momentum[P, D], D] . DiracGamma[7]*FeynCalc`PaVe[0, 0, 1, 
+     {8317.44, s, 8317.44}, {mh2^2, 15650.009999999998, mh3^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh2^2, mh3^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True] - 5.428124324381563*^-6*
+    (DiracGamma[Momentum[P, D], D] . DiracGamma[7])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {mh2^2, 15650.009999999998, 
+      mh3^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh2^2, mh3^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True] - 9.046873873969271*^-7*D*
+    (DiracGamma[Momentum[P, D], D] . DiracGamma[7])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {mh2^2, 15650.009999999998, 
+      mh3^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh2^2, mh3^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True] + 8.461841453739691*^-8*s*
+    (DiracGamma[LorentzIndex[\[Mu]2, D], D] . DiracGamma[6])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+      {mh2^2, mh3^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+      PaVeAutoReduce -> True]^2 - 3.912881607549806*^-7*s*
+    DiracGamma[LorentzIndex[\[Mu]2, D], D] . DiracGamma[6]*
+    DiracGamma[LorentzIndex[\[Mu]2, D], D] . DiracGamma[7]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+      {mh2^2, mh3^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+      PaVeAutoReduce -> True]^2 + 4.5234369369846357*^-7*s*
+    (DiracGamma[LorentzIndex[\[Mu]2, D], D] . DiracGamma[7])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+      {mh2^2, mh3^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+      PaVeAutoReduce -> True]^2 + 5.077104872243814*^-7*
+    (DiracGamma[Momentum[P, D], D] . DiracGamma[6])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+      {mh2^2, mh3^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+      PaVeAutoReduce -> True]^2 + 8.461841453739691*^-8*D*
+    (DiracGamma[Momentum[P, D], D] . DiracGamma[6])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+      {mh2^2, mh3^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+      PaVeAutoReduce -> True]^2 - 2.3477289645298835*^-6*
+    DiracGamma[Momentum[P, D], D] . DiracGamma[6]*
+    DiracGamma[Momentum[P, D], D] . DiracGamma[7]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+      {mh2^2, mh3^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+      PaVeAutoReduce -> True]^2 - 3.912881607549806*^-7*D*
+    DiracGamma[Momentum[P, D], D] . DiracGamma[6]*
+    DiracGamma[Momentum[P, D], D] . DiracGamma[7]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+      {mh2^2, mh3^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+      PaVeAutoReduce -> True]^2 + 2.7140621621907816*^-6*
+    (DiracGamma[Momentum[P, D], D] . DiracGamma[7])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+      {mh2^2, mh3^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+      PaVeAutoReduce -> True]^2 + 4.5234369369846357*^-7*D*
+    (DiracGamma[Momentum[P, D], D] . DiracGamma[7])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+      {mh2^2, mh3^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+      PaVeAutoReduce -> True]^2 + 1.6923682907479381*^-7*s*
+    (DiracGamma[LorentzIndex[\[Mu]2, D], D] . DiracGamma[6])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {15650.009999999998, mh2^2, 
+      mh3^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {mh3^2, 15650.009999999998, 
+      mh2^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True] - 
+   7.825763215099612*^-7*s*DiracGamma[LorentzIndex[\[Mu]2, D], D] . 
+     DiracGamma[6]*DiracGamma[LorentzIndex[\[Mu]2, D], D] . DiracGamma[7]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {15650.009999999998, mh2^2, 
+      mh3^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {mh3^2, 15650.009999999998, 
+      mh2^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True] + 
+   9.046873873969271*^-7*s*(DiracGamma[LorentzIndex[\[Mu]2, D], D] . 
+      DiracGamma[7])^2*FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {15650.009999999998, mh2^2, mh3^2}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True]*FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh3^2, 15650.009999999998, mh2^2}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True] + 1.0154209744487628*^-6*
+    (DiracGamma[Momentum[P, D], D] . DiracGamma[6])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {15650.009999999998, mh2^2, 
+      mh3^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {mh3^2, 15650.009999999998, 
+      mh2^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True] + 
+   1.6923682907479381*^-7*D*(DiracGamma[Momentum[P, D], D] . DiracGamma[6])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {15650.009999999998, mh2^2, 
+      mh3^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {mh3^2, 15650.009999999998, 
+      mh2^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True] - 
+   4.695457929059767*^-6*DiracGamma[Momentum[P, D], D] . DiracGamma[6]*
+    DiracGamma[Momentum[P, D], D] . DiracGamma[7]*FeynCalc`PaVe[0, 0, 1, 
+     {8317.44, s, 8317.44}, {15650.009999999998, mh2^2, mh3^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {mh3^2, 15650.009999999998, 
+      mh2^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True] - 
+   7.825763215099612*^-7*D*DiracGamma[Momentum[P, D], D] . DiracGamma[6]*
+    DiracGamma[Momentum[P, D], D] . DiracGamma[7]*FeynCalc`PaVe[0, 0, 1, 
+     {8317.44, s, 8317.44}, {15650.009999999998, mh2^2, mh3^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {mh3^2, 15650.009999999998, 
+      mh2^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True] + 
+   5.428124324381563*^-6*(DiracGamma[Momentum[P, D], D] . DiracGamma[7])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {15650.009999999998, mh2^2, 
+      mh3^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {mh3^2, 15650.009999999998, 
+      mh2^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True] + 
+   9.046873873969271*^-7*D*(DiracGamma[Momentum[P, D], D] . DiracGamma[7])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {15650.009999999998, mh2^2, 
+      mh3^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {mh3^2, 15650.009999999998, 
+      mh2^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True] - 
+   1.6923682907479381*^-7*s*(DiracGamma[LorentzIndex[\[Mu]2, D], D] . 
+      DiracGamma[6])^2*FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {15650.009999999998, mh3^2, mh2^2}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True]*FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh3^2, 15650.009999999998, mh2^2}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True] + 7.825763215099612*^-7*s*
+    DiracGamma[LorentzIndex[\[Mu]2, D], D] . DiracGamma[6]*
+    DiracGamma[LorentzIndex[\[Mu]2, D], D] . DiracGamma[7]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {15650.009999999998, mh3^2, 
+      mh2^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {mh3^2, 15650.009999999998, 
+      mh2^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True] - 
+   9.046873873969271*^-7*s*(DiracGamma[LorentzIndex[\[Mu]2, D], D] . 
+      DiracGamma[7])^2*FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {15650.009999999998, mh3^2, mh2^2}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True]*FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh3^2, 15650.009999999998, mh2^2}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True] - 1.0154209744487628*^-6*
+    (DiracGamma[Momentum[P, D], D] . DiracGamma[6])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {15650.009999999998, mh3^2, 
+      mh2^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {mh3^2, 15650.009999999998, 
+      mh2^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True] - 
+   1.6923682907479381*^-7*D*(DiracGamma[Momentum[P, D], D] . DiracGamma[6])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {15650.009999999998, mh3^2, 
+      mh2^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {mh3^2, 15650.009999999998, 
+      mh2^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True] + 
+   4.695457929059767*^-6*DiracGamma[Momentum[P, D], D] . DiracGamma[6]*
+    DiracGamma[Momentum[P, D], D] . DiracGamma[7]*FeynCalc`PaVe[0, 0, 1, 
+     {8317.44, s, 8317.44}, {15650.009999999998, mh3^2, mh2^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {mh3^2, 15650.009999999998, 
+      mh2^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True] + 
+   7.825763215099612*^-7*D*DiracGamma[Momentum[P, D], D] . DiracGamma[6]*
+    DiracGamma[Momentum[P, D], D] . DiracGamma[7]*FeynCalc`PaVe[0, 0, 1, 
+     {8317.44, s, 8317.44}, {15650.009999999998, mh3^2, mh2^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {mh3^2, 15650.009999999998, 
+      mh2^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True] - 
+   5.428124324381563*^-6*(DiracGamma[Momentum[P, D], D] . DiracGamma[7])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {15650.009999999998, mh3^2, 
+      mh2^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {mh3^2, 15650.009999999998, 
+      mh2^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True] - 
+   9.046873873969271*^-7*D*(DiracGamma[Momentum[P, D], D] . DiracGamma[7])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {15650.009999999998, mh3^2, 
+      mh2^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {mh3^2, 15650.009999999998, 
+      mh2^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True] - 
+   1.6923682907479381*^-7*s*(DiracGamma[LorentzIndex[\[Mu]2, D], D] . 
+      DiracGamma[6])^2*FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh2^2, 15650.009999999998, mh3^2}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True]*FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh3^2, 15650.009999999998, mh2^2}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True] + 7.825763215099612*^-7*s*
+    DiracGamma[LorentzIndex[\[Mu]2, D], D] . DiracGamma[6]*
+    DiracGamma[LorentzIndex[\[Mu]2, D], D] . DiracGamma[7]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {mh2^2, 15650.009999999998, 
+      mh3^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {mh3^2, 15650.009999999998, 
+      mh2^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True] - 
+   9.046873873969271*^-7*s*(DiracGamma[LorentzIndex[\[Mu]2, D], D] . 
+      DiracGamma[7])^2*FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh2^2, 15650.009999999998, mh3^2}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True]*FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh3^2, 15650.009999999998, mh2^2}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True] - 1.0154209744487628*^-6*
+    (DiracGamma[Momentum[P, D], D] . DiracGamma[6])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {mh2^2, 15650.009999999998, 
+      mh3^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {mh3^2, 15650.009999999998, 
+      mh2^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True] - 
+   1.6923682907479381*^-7*D*(DiracGamma[Momentum[P, D], D] . DiracGamma[6])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {mh2^2, 15650.009999999998, 
+      mh3^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {mh3^2, 15650.009999999998, 
+      mh2^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True] + 
+   4.695457929059767*^-6*DiracGamma[Momentum[P, D], D] . DiracGamma[6]*
+    DiracGamma[Momentum[P, D], D] . DiracGamma[7]*FeynCalc`PaVe[0, 0, 1, 
+     {8317.44, s, 8317.44}, {mh2^2, 15650.009999999998, mh3^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {mh3^2, 15650.009999999998, 
+      mh2^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True] + 
+   7.825763215099612*^-7*D*DiracGamma[Momentum[P, D], D] . DiracGamma[6]*
+    DiracGamma[Momentum[P, D], D] . DiracGamma[7]*FeynCalc`PaVe[0, 0, 1, 
+     {8317.44, s, 8317.44}, {mh2^2, 15650.009999999998, mh3^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {mh3^2, 15650.009999999998, 
+      mh2^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True] - 
+   5.428124324381563*^-6*(DiracGamma[Momentum[P, D], D] . DiracGamma[7])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {mh2^2, 15650.009999999998, 
+      mh3^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {mh3^2, 15650.009999999998, 
+      mh2^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True] - 
+   9.046873873969271*^-7*D*(DiracGamma[Momentum[P, D], D] . DiracGamma[7])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {mh2^2, 15650.009999999998, 
+      mh3^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {mh3^2, 15650.009999999998, 
+      mh2^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True] + 
+   1.6923682907479381*^-7*s*(DiracGamma[LorentzIndex[\[Mu]2, D], D] . 
+      DiracGamma[6])^2*FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh2^2, mh3^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True]*FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh3^2, 15650.009999999998, mh2^2}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True] - 7.825763215099612*^-7*s*
+    DiracGamma[LorentzIndex[\[Mu]2, D], D] . DiracGamma[6]*
+    DiracGamma[LorentzIndex[\[Mu]2, D], D] . DiracGamma[7]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh2^2, mh3^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True]*FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh3^2, 15650.009999999998, mh2^2}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True] + 9.046873873969271*^-7*s*
+    (DiracGamma[LorentzIndex[\[Mu]2, D], D] . DiracGamma[7])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh2^2, mh3^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True]*FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh3^2, 15650.009999999998, mh2^2}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True] + 1.0154209744487628*^-6*
+    (DiracGamma[Momentum[P, D], D] . DiracGamma[6])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh2^2, mh3^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True]*FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh3^2, 15650.009999999998, mh2^2}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True] + 1.6923682907479381*^-7*D*
+    (DiracGamma[Momentum[P, D], D] . DiracGamma[6])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh2^2, mh3^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True]*FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh3^2, 15650.009999999998, mh2^2}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True] - 4.695457929059767*^-6*
+    DiracGamma[Momentum[P, D], D] . DiracGamma[6]*
+    DiracGamma[Momentum[P, D], D] . DiracGamma[7]*FeynCalc`PaVe[0, 0, 1, 
+     {8317.44, s, 8317.44}, {mh2^2, mh3^2, 15650.009999999998}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {mh3^2, 15650.009999999998, 
+      mh2^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True] - 
+   7.825763215099612*^-7*D*DiracGamma[Momentum[P, D], D] . DiracGamma[6]*
+    DiracGamma[Momentum[P, D], D] . DiracGamma[7]*FeynCalc`PaVe[0, 0, 1, 
+     {8317.44, s, 8317.44}, {mh2^2, mh3^2, 15650.009999999998}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {mh3^2, 15650.009999999998, 
+      mh2^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True] + 
+   5.428124324381563*^-6*(DiracGamma[Momentum[P, D], D] . DiracGamma[7])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh2^2, mh3^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True]*FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh3^2, 15650.009999999998, mh2^2}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True] + 9.046873873969271*^-7*D*
+    (DiracGamma[Momentum[P, D], D] . DiracGamma[7])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh2^2, mh3^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True]*FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh3^2, 15650.009999999998, mh2^2}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True] + 8.461841453739691*^-8*s*
+    (DiracGamma[LorentzIndex[\[Mu]2, D], D] . DiracGamma[6])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {mh3^2, 15650.009999999998, 
+       mh2^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]^2 - 
+   3.912881607549806*^-7*s*DiracGamma[LorentzIndex[\[Mu]2, D], D] . 
+     DiracGamma[6]*DiracGamma[LorentzIndex[\[Mu]2, D], D] . DiracGamma[7]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {mh3^2, 15650.009999999998, 
+       mh2^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]^2 + 
+   4.5234369369846357*^-7*s*(DiracGamma[LorentzIndex[\[Mu]2, D], D] . 
+      DiracGamma[7])^2*FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+      {mh3^2, 15650.009999999998, mh2^2}, PaVeAutoOrder -> True, 
+      PaVeAutoReduce -> True]^2 + 5.077104872243814*^-7*
+    (DiracGamma[Momentum[P, D], D] . DiracGamma[6])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {mh3^2, 15650.009999999998, 
+       mh2^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]^2 + 
+   8.461841453739691*^-8*D*(DiracGamma[Momentum[P, D], D] . DiracGamma[6])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {mh3^2, 15650.009999999998, 
+       mh2^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]^2 - 
+   2.3477289645298835*^-6*DiracGamma[Momentum[P, D], D] . DiracGamma[6]*
+    DiracGamma[Momentum[P, D], D] . DiracGamma[7]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {mh3^2, 15650.009999999998, 
+       mh2^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]^2 - 
+   3.912881607549806*^-7*D*DiracGamma[Momentum[P, D], D] . DiracGamma[6]*
+    DiracGamma[Momentum[P, D], D] . DiracGamma[7]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {mh3^2, 15650.009999999998, 
+       mh2^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]^2 + 
+   2.7140621621907816*^-6*(DiracGamma[Momentum[P, D], D] . DiracGamma[7])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {mh3^2, 15650.009999999998, 
+       mh2^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]^2 + 
+   4.5234369369846357*^-7*D*(DiracGamma[Momentum[P, D], D] . DiracGamma[7])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {mh3^2, 15650.009999999998, 
+       mh2^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]^2 - 
+   1.6923682907479381*^-7*s*(DiracGamma[LorentzIndex[\[Mu]2, D], D] . 
+      DiracGamma[6])^2*FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {15650.009999999998, mh2^2, mh3^2}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True]*FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh3^2, mh2^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True] + 7.825763215099612*^-7*s*
+    DiracGamma[LorentzIndex[\[Mu]2, D], D] . DiracGamma[6]*
+    DiracGamma[LorentzIndex[\[Mu]2, D], D] . DiracGamma[7]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {15650.009999999998, mh2^2, 
+      mh3^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh3^2, mh2^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True] - 9.046873873969271*^-7*s*
+    (DiracGamma[LorentzIndex[\[Mu]2, D], D] . DiracGamma[7])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {15650.009999999998, mh2^2, 
+      mh3^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh3^2, mh2^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True] - 1.0154209744487628*^-6*
+    (DiracGamma[Momentum[P, D], D] . DiracGamma[6])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {15650.009999999998, mh2^2, 
+      mh3^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh3^2, mh2^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True] - 1.6923682907479381*^-7*D*
+    (DiracGamma[Momentum[P, D], D] . DiracGamma[6])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {15650.009999999998, mh2^2, 
+      mh3^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh3^2, mh2^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True] + 4.695457929059767*^-6*
+    DiracGamma[Momentum[P, D], D] . DiracGamma[6]*
+    DiracGamma[Momentum[P, D], D] . DiracGamma[7]*FeynCalc`PaVe[0, 0, 1, 
+     {8317.44, s, 8317.44}, {15650.009999999998, mh2^2, mh3^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh3^2, mh2^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True] + 7.825763215099612*^-7*D*
+    DiracGamma[Momentum[P, D], D] . DiracGamma[6]*
+    DiracGamma[Momentum[P, D], D] . DiracGamma[7]*FeynCalc`PaVe[0, 0, 1, 
+     {8317.44, s, 8317.44}, {15650.009999999998, mh2^2, mh3^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh3^2, mh2^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True] - 5.428124324381563*^-6*
+    (DiracGamma[Momentum[P, D], D] . DiracGamma[7])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {15650.009999999998, mh2^2, 
+      mh3^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh3^2, mh2^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True] - 9.046873873969271*^-7*D*
+    (DiracGamma[Momentum[P, D], D] . DiracGamma[7])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {15650.009999999998, mh2^2, 
+      mh3^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh3^2, mh2^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True] + 1.6923682907479381*^-7*s*
+    (DiracGamma[LorentzIndex[\[Mu]2, D], D] . DiracGamma[6])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {15650.009999999998, mh3^2, 
+      mh2^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh3^2, mh2^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True] - 7.825763215099612*^-7*s*
+    DiracGamma[LorentzIndex[\[Mu]2, D], D] . DiracGamma[6]*
+    DiracGamma[LorentzIndex[\[Mu]2, D], D] . DiracGamma[7]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {15650.009999999998, mh3^2, 
+      mh2^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh3^2, mh2^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True] + 9.046873873969271*^-7*s*
+    (DiracGamma[LorentzIndex[\[Mu]2, D], D] . DiracGamma[7])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {15650.009999999998, mh3^2, 
+      mh2^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh3^2, mh2^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True] + 1.0154209744487628*^-6*
+    (DiracGamma[Momentum[P, D], D] . DiracGamma[6])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {15650.009999999998, mh3^2, 
+      mh2^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh3^2, mh2^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True] + 1.6923682907479381*^-7*D*
+    (DiracGamma[Momentum[P, D], D] . DiracGamma[6])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {15650.009999999998, mh3^2, 
+      mh2^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh3^2, mh2^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True] - 4.695457929059767*^-6*
+    DiracGamma[Momentum[P, D], D] . DiracGamma[6]*
+    DiracGamma[Momentum[P, D], D] . DiracGamma[7]*FeynCalc`PaVe[0, 0, 1, 
+     {8317.44, s, 8317.44}, {15650.009999999998, mh3^2, mh2^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh3^2, mh2^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True] - 7.825763215099612*^-7*D*
+    DiracGamma[Momentum[P, D], D] . DiracGamma[6]*
+    DiracGamma[Momentum[P, D], D] . DiracGamma[7]*FeynCalc`PaVe[0, 0, 1, 
+     {8317.44, s, 8317.44}, {15650.009999999998, mh3^2, mh2^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh3^2, mh2^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True] + 5.428124324381563*^-6*
+    (DiracGamma[Momentum[P, D], D] . DiracGamma[7])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {15650.009999999998, mh3^2, 
+      mh2^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh3^2, mh2^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True] + 9.046873873969271*^-7*D*
+    (DiracGamma[Momentum[P, D], D] . DiracGamma[7])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {15650.009999999998, mh3^2, 
+      mh2^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh3^2, mh2^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True] + 1.6923682907479381*^-7*s*
+    (DiracGamma[LorentzIndex[\[Mu]2, D], D] . DiracGamma[6])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {mh2^2, 15650.009999999998, 
+      mh3^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh3^2, mh2^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True] - 7.825763215099612*^-7*s*
+    DiracGamma[LorentzIndex[\[Mu]2, D], D] . DiracGamma[6]*
+    DiracGamma[LorentzIndex[\[Mu]2, D], D] . DiracGamma[7]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {mh2^2, 15650.009999999998, 
+      mh3^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh3^2, mh2^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True] + 9.046873873969271*^-7*s*
+    (DiracGamma[LorentzIndex[\[Mu]2, D], D] . DiracGamma[7])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {mh2^2, 15650.009999999998, 
+      mh3^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh3^2, mh2^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True] + 1.0154209744487628*^-6*
+    (DiracGamma[Momentum[P, D], D] . DiracGamma[6])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {mh2^2, 15650.009999999998, 
+      mh3^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh3^2, mh2^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True] + 1.6923682907479381*^-7*D*
+    (DiracGamma[Momentum[P, D], D] . DiracGamma[6])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {mh2^2, 15650.009999999998, 
+      mh3^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh3^2, mh2^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True] - 4.695457929059767*^-6*
+    DiracGamma[Momentum[P, D], D] . DiracGamma[6]*
+    DiracGamma[Momentum[P, D], D] . DiracGamma[7]*FeynCalc`PaVe[0, 0, 1, 
+     {8317.44, s, 8317.44}, {mh2^2, 15650.009999999998, mh3^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh3^2, mh2^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True] - 7.825763215099612*^-7*D*
+    DiracGamma[Momentum[P, D], D] . DiracGamma[6]*
+    DiracGamma[Momentum[P, D], D] . DiracGamma[7]*FeynCalc`PaVe[0, 0, 1, 
+     {8317.44, s, 8317.44}, {mh2^2, 15650.009999999998, mh3^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh3^2, mh2^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True] + 5.428124324381563*^-6*
+    (DiracGamma[Momentum[P, D], D] . DiracGamma[7])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {mh2^2, 15650.009999999998, 
+      mh3^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh3^2, mh2^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True] + 9.046873873969271*^-7*D*
+    (DiracGamma[Momentum[P, D], D] . DiracGamma[7])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {mh2^2, 15650.009999999998, 
+      mh3^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh3^2, mh2^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True] - 1.6923682907479381*^-7*s*
+    (DiracGamma[LorentzIndex[\[Mu]2, D], D] . DiracGamma[6])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh2^2, mh3^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True]*FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh3^2, mh2^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True] + 7.825763215099612*^-7*s*
+    DiracGamma[LorentzIndex[\[Mu]2, D], D] . DiracGamma[6]*
+    DiracGamma[LorentzIndex[\[Mu]2, D], D] . DiracGamma[7]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh2^2, mh3^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True]*FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh3^2, mh2^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True] - 9.046873873969271*^-7*s*
+    (DiracGamma[LorentzIndex[\[Mu]2, D], D] . DiracGamma[7])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh2^2, mh3^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True]*FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh3^2, mh2^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True] - 1.0154209744487628*^-6*
+    (DiracGamma[Momentum[P, D], D] . DiracGamma[6])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh2^2, mh3^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True]*FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh3^2, mh2^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True] - 1.6923682907479381*^-7*D*
+    (DiracGamma[Momentum[P, D], D] . DiracGamma[6])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh2^2, mh3^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True]*FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh3^2, mh2^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True] + 4.695457929059767*^-6*
+    DiracGamma[Momentum[P, D], D] . DiracGamma[6]*
+    DiracGamma[Momentum[P, D], D] . DiracGamma[7]*FeynCalc`PaVe[0, 0, 1, 
+     {8317.44, s, 8317.44}, {mh2^2, mh3^2, 15650.009999999998}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh3^2, mh2^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True] + 7.825763215099612*^-7*D*
+    DiracGamma[Momentum[P, D], D] . DiracGamma[6]*
+    DiracGamma[Momentum[P, D], D] . DiracGamma[7]*FeynCalc`PaVe[0, 0, 1, 
+     {8317.44, s, 8317.44}, {mh2^2, mh3^2, 15650.009999999998}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh3^2, mh2^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True] - 5.428124324381563*^-6*
+    (DiracGamma[Momentum[P, D], D] . DiracGamma[7])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh2^2, mh3^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True]*FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh3^2, mh2^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True] - 9.046873873969271*^-7*D*
+    (DiracGamma[Momentum[P, D], D] . DiracGamma[7])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh2^2, mh3^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True]*FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh3^2, mh2^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True] - 1.6923682907479381*^-7*s*
+    (DiracGamma[LorentzIndex[\[Mu]2, D], D] . DiracGamma[6])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {mh3^2, 15650.009999999998, 
+      mh2^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh3^2, mh2^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True] + 7.825763215099612*^-7*s*
+    DiracGamma[LorentzIndex[\[Mu]2, D], D] . DiracGamma[6]*
+    DiracGamma[LorentzIndex[\[Mu]2, D], D] . DiracGamma[7]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {mh3^2, 15650.009999999998, 
+      mh2^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh3^2, mh2^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True] - 9.046873873969271*^-7*s*
+    (DiracGamma[LorentzIndex[\[Mu]2, D], D] . DiracGamma[7])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {mh3^2, 15650.009999999998, 
+      mh2^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh3^2, mh2^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True] - 1.0154209744487628*^-6*
+    (DiracGamma[Momentum[P, D], D] . DiracGamma[6])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {mh3^2, 15650.009999999998, 
+      mh2^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh3^2, mh2^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True] - 1.6923682907479381*^-7*D*
+    (DiracGamma[Momentum[P, D], D] . DiracGamma[6])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {mh3^2, 15650.009999999998, 
+      mh2^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh3^2, mh2^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True] + 4.695457929059767*^-6*
+    DiracGamma[Momentum[P, D], D] . DiracGamma[6]*
+    DiracGamma[Momentum[P, D], D] . DiracGamma[7]*FeynCalc`PaVe[0, 0, 1, 
+     {8317.44, s, 8317.44}, {mh3^2, 15650.009999999998, mh2^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh3^2, mh2^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True] + 7.825763215099612*^-7*D*
+    DiracGamma[Momentum[P, D], D] . DiracGamma[6]*
+    DiracGamma[Momentum[P, D], D] . DiracGamma[7]*FeynCalc`PaVe[0, 0, 1, 
+     {8317.44, s, 8317.44}, {mh3^2, 15650.009999999998, mh2^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh3^2, mh2^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True] - 5.428124324381563*^-6*
+    (DiracGamma[Momentum[P, D], D] . DiracGamma[7])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {mh3^2, 15650.009999999998, 
+      mh2^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh3^2, mh2^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True] - 9.046873873969271*^-7*D*
+    (DiracGamma[Momentum[P, D], D] . DiracGamma[7])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {mh3^2, 15650.009999999998, 
+      mh2^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+     {mh3^2, mh2^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+     PaVeAutoReduce -> True] + 8.461841453739691*^-8*s*
+    (DiracGamma[LorentzIndex[\[Mu]2, D], D] . DiracGamma[6])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+      {mh3^2, mh2^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+      PaVeAutoReduce -> True]^2 - 3.912881607549806*^-7*s*
+    DiracGamma[LorentzIndex[\[Mu]2, D], D] . DiracGamma[6]*
+    DiracGamma[LorentzIndex[\[Mu]2, D], D] . DiracGamma[7]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+      {mh3^2, mh2^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+      PaVeAutoReduce -> True]^2 + 4.5234369369846357*^-7*s*
+    (DiracGamma[LorentzIndex[\[Mu]2, D], D] . DiracGamma[7])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+      {mh3^2, mh2^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+      PaVeAutoReduce -> True]^2 + 5.077104872243814*^-7*
+    (DiracGamma[Momentum[P, D], D] . DiracGamma[6])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+      {mh3^2, mh2^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+      PaVeAutoReduce -> True]^2 + 8.461841453739691*^-8*D*
+    (DiracGamma[Momentum[P, D], D] . DiracGamma[6])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+      {mh3^2, mh2^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+      PaVeAutoReduce -> True]^2 - 2.3477289645298835*^-6*
+    DiracGamma[Momentum[P, D], D] . DiracGamma[6]*
+    DiracGamma[Momentum[P, D], D] . DiracGamma[7]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+      {mh3^2, mh2^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+      PaVeAutoReduce -> True]^2 - 3.912881607549806*^-7*D*
+    DiracGamma[Momentum[P, D], D] . DiracGamma[6]*
+    DiracGamma[Momentum[P, D], D] . DiracGamma[7]*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+      {mh3^2, mh2^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+      PaVeAutoReduce -> True]^2 + 2.7140621621907816*^-6*
+    (DiracGamma[Momentum[P, D], D] . DiracGamma[7])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+      {mh3^2, mh2^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+      PaVeAutoReduce -> True]^2 + 4.5234369369846357*^-7*D*
+    (DiracGamma[Momentum[P, D], D] . DiracGamma[7])^2*
+    FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+      {mh3^2, mh2^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+      PaVeAutoReduce -> True]^2 + s*DiracGamma[LorentzIndex[\[Mu]1, D], D] . 
+     DiracGamma[6]*DiracGamma[LorentzIndex[\[Mu]1, D], D] . DiracGamma[7]*
+    (-3.912881607549806*^-7*FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+        {15650.009999999998, mh2^2, mh3^2}, PaVeAutoOrder -> True, 
+        PaVeAutoReduce -> True]^2 - 3.912881607549806*^-7*
+      FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {15650.009999999998, 
+         mh3^2, mh2^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]^2 - 
+     3.912881607549806*^-7*FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+        {mh2^2, 15650.009999999998, mh3^2}, PaVeAutoOrder -> True, 
+        PaVeAutoReduce -> True]^2 + 7.825763215099612*^-7*
+      FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+       {mh2^2, 15650.009999999998, mh3^2}, PaVeAutoOrder -> True, 
+       PaVeAutoReduce -> True]*FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+       {mh2^2, mh3^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+       PaVeAutoReduce -> True] - 3.912881607549806*^-7*
+      FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {mh2^2, mh3^2, 
+         15650.009999999998}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]^
+       2 + 7.825763215099612*^-7*FeynCalc`PaVe[0, 0, 1, 
+       {8317.44, s, 8317.44}, {mh2^2, 15650.009999999998, mh3^2}, 
+       PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+      FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+       {mh3^2, 15650.009999999998, mh2^2}, PaVeAutoOrder -> True, 
+       PaVeAutoReduce -> True] - 7.825763215099612*^-7*
+      FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+       {mh2^2, mh3^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+       PaVeAutoReduce -> True]*FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+       {mh3^2, 15650.009999999998, mh2^2}, PaVeAutoOrder -> True, 
+       PaVeAutoReduce -> True] - 3.912881607549806*^-7*
+      FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+        {mh3^2, 15650.009999999998, mh2^2}, PaVeAutoOrder -> True, 
+        PaVeAutoReduce -> True]^2 + FeynCalc`PaVe[0, 0, 1, 
+       {8317.44, s, 8317.44}, {15650.009999999998, mh3^2, mh2^2}, 
+       PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+      (-7.825763215099612*^-7*FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+         {mh2^2, 15650.009999999998, mh3^2}, PaVeAutoOrder -> True, 
+         PaVeAutoReduce -> True] + 7.825763215099612*^-7*
+        FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {mh2^2, mh3^2, 
+          15650.009999999998}, PaVeAutoOrder -> True, PaVeAutoReduce -> 
+          True] + 7.825763215099612*^-7*FeynCalc`PaVe[0, 0, 1, 
+         {8317.44, s, 8317.44}, {mh3^2, 15650.009999999998, mh2^2}, 
+         PaVeAutoOrder -> True, PaVeAutoReduce -> True] - 
+       7.825763215099612*^-7*FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+         {mh3^2, mh2^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+         PaVeAutoReduce -> True]) + FeynCalc`PaVe[0, 0, 1, 
+       {8317.44, s, 8317.44}, {15650.009999999998, mh2^2, mh3^2}, 
+       PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+      (7.825763215099612*^-7*FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+         {15650.009999999998, mh3^2, mh2^2}, PaVeAutoOrder -> True, 
+         PaVeAutoReduce -> True] + 7.825763215099612*^-7*
+        FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+         {mh2^2, 15650.009999999998, mh3^2}, PaVeAutoOrder -> True, 
+         PaVeAutoReduce -> True] - 7.825763215099612*^-7*
+        FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {mh2^2, mh3^2, 
+          15650.009999999998}, PaVeAutoOrder -> True, PaVeAutoReduce -> 
+          True] - 7.825763215099612*^-7*FeynCalc`PaVe[0, 0, 1, 
+         {8317.44, s, 8317.44}, {mh3^2, 15650.009999999998, mh2^2}, 
+         PaVeAutoOrder -> True, PaVeAutoReduce -> True] + 
+       7.825763215099612*^-7*FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+         {mh3^2, mh2^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+         PaVeAutoReduce -> True]) - 7.825763215099612*^-7*
+      FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+       {mh2^2, 15650.009999999998, mh3^2}, PaVeAutoOrder -> True, 
+       PaVeAutoReduce -> True]*FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+       {mh3^2, mh2^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+       PaVeAutoReduce -> True] + 7.825763215099612*^-7*
+      FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+       {mh2^2, mh3^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+       PaVeAutoReduce -> True]*FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+       {mh3^2, mh2^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+       PaVeAutoReduce -> True] + 7.825763215099612*^-7*
+      FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+       {mh3^2, 15650.009999999998, mh2^2}, PaVeAutoOrder -> True, 
+       PaVeAutoReduce -> True]*FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+       {mh3^2, mh2^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+       PaVeAutoReduce -> True] - 3.912881607549806*^-7*
+      FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {mh3^2, mh2^2, 
+         15650.009999999998}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]^
+       2) + s*(DiracGamma[LorentzIndex[\[Mu]1, D], D] . DiracGamma[6])^2*
+    (8.461841453739691*^-8*FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+        {15650.009999999998, mh2^2, mh3^2}, PaVeAutoOrder -> True, 
+        PaVeAutoReduce -> True]^2 + 8.461841453739691*^-8*
+      FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {15650.009999999998, 
+         mh3^2, mh2^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]^2 + 
+     8.461841453739691*^-8*FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+        {mh2^2, 15650.009999999998, mh3^2}, PaVeAutoOrder -> True, 
+        PaVeAutoReduce -> True]^2 - 1.6923682907479381*^-7*
+      FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+       {mh2^2, 15650.009999999998, mh3^2}, PaVeAutoOrder -> True, 
+       PaVeAutoReduce -> True]*FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+       {mh2^2, mh3^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+       PaVeAutoReduce -> True] + 8.461841453739691*^-8*
+      FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {mh2^2, mh3^2, 
+         15650.009999999998}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]^
+       2 - 1.6923682907479381*^-7*FeynCalc`PaVe[0, 0, 1, 
+       {8317.44, s, 8317.44}, {mh2^2, 15650.009999999998, mh3^2}, 
+       PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+      FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+       {mh3^2, 15650.009999999998, mh2^2}, PaVeAutoOrder -> True, 
+       PaVeAutoReduce -> True] + 1.6923682907479381*^-7*
+      FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+       {mh2^2, mh3^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+       PaVeAutoReduce -> True]*FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+       {mh3^2, 15650.009999999998, mh2^2}, PaVeAutoOrder -> True, 
+       PaVeAutoReduce -> True] + 8.461841453739691*^-8*
+      FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+        {mh3^2, 15650.009999999998, mh2^2}, PaVeAutoOrder -> True, 
+        PaVeAutoReduce -> True]^2 + FeynCalc`PaVe[0, 0, 1, 
+       {8317.44, s, 8317.44}, {15650.009999999998, mh2^2, mh3^2}, 
+       PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+      (-1.6923682907479381*^-7*FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+         {15650.009999999998, mh3^2, mh2^2}, PaVeAutoOrder -> True, 
+         PaVeAutoReduce -> True] - 1.6923682907479381*^-7*
+        FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+         {mh2^2, 15650.009999999998, mh3^2}, PaVeAutoOrder -> True, 
+         PaVeAutoReduce -> True] + 1.6923682907479381*^-7*
+        FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {mh2^2, mh3^2, 
+          15650.009999999998}, PaVeAutoOrder -> True, PaVeAutoReduce -> 
+          True] + 1.6923682907479381*^-7*FeynCalc`PaVe[0, 0, 1, 
+         {8317.44, s, 8317.44}, {mh3^2, 15650.009999999998, mh2^2}, 
+         PaVeAutoOrder -> True, PaVeAutoReduce -> True] - 
+       1.6923682907479381*^-7*FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+         {mh3^2, mh2^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+         PaVeAutoReduce -> True]) + FeynCalc`PaVe[0, 0, 1, 
+       {8317.44, s, 8317.44}, {15650.009999999998, mh3^2, mh2^2}, 
+       PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+      (1.6923682907479381*^-7*FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+         {mh2^2, 15650.009999999998, mh3^2}, PaVeAutoOrder -> True, 
+         PaVeAutoReduce -> True] - 1.6923682907479381*^-7*
+        FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {mh2^2, mh3^2, 
+          15650.009999999998}, PaVeAutoOrder -> True, PaVeAutoReduce -> 
+          True] - 1.6923682907479381*^-7*FeynCalc`PaVe[0, 0, 1, 
+         {8317.44, s, 8317.44}, {mh3^2, 15650.009999999998, mh2^2}, 
+         PaVeAutoOrder -> True, PaVeAutoReduce -> True] + 
+       1.6923682907479381*^-7*FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+         {mh3^2, mh2^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+         PaVeAutoReduce -> True]) + 1.6923682907479381*^-7*
+      FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+       {mh2^2, 15650.009999999998, mh3^2}, PaVeAutoOrder -> True, 
+       PaVeAutoReduce -> True]*FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+       {mh3^2, mh2^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+       PaVeAutoReduce -> True] - 1.6923682907479381*^-7*
+      FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+       {mh2^2, mh3^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+       PaVeAutoReduce -> True]*FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+       {mh3^2, mh2^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+       PaVeAutoReduce -> True] - 1.6923682907479381*^-7*
+      FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+       {mh3^2, 15650.009999999998, mh2^2}, PaVeAutoOrder -> True, 
+       PaVeAutoReduce -> True]*FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+       {mh3^2, mh2^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+       PaVeAutoReduce -> True] + 8.461841453739691*^-8*
+      FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {mh3^2, mh2^2, 
+         15650.009999999998}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]^
+       2) + s*(DiracGamma[LorentzIndex[\[Mu]1, D], D] . DiracGamma[7])^2*
+    (4.5234369369846357*^-7*FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+        {15650.009999999998, mh2^2, mh3^2}, PaVeAutoOrder -> True, 
+        PaVeAutoReduce -> True]^2 + 4.5234369369846357*^-7*
+      FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {15650.009999999998, 
+         mh3^2, mh2^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]^2 + 
+     4.5234369369846357*^-7*FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+        {mh2^2, 15650.009999999998, mh3^2}, PaVeAutoOrder -> True, 
+        PaVeAutoReduce -> True]^2 - 9.046873873969271*^-7*
+      FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+       {mh2^2, 15650.009999999998, mh3^2}, PaVeAutoOrder -> True, 
+       PaVeAutoReduce -> True]*FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+       {mh2^2, mh3^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+       PaVeAutoReduce -> True] + 4.5234369369846357*^-7*
+      FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {mh2^2, mh3^2, 
+         15650.009999999998}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]^
+       2 - 9.046873873969271*^-7*FeynCalc`PaVe[0, 0, 1, 
+       {8317.44, s, 8317.44}, {mh2^2, 15650.009999999998, mh3^2}, 
+       PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+      FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+       {mh3^2, 15650.009999999998, mh2^2}, PaVeAutoOrder -> True, 
+       PaVeAutoReduce -> True] + 9.046873873969271*^-7*
+      FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+       {mh2^2, mh3^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+       PaVeAutoReduce -> True]*FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+       {mh3^2, 15650.009999999998, mh2^2}, PaVeAutoOrder -> True, 
+       PaVeAutoReduce -> True] + 4.5234369369846357*^-7*
+      FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+        {mh3^2, 15650.009999999998, mh2^2}, PaVeAutoOrder -> True, 
+        PaVeAutoReduce -> True]^2 + FeynCalc`PaVe[0, 0, 1, 
+       {8317.44, s, 8317.44}, {15650.009999999998, mh2^2, mh3^2}, 
+       PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+      (-9.046873873969271*^-7*FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+         {15650.009999999998, mh3^2, mh2^2}, PaVeAutoOrder -> True, 
+         PaVeAutoReduce -> True] - 9.046873873969271*^-7*
+        FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+         {mh2^2, 15650.009999999998, mh3^2}, PaVeAutoOrder -> True, 
+         PaVeAutoReduce -> True] + 9.046873873969271*^-7*
+        FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {mh2^2, mh3^2, 
+          15650.009999999998}, PaVeAutoOrder -> True, PaVeAutoReduce -> 
+          True] + 9.046873873969271*^-7*FeynCalc`PaVe[0, 0, 1, 
+         {8317.44, s, 8317.44}, {mh3^2, 15650.009999999998, mh2^2}, 
+         PaVeAutoOrder -> True, PaVeAutoReduce -> True] - 
+       9.046873873969271*^-7*FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+         {mh3^2, mh2^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+         PaVeAutoReduce -> True]) + FeynCalc`PaVe[0, 0, 1, 
+       {8317.44, s, 8317.44}, {15650.009999999998, mh3^2, mh2^2}, 
+       PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+      (9.046873873969271*^-7*FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+         {mh2^2, 15650.009999999998, mh3^2}, PaVeAutoOrder -> True, 
+         PaVeAutoReduce -> True] - 9.046873873969271*^-7*
+        FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {mh2^2, mh3^2, 
+          15650.009999999998}, PaVeAutoOrder -> True, PaVeAutoReduce -> 
+          True] - 9.046873873969271*^-7*FeynCalc`PaVe[0, 0, 1, 
+         {8317.44, s, 8317.44}, {mh3^2, 15650.009999999998, mh2^2}, 
+         PaVeAutoOrder -> True, PaVeAutoReduce -> True] + 
+       9.046873873969271*^-7*FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+         {mh3^2, mh2^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+         PaVeAutoReduce -> True]) + 9.046873873969271*^-7*
+      FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+       {mh2^2, 15650.009999999998, mh3^2}, PaVeAutoOrder -> True, 
+       PaVeAutoReduce -> True]*FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+       {mh3^2, mh2^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+       PaVeAutoReduce -> True] - 9.046873873969271*^-7*
+      FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+       {mh2^2, mh3^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+       PaVeAutoReduce -> True]*FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+       {mh3^2, mh2^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+       PaVeAutoReduce -> True] - 9.046873873969271*^-7*
+      FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+       {mh3^2, 15650.009999999998, mh2^2}, PaVeAutoOrder -> True, 
+       PaVeAutoReduce -> True]*FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, 
+       {mh3^2, mh2^2, 15650.009999999998}, PaVeAutoOrder -> True, 
+       PaVeAutoReduce -> True] + 4.5234369369846357*^-7*
+      FeynCalc`PaVe[0, 0, 1, {8317.44, s, 8317.44}, {mh3^2, mh2^2, 
+         15650.009999999998}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]^
+       2)))/((8317.44 - 1.*s)^2*SUNN)

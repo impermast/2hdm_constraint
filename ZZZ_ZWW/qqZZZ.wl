@@ -125,7 +125,7 @@ ampHHZ[0] = FCFAConvert[CreateFeynAmp[diagHHZ,Truncated -> True],
 		
 ampHHH[0]= FCFAConvert[CreateFeynAmp[diagHHH,Truncated -> True], 
 		IncomingMomenta->{k1,k2}, OutgoingMomenta->{p1,p2},LorentzIndexNames->{\[Mu]1,\[Mu]2,\[Alpha]1,\[Beta]1},LoopMomenta->{q},TransversePolarizationVectors -> {p1, p2},
-		 UndoChiralSplittings->True,ChangeDimension->D, List->False, SMP->True, Contract->True, DropSumOver->True]
+		 UndoChiralSplittings->True,ChangeDimension->D, List->False, SMP->True, Contract->False, DropSumOver->True]
 		 
 ampHHG[0]= FCFAConvert[CreateFeynAmp[diagHHG,Truncated -> True], 
 		IncomingMomenta->{Q1,Q2}, OutgoingMomenta->{p1,p2},LorentzIndexNames->{\[Mu]1,\[Mu]2,\[Alpha]1,\[Beta]1},LoopMomenta->{q},
@@ -245,16 +245,19 @@ ampHHH[2]
 ampHHH[3] = (ampHHH[2] /.M$FACouplings) // FCReplaceD[#, D -> 4 - 2 Epsilon] & //
     Series[#, {Epsilon, 0, 0}] & // Normal;
 ampHHH[4] = ampHHH[3] // ChangeDimension[#, 4] &;
-Print["\tCPU Time used: ", Round[N[TimeUsed[], 3], 0.001], " s."];
+Print["\tCPU Time used: ", Round[N[TimeUsed[]], 0.001], " s."];
 
 
-ampSquared[0] = 1/2 (ampHHH[4] (ComplexConjugate[ampHHH[4]])) //  
+(ampHHH[4] ComplexConjugate[ampHHH[4]])//Contract
+
+
+(*ampSquared[0] = 1/2 (ampHHH[4] (ComplexConjugate[ampHHH[4]])) //  
 		FermionSpinSum // 
         DiracSimplify //
         SUNSimplify  // 
         (*DoPolarizationSums[#, k1] & // DoPolarizationSums[#, k2] & // *)
         TrickMandelstam[#, {s, t, u, 2 SMP["m_t"]^2 + 2 SMP["m_Z"]^2}] &;
-Print["\tCPU Time used: ", Round[N[TimeUsed[], 3], 0.001], " s."];
+Print["\tCPU Time used: ", Round[N[TimeUsed[], 3], 0.001], " s."];*)
 
 
 ampSquared[0]
@@ -303,6 +306,10 @@ C001terms = Select[terms,
 Length[C001terms]
 
 
+(GA[a] . GA[6] . GA[a] . GA[7])//DiracSimplify
+DiracTrace[GA[a] . GA[a]]
+
+
 SubjAmpHHH = commonFactor*Total[C001terms];
 SubjAmpHHH//Simplify
 
@@ -310,11 +317,12 @@ SubjAmpHHH//Simplify
 
 
 
+
+SubjAmpHHH* ComplexConjugate[SubjAmpHHH]//DiracSimplify//Contract
+
+
 (* ::Subsection:: *)
 (*cross-section*)
-
-
-
 
 
 ampSqHHH = 1/2 *1/(SUNN^2)(SubjAmpHHH (ComplexConjugate[SubjAmpHHH])) // 
@@ -324,7 +332,7 @@ ampSqHHH = 1/2 *1/(SUNN^2)(SubjAmpHHH (ComplexConjugate[SubjAmpHHH])) //
         DiracSimplify // 
         DoPolarizationSums[#, p1, NumberOfPolarizations -> 3] & // 
         DoPolarizationSums[#, p2, NumberOfPolarizations -> 3] & // 
-        Simplify
+        Simplify // DiracSimplify
         
 
 

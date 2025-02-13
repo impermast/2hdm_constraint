@@ -15,12 +15,11 @@ If[ $Notebooks === False,
 (*$LoadAddOns={"FeynArts", "FeynHelpers"};*)
 $LoadAddOns={"FeynArts"};
 <<FeynCalc`
+AppendTo[$ModelPath, "/home/kds/.Mathematica/Applications/FeynArts/Models/"];
 $FAVerbose = 0;
 
 FCCheckVersion[9,3,0];
 
-Needs["CollierLink`"]
-Needs["X`"]
 Install["LoopTools"]
 Needs["LoopTools`"]
 
@@ -258,7 +257,7 @@ Y3 = (R3x2*Cos[beta] - R3x1*Sin[beta]);
 
 Print["Prefactor:"]
 prefactor[a1_,a2_,a3_] := x1[a1,a2,a3] x2[a1,a2,a3] x3[a1,a2,a3];
-N[prefactor[\[Alpha]1,\[Alpha]2,\[Alpha]3]]
+prefactor[a1,a2,a3]//Simplify
 pref0 =mZ^2/(b^2-mZ^2) \!\(TraditionalForm\`
 \*FractionBox[
 SuperscriptBox[\(g\), \(3\)], \(16 
@@ -274,7 +273,7 @@ pref1 =\[Pi]^2 g^3/cw^3 prefactor[\[Alpha]1,\[Alpha]2,\[Alpha]3]
 b=0.5
 label0 = Text[Style["m_H=" <> ToString[b] <> " TeV", FontSize -> 14, FontFamily -> "Arial", 
        Background -> LightGray, Frame -> True, FrameStyle -> Directive[Thick, Black]], {1.3, -10}];
-plot1 = LogPlot[N[Abs[F1Z[x^2,m1,b,Sqrt[b^2+v^2],prefactor[\[Alpha]1,\[Alpha]2,\[Alpha]3]]/pref1]],{x,0.2,1.0},
+plot1 = LogPlot[N[Abs[F1Z[x^2,m1,b,Sqrt[b^2+v^2],prefactor[\[Alpha]1,\[Alpha]2,\[Alpha]3]]/pref1]],{x,m1+1,13},
   GridLines -> Automatic,
   ImageSize->400,
   PlotRange->{10^(-5),1},
@@ -318,6 +317,12 @@ plot1 = ContourPlot[
   ImageSize->{200,200}\:044b
 ];
 Row[{plot1, plotex}]
+
+
+
+
+
+
 
 
 

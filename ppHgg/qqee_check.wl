@@ -233,15 +233,6 @@ IntGev *3.96*10^8 "pb"
 (*\:0421\:0432\:0435\:0440\:0442\:043a\:0430*)
 
 
-WidthCross1[s_] :=FullSimplify[NampQQEE[s, t]/.{(s - MZ^2)->((s - MZ^2)^2 + MZ^2 * wZ^2)^(1/2)}]
-WidthCross2[s_] :=FullSimplify[NampQQEE[s, t]*(s - MZ^2)^2  / ((s - MZ^2)^2 + MZ^2 * wZ^2)]
-WidthCross1[s]
-WidthCross2[s]
-WidthCross1[MZ^2]
-WidthCross2[MZ^2]
-
-
-
 WidthCross[s_] := Integrate[Pref[s] (NampQQEE[s, t]*(s - MZ^2)^2  / ((s - MZ^2)^2 + MZ^2 * wZ^2) ) // Simplify, 
                                  {t, -s/2 * (1 + Sqrt[1 - (4*ptmin/Sqrt[s0])^2]), -s/2 * (1 - Sqrt[1 - (4*ptmin/Sqrt[s0])^2])}];
 "cross on MZ no PDF(1300 GeV) = 0.002852"
@@ -281,7 +272,7 @@ texpVal = Range[Log10[xmin*xmin],0,-Log10[xmin*xmin]/(NumberOfPoints - 1)]//N
 lVal = Table[L[i], {i, tVal}]
 lexpVal = Table[Lexp[10^i], {i, texpVal}]
 crossVal = Table[WidthCross[i*s0]*L[i], {i, tVal}]
-crossValExp = Table[Log[10]*WidthCross[10^i*s0]*Lexp[10^i], {i, texpVal}]
+crossValExp = Table[WidthCross[10^i*s0]*Lexp[10^i], {i, texpVal}]
 dataLT = Transpose[{tVal,lVal}];
 dataLexpT = Transpose[{tVal,lexpVal}];
 dataST = Transpose[{tVal,crossVal}];
@@ -323,7 +314,7 @@ PlotCrossExp = ListLogLogPlot[
 Print["Integrate log scale"]
 (*correct: log(xmin*xmin),0*)
 Print["s0 = ",s0, ", pt_cut = ",ptmin]
-CrossSvertkaExp  =  AbsoluteTiming[NIntegrate[Log[10]*WidthCross[s0*(10^kt)]*Lexp[10^(kt)], {kt,Log10[xmin*xmin],0}]];
+CrossSvertkaExp  =  AbsoluteTiming[NIntegrate[WidthCross[s0*(10^kt)]*Lexp[10^(kt)], {kt,Log10[xmin*xmin],0}]];
 Print["\:0412\:0440\:0435\:043c\:044f \:0432\:044b\:043f\:043e\:043b\:043d\:0435\:043d\:0438\:044f: ", CrossSvertkaExp[[1]]]
 
 Abs[CrossSvertkaExp[[2]]]*3.9*10^8 "pb"
@@ -333,6 +324,12 @@ Print["Force without log scale"]
 CrossSvertka  =  AbsoluteTiming[NIntegrate[WidthCross[s0*t]*L[t]/t,{t,xmin*xmin,1}]];
 Print["\:0412\:0440\:0435\:043c\:044f \:0432\:044b\:043f\:043e\:043b\:043d\:0435\:043d\:0438\:044f: ", CrossSvertka[[1]]]
 Abs[CrossSvertka[[2]]]*3.9*10^8 "pb"
+
+
+
+
+
+
 
 
 

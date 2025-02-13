@@ -1,54 +1,59 @@
--1/36864*(CA*g^6*X1^2*X2^2*X3^2*
-   (4*FeynCalc`PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, 
-      {mh2^2, mh3^2, mh1^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
-     FeynCalc`PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, 
-      {mh3^2, mh2^2, mh1^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
-     (s^2*(9*cw^2*gw^2*t*(s + t) + 6*cw*g1*gw*sw*(4*MT^2*s - t*(s + t)) + 
-        g1^2*sw^2*(-8*MT^2*s + 17*t*(s + t))) - 
-      2*s*(9*cw^2*gw^2*t*(2*s + t) + 6*cw*g1*gw*sw*(12*MT^2*s - 
-          t*(2*s + t)) + g1^2*sw^2*(-24*MT^2*s + 17*t*(2*s + t)))*
-       SMP["m_Z"]^2 + (6*cw*g1*gw*sw*(44*MT^2*s - s^2 - 7*s*t - 3*t^2) + 
-        9*cw^2*gw^2*(s^2 + 7*s*t + 3*t^2) + g1^2*sw^2*(-88*MT^2*s + 
-          17*(s^2 + 7*s*t + 3*t^2)))*SMP["m_Z"]^4 - 
-      2*(6*cw*g1*gw*sw*(12*MT^2 - s - 3*t) + 9*cw^2*gw^2*(s + 3*t) + 
-        g1^2*sw^2*(-24*MT^2 + 17*(s + 3*t)))*SMP["m_Z"]^6 + 
-      3*(9*cw^2*gw^2 - 6*cw*g1*gw*sw + 17*g1^2*sw^2)*SMP["m_Z"]^8 + 
-      (9*cw^2*gw^2 - 6*cw*g1*gw*sw + 17*g1^2*sw^2)*SMP["m_t"]^4*
-       (s^2 - 2*s*SMP["m_Z"]^2 + 3*SMP["m_Z"]^4) - 
-      2*(9*cw^2*gw^2 - 6*cw*g1*gw*sw + 17*g1^2*sw^2)*SMP["m_t"]^2*
-       (s^2*t + s*(s - 2*t)*SMP["m_Z"]^2 + (-2*s + 3*t)*SMP["m_Z"]^4)) + 
-    FeynCalc`PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, 
-       {mh2^2, mh3^2, mh1^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]^
-      2*(2*s^2*(9*cw^2*gw^2 - 6*cw*g1*gw*sw + 17*g1^2*sw^2)*t*(s + t) - 
-      s*(9*cw^2*gw^2*(s^2 + 10*s*t + 6*t^2) - 6*cw*g1*gw*sw*
-         (8*MT^2*s + s^2 + 10*s*t + 6*t^2) + g1^2*sw^2*
-         (16*MT^2*s + 17*(s^2 + 10*s*t + 6*t^2)))*SMP["m_Z"]^2 + 
-      2*(27*cw^2*gw^2*(s^2 + 3*s*t + t^2) - 6*cw*g1*gw*sw*
-         (16*MT^2*s + 3*(s^2 + 3*s*t + t^2)) + g1^2*sw^2*
-         (32*MT^2*s + 51*(s^2 + 3*s*t + t^2)))*SMP["m_Z"]^4 - 
-      6*(6*cw*g1*gw*sw*(8*MT^2 - s - 2*t) + 9*cw^2*gw^2*(s + 2*t) + 
-        g1^2*sw^2*(-16*MT^2 + 17*(s + 2*t)))*SMP["m_Z"]^6 + 
-      6*(9*cw^2*gw^2 - 6*cw*g1*gw*sw + 17*g1^2*sw^2)*SMP["m_Z"]^8 + 
-      2*(9*cw^2*gw^2 - 6*cw*g1*gw*sw + 17*g1^2*sw^2)*SMP["m_t"]^4*
-       (s^2 - 3*s*SMP["m_Z"]^2 + 3*SMP["m_Z"]^4) - 
-      2*(9*cw^2*gw^2 - 6*cw*g1*gw*sw + 17*g1^2*sw^2)*SMP["m_t"]^2*
-       (s^2*(s + 2*t) - s*(5*s + 6*t)*SMP["m_Z"]^2 + 
-        (9*s + 6*t)*SMP["m_Z"]^4)) + 
-    FeynCalc`PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, 
-       {mh3^2, mh2^2, mh1^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True]^
-      2*(2*s^2*(9*cw^2*gw^2 - 6*cw*g1*gw*sw + 17*g1^2*sw^2)*t*(s + t) - 
-      s*(9*cw^2*gw^2*(s^2 + 10*s*t + 6*t^2) - 6*cw*g1*gw*sw*
-         (8*MT^2*s + s^2 + 10*s*t + 6*t^2) + g1^2*sw^2*
-         (16*MT^2*s + 17*(s^2 + 10*s*t + 6*t^2)))*SMP["m_Z"]^2 + 
-      2*(27*cw^2*gw^2*(s^2 + 3*s*t + t^2) - 6*cw*g1*gw*sw*
-         (16*MT^2*s + 3*(s^2 + 3*s*t + t^2)) + g1^2*sw^2*
-         (32*MT^2*s + 51*(s^2 + 3*s*t + t^2)))*SMP["m_Z"]^4 - 
-      6*(6*cw*g1*gw*sw*(8*MT^2 - s - 2*t) + 9*cw^2*gw^2*(s + 2*t) + 
-        g1^2*sw^2*(-16*MT^2 + 17*(s + 2*t)))*SMP["m_Z"]^6 + 
-      6*(9*cw^2*gw^2 - 6*cw*g1*gw*sw + 17*g1^2*sw^2)*SMP["m_Z"]^8 + 
-      2*(9*cw^2*gw^2 - 6*cw*g1*gw*sw + 17*g1^2*sw^2)*SMP["m_t"]^4*
-       (s^2 - 3*s*SMP["m_Z"]^2 + 3*SMP["m_Z"]^4) - 
-      2*(9*cw^2*gw^2 - 6*cw*g1*gw*sw + 17*g1^2*sw^2)*SMP["m_t"]^2*
-       (s^2*(s + 2*t) - s*(5*s + 6*t)*SMP["m_Z"]^2 + 
-        (9*s + 6*t)*SMP["m_Z"]^4))))/(cw^6*Pi^4*SMP["m_Z"]^4*
-   (s - SMP["m_Z"]^2)^2)
+(CA*g^6*s*X1^2*X2^2*X3^2*(PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, 
+     {mh1^2, mh2^2, mh3^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True] - 
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh1^2, mh2^2, MZ^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True] - 
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh1^2, mh3^2, mh2^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True] + 
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh1^2, mh3^2, MZ^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True] + 
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh1^2, MZ^2, mh2^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True] - 
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh1^2, MZ^2, mh3^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True] - 
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh2^2, mh1^2, mh3^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True] + 
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh2^2, mh1^2, MZ^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True] + 
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh2^2, mh3^2, mh1^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True] - 
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh2^2, mh3^2, MZ^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True] - 
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh2^2, MZ^2, mh1^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True] + 
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh2^2, MZ^2, mh3^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True] + 
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh3^2, mh1^2, mh2^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True] - 
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh3^2, mh1^2, MZ^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True] - 
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh3^2, mh2^2, mh1^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True] + 
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh3^2, mh2^2, MZ^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True] + 
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh3^2, MZ^2, mh1^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True] - 
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh3^2, MZ^2, mh2^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True] - 
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {MZ^2, mh1^2, mh2^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True] + 
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {MZ^2, mh1^2, mh3^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True] + 
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {MZ^2, mh2^2, mh1^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True] - 
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {MZ^2, mh2^2, mh3^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True] - 
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {MZ^2, mh3^2, mh1^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True] + 
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {MZ^2, mh3^2, mh2^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True])^2*
+  (-16*g1*MT^2*s^2*sw*(-3*cw*gw + g1*sw) + 
+   (9*cw^2*gw^2*(s^2 + 2*s*t + 2*t^2) - 6*cw*g1*gw*sw*
+      (56*MT^2*s + s^2 + 2*s*t + 2*t^2) + 
+     g1^2*sw^2*(112*MT^2*s + 17*(s^2 + 2*s*t + 2*t^2)))*SMP["m_Z"]^2 + 
+   2*(9*cw^2*gw^2 - 6*cw*g1*gw*sw + 17*g1^2*sw^2)*SMP["m_t"]^4*SMP["m_Z"]^2 - 
+   4*(9*cw^2*gw^2*(s + t) - 6*cw*g1*gw*sw*(30*MT^2 + s + t) + 
+     g1^2*sw^2*(60*MT^2 + 17*(s + t)))*SMP["m_Z"]^4 + 
+   2*(9*cw^2*gw^2 - 6*cw*g1*gw*sw + 17*g1^2*sw^2)*SMP["m_Z"]^6 + 
+   2*(9*cw^2*gw^2 - 6*cw*g1*gw*sw + 17*g1^2*sw^2)*SMP["m_t"]^2*
+    (s^2 - (7*s + 2*t)*SMP["m_Z"]^2 + 13*SMP["m_Z"]^4)))/
+ (18432*cw^6*Pi^4*SMP["m_Z"]^4*(s - SMP["m_Z"]^2)^2)

@@ -2,7 +2,7 @@
 (* ::Package:: *)
 
 (* \:041e\:043f\:0446\:0438\:0438 \:0440\:0430\:0431\:043e\:0442\:044b *)
-logic = 0; 
+logic = 1; 
 NumberOfPoints = 10;
 (*  0 - \:043f\:0435\:0440\:0435\:0441\:0447\:0438\:0442\:0430\:0442\:044c \:0432\:0441\:0451, 
 	1 - \:0437\:0430\:0433\:0440\:0443\:0437\:0438\:0442\:044c \:0432\:0441\:0435 \:0431\:0443\:0444\:0435\:0440\:044b, 
@@ -41,13 +41,16 @@ $FAVerbose = 0;
 
 Unprotect[PaVe, Li2, A0, A00, B0, B1, B00, B11, DB0, DB1, C0, D0];
 Remove[PaVe, Li2, A0, A00, B0, B1, B00, B11, DB0, DB1, C0, D0];
-<< "CheckTime.wl";
-<< "ModelParams.wl";
+
+
+Get["modules/ModelParams.wl"];
+Get["modules/CheckTime.wl"];
+
+meFile = "buffer/matrixElementZZZ.mx";
+csFile = "buffer/crossSectionZZZ.mx";
 
 
 
-meFile = "matrixElementZZZ.mx";
-csFile = "crossSectionZZZ.mx";
 (*model params*)
 mh2 = 500;
 mh3 = Sqrt[mh2^2+mh1^2];
@@ -57,8 +60,8 @@ Print["-------
 Model parameters in code:
 mh2 = ",mh2,
 "\nmh3    = ",mh3,
-"\nalpha2    = ",alpha2,
-"\nalpha3  = ",alpha3,
+"\nalpha2    = ",a2,
+"\nalpha3  = ",a3,
 "\n--------"];
 
 (*Integration limits*)

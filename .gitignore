@@ -1,0 +1,54 @@
+# ⛔ Игнорируем Python-кэш и временные файлы
+__pycache__/
+*.py[cod]
+*.so
+*.pyo
+*.pyd
+
+# ⛔ Игнорируем виртуальное окружение (venv)
+venv/
+env/
+.virtualenv/
+
+# ⛔ Игнорируем конфиденциальные файлы и токены
+*.env
+*.json
+*.ini
+*.toml
+*.cfg
+secrets.yaml
+*.key
+*.pem
+
+# ⛔ Игнорируем зависимости (если используется venv, но нет pip freeze)
+pip-log.txt
+pip-delete-this-directory.txt
+
+# ⛔ Игнорируем логи и отладочную информацию
+*.log
+*.out
+*.err
+debug.log
+
+# ⛔ Игнорируем файлы IDE и редакторов
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+code_screenshorts/
+
+# ⛔ Игнорируем файлы Jupyter Notebook output
+.ipynb_checkpoints/
+
+# ⛔ Игнорируем файлы, связанные с LHAPDF и математическими вычислениями
+lhapdf/
+lhapdf-data/
+lhapdf-sets/
+
+
+# ⛔ Игнорируем скомпилированные бинарные файлы
+*.o
+*.obj
+*.dll
+*.exe
+*.dylib

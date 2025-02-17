@@ -24,7 +24,7 @@ If[ $Notebooks === False,
 
 
 (* \:041f\:043e\:0434\:043a\:043b\:044e\:0447\:0435\:043d\:0438\:0435 \:043d\:0435\:043e\:0431\:0445\:043e\:0434\:0438\:043c\:044b\:0445 \:043f\:0430\:043a\:0435\:0442\:043e\:0432 *)
-<< "CheckTime.wl`";
+Get["modules/CheckTime.wl"]
 
 $LoadAddOns = {"FeynArts"};
 $PrePrint = InputForm;
@@ -42,11 +42,11 @@ Remove[PaVe, Li2, A0, A00, B0, B1, B00, B11, DB0, DB1, C0, D0];
 
 (* \:0424\:0430\:0439\:043b\:044b \:0434\:043b\:044f \:0431\:0443\:0444\:0435\:0440\:043e\:0432 *)
 
-ampFile = "ampZZZ.mx";
+ampFile = "buffer/ampZZZ.mx";
 
-meFile = "matrixElementZZZ.mx";
+meFile = "buffer/matrixElementZZZ.mx";
 
-csFile = "crossSectionZZZ.mx";
+csFile = "buffer/crossSectionZZZ.mx";
 
 
 

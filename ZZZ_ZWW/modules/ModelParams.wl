@@ -59,10 +59,10 @@ Params = {
 
 
 PaveToLooptools = {
-   FeynCalc`PaVe[0, 0, 1, {a_, b_, c_}, {d_, e_, f_}, ___] :> LoopTools`C0i[LoopTools`cc001, a, c, b, d, e, f],
+   FeynCalc`PaVe[0, 0, 1, {a_, b_, c_}, {d_, e_, f_}, ___] :> LoopTools`C0i[LoopTools`cc001, a, b, c, d, e, f],
    FeynCalc`PaVe[0, 0, 2, {a_, b_, c_}, {d_, e_, f_}, ___] :> LoopTools`C0i[LoopTools`cc002, a, b, c, d, e, f],
-   FeynCalc`PaVe[1, {a_, b_, c_}, {d_, e_, f_}, ___] :> LoopTools`C0i[LoopTools`cc1, a, c, b, d, e, f],
-   FeynCalc`PaVe[2, {a_, b_, c_}, {d_, e_, f_}, ___] :> LoopTools`C0i[LoopTools`cc2, a, c, b, d, e, f],
+   FeynCalc`PaVe[1, {a_, b_, c_}, {d_, e_, f_}, ___] :> LoopTools`C0i[LoopTools`cc1, a, b, c, d, e, f],
+   FeynCalc`PaVe[2, {a_, b_, c_}, {d_, e_, f_}, ___] :> LoopTools`C0i[LoopTools`cc2, a, b, c, d, e, f],
    FeynCalc`PaVeAutoOrder -> Sequence[],
    FeynCalc`PaVeAutoReduce -> Sequence[]
 };

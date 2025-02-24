@@ -2,12 +2,12 @@
 (* ::Package:: *)
 
 (* \:041e\:043f\:0446\:0438\:0438 \:0440\:0430\:0431\:043e\:0442\:044b *)
-logic = 1; 
+logic = 0; 
 NumberOfPoints = 10;
 (*  0 - \:043f\:0435\:0440\:0435\:0441\:0447\:0438\:0442\:0430\:0442\:044c \:0432\:0441\:0451, 
 	1 - \:0437\:0430\:0433\:0440\:0443\:0437\:0438\:0442\:044c \:0432\:0441\:0435 \:0431\:0443\:0444\:0435\:0440\:044b, 
-	2 - \:043f\:0435\:0440\:0435\:0441\:0447\:0438\:0442\:0430\:0442\:044c \:0442\:043e\:043b\:044c\:043a\:043e \:0441\:0435\:0447\:0435\:043d\:0438\:0435, 
-	3 - \:043f\:0435\:0440\:0435\:0441\:0447\:0438\:0442\:0430\:0442\:044c \:0441\:0435\:0447\:0435\:043d\:0438\:044f \:0438 \:043f\:0434\:0444 *)
+	2 - \:043f\:0435\:0440\:0435\:0441\:0447\:0438\:0442\:0430\:0442\:044c \:0432\:0441\:0435 \:0441 \:0443\:043f\:0440\:043e\:0449\:0435\:043d\:043d\:044b\:043c \:043c\:0430\:0442\:0440\:0438\:0447\:043d\:044b\:043c, 
+	3 -  *)
 
 (* \:0427\:0442\:0435\:043d\:0438\:0435 \:0430\:0440\:0433\:0443\:043c\:0435\:043d\:0442\:043e\:0432 \:043a\:043e\:043c\:0430\:043d\:0434\:043d\:043e\:0439 \:0441\:0442\:0440\:043e\:043a\:0438 *)
 If[Length[$ScriptCommandLine] > 1,
@@ -23,6 +23,7 @@ If[ $Notebooks === False,
 	$FeynCalcStartupMessages = False;
 	$LoadFeynCalcMessages = False; 
 	Off[General::shdw];
+	Off[C0::"msg"]
     ,
     SetDirectory[NotebookDirectory[]]
   ];
@@ -44,7 +45,7 @@ Remove[PaVe, Li2, A0, A00, B0, B1, B00, B11, DB0, DB1, C0, D0];
 
 
 Get["modules/ModelParams.wl"];
-Get["modules/CheckTime.wl"];
+Get["modules/FunctionalModules.wl"];
 
 meFile = "buffer/matrixElementZZZ.mx";
 csFile = "buffer/crossSectionZZZ.mx";
@@ -52,7 +53,7 @@ csFile = "buffer/crossSectionZZZ.mx";
 
 
 (*model params*)
-mh2 = 500;
+mh2 = 250;
 mh3 = Sqrt[mh2^2+mh1^2];
 a2 = 0.3;
 a3 = 0.5;
@@ -65,7 +66,7 @@ mh2 = ",mh2,
 "\n--------"];
 
 (*Integration limits*)
-ptmin = mh1+1;
+ptmin = 2*MZ;
 s0 = 13000^2;
 smin = 4*ptmin^2;  
 xmin = Sqrt[smin/s0];
@@ -76,12 +77,17 @@ ptmin = ",ptmin,
 
 
 (*download matrix element*)
-Print["Loading matrix element."]
-MaElread = Get[meFile];
-MaElread = MaElread//.SmpChanger//.Params//.AngleChanger;
-MaElreadPTL = MaElread//.PaveToLooptools;
-MaEl[sX_,tX_] := Abs[MaElreadPTL/.{s->sX,t->tX}];
-
+If[logic < 2,
+	Print["Loading matrix element."];
+	MaElread = Get[meFile];
+	MaElread = MaElread//.SmpChanger//.Params//.AngleChanger;
+	MaElreadPTL = MaElread//.PaveToLooptools;
+	MaEl[sX_,tX_] := Abs[MaElreadPTL/.{s->sX,t->tX}];
+	,
+	Print["Using demo matrix element."];
+	MaEldemo = Abs[(t^2+s^2)*C0i[cc001,MZ^2,s,MZ^2,mh1^2,mh2^2,mh3^2]/(s-MZ^2)^2];
+	MaEl[sX_,tX_] := MaEldemo/.{s->sX,t->tX}//N
+]
 If[$Notebooks,
 	Print["Test of matrix function:\n",
 	"Numericaly: ",MaEl[s0,1300],
@@ -117,38 +123,77 @@ Pref[s] (MaEl[s, t]*(s - MZ^2)^2  / ((s - MZ^2)^2 + MZ^2 * WZ^2) )/.Params,
 CheckTime[];                                 
 
 
-LogRange[a_, b_, n_] := Exp[Range[Log[a], Log[b], (Log[b] - Log[a])/(n - 1)]]//N
-
-If[$Notebooks,
-tVal = LogRange[xmin*xmin,1,NumberOfPoints];
-texpVal = Range[Log10[xmin*xmin],0,-Log10[xmin*xmin]/(NumberOfPoints - 1)]//N;
-
-crossVal = Table[WidthCross[i*s0]*L[i], {i, tVal}];
-crossValExp = Table[WidthCross[10^i*s0]*Lexp[10^i], {i, texpVal}];
-
-dataST = Transpose[{tVal*s0,crossVal}];
-dataSTexp = Transpose[{tVal*s0,crossValExp}];
-
-
-CheckTime[];
-];
-
-
-
-
-Print[dataSTexp];
-
-
-Print[dataST]
-
-
 If[ logic === 0,
 Print["Integrate crosssection log scale"];
 CheckTime[];
-CrossSvertkaExp  =  AbsoluteTiming[NIntegrate[WidthCross[s0*(10^kt)]*Lexp[10^(kt)], {kt,Log10[xmin*xmin],0}]];
-Print["CalcTiming: ", CrossSvertkaExp[[1]]];
-Print["Crosssection: ", CrossSvertkaExp[[2]]*3.9*10^8, " pb"];
-Put[CrossSvertkaExp[[2]]*3.9*10^8,csFile];
+(*Off[General::stop];*)
+
+iteration = 0;
+progress = 0;
+CrossSvertkaExp = NIntegrate[
+   Module[{val},
+      val = WidthCross[s0*(10^kt)]*Lexp[10^(kt)]; 
+      progress = N[val];
+      val
+   ],
+   {kt, Log10[xmin*xmin], 0},
+   EvaluationMonitor :> (
+      iteration++;
+      ShowStep[iteration,  kt,  progress];
+   )
+];
+Print["\nCrossSection: ", CrossSvertkaExp*3.9*10^8, " pb\n"];
+Put[CrossSvertkaExp*3.9*10^8,csFile];
+CheckTime[];
+]
+
+
+If[ logic === 1,
+Print["Getting crosssection from buffer."];
+CheckTime[];
+CrossSvertkaExp  =  Get[csFile];
+Print["CrossSection: ", CrossSvertkaExp," pb"];
+CheckTime[];
+]
+
+
+If[ logic === 2,
+Print["Integrate DemoCrossSection log scale"];
+CheckTime[];
+(*Off[General::stop];*)
+iteration = 0;
+progress = 0;
+CrossSvertkaExp = NIntegrate[
+   Module[{val},
+      val = WidthCross[s0*(10^kt)]*Lexp[10^(kt)]; 
+      progress = N[val];
+      val
+   ],
+   {kt, Log10[xmin*xmin], 0},
+   EvaluationMonitor :> (
+      iteration++;
+      ShowStep[iteration,  kt,  progress];
+   )
+];
+Print["CrossSection: ", CrossSvertkaExp*3.9*10^8, " pb"];
+Print["Integrate DemoCrossSection lin scale"];
+
+iteration = 0;
+progress = 0;
+CrossSvertka = NIntegrate[
+   Module[{val},
+      val = WidthCross[s0*kt]*L[kt]; 
+      progress = N[val];
+      val
+   ],
+   {kt, xmin*xmin, 1},
+   EvaluationMonitor :> (
+      iteration++;
+      ShowStep[iteration,  kt,  progress];
+   )
+];
+
+Print["CrossSection: ", CrossSvertka*3.9*10^8, " pb"];
 CheckTime[];
 ]
 

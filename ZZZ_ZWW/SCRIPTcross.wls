@@ -16,14 +16,14 @@ If[Length[$ScriptCommandLine] > 1,
 If[ $FrontEnd === Null, 
     $FeynCalcStartupMessages = False; 
     $LoadFeynCalcMessages = False; 
-    Print["tt>Z>ZZ calculation in 2HDM CPV, 1-loop.\n",
-    "Calcultion of cross from PDF and matrix."]; 
+    Print["tt>Z>ZZ calculation in 2HDM CPV, 1-loop.\n
+	Calcultion of cross from PDF and matrix."]; 
   ];
 If[ $Notebooks === False, 
 	$FeynCalcStartupMessages = False;
 	$LoadFeynCalcMessages = False; 
-	Off[General::shdw];
-	Off[C0::"msg"]
+	(*Off[General::shdw];
+	Off[C0::"msg"]*)
     ,
     SetDirectory[NotebookDirectory[]]
   ];
@@ -44,19 +44,19 @@ Unprotect[PaVe, Li2, A0, A00, B0, B1, B00, B11, DB0, DB1, C0, D0];
 Remove[PaVe, Li2, A0, A00, B0, B1, B00, B11, DB0, DB1, C0, D0];
 
 
-Get["modules/ModelParams.wl"];
-Get["modules/FunctionalModules.wl"];
+Get["../modules/ModelParams.wl"];
+Get["../modules/FunctionalModules.wl"];
 
-meFile = "buffer/matrixElementZZZ.mx";
-csFile = "buffer/crossSectionZZZ.mx";
-
+meFile = "buffer/me_ddZZZ.mx";
+wcFile = "buffer/wc_ddZZZ.mx";
+csFile = "buffer/cs_ddZZZ.mx";
 
 
 (*model params*)
 mh2 = 250;
 mh3 = Sqrt[mh2^2+mh1^2];
-a2 = 0.3;
-a3 = 0.5;
+a2 = 0.1317; 
+a3 = 0.7854;
 Print["-------
 Model parameters in code:
 mh2 = ",mh2,
@@ -78,7 +78,7 @@ ptmin = ",ptmin,
 
 (*download matrix element*)
 If[logic < 2,
-	Print["Loading matrix element."];
+	PrintTG["Loading matrix element."];
 	MaElread = Get[meFile];
 	MaElread = MaElread//.SmpChanger//.Params//.AngleChanger;
 	MaElreadPTL = MaElread//.PaveToLooptools;
@@ -89,15 +89,14 @@ If[logic < 2,
 	MaEl[sX_,tX_] := MaEldemo/.{s->sX,t->tX}//N
 ]
 If[$Notebooks,
-	Print["Test of matrix function:\n",
-	"Numericaly: ",MaEl[s0,1300],
-	"\nAnaliticaly:", MaEl[s,t]//Simplify]
-]
+	Print["Test of matrix function:\n";
+	"Numericaly: ",MaEl[(3*MZ)^2,100]];
+];
 CheckTime[]
 
 
 (*download PDFs*)
-Print["Loading pdf for run."]
+PrintTG["Loading pdf for run."]
 xPDF[x_, Q_, id_] := Module[{result, scriptPath, output},
   scriptPath = FileNameJoin[{NotebookDirectory[],"../pdfcode/", "xPDF.py"}];
   result = RunProcess[{"sh", "-c", 
@@ -113,18 +112,28 @@ CheckTime[];
 
 
 
-Print["Working on general crosssection"]
-Pref[x_] := 1/(64 Pi*x((x/4)-MT^2));
+If[ logic === 0,
+PrintTG["Working on general crosssection"];
+Pref[x_] := 1/(64 Pi*x(x/4));
 WidthCross[s_] := Integrate[
 Pref[s] (MaEl[s, t]*(s - MZ^2)^2  / ((s - MZ^2)^2 + MZ^2 * WZ^2) )/.Params, 
                                  {t, -s/2 * (1 + Sqrt[1 - (4*ptmin/Sqrt[s0])^2]), -s/2 * (1 - Sqrt[1 - (4*ptmin/Sqrt[s0])^2])}];                    
-                                 
-                          
-CheckTime[];                                 
+                                                           
+Put[WidthCross[St],wcFile];
+CheckTime[];                 
+];
+
+If[ logic === 1,
+Print["Creating WidthCross function from buffer."];
+CheckTime[];
+WC  =  Get[wcFile];
+WidthCross[s_] := WC/{St->s};
+CheckTime[];
+]                
 
 
 If[ logic === 0,
-Print["Integrate crosssection log scale"];
+PrintTG["Integrate crosssection log scale"];
 CheckTime[];
 (*Off[General::stop];*)
 
@@ -142,7 +151,7 @@ CrossSvertkaExp = NIntegrate[
       ShowStep[iteration,  kt,  progress];
    )
 ];
-Print["\nCrossSection: ", CrossSvertkaExp*3.9*10^8, " pb\n"];
+PrintTG[StringJoin["\nCrossSection: ", ToString[CrossSvertkaExp*3.9*10^8], " pb\n"]];
 Put[CrossSvertkaExp*3.9*10^8,csFile];
 CheckTime[];
 ]
@@ -196,6 +205,3 @@ CrossSvertka = NIntegrate[
 Print["CrossSection: ", CrossSvertka*3.9*10^8, " pb"];
 CheckTime[];
 ]
-
-
-

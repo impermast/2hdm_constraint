@@ -34,7 +34,7 @@ async def edit_or_send_msg(update, context, msg_txt,markup=None):
 
 
 # Функция для получения токена и ID чата из конфигурации
-def load_telegram_config(config_path="tg/config.json"):
+def load_telegram_config(config_path="../tg/config.json"):
     """Загружает конфигурацию из файла config.json"""
     try:
         with open(config_path, "r") as config_file:

@@ -1,3 +1,1 @@
-3.9*^8*NIntegrate[Module[{val}, val = WidthCross[s0*10^kt]*Lexp[10^kt]; 
-    progress = N[val]; val], {kt, Log10[xmin*xmin], 0}, 
-  EvaluationMonitor :> (iteration++; ShowStep[iteration, kt, progress]; )]
+0.00003939598031852704

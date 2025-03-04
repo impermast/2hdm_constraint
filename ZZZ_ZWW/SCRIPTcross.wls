@@ -3,11 +3,15 @@
 
 (* \:041e\:043f\:0446\:0438\:0438 \:0440\:0430\:0431\:043e\:0442\:044b *)
 logic = 0; 
-NumberOfPoints = 10;
 (*  0 - \:043f\:0435\:0440\:0435\:0441\:0447\:0438\:0442\:0430\:0442\:044c \:0432\:0441\:0451, 
 	1 - \:0437\:0430\:0433\:0440\:0443\:0437\:0438\:0442\:044c \:0432\:0441\:0435 \:0431\:0443\:0444\:0435\:0440\:044b, 
 	2 - \:043f\:0435\:0440\:0435\:0441\:0447\:0438\:0442\:0430\:0442\:044c \:0432\:0441\:0435 \:0441 \:0443\:043f\:0440\:043e\:0449\:0435\:043d\:043d\:044b\:043c \:043c\:0430\:0442\:0440\:0438\:0447\:043d\:044b\:043c, 
-	3 -  *)
+	3 - \:0437\:0430\:0433\:0440\:0443\:0437\:043a\:0430 WidthCross, \:0440\:0430\:0441\:0447\:0435\:0442 \:0441\:0435\:0447\:0435\:043d\:0438\:044f *)
+particleID = 1;
+(* for PDF not FeynCalc
+*)
+ProcName = "uuZZZ";
+
 
 (* \:0427\:0442\:0435\:043d\:0438\:0435 \:0430\:0440\:0433\:0443\:043c\:0435\:043d\:0442\:043e\:0432 \:043a\:043e\:043c\:0430\:043d\:0434\:043d\:043e\:0439 \:0441\:0442\:0440\:043e\:043a\:0438 *)
 If[Length[$ScriptCommandLine] > 1,
@@ -47,9 +51,11 @@ Remove[PaVe, Li2, A0, A00, B0, B1, B00, B11, DB0, DB1, C0, D0];
 Get["../modules/ModelParams.wl"];
 Get["../modules/FunctionalModules.wl"];
 
-meFile = "buffer/me_ddZZZ.mx";
-wcFile = "buffer/wc_ddZZZ.mx";
-csFile = "buffer/cs_ddZZZ.mx";
+ampFile = StringJoin["buffer/amp_", ProcName, ".mx"];
+meFile  = StringJoin["buffer/me_", ProcName, ".mx"];
+wcFile  = StringJoin["buffer/wc_", ProcName, ".mx"];
+csFile  = StringJoin["buffer/cs_", ProcName, ".mx"];
+pvFile  = StringJoin["buffer/pv_", ProcName, ".mx"];
 
 
 (*model params*)
@@ -66,7 +72,7 @@ mh2 = ",mh2,
 "\n--------"];
 
 (*Integration limits*)
-ptmin = 2*MZ;
+ptmin = MZ+0.1;
 s0 = 13000^2;
 smin = 4*ptmin^2;  
 xmin = Sqrt[smin/s0];
@@ -80,9 +86,10 @@ ptmin = ",ptmin,
 If[logic < 2,
 	PrintTG["Loading matrix element."];
 	MaElread = Get[meFile];
-	MaElread = MaElread//.SmpChanger//.Params//.AngleChanger;
-	MaElreadPTL = MaElread//.PaveToLooptools;
-	MaEl[sX_,tX_] := Abs[MaElreadPTL/.{s->sX,t->tX}];
+	OnlyPaVe = Get[pvFile];
+	MaElread = MaElread//.OnlyPaVe//.SmpChanger//.Params//.AngleChanger;
+	MaElreadPTL = MaElread//.PaveToLooptools/.{FeynCalc`CA->3};
+	MaEl[sX_,tX_] := MaElreadPTL/.{s->sX,t->tX};
 	,
 	Print["Using demo matrix element."];
 	MaEldemo = Abs[(t^2+s^2)*C0i[cc001,MZ^2,s,MZ^2,mh1^2,mh2^2,mh3^2]/(s-MZ^2)^2];
@@ -90,7 +97,7 @@ If[logic < 2,
 ]
 If[$Notebooks,
 	Print["Test of matrix function:\n";
-	"Numericaly: ",MaEl[(3*MZ)^2,100]];
+	"Numericaly: ",MaEl[(4*MZ)^2,100]];
 ];
 CheckTime[]
 
@@ -105,50 +112,68 @@ xPDF[x_, Q_, id_] := Module[{result, scriptPath, output},
   output = StringTrim[result["StandardOutput"]];
   If[StringMatchQ[output, NumberString], ToExpression[output], Null]
 ]
-L[t_]:=Integrate[(1/x) *xPDF[x,t*s0,-1]*xPDF[t/x,t*s0,1],{x,t,1}]/Null^2;
-Lexp[t_]:=Integrate[xPDF[10^yt,t*s0,1] * xPDF[t*10^(-yt),t*s0,-1] ,{yt, Log10[t],0}]*Log[10]/Null^2;
+L[t_]:=Integrate[(1/x) *xPDF[x,t*s0,-particleID]*xPDF[t/x,t*s0,id],{x,t,particleID}]/Null^2;
+Lexp[t_]:=Integrate[xPDF[10^yt,t*s0,particleID] * xPDF[t*10^(-yt),t*s0,-particleID] ,{yt, Log10[t],0}]*Log[10]/Null^2;
 CheckTime[];
 
 
 
 
-If[ logic === 0,
-PrintTG["Working on general crosssection"];
-Pref[x_] := 1/(64 Pi*x(x/4));
-WidthCross[s_] := Integrate[
-Pref[s] (MaEl[s, t]*(s - MZ^2)^2  / ((s - MZ^2)^2 + MZ^2 * WZ^2) )/.Params, 
-                                 {t, -s/2 * (1 + Sqrt[1 - (4*ptmin/Sqrt[s0])^2]), -s/2 * (1 - Sqrt[1 - (4*ptmin/Sqrt[s0])^2])}];                    
-                                                           
+If[ logic == 0 || logic == 2,
+PrintTG["Working on WidthCross"];
+Pref[x_] := (x-2*MZ^2)/(16 Pi x^2);
+WidthCross[s_] := Pref[s] Integrate[
+	MaEl[s, t], 
+    {t, -s/2 * (1 + Sqrt[1 - (4*ptmin/Sqrt[s0])^2]), -s/2 * (1 - Sqrt[1 - (4*ptmin/Sqrt[s0])^2])}];                                                                               
 Put[WidthCross[St],wcFile];
 CheckTime[];                 
 ];
 
-If[ logic === 1,
+If[ logic == 1 || logic == 3,
 Print["Creating WidthCross function from buffer."];
 CheckTime[];
 WC  =  Get[wcFile];
-WidthCross[s_] := WC/{St->s};
+If[$Notebooks,
+Print[WC]
+];
+WidthCross[s_] := WC/.{St->s};
 CheckTime[];
 ]                
 
+If[$Notebooks,
+Num1 = WidthCross[1000^2];
+PrintTG[ToString[ScientificForm[Num1]]];
+];
 
-If[ logic === 0,
+
+If[$Notebooks,
+pointArray = Range[0.0005, 0.0015,0.00005];
+dataPoints = Table[{x, WidthCross[s0 * x]*Lexp[x]//N}, {x, pointArray}];
+Plot1 = ListPlot[
+    dataPoints,
+    PlotStyle -> {Red, PointSize[Medium]},
+    AxesLabel -> {"x", "WidthCross(s0 * x)"},
+    PlotLabel -> "Points of integration",
+    GridLines -> Automatic,
+    Frame -> True
+];
+Export["supgraphs/integration_points.png",Plot1];
+];
+
+
+If[ logic === 0 || logic == 3,
 PrintTG["Integrate crosssection log scale"];
 CheckTime[];
-(*Off[General::stop];*)
-
 iteration = 0;
-progress = 0;
 CrossSvertkaExp = NIntegrate[
-   Module[{val},
-      val = WidthCross[s0*(10^kt)]*Lexp[10^(kt)]; 
-      progress = N[val];
-      val
-   ],
+		progress = WidthCross[s0*(10^kt)]*Lexp[10^(kt)]
+   ,
    {kt, Log10[xmin*xmin], 0},
+   Method -> "AdaptiveMonteCarlo",
    EvaluationMonitor :> (
       iteration++;
-      ShowStep[iteration,  kt,  progress];
+      If[Mod[iteration,100]===0,
+      ShowStep[iteration,  kt,  progress]];
    )
 ];
 PrintTG[StringJoin["\nCrossSection: ", ToString[CrossSvertkaExp*3.9*10^8], " pb\n"]];
@@ -181,7 +206,8 @@ CrossSvertkaExp = NIntegrate[
    {kt, Log10[xmin*xmin], 0},
    EvaluationMonitor :> (
       iteration++;
-      ShowStep[iteration,  kt,  progress];
+      If[Mod[iteration,10]===0,
+      ShowStep[iteration,  kt,  progress]];
    )
 ];
 Print["CrossSection: ", CrossSvertkaExp*3.9*10^8, " pb"];
@@ -198,7 +224,8 @@ CrossSvertka = NIntegrate[
    {kt, xmin*xmin, 1},
    EvaluationMonitor :> (
       iteration++;
-      ShowStep[iteration,  kt,  progress];
+      If[Mod[iteration,10]===0,
+      ShowStep[iteration,  kt,  progress]];
    )
 ];
 

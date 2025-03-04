@@ -1,8 +1,5 @@
 (* ::Package:: *)
 
-
-
-
 BeginPackage["FunctionalPackage`"];
 
 (* \:041f\:0440\:043e\:0432\:0435\:0440\:043a\:0430 \:0438\:043d\:0438\:0446\:0438\:0430\:043b\:0438\:0437\:0430\:0446\:0438\:0438 \:0432\:0440\:0435\:043c\:0435\:043d\:0438 *)
@@ -44,7 +41,7 @@ PrintTG[msg_String] := Module[{command, result},
   Print[msg];
   command = StringJoin["python3 ../tg/notifier_console.py \"", msg, "\""];
   result = RunProcess[{"bash", "-c", command}];
-  result
+  result["StandardOutput"]
 ];
 
 End[];

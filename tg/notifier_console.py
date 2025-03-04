@@ -13,7 +13,8 @@ if __name__ == "__main__":
         if len(sys.argv) > 1:
             message = " ".join(sys.argv[1:])
             send_msg(message)
+            print("Message sent.")
         else:
-            raise ValueError("Нет сообщения для отправки.")
+            print("No message to send.")
     except Exception as error:
-        print(f"Ошибка отправки: {error}")
+        print(f"Send message: {error}")

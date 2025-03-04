@@ -1,0 +1,120 @@
+{RePV1 -> Re[PaVe[1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh1^2, MZ^2, mh2^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True] - 
+    PaVe[1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh1^2, MZ^2, mh3^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True] - 
+    PaVe[1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh2^2, MZ^2, mh1^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True] + 
+    PaVe[1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh2^2, MZ^2, mh3^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True] + 
+    PaVe[1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh3^2, MZ^2, mh1^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True] - 
+    PaVe[1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh3^2, MZ^2, mh2^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]], 
+ ImPV1 -> Im[PaVe[1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh1^2, MZ^2, mh2^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True] - 
+    PaVe[1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh1^2, MZ^2, mh3^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True] - 
+    PaVe[1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh2^2, MZ^2, mh1^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True] + 
+    PaVe[1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh2^2, MZ^2, mh3^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True] + 
+    PaVe[1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh3^2, MZ^2, mh1^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True] - 
+    PaVe[1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh3^2, MZ^2, mh2^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]], 
+ RePV2 -> Re[PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, 
+     {mh1^2, mh2^2, mh3^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True] - 
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh1^2, mh2^2, MZ^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True] - 
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh1^2, mh3^2, mh2^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True] + 
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh1^2, mh3^2, MZ^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True] + 
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh1^2, MZ^2, mh2^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True] - 
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh1^2, MZ^2, mh3^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True] - 
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh2^2, mh1^2, mh3^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True] + 
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh2^2, mh1^2, MZ^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True] + 
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh2^2, mh3^2, mh1^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True] - 
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh2^2, mh3^2, MZ^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True] - 
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh2^2, MZ^2, mh1^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True] + 
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh2^2, MZ^2, mh3^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True] + 
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh3^2, mh1^2, mh2^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True] - 
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh3^2, mh1^2, MZ^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True] - 
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh3^2, mh2^2, mh1^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True] + 
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh3^2, mh2^2, MZ^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True] + 
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh3^2, MZ^2, mh1^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True] - 
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh3^2, MZ^2, mh2^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True] - 
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {MZ^2, mh1^2, mh2^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True] + 
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {MZ^2, mh1^2, mh3^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True] + 
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {MZ^2, mh2^2, mh1^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True] - 
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {MZ^2, mh2^2, mh3^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True] - 
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {MZ^2, mh3^2, mh1^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True] + 
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {MZ^2, mh3^2, mh2^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]], 
+ ImPV2 -> Im[PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, 
+     {mh1^2, mh2^2, mh3^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> True] - 
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh1^2, mh2^2, MZ^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True] - 
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh1^2, mh3^2, mh2^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True] + 
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh1^2, mh3^2, MZ^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True] + 
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh1^2, MZ^2, mh2^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True] - 
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh1^2, MZ^2, mh3^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True] - 
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh2^2, mh1^2, mh3^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True] + 
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh2^2, mh1^2, MZ^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True] + 
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh2^2, mh3^2, mh1^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True] - 
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh2^2, mh3^2, MZ^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True] - 
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh2^2, MZ^2, mh1^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True] + 
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh2^2, MZ^2, mh3^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True] + 
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh3^2, mh1^2, mh2^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True] - 
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh3^2, mh1^2, MZ^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True] - 
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh3^2, mh2^2, mh1^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True] + 
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh3^2, mh2^2, MZ^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True] + 
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh3^2, MZ^2, mh1^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True] - 
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh3^2, MZ^2, mh2^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True] - 
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {MZ^2, mh1^2, mh2^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True] + 
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {MZ^2, mh1^2, mh3^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True] + 
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {MZ^2, mh2^2, mh1^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True] - 
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {MZ^2, mh2^2, mh3^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True] - 
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {MZ^2, mh3^2, mh1^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True] + 
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {MZ^2, mh3^2, mh2^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]]}

@@ -19,7 +19,7 @@ If[ $FrontEnd === Null,
     Print[ProcName," calculation in 2HDM CPV, 1-loop.\n",
     "Calcultion of matrix element from diagrams."]; 
   ];
-If[ $Notebooks === False, 
+If[ $Notebooks === False,
 	$FeynCalcStartupMessages = False;
 	$LoadFeynCalcMessages = False; 
 	Off[General::shdw];
@@ -47,6 +47,7 @@ Get["../modules/FunctionalModules.wl"];
 
 (* \:0424\:043e\:0440\:043c\:0438\:0440\:0443\:0435\:043c \:043f\:0443\:0442\:0438 \:043a \:0444\:0430\:0439\:043b\:0430\:043c *)
 ampFile = StringJoin["buffer/amp_", ProcName, ".mx"];
+expFile = StringJoin["buffer/exp_", ProcName, ".mx"];
 meFile  = StringJoin["buffer/me_", ProcName, ".mx"];
 wcFile  = StringJoin["buffer/wc_", ProcName, ".mx"];
 csFile  = StringJoin["buffer/cs_", ProcName, ".mx"];
@@ -65,6 +66,9 @@ Print["Calculate diagrams."]
 diagHHH = DiagramExtract[diagsAll, {19..24}];
 diagHHG = DiagramExtract[diagsAll, {1..18}];
 diagHHZ = DiagramExtract[diagsAll, {25..42}];
+diagHHZ1 = DiagramExtract[diagsAll, {25..30}];
+diagHHZ2 = DiagramExtract[diagsAll, {31..36}];
+diagHHZ3 = DiagramExtract[diagsAll, {37..42}];
 
 If[$Notebooks,
    Print["Diagrams HHH:"];
@@ -74,7 +78,9 @@ If[$Notebooks,
    Paint[diagHHG, ColumnsXRows -> {6, 3}, Numbering -> Simple, SheetHeader -> None, ImageSize -> {600, 300}];
 
    Print["Diagrams HHZ:"];
-   Paint[diagHHZ, ColumnsXRows -> {6, 3}, Numbering -> Simple, SheetHeader -> None, ImageSize -> {600, 300}];
+   Paint[diagHHZ1, ColumnsXRows -> {6, 1}, Numbering -> Simple, SheetHeader -> None, ImageSize -> {600, 100}];
+   Paint[diagHHZ2, ColumnsXRows -> {6, 1}, Numbering -> Simple, SheetHeader -> None, ImageSize -> {600, 100}];
+   Paint[diagHHZ3, ColumnsXRows -> {6, 1}, Numbering -> Simple, SheetHeader -> None, ImageSize -> {600, 100}];
 ];
 
 
@@ -89,18 +95,29 @@ If[logic >= 1 && FileExistsQ[ampFile],
     PrintTG["Calculation of amplitude."];
     CheckTime[];
     ampHHH = FCFAConvert[CreateFeynAmp[diagHHH], IncomingMomenta -> {p1,p2}, 
-    OutgoingMomenta -> {k1,k2}, LoopMomenta->{Q}, List -> False, ChangeDimension -> D, 
+    OutgoingMomenta -> {k1,k2}, LorentzIndexNames->{\[Mu],\[Alpha],\[Beta]}, LoopMomenta->{Q}, List -> False, ChangeDimension -> D, 
     DropSumOver -> True, SMP -> False, Contract -> True, UndoChiralSplittings -> True];
     ampHHG = FCFAConvert[CreateFeynAmp[diagHHG], IncomingMomenta -> {p1,p2}, 
-    OutgoingMomenta -> {k1,k2}, LoopMomenta->{Q}, List -> False, ChangeDimension -> D, 
-    DropSumOver -> True, SMP -> False, Contract -> True, UndoChiralSplittings -> True];
-    ampHHZ = FCFAConvert[CreateFeynAmp[diagHHZ], IncomingMomenta -> {p1,p2}, 
-    OutgoingMomenta -> {k1,k2}, LoopMomenta->{Q}, List -> False, ChangeDimension -> D, 
+    OutgoingMomenta -> {k1,k2}, LorentzIndexNames->{\[Mu],\[Alpha],\[Beta]}, LoopMomenta->{Q}, List -> False, ChangeDimension -> D, 
     DropSumOver -> True, SMP -> False, Contract -> True, UndoChiralSplittings -> True];
     
-    ampHHH=ampHHH/.M$FACouplings/.{SMP["m_d"]->SMP["m_q"]};
-	ampHHG=ampHHG/.M$FACouplings/.{SMP["m_d"]->SMP["m_q"]};
-	ampHHZ=ampHHZ/.M$FACouplings/.{SMP["m_d"]->SMP["m_q"]};
+    (*ampHHZ = FCFAConvert[CreateFeynAmp[diagHHZ], IncomingMomenta -> {p1,p2}, 
+    OutgoingMomenta -> {k1,k2}, LorentzIndexNames->{\[Mu],\[Alpha],\[Beta]}, LoopMomenta->{Q}, List -> False, ChangeDimension -> D, 
+    DropSumOver -> True, SMP -> False, Contract -> True, UndoChiralSplittings -> True];*)
+    
+    ampHHZ1 = FCFAConvert[CreateFeynAmp[diagHHZ1], IncomingMomenta -> {p1,p2}, 
+    OutgoingMomenta -> {k1,k2}, LorentzIndexNames->{\[Mu],\[Alpha],\[Beta]}, LoopMomenta->{Q}, List -> False, ChangeDimension -> D, 
+    DropSumOver -> True, SMP -> False, Contract -> True, UndoChiralSplittings -> True];
+    ampHHZ2 = FCFAConvert[CreateFeynAmp[diagHHZ2], IncomingMomenta -> {p1,p2}, 
+    OutgoingMomenta -> {k1,k2}, LorentzIndexNames->{\[Mu],\[Alpha],\[Beta]}, LoopMomenta->{Q}, List -> False, ChangeDimension -> D, 
+    DropSumOver -> True, SMP -> False, Contract -> True, UndoChiralSplittings -> True];
+    ampHHZ3 = FCFAConvert[CreateFeynAmp[diagHHZ3], IncomingMomenta -> {p1,p2}, 
+    OutgoingMomenta -> {k1,k2}, LorentzIndexNames->{\[Mu],\[Alpha],\[Beta]}, LoopMomenta->{Q}, List -> False, ChangeDimension -> D, 
+    DropSumOver -> True, SMP -> False, Contract -> True, UndoChiralSplittings -> True];
+    
+    ampHHH=ampHHH/.{SMP["m_d"]->SMP["m_q"]};
+	ampHHG=ampHHG/.{SMP["m_d"]->SMP["m_q"]};
+	ampHHZ=(ampHHZ1+ampHHZ2+ampHHZ3)/.{SMP["m_d"]->SMP["m_q"]};
 	
 	(*\:041a\:0438\:043d\:0435\:043c\:0430\:0442\:0438\:043a\:0430*)
 	FCClearScalarProducts[];
@@ -113,6 +130,8 @@ SP[k2, k2] = SMP["m_Z"]^2;
 SP[k1, k2] = (s - 2 SMP["m_Z"]^2)/2;
 SP[k1 + k2, k1 + k2] = s;
 SP[K0,K0] = s;
+ScalarProduct[K0,k1]=ScalarProduct[K0,K0]/2;
+ScalarProduct[K0,k2]=ScalarProduct[K0,K0]/2;
 (*u=(p2-k1)^2 t=(p2-k2)^2*)
 SP[p2, k1] = (SMP["m_Z"]^2 + SMP["m_q"]^2-u)/2;
 SP[p2, k2] = (SMP["m_Z"]^2 + SMP["m_q"]^2-t)/2;
@@ -124,9 +143,9 @@ FeynAmpDenominator[PropagatorDenominator[Plus[Momentum[k1], Momentum[k2]], MZ]] 
 u = 2*(SMP["m_Z"]^2 + SMP["m_q"]^2)-s-t;
 	PrintTG["PV-reduction in process."];
 	CheckTime[];
-	ampHHZ = TID[ampHHZ, Q, ToPaVe->True,UsePaVeBasis->True ]//ChangeDimension[#,4] &;		
-    ampHHG = TID[ampHHG, Q, ToPaVe->True,UsePaVeBasis->True ]//ChangeDimension[#,4] &;		
-    ampHHH = TID[ampHHH, Q, ToPaVe->True,UsePaVeBasis->True ]//ChangeDimension[#,4] &;		
+	ampHHZ = TID[ampHHZ, Q, ToPaVe->True,UsePaVeBasis->True ]//ChangeDimension[#,4] &//Simplify;		
+    ampHHG = TID[ampHHG, Q, ToPaVe->True,UsePaVeBasis->True ]//ChangeDimension[#,4] &//Simplify;		
+    ampHHH = TID[ampHHH, Q, ToPaVe->True,UsePaVeBasis->True ]//ChangeDimension[#,4] &//Simplify;		
     
     amp = ampHHH+ampHHZ+ampHHG;
     Put[amp,ampFile];
@@ -136,33 +155,42 @@ u = 2*(SMP["m_Z"]^2 + SMP["m_q"]^2)-s-t;
 
 
 (*\:0412\:044b\:0431\:0438\:0440\:0430\:0435\:043c \:0441\:043b\:0430\:0433\:0430\:0435\:043c\:044b\:0435 \:0441\:043e\:043e\:0442\:0432\:0435\:0442\:0441\:0442\:0432\:0443\:044e\:0449\:0438\:0435 \:0432\:0435\:0440\:0448\:0438\:043d\:043d\:043e\:0439 \:0444\:0443\:043d\:043a\:0446\:0438\:0438 f4_Z*)
-Denom = SequenceForm[FeynCalc`Pair[FeynCalc`Momentum[k1, 4] + FeynCalc`Momentum[k2, 4], FeynCalc`Momentum[k1, 4] + FeynCalc`Momentum[k2, 4]], "-",MZ^2];
-expr = amp;
+expr = amp/.{K0-k1->k2,K0-k2->k1};
 expr = ExpandAll[expr];
 terms = List @@ expr;
-C001terms = Select[terms, 
- !FreeQ[#, FeynCalc`PaVe[0,0,1, {__, __, __}, {__, __, __}, 
-      PaVeAutoOrder -> True, PaVeAutoReduce -> True]] &
+terms1 = Select[terms, 
+ !FreeQ[#, Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[Polarization[k2, -I]]] . DiracGamma[__] . Spinor[Momentum[p1], 0, 1]*
+    Pair[Momentum[k2], Momentum[Polarization[k1, -I]]]] &//Simplify
 ];
-C1terms = Select[terms, 
- !FreeQ[#, FeynCalc`PaVe[1, {__, __, __}, {__, MZ^2, __}, 
-      PaVeAutoOrder -> True, PaVeAutoReduce -> True]] &
+terms2 = Select[terms, 
+ !FreeQ[#, Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[Polarization[k1, -I]]] . DiracGamma[__] . Spinor[Momentum[p1], 0, 1]*
+    Pair[Momentum[k1], Momentum[Polarization[k2, -I]]]] &//Simplify
 ];
 
 
-GroupedC001 = Factor[Total[C001terms]];
-GroupedC1 = Factor[Total[C1terms]];
-OnlyPaVe001 = Cases[GroupedC001, x_ /; Count[x, FeynCalc`PaVe[___], {0, Infinity}] > 1, Infinity][[1]];
-OnlyPaVe1 = Cases[GroupedC1, x_ /; Count[x, FeynCalc`PaVe[___], {0, Infinity}] > 1, Infinity][[1]];
+SubjAmpChecking = Total[terms1]+Total[terms2]//Simplify;
+Print[SubjAmpChecking]
+
+
+gamma6check = Coefficient[expr,
+{
+Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[Polarization[k2, -I]]] . DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+    Pair[Momentum[k2], Momentum[Polarization[k1, -I]]],
+Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[Polarization[k1, -I]]] . DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+    Pair[Momentum[k1], Momentum[Polarization[k2, -I]]]
+}
+]//Simplify;
+Print[gamma6check[[1]]-gamma6check[[2]]//Simplify]
+Print[gamma6check]
 
 
 PrintTG[StringJoin["Get terms from amp:\tC001/All:  ",ToString[Length[C001terms]],"/",ToString[Length[terms]]]];
 PrintTG[StringJoin["Get terms from amp:\t     C1/All:  ",ToString[Length[C1terms]],"/",ToString[Length[terms]]]];
 CheckTime[];
 
-GroupedC1 = GroupedC1/.{OnlyPaVe1->RePV1+I*ImPV1};
-GroupedC001 = GroupedC001/.{OnlyPaVe001->RePV2+I*ImPV2};
-SubjAmp = (GroupedC001 +GroupedC1)//Simplify;
+changedC1 = GroupedC1/.{OnlyPaVe1->RePV1+I*ImPV1};
+changedC001 = GroupedC001/.{OnlyPaVe001->RePV2+I*ImPV2};
+SubjAmp = (changedC001 +changedC1)/.M$FACouplings//Simplify;
 If[$Notebooks,
 Print[SubjAmp]];
 
@@ -237,6 +265,9 @@ Print[ampSquared]];
 (* \:0418\:0442\:043e\:0433\:043e\:0432\:044b\:0439 \:0432\:044b\:0432\:043e\:0434 *)
 CheckTime[];
 Print[Factor[ampSquared]//Simplify];
+
+
+
 
 
 

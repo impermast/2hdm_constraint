@@ -1,6 +1,9 @@
 #!/usr/bin/env wolframscript
 (* ::Package:: *)
 
+ 
+
+
 (* \:041e\:043f\:0446\:0438\:0438 \:0440\:0430\:0431\:043e\:0442\:044b *)
 logic = 0; 
 (*  0 - \:043f\:0435\:0440\:0435\:0441\:0447\:0438\:0442\:0430\:0442\:044c \:0432\:0441\:0451, 
@@ -117,6 +120,9 @@ Lexp[t_]:=Integrate[xPDF[10^yt,t*s0,particleID] * xPDF[t*10^(-yt),t*s0,-particle
 CheckTime[];
 
 
+
+
+Print[MaEl[s,t]]
 
 
 If[ logic == 0 || logic == 2,

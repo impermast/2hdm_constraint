@@ -26,7 +26,8 @@ SmpChanger = {
 	FeynCalc`SMP["m_u"] -> MQ,
 	FeynCalc`SMP["m_d"] -> MQ,
 	FeynCalc`SMP["m_q"] -> MQ,
-	FeynCalc`SMP["m_W"] -> MW
+	FeynCalc`SMP["e"] -> e,
+	FeynCalc`SMP["m_W"] -> MW,
 	FeynCalc`CA -> ca
 };
 

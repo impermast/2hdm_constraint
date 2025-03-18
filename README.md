@@ -23,15 +23,33 @@ This directory contains essential scripts for computing amplitudes and interacti
 - `ZWW_full.wl` – Amplitude calculation and coefficient extraction for the \( ZWW \) process.
 - `ZZZ_amp.wl` – Amplitude calculation and coefficient extraction for the \( ZZZ \) process.
 - `SCRIPTqqZZZ.wls` – Executable script for computing the amplitude and matrix element squared for \( q\bar{q} \to Z \to ZZ \).
+- `SCRIPTcross.wls` – Computes the **cross-section** and saves results in a buffer.
 - `TESTqqZZZ.wl` – Test file for developing new computational methods.
 
 Additionally, **backup calculation results** are stored here:
 - `.mx` files – Serialized intermediate computations.
 - `.txt` files – Stored numerical values of coefficients.
 
+All buffer files, intermediate results, and additional plots are stored in:
+- `ZZZ_ZWW/buffer/` – Temporary buffer files for storing intermediate data.
+- `ZZZ_ZWW/graphs/` – Various graphical representations of calculations.
+- `ZZZ_ZWW/subgraphs/` – Additional subgraphs related to the analysis.
+
 ---
 
-### **2. `pdfcode/` – Working with Parton Distribution Functions (PDFs)**
+### **2. `automation/` – Automated cross-section scanning**
+This directory contains scripts for **automated calculations of \( \sigma(mh_2) \)**.
+
+- `run_mh2_scan.sh` – **Bash script** that loops over different values of \( mh_2 \) and launches `SCRIPTcross.wls`.
+- `plot_cs_data.wls` – **WolframScript** that reads stored cross-section values and plots \( \sigma(mh_2) \) with uncertainties.
+
+Results are stored in:
+- `buffer/cs_uuZZZ.wl` – Cross-section results.
+- `subgraphs/cross_sectionMh2.png` – Generated plot.
+
+---
+
+### **3. `pdfcode/` – Working with Parton Distribution Functions (PDFs)**
 This directory contains a set of **precomputed CSV files** with PDFs for various particles and energies.
 
 Key files:
@@ -40,8 +58,15 @@ Key files:
 
 ---
 
-### **3. `ppHgg/` – Cross-section testing**
+### **4. `ppHgg/` – Cross-section testing**
 This directory focuses on the auxiliary process **pp → H → gg**, used to validate the cross-section computation method with PDFs.
+
+---
+
+### **5. `tg/` – Telegram bot for computation notifications**
+This directory contains files related to the Telegram bot, which sends notifications about the status of computations in **Wolfram Mathematica**.  
+
+The bot interacts with Mathematica through the `PrintTG[string]` function, which sends a message with the provided `string` parameter to a specified Telegram chat.
 
 ---
 
@@ -62,63 +87,82 @@ For any questions, feel free to contact:
 
 ## Описание
 
-Этот проект посвящен исследованию ограничений на параметры **2HDM (Двуххиггсовской модели)** с использованием **анизотропных вершинных функций**. Методология основана на анализе **коэффициентов аномальных взаимодействий** \( ZZZ \) и \( ZWW \), полученных из экспериментальных данных LHC.  
+Этот проект посвящён исследованию ограничений на параметры **Двуххиггсовской модели (2HDM)** с использованием **аномальных вершинных функций**. Методология основана на анализе **коэффициентов аномальных взаимодействий** \( ZZZ \) и \( ZWW \), полученных из экспериментальных данных LHC.
 
-Расчеты выполняются в среде **Wolfram Mathematica** с использованием нескольких ключевых пакетов:  
-- **FeynArts** – построение диаграмм Фейнмана.  
-- **FeynCalc** – вычисление амплитуд процессов.  
-- **LoopTools** – редукция интегралов Пасарино-Вельтмана.  
-- **LHAPDF** – работа с функциями плотности распределения частиц (PDF).  
+Расчёты выполняются в **Wolfram Mathematica** с использованием нескольких ключевых пакетов:
+- **FeynArts** – для генерации диаграмм Фейнмана.
+- **FeynCalc** – для вычисления амплитуд процессов.
+- **LoopTools** – для редукции интегралов Пасарино-Вельтмана.
+- **LHAPDF** – для работы с функциями плотности распределения партонов (PDF).
 
-Для проверки работы метода также рассматривается вспомогательный процесс **pp → H → gg**, который тестирует вычисление сечения с учетом PDF.
+Дополнительно для проверки расчётов сечения с использованием PDF анализируется тестовый процесс **pp → H → gg**.
 
 ---
 
 ## **Структура проекта**
 
-### **1. `ZZZ_ZWW/` – Основные расчеты для вершинных функций**
-Здесь находятся основные скрипты для вычисления амплитуд и коэффициентов взаимодействий:
-- `Vertex_graphs.wl` – построение и анализ графиков вершинных функций.
-- `ZWW_full.wl` – расчет амплитуды и коэффициента \( f_4^Z \) для процесса \( ZWW \).
-- `ZZZ_amp.wl` – расчет амплитуды и коэффициента \( f_4^Z \) для процесса \( ZZZ \).
+### **1. `ZZZ_ZWW/` – Основные вычисления для вершинных функций**
+Этот каталог содержит основные скрипты для вычисления амплитуд и коэффициентов взаимодействий:
+- `Vertex_graphs.wl` – генерация графиков и анализ вершинных функций.
+- `ZWW_full.wl` – расчёт амплитуды и извлечение коэффициентов для процесса \( ZWW \).
+- `ZZZ_amp.wl` – расчёт амплитуды и извлечение коэффициентов для процесса \( ZZZ \).
 - `SCRIPTqqZZZ.wls` – исполняемый скрипт для вычисления амплитуды и квадрата матричного элемента процесса \( q\bar{q} \to Z \to ZZ \).
-- `TESTqqZZZ.wl` – тестовый файл для отработки новых методов вычислений.
+- `SCRIPTcross.wls` – вычисляет **сечение процесса** и сохраняет результаты в буфер.
+- `TESTqqZZZ.wl` – тестовый файл для разработки новых вычислительных методов.
 
-Дополнительно здесь хранятся **бэкапы вычислений**:
+Дополнительно здесь хранятся **резервные копии результатов вычислений**:
 - `.mx` файлы – сериализованные промежуточные вычисления.
-- `.txt` файлы – сохраненные численные значения коэффициентов.
+- `.txt` файлы – сохранённые числовые значения коэффициентов.
+
+Все буферные файлы, промежуточные результаты и дополнительные графики хранятся в:
+- `ZZZ_ZWW/buffer/` – временные буферные файлы для хранения промежуточных данных.
+- `ZZZ_ZWW/graphs/` – различные графические представления вычислений.
+- `ZZZ_ZWW/subgraphs/` – дополнительные подграфики, относящиеся к анализу.
 
 ---
 
-### **2. `pdfcode/` – Работа с PDF-функциями**
-Архив CSV-файлов с предвычисленными **функциями плотности распределения частиц (PDF)** для различных энергий и типов частиц.  
+### **2. `automation/` – Автоматизированный перебор параметров и расчёт сечения**
+Этот каталог содержит скрипты для **автоматизированных расчётов сечения \( \sigma(mh_2) \)**.
 
-Ключевые файлы:
-- `PDF_csv.py` – Python-скрипт для получения нужного PDF.  
-- `pdf_mathematica_test.wl` – пример вызова PDF в коде Mathematica.  
+- `run_mh2_scan.sh` – **Bash-скрипт**, который перебирает различные значения \( mh_2 \) и запускает `SCRIPTcross.wls`.
+- `plot_cs_data.wls` – **WolframScript**, который загружает сохранённые значения сечений и строит график \( \sigma(mh_2) \) с учётом погрешностей.
 
----
-
-### **3. `ppHgg/` – Тестирование расчета сечения**
-Раздел, посвященный вспомогательному процессу **pp → H → gg**, который используется для тестирования расчета сечения процесса через PDF.
+Результаты сохраняются в файлы:
+- `buffer/cs_uuZZZ.wl` – рассчитанные значения сечения.
+- `subgraphs/cross_sectionMh2.png` – сгенерированный график.
 
 ---
 
-## **Запуск и установка**
+### **3. `pdfcode/` – Работа с функциями плотности распределения частиц (PDF)**
+Этот каталог содержит набор **предварительно вычисленных CSV-файлов** с PDF-функциями для различных частиц и энергий.
+
+Основные файлы:
+- `PDF_csv.py` – Python-скрипт для извлечения конкретных значений PDF.
+- `pdf_mathematica_test.wl` – пример вызова PDF-функций в Mathematica.
+
+---
+
+### **4. `ppHgg/` – Тестирование расчёта сечения**
+Этот каталог посвящён вспомогательному процессу **pp → H → gg**, который используется для проверки метода расчёта сечения с PDF.
+
+---
+
+### **5. `tg/` – Telegram-бот для уведомлений о вычислениях**
+Этот каталог содержит файлы, связанные с Telegram-ботом, который отправляет уведомления о ходе вычислений в **Wolfram Mathematica**.  
+
+Бот взаимодействует с Mathematica через функцию `PrintTG[string]`, которая отправляет сообщение с переданной строкой `string` в указанный Telegram-чат.
+
+---
+
+## **Установка и настройка**
 
 Для работы с проектом необходимо:
 1. **Wolfram Mathematica** с установленными `FeynArts`, `FeynCalc`, `LoopTools`.
 2. **Python 3** для работы с PDF-функциями (`pdfcode/`).
-3. **LHAPDF** для работы с PDF-файлами.
+3. **LHAPDF** для загрузки и работы с функциями плотности распределения частиц.
 
-### **Запуск основного кода**
-Выполнить расчет амплитуды и квадрата матричного элемента:
-```sh
-wolframscript -file ZZZ_ZWW/SCRIPTqqZZZ.wls 1
-```
+---
 
-
-### **Контакты**
-По всем вопросам можно обращаться:
-
-Дмитрий Калашников: [dskalashnikov@mephi.ru](mailto:dskalashnikov@mephi.ru)
+## **Контакты**
+По всем вопросам обращайтесь:
+- **Дмитрий Калашников**: [dskalashnikov@mephi.ru](mailto:dskalashnikov@mephi.ru)

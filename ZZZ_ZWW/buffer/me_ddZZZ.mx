@@ -63,8 +63,8 @@
       4*(s + t)*SMP["m_Z"]^2 + 2*SMP["m_Z"]^4) + 
     SMP["m_q"]^2*(s^2 - 4*(3*s + 2*t)*SMP["m_Z"]^2 + 24*SMP["m_Z"]^4)))/
   (12288*cw^6*Pi^4*SMP["m_Z"]^4*(s - SMP["m_Z"]^2)^2), 
- (CA*f4exp^2*MZ^4*s*(9*cw^2*gw^2 + 6*cw*g1*gw*sw + 5*g1^2*sw^2)*
+ (f4exp^2*s*(9*cw^2*gw^2 + 6*cw*g1*gw*sw + 5*g1^2*sw^2)*
    (4*SMP["m_q"]^4*SMP["m_Z"]^2 + 2*SMP["m_Z"]^2*(s^2 + 2*s*t + 2*t^2 - 
       4*(s + t)*SMP["m_Z"]^2 + 2*SMP["m_Z"]^4) + 
     SMP["m_q"]^2*(s^2 - 4*(3*s + 2*t)*SMP["m_Z"]^2 + 24*SMP["m_Z"]^4)))/
-  (144*e^2*SMP["m_Z"]^4)}
+  (48*SMP["m_Z"]^8)}

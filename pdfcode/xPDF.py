@@ -3,17 +3,18 @@ import sys
 import lhapdf
 
 
-def get_pdf_values(x, Q, id):
+def get_pdf_values(id, x, Q):
     """
         Retrieve the Parton Distribution Function (PDF) value for a given parton at a specific x and Q.
         Parameters:
     -----------
+    id : int
+        The PDG ID of the parton (e.g., 1 for down quark, -1 for anti-down, etc.).
     x : float
         (0 < x < 1).
     Q : float
         The energy scale in GeV.
-    id : int
-        The PDG ID of the parton (e.g., 1 for down quark, -1 for anti-down, etc.).
+    
 
     Returns:
     --------
@@ -90,4 +91,4 @@ if __name__ == "__main__":
     x = float(sys.argv[1])
     Q = float(sys.argv[2])
     id = int(sys.argv[3])
-    print(get_pdf_values(x, Q, id))
+    print(get_pdf_values( id, x, Q))

@@ -20,7 +20,6 @@ If[Length[$ScriptCommandLine] > 1,
     logic = ToExpression[$ScriptCommandLine[[2]]];
     mh2 = ToExpression[$ScriptCommandLine[[3]]];
     msg = ToExpression[$ScriptCommandLine[[4]]],
-    mh2=250;
 ];
 If[ $FrontEnd === Null, 
     $FeynCalcStartupMessages = False; 
@@ -75,7 +74,7 @@ mh2 = ",mh2,
 
 (*Integration limits*)
 f4experimental = 0.001;
-s0 = 8000^2;
+s0 = 13000^2;
 smin =(2*MZ+0.05)^2;  
 xmin = Sqrt[smin/s0];
 Print["-------\nIntegration limits in code:",
@@ -177,8 +176,8 @@ Print[WidthCross[s]];
 ];
 
 
-If[$Notebooks,
-pointArray = Range[0.0005, 0.0012,0.00001];
+(*If[logic == 0,
+pointArray = Range[0.05, 0.12,0.01];
 dataPoints = Table[{x, WidthCross[s0 * x]*Lexp[x]//N}, {x, pointArray}];
 Plot1 = ListPlot[
     dataPoints,
@@ -189,7 +188,7 @@ Plot1 = ListPlot[
     Frame -> True
 ];
 Export["supgraphs/integration_points.png",Plot1];
-];
+];*)
 
 
 If[ logic === 0 || logic == 3,
@@ -200,7 +199,7 @@ CrossSvertka = NIntegrate[
 		progress = WidthCross[s0*(10^kt)]*Lexp[10^(kt)]* (Log[10])
    ,
    {kt, Log10[xmin*xmin], 0},
-   Method -> "AdaptiveQuasiMonteCarlo"(*,
+   Method -> "AdaptiveMonteCarlo"(*,
    EvaluationMonitor :> (
       iteration++;
       If[Mod[iteration,500]===0,
@@ -211,11 +210,14 @@ CrossSvertkaExp = NIntegrate[
 		WidthCrossExp[s0*(10^kt)]*Lexp[10^(kt)]* (Log[10])
    ,
    {kt, Log10[xmin*xmin], 0},
-   Method -> "AdaptiveQuasiMonteCarlo"
+   Method -> "AdaptiveMonteCarlo"
 ];
 formatSciPrec[x_, prec_:3] := ScientificForm[x, prec, NumberFormat -> (Row[{#1, "\[Times]10^", #3}] &)];
-PrintTG[StringJoin["\nCrossSection: ", ToString[formatSciPrec[CrossSvertka*3.9*10^8]], " pb\n","\nCrossSectionExp: ", ToString[formatSciPrec[CrossSvertkaExp*3.9*10^8]], " pb\n"]];
-CheckTime[];
+strOutput = StringJoin[
+"params: sqrt(s0) = ",ToString[Sqrt[s0]], ",  f4exp = ",ToString[f4experimental], ",  mh2 = ",ToString[mh2],"\n",
+"\nCrossSection: ", ToString[formatSciPrec[CrossSvertka*3.9*10^8]], " pb\n",
+"\nCrossSectionExp: ", ToString[formatSciPrec[CrossSvertkaExp*3.9*10^8]], " pb\n"];
+PrintTG[strOutput];
 ]
 
 
@@ -273,6 +275,6 @@ CheckTime[];
 
 If[Length[$ScriptCommandLine] > 1,
 output = OpenAppend[csFile];
-WriteString[output,  "\n" <> ToString[mh2] <> "\t" <> ToString[formatSciPrec[CrossSvertka*3.9*10^8]]]
+WriteString[output,  "\n" <> ToString[mh2] <> "\t" <> ToString[formatSciPrec[CrossSvertka*3.9*10^8]]];
 Close[output];
 ];

@@ -3,8 +3,8 @@
 
 (* \:041e\:043f\:0446\:0438\:0438 \:0440\:0430\:0431\:043e\:0442\:044b *)
 logic = 0; (* 0 - \:043f\:0435\:0440\:0435\:0441\:0447\:0438\:0442\:0430\:0442\:044c \:0432\:0441\:0451, 1 - \:0437\:0430\:0433\:0440\:0443\:0437\:0438\:0442\:044c \:0431\:0443\:0444\:0435\:0440\:044b, 2 - \:043f\:0435\:0440\:0435\:0441\:0447\:0438\:0442\:0430\:0442\:044c \:0442\:043e\:043b\:044c\:043a\:043e \:0441\:0435\:0447\:0435\:043d\:0438\:0435, 3 - \:043f\:0435\:0440\:0435\:0441\:0447\:0438\:0442\:0430\:0442\:044c \:0442\:043e\:043b\:044c\:043a\:043e \:043a\:0432\:0430\:0434\:0440\:0430\:0442 \:043c\:0430\:0442\:0440\:0438\:0447\:043d\:043e\:0433\:043e \:044d\:043b\:0435\:043c\:0435\:043d\:0442\:0430 *)
-ProcName = "ddZZZ";
-particleID = 10;
+ProcName = "uuZZZ";
+particleID = 7;
 
 (* For feynCalc not PDF
 7 u, 8 c, 9 t
@@ -39,6 +39,7 @@ Quiet[Install["LoopTools"]];
 Quiet[Needs["LoopTools`"]];
 $FAVerbose = 0; 
 
+
 Unprotect[PaVe, Li2, A0, A00, B0, B1, B00, B11, DB0, DB1, C0, D0];
 Remove[PaVe, Li2, A0, A00, B0, B1, B00, B11, DB0, DB1, C0, D0];
 (* \:0424\:0430\:0439\:043b\:044b \:0434\:043b\:044f \:0431\:0443\:0444\:0435\:0440\:043e\:0432 *)
@@ -51,6 +52,7 @@ ampFile = StringJoin["buffer/amp_", ProcName, ".mx"];
 meFile  = StringJoin["buffer/me_", ProcName, ".mx"];
 wcFile  = StringJoin["buffer/wc_", ProcName, ".mx"];
 csFile  = StringJoin["buffer/cs_", ProcName, ".mx"];
+f4teorFile  = "buffer/f4_teor.mx";
 
 
 (*Diags*)
@@ -191,7 +193,7 @@ PrintTG[StringJoin["Get terms from amp:\tAntisim/All:  ",ToString[Length[terms2]
 
 CheckTime[];
 SubjAmp1 = Total[terms1]+Total[terms2]//Simplify;
-PaVeSum = Coefficient[SubjAmp1,gc359R*SUNFDelta[SUNFIndex[Col1], SUNFIndex[Col2]]*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[Polarization[k1, -I]]] . DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+PaVeSum = Coefficient[SubjAmp1/. {gc359R -> gcR, gc357R -> gcR},gcR*SUNFDelta[SUNFIndex[Col1], SUNFIndex[Col2]]*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[Polarization[k1, -I]]] . DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
     Pair[Momentum[k1], Momentum[Polarization[k2, -I]]]];
 F4teor = PaVeSum * SMP["m_Z"]^2;
 $Assumptions = Element[f4, Complexes];
@@ -255,6 +257,7 @@ If[logic >= 1 && logic != 3 && FileExistsQ[meFile],
 		CheckTime[];
 
     Put[{ampSquared,ampSquaredexp},meFile];
+    Put[F4teor,f4teorFile];
     PrintTG["Matrix element saved in buffer."];
     CheckTime[];
 ];
@@ -271,3 +274,7 @@ Print[Factor[ampSquared]//Simplify];
 
 
 
+
+
+	$FeynCalcStartupMessages = False;
+	$LoadFeynCalcMessages = False; 

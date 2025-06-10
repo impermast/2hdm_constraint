@@ -32,11 +32,12 @@ SmpChanger = {
 };
 
 AngleChanger = {
-	X1^2*X2^2*X3^2 -> (Sin[a2]*Sin[a2]*Sin[a3]*Cos[a3]*Cos[a2])^2
+	X1^2*X2^2*X3^2 -> (Sin[a2]*Sin[a2]*Sin[a3]*Cos[a3]*Cos[a2])^2,
+	X1*X2*X3 -> (Sin[a2]*Sin[a2]*Sin[a3]*Cos[a3]*Cos[a2])
 	(*X1 -> (Cos[a1]*Cos[a2]*Cos[a1] + Sin[a1]*Cos[a2]*Sin[a1]),
 	X2 ->  (-(Sin[a1]*Cos[a3] + Cos[a1]*Sin[a2]*Sin[a3])*Cos[a1] + (Cos[a1]*Cos[a3] - Sin[a1]*Sin[a2] *Sin[a3])*Sin[a1]),
-	X3 -> ((-Cos[a1] *Sin[a2]* Cos[a3] + Sin[a1] *Sin[a3])*Cos[a1] -(Sin[a1] *Sin[a2] *Cos[a3] + Cos[a1]* Sin[a3])*Sin[a1])*)
-};
+	X3 -> ((-Cos[a1] *Sin[a2]* Cos[a3] + Sin[a1] *Sin[a3])*Cos[a1] -(Sin[a1] *Sin[a2] *Cos[a3] + Cos[a1]* Sin[a3])*Sin[a1])
+*)};
 
 Params = {
    (* \:041c\:0430\:0441\:0441\:044b \:043a\:0432\:0430\:0440\:043a\:043e\:0432 (GeV) *)

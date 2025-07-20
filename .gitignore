@@ -9,6 +9,7 @@ __pycache__/
 venv/
 env/
 .continue
+.venv
 .virtualenv/
 
 # ⛔ Игнорируем конфиденциальные файлы и токены
@@ -45,7 +46,7 @@ code_screenshorts/
 lhapdf/
 lhapdf-data/
 lhapdf-sets/
-
+pdf_*.csv
 
 # ⛔ Игнорируем скомпилированные бинарные файлы
 *.o

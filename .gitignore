@@ -37,7 +37,15 @@ debug.log
 .idea/
 *.sublime-workspace
 *.sublime-project
+
+#графики
 code_screenshorts/
+graphs/
+../graphs/
+subgraphs/
+../graphs_alphamax/
+backfiles/
+
 
 # ⛔ Игнорируем файлы Jupyter Notebook output
 .ipynb_checkpoints/
@@ -46,7 +54,7 @@ code_screenshorts/
 lhapdf/
 lhapdf-data/
 lhapdf-sets/
-pdf_*.csv
+pdfcode/*.csv
 
 # ⛔ Игнорируем скомпилированные бинарные файлы
 *.o

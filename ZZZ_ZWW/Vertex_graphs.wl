@@ -19,8 +19,6 @@ $FAVerbose = 0;
 
 FCCheckVersion[9,3,0];
 
-Needs["CollierLink`"]
-Needs["X`"]
 Install["LoopTools"]
 Needs["LoopTools`"]
 
@@ -36,10 +34,15 @@ LogRange1[a_?NumericQ, b_?NumericQ, n_Integer] :=
 (*Main params of graphs*)
 (*Number of points in graphs  N=*)
 PointNumber = 100
-ContoursNumber = 50
-GraphTheme = ColorData["Rainbow"];
-SavePDF = 1; (*1--save, 0--dont*)
-ReCalculateTable = 1; (*1--recalculate,  0 -- no*)
+ContoursNumber = 30
+GraphTheme = ColorData["SolarColors"]
+SavePDF = 0; (*1--save, 0--dont*)
+ReCalculateTable = 0; (*1--recalculate,  0 -- no*)
+
+
+SavePath = "/home/kds/sci/zzz/2hdm_constraint/ZZZ_ZWW/graphs/";
+str    = Import["/home/kds/sci/zzz/2hdm_constraint/ZZZ_ZWW/buffer/F4ZZZ.txt"];
+strZWW = Import["/home/kds/sci/zzz/2hdm_constraint/ZZZ_ZWW/buffer/F4ZWW.txt"];
 
 
 \[Alpha]2max =  0.955317;(* Lightest Higgs is a pure scalar*)
@@ -92,25 +95,19 @@ SP[P,P]=s;
 (*Getting F4 funcs from file*)
 
 
-str = Import["ZZZ/F1Z.txt"];
-strZWW = Import["ZZZ/FZWW.txt"];
 args = {s,mh1,mh2,mh3,pref};
 argsZWW = {s,mh1,mh2,mh3,mhc,a1,a2,a3};
 Print["Funcs:"]
 str
 strZWW
-Activate[Inactive[SetDelayed][ToExpression["F1Z"]@@(Pattern[#,_]&/@args),ToExpression[str]]];
+Activate[Inactive[SetDelayed][ToExpression["FZZZ"]@@(Pattern[#,_]&/@args),ToExpression[str]]];
 Activate[Inactive[SetDelayed][ToExpression["FZWW"]@@(Pattern[#,_]&/@argsZWW),ToExpression[strZWW]]];
-(*Abs[F1Z[1,0.3,0.4,0.5,1]]*)
-FullSimplify[F1Z[s,mh1,mh2,mh3,pref]]
+(*Abs[FZZZ[1,0.3,0.4,0.5,1]]*)
+FullSimplify[FZZZ[s,mh1,mh2,mh3,pref]]
 FullSimplify[FZWW[s,mh1,mh2,mh3,mhc,a1,a2,a3]];
 
 
-FullSimplify[FZWW[0.5,m1,m2,m3,mc,a1,a2,a3]];
-FullSimplify[FZWW[0.5,m1,m2,m3,mc,\[Alpha]1,\[Alpha]2,\[Alpha]3]];
-
 prefactorZWW[a1_,a2_,a3_] := g^3/(16\[Pi]^2 cw) x1[a1,a2,a3] x2[a1,a2,a3] x3[a1,a2,a3];
-
 
 
 (* ::Section:: *)
@@ -142,8 +139,8 @@ FullSimplify[(Y1[a1,a2,a3]*Y2[a1,a2,a3]+R23[a1,a2,a3]*R13[a1,a2,a3])x3[a1,a2,a3]
 
 prefactor[a1_,a2_,a3_] := x1[a1,a2,a3] x2[a1,a2,a3] x3[a1,a2,a3];
 FullSimplify[prefactor[a1,a2,a3]]
-prefmax = prefactor[\[Alpha]1,\[Alpha]2,\[Alpha]3]
-prefalphamax=prefactor[\[Alpha]1,\[Alpha]2max,\[Alpha]3max]
+pref = prefactor[\[Alpha]1,\[Alpha]2,\[Alpha]3]
+prefmax=prefactor[\[Alpha]1,\[Alpha]2max,\[Alpha]3max]
 pref0 = \!\(TraditionalForm\`
 \*FractionBox[
 SuperscriptBox[\(g\), \(3\)], \(16 
@@ -151,8 +148,8 @@ SuperscriptBox[\(g\), \(3\)], \(16
 \*SuperscriptBox[\(cw\), \(3\)]\)]\)prefactor[\[Alpha]1,\[Alpha]2,\[Alpha]3];
 
 
-FZWWbar[q_,mh1_,mh2_,mhc_] := Abs[Re[FZWW[q^2,mh1,mh2,Sqrt[mh2^2+v^2],mhc,\[Alpha]1,\[Alpha]2,\[Alpha]3]]/prefmax];
-FplotZWW[q_,mh1_,mh2_,mhc_]:=Abs[Re[FZWW[q^2,mh1,mh2,Sqrt[mh2^2+v^2],mhc,\[Alpha]1,\[Alpha]2,\[Alpha]3]]];(*x^2 -- \:0447\:0442\:043e\:0431\:044b \:043f\:043e\:0434\:0441\:0442\:0430\:0432\:043b\:044f\:0442\:044c sqrt(s)=TeV *)
+FZWWbar[q_,mh1_,mh2_,mhc_] := Abs[Abs[FZWW[q^2,mh1,mh2,Sqrt[mh2^2+v^2],mhc,\[Alpha]1,\[Alpha]2,\[Alpha]3]]/prefmax];
+FplotZWW[q_,mh1_,mh2_,mhc_]:=Abs[Abs[FZWW[q^2,mh1,mh2,Sqrt[mh2^2+v^2],mhc,\[Alpha]1,\[Alpha]2,\[Alpha]3]]];(*x^2 -- \:0447\:0442\:043e\:0431\:044b \:043f\:043e\:0434\:0441\:0442\:0430\:0432\:043b\:044f\:0442\:044c sqrt(s)=TeV *)
 
 
 
@@ -167,7 +164,7 @@ FplotZWW[q_,mh1_,mh2_,mhc_]:=Abs[Re[FZWW[q^2,mh1,mh2,Sqrt[mh2^2+v^2],mhc,\[Alpha
 (*b=m2
 label0 = Text[Style["m_H=" <> ToString[b] <> " TeV", FontSize -> 14, FontFamily -> "Arial", 
        Background -> LightGray, Frame -> True, FrameStyle -> Directive[Thick, Black]], {1.3, -10}];
-plot1 = LogPlot[N[Abs[F1Z[x,m1,b,Sqrt[b^2+v^2],prefactor[\[Alpha]1,\[Alpha]2,\[Alpha]3]]/pref0]],{x,0.2,1.0},
+plot1 = LogPlot[N[Abs[FZZZ[x,m1,b,Sqrt[b^2+v^2],prefactor[\[Alpha]1,\[Alpha]2,\[Alpha]3]]/pref0]],{x,0.2,1.0},
   GridLines -> Automatic,
   ImageSize->400,
   PlotRange->{10^(-5),1},
@@ -184,7 +181,7 @@ Row[{plot1, Graphics[{Inset[img1, Scaled[{0.5, 0.5}], Automatic, Scaled[1]]}, Im
 img2 = Import["/home/kds/ZZZ/plot2.pdf"]
 label1 = Text[Style["p=" <> ToString[p] <> " TeV", FontSize -> 14, FontFamily -> "Arial", FontWeight -> Bold, 
        Background -> LightGray], {1, 10^(-5)}];
-data = Table[{x, N[Abs[F1Z[p, m1, x, Sqrt[x^2+v^2],prefactor[\[Alpha]1,\[Alpha]2,Pi/4]]]]}, {x, 0.1, 10,0.01}] // N;
+data = Table[{x, N[Abs[FZZZ[p, m1, x, Sqrt[x^2+v^2],prefactor[\[Alpha]1,\[Alpha]2,Pi/4]]]]}, {x, 0.1, 10,0.01}] // N;
 l = ListLogLogPlot[data,
 PlotMarkers -> Automatic,
 Epilog -> label1, 
@@ -198,7 +195,12 @@ Show[l]*)
 
 
 
-p1 = 0.5
+(* ::Text:: *)
+(**)
+(*2d graph of prefactor*)
+
+
+(*p1 = 0.5
 b = m2
 
 plotZZZa2a3 = ContourPlot[
@@ -212,14 +214,18 @@ plotZZZa2a3 = ContourPlot[
   FrameLabel -> {"\[Alpha]2", "\[Alpha]3"},
   PlotLegends -> Automatic
 ];
+*)
 
 
+(* ::Text:: *)
+(*2 d graph from q m2*)
 
-(*p1=0.5
+
+p1=0.5
 xmin=0.2;  ymin=0.2;
 xmax=3;    ymax=3;
 plotZZZm2s = ContourPlot[
-  Abs[F1Z[x,m1,y,Sqrt[y^2+v^2],prefmax]], 
+  Abs[FZZZ[x,m1,y,Sqrt[y^2+v^2],prefmax]], 
   {x, xmin, xmax}, {y, ymin, ymax},
   ColorFunction -> GraphTheme,
   ScalingFunctions->"Log", 
@@ -231,25 +237,46 @@ plotZZZm2s = ContourPlot[
   PlotLegends -> Automatic
 ];
     
-  conplot = ContourPlot[{Abs[F1Z[x,m1,y,Sqrt[y^2+v^2],prefmax]] == constraitF4Z300,Abs[F1Z[x,m1,y,Sqrt[y^2+v^2],prefmax]] == constraitF4Z3000}, {x, xmin, xmax}, {y, ymin, ymax},
+  conplot = ContourPlot[{Abs[FZZZ[x,m1,y,Sqrt[y^2+v^2],prefmax]] == constraitF4Z300,Abs[FZZZ[x,m1,y,Sqrt[y^2+v^2],prefmax]] == constraitF4Z3000}, {x, xmin, xmax}, {y, ymin, ymax},
   ContourStyle -> {Directive[Black, Thickness[0.005]], Directive[Darker[Blue], Thickness[0.003]]},
   PlotLegends -> SwatchLegend[{Black,Darker[Blue]}, {"300", "3000"}, LegendLayout -> "Column", LegendFunction -> "Panel",LegendLabel->"\!\(\*TemplateBox[<|\"boxes\" -> FormBox[RowBox[{\"\[Integral]\", RowBox[{StyleBox[\"L\", \"TI\"], StyleBox[\"d\", \"TI\"], StyleBox[\"t\", \"TI\"]}], \",\"}], TraditionalForm], \"errors\" -> {}, \"input\" -> \"\\\\int{Ldt},\", \"state\" -> \"Boxes\"|>,\n\"TeXAssistantTemplate\"]\)  pb\!\(\*TemplateBox[<|\"boxes\" -> FormBox[SuperscriptBox[\"\[Null]\", \"-1\"], TraditionalForm], \"errors\" -> {}, \"input\" -> \"^{-1}\", \"state\" -> \"Boxes\"|>,\n\"TeXAssistantTemplate\"]\)"]];
   
   plotZZZm2s=Show[plotZZZm2s,conplot,ImageSize->800]
 
 If[SavePDF == 1,
-Export["./ZZZ/graphs/ZZZ_f4_a2a3.pdf", plotZZZa2a3]
-Export["./ZZZ/graphs/ZZZ_f4_m2a3.pdf", plotZZZm2s]
-]*)
+Export[SavePath <> "ZZZ_f4_m2a3.pdf", plotZZZm2s]
+]
 
 
+Needs["SaveToCSVmodule`"];
+xmin = 0.2; xmax = 3;
+ymin = 0.2; ymax = 3;
+step = 0.05;
+table = Reap[
+  Do[
+    f = Log10[Abs[FZZZ[x, m1, y, Sqrt[y^2 + v^2], prefmax]]];
+    Sow[{N[x], N[y], N[f]}],
+    {x, xmin, xmax, step},
+    {y, ymin, ymax, step}
+  ]
+][[2, 1]];
+SaveTableToCSV[
+	{"q","m2","log10_f4ZZZ"},
+	table,
+	"/home/kds/sci/zzz/2hdm_constraint/ZZZ_ZWW/backfiles/f4Z_m2q.csv"
+];
 
+
+(* ::Text:: *)
+(**)
 (*F4ZZZ from m2 for different s*)
+
+
 p=0.5
 Print["Start graph F4Z(m2) for different q"]
 xmin = 0.1;     xmax = 4.0;
 ymin = 10^(-8); ymax = 10^(-3);
-data = Table[{x,N[Abs[F1Z[p, m1, x, Sqrt[x^2+v^2],prefmax]]]}, {x,LogRange1[xmin,xmax,PointNumber]}]//N;
+data = Table[{x,N[Abs[FZZZ[p, m1, x, Sqrt[x^2+v^2],prefmax]]]}, {x,LogRange1[xmin,xmax,PointNumber]}]//N;
 l = ListLogLogPlot[data,
     PlotMarkers -> None,
     Ticks->Automatic,
@@ -264,14 +291,14 @@ l = ListLogLogPlot[data,
 
 p = 0.5
 Print["Start graph F4Z(m2) for different q"]
-xmin = 0.1;     xmax = 2.5;
-ymin = 10^(-8); ymax = 10^(-3);
-slist = {0.3, 0.5, 3, 7, 13.6};
+xmin = 0.126;     xmax = 2.5;
+ymin = 10^(-10); ymax = 10^(-3);
+slist = {0.3, 0.5, 1, 3, 7, 13.6};
 plots = {};
 extr={};
 (*slistextr = LogRange1[0.05, 6, 6];
 Do[
-     data = Table[{x, N[Abs[F1Z[slistextr[[i]], m1, x, Sqrt[x^2 + v^2], prefmax]]]}, {x, LogRange1[xmin, xmax, PointNumber]}];
+     data = Table[{x, N[Abs[FZZZ[slistextr[[i]], m1, x, Sqrt[x^2 + v^2], prefmax]]]}, {x, LogRange1[xmin, xmax, PointNumber]}];
      valY = Max[data[[All, 2]]];
   	For[j = 1, j <= Length[data], j++,
    	If[valY == data[[j, 2]],
@@ -282,7 +309,7 @@ Do[
 colors = GraphTheme /@ Rescale[Range[Length[slist]], {1, Length[slist]}];
 legend = SwatchLegend[colors, slist, LegendLayout -> "Column", LegendLabel -> "q, TeV", LegendFunction -> "Panel"];
 Do[
-     data = Table[{x, N[Abs[F1Z[slist[[i]], m1, x, Sqrt[x^2 + v^2], prefmax]]]}, {x, LogRange1[xmin, xmax, PointNumber]}];
+     data = Table[{x, N[Abs[FZZZ[slist[[i]], m1, x, Sqrt[x^2 + v^2], prefmax]]]}, {x, LogRange1[xmin, xmax, PointNumber]}];
      If[i == 1,(*\:0443\:0441\:043b\:043e\:0432\:0438\:0435 = \:043a\:043e\:0441\:0442\:044b\:043b\:044c \:0434\:043b\:044f \:0432\:044b\:0432\:043e\:0434\:0430 \:043b\:0435\:0433\:0435\:043d\:0434\:044b*)
       p = ListLogLogPlot[data,
       PlotMarkers -> None,
@@ -293,7 +320,7 @@ Do[
       BaseStyle -> {FontSize->14},
       AxesLabel -> {Text[Style["\!\(\*TemplateBox[<|\"boxes\" -> FormBox[RowBox[{SubscriptBox[StyleBox[\"m\", \"TI\"], \"2\"], \",\"}], TraditionalForm], \"errors\" -> {}, \"input\" -> \"m_2,\", \"state\" -> \"Boxes\"|>,\n\"TeXAssistantTemplate\"]\) TeV", FontSize -> 16]],
          Text[Style["\!\(\*TemplateBox[<|\"boxes\" -> FormBox[SubsuperscriptBox[StyleBox[\"f\", \"TI\"], \"4\", StyleBox[\"Z\", \"TI\"]], TraditionalForm], \"errors\" -> {}, \"input\" -> \"f_ 4^Z\", \"state\" -> \"Boxes\"|>,\n\"TeXAssistantTemplate\"]\)", FontSize -> 16]]},
-      GridLines -> Automatic,
+      GridLines -> None,
       PlotRange -> {{xmin, xmax}, {ymin, ymax}},
       ImageSize -> 400];,
       p = ListLogLogPlot[data,
@@ -305,15 +332,21 @@ Do[
     {i, Length[slist]}
   ];
 legend1 = SwatchLegend[{Red, Blue}, {"300", "3000"}, LegendLayout -> "Column", LegendFunction -> "Panel", LabelStyle -> Directive[FontSize -> 14, FontFamily -> "Helvetica"],
-LegendLabel -> Text[Style["\!\(\*TemplateBox[<|\"boxes\" -> FormBox[RowBox[{\"\[Integral]\", StyleBox[\"L\", \"TI\"], StyleBox[\"d\", \"TI\"], StyleBox[\"t\", \"TI\"]}], TraditionalForm], \"errors\" -> {}, \"input\" -> \"\\\\int Ldt\", \"state\" -> \"Boxes\"|>,\n\"TeXAssistantTemplate\"]\), fb\!\(\*TemplateBox[<|\"boxes\" -> FormBox[SuperscriptBox[\"\[Null]\", \"-1\"], TraditionalForm], \"errors\" -> {}, \"input\" -> \"{}^{-1}\", \"state\" -> \"Boxes\"|>,\n\"TeXAssistantTemplate\"]\)", FontSize -> 14]]];
+	LegendLabel -> Text[Style["\!\(\*TemplateBox[<|\"boxes\" -> FormBox[RowBox[{\"\[Integral]\", StyleBox[\"L\", \"TI\"], StyleBox[\"d\", \"TI\"], StyleBox[\"t\", \"TI\"]}], TraditionalForm], \"errors\" -> {}, \"input\" -> \"\\\\int Ldt\", \"state\" -> \"Boxes\"|>,\n\"TeXAssistantTemplate\"]\), fb\!\(\*TemplateBox[<|\"boxes\" -> FormBox[SuperscriptBox[\"\[Null]\", \"-1\"], TraditionalForm], \"errors\" -> {}, \"input\" -> \"{}^{-1}\", \"state\" -> \"Boxes\"|>,\n\"TeXAssistantTemplate\"]\)", FontSize -> 14]]];
+
 AppendTo[plots,
-LogLogPlot[{constraitF4Z300,constraitF4Z3000}, {x, xmin, xmax}, Filling -> Top,PlotStyle->{Red,Blue}, FillingStyle -> Directive[Opacity[0.05]],PlotLegends->legend1,PlotRange -> {{xmin, xmax}, {ymin, ymax}}]
+LogLogPlot[{constraitF4Z300,constraitF4Z3000}, {x, xmin, xmax}, 
+	Filling -> Top,
+	PlotStyle->{Darker[Red],Darker[Blue]}, 
+	FillingStyle -> Directive[Opacity[0.05]],
+	PlotLegends->legend1,
+	PlotRange -> {{xmin, xmax}, {ymin, ymax}}]
 ];
 (*AppendTo[plots, ListLogLogPlot[extr, Joined -> True, PlotStyle -> Black, PlotMarkers -> Automatic]];
 *)Sh = Show[plots, ImageSize -> 800]
 If[SavePDF == 1,
- Export["./ZZZ/graphs/ZZZ_f4_m2_500.pdf", l]
-  Export["./ZZZ/graphs/ZZZ_f4_m2.pdf", Sh]]
+ Export[SavePath <> "ZZZ_f4_m2_500.pdf", l];
+  Export[SavePath <> "ZZZ_f4_m2.pdf", Sh]]
 
 
 
@@ -327,7 +360,7 @@ alpha2list = {Pi/50, Pi/20, Pi/10, Pi/4, Pi/3, 0.99*Pi/2}//N;
 If[Length[data]==0||ReCalculateTable == 1,
 	data={};
 	Do[d = Flatten[Table[
-      {x, y, Abs[F1Z[p1, m1, x, Sqrt[x^2+v^2],prefactor[\[Alpha]1,a2,y]]]},
+      {x, y, Abs[FZZZ[p1, m1, x, Sqrt[x^2+v^2],prefactor[\[Alpha]1,a2,y]]]},
       {x, 0.1, 0.7, 0.6/PointNumber}, {y, 0, \[Pi]/2,\[Pi]/2/PointNumber }],1];
   AppendTo[data, d],
   {a2, alpha2list}];]
@@ -351,17 +384,17 @@ Do[
 
 l = Row[plots]
 If[SavePDF == 1,
-Export["./ZZZ/graphs/ZZZ_f4_2Dseries.pdf", l]]*)
+Export[SavePath <> "ZZZ_f4_2Dseries.pdf", l]]*)
 
 
 (*f4ZZZ from s for optimal m2*)
-b=0.3;
+(*b=0.3;
 xmin=0.1;    xmax=0.6;
 ymin=10^(-10);ymax=10^(-3);
 plots={};
 label2 = Text[Style["\!\(\*TemplateBox[<|\"boxes\" -> FormBox[SubscriptBox[StyleBox[\"m\", \"TI\"], \"2\"], TraditionalForm], \"errors\" -> {}, \"input\" -> \"m_ 2\", \"state\" -> \"Boxes\"|>,\n\"TeXAssistantTemplate\"]\)=" <> ToString[b] <> " TeV", FontSize -> 14, FontFamily -> "Arial", FontWeight -> Bold, 
        Background -> LightGray], {0.4, 0.0002}];
-data = Table[{x, N[Abs[F1Z[x, m1, b, Sqrt[b^2+v^2],prefmax]]]},  {x,LogRange1[xmin,xmax,PointNumber]}] // N;
+data = Table[{x, N[Abs[FZZZ[x, m1, b, Sqrt[b^2+v^2],prefmax]]]},  {x,LogRange1[xmin,xmax,PointNumber]}] // N;
 l = ListLogLogPlot[data,
 Joined->True,
 LabelStyle -> Directive[FontSize -> 14, FontFamily -> "Helvetica"],
@@ -381,18 +414,18 @@ LogLogPlot[{constraitF4Z300,constraitF4Z3000}, {x, xmin, xmax}, Filling -> Top,P
 Sh=Show[plots, ImageSize->600]
 
 If[SavePDF == 1,
-Export["./ZZZ/graphs/ZZZ_s_optima.pdf", Sh]]
+Export[SavePath <> "ZZZ_s_optima.pdf", Sh]]*)
 
 
 (*F4ZZZ from s for differnet mass*)
-mlist = {0.1,0.2,0.3,0.5,1,1.5};
+(*mlist = {0.1,0.2,0.3,0.5,1,1.5};
 plots={};
 xmin = 0.1;     xmax = 5;
 ymin = 10^(-6); ymax = 10^(-3);
 colors = GraphTheme /@ Rescale[Range[Length[mlist]], {1, Length[mlist]}];
 legend =SwatchLegend[colors,mlist,LegendLayout->"Column",LegendLabel->"\!\(\*TemplateBox[<|\"boxes\" -> FormBox[SubscriptBox[StyleBox[\"m\", \"TI\"], \"2\"], TraditionalForm], \"errors\" -> {}, \"input\" -> \"m_2\", \"state\" -> \"Boxes\"|>,\n\"TeXAssistantTemplate\"]\), TeV",LegendFunction->"Panel"];
 Do[
-   data = Table[{x, N[Abs[F1Z[x, m1, mlist[[i]], Sqrt[mlist[[i]]^2+v^2],prefmax]]]}, {x,LogRange1[xmin,xmax,PointNumber]}];
+   data = Table[{x, N[Abs[FZZZ[x, m1, mlist[[i]], Sqrt[mlist[[i]]^2+v^2],prefmax]]]}, {x,LogRange1[xmin,xmax,PointNumber]}];
    If[i ==1,(*\:0443\:0441\:043b\:043e\:0432\:0438\:0435 = \:043a\:043e\:0441\:0442\:044b\:043b\:044c \:0434\:043b\:044f \:0432\:044b\:0432\:043e\:0434\:0430 \:043b\:0435\:0433\:0435\:043d\:0434\:044b*)
    p = ListLogLogPlot[data,
        PlotMarkers -> None,
@@ -422,7 +455,7 @@ LogLogPlot[{constraitF4Z300,constraitF4Z3000}, {x, xmin, xmax}, Filling -> Top, 
 Sh=Show[plots, ImageSize->800]
 
 If[SavePDF == 1,
-Export["./ZZZ/graphs/ZZZ_f4_s.pdf", Sh]]
+Export[SavePath <> "ZZZ_f4_s.pdf", Sh]]      *)
 
 
 (* ::Subsection:: *)
@@ -466,12 +499,16 @@ Export["./ZZZ/graphs/ZWW_f4_m2.pdf", plot3]]
 *)
 
 
-(*\:0420\:0430\:0437\:043d\:044b\:0435 m2 \:0440\:0430\:0437\:043d\:044b\:043c\:0438 \:0446\:0432\:0435\:0442\:0430\:043c\:0438*)
+(* ::Text:: *)
+(**)
+(*1d: f4zww  from q (m2 -diff colors)*)
+
+
 xmin = 0.2;
 xmax = 3;
 dataQ = Table[
 	{x,y, FplotZWW[x,m1,y,Sqrt[y^2+v^2]]},
-   {y, LogRange1[0.1,2,6]},{x,LogRange1[xmin,xmax,PointNumber]}
+   {y, {1.5,1.7,2,3,4,5,7.5,10}},{x,LogRange1[xmin,xmax,PointNumber]}
    ];
 col = dataQ[[All,1,2]] (*znachenie parametrov v graph*)
 ymin = Min[dataQ[[All,All,3]]];
@@ -516,7 +553,12 @@ P = Show[plots, ImageSize -> 800]
 
 
 If[SavePDF == 1,
-Export["./ZZZ/graphs/ZWW_f4_m2fromQ2.pdf", P]]
+Export[SavePath <> "ZWW_f4_m2fromQ2.pdf", P]]
+
+
+(* ::Text:: *)
+(**)
+(*2d:  f4zww from q m2*)
 
 
 (*\:0421\:0442\:0430\:0440\:044b\:0435 \:0434\:0432\:0443\:0445\:043f\:0430\:0440\:0430\:043c \:0433\:0440\:0430\:0444\:0438\:043a\:0438*)
@@ -559,8 +601,8 @@ LegendLabel -> Text[Style["\!\(\*TemplateBox[<|\"boxes\" -> FormBox[RowBox[{\"\[
   Show[plot5,conplot,ImageSize->800]
  
 If[SavePDF == 1,
-Export["./ZZZ/graphs/ZWW_prefactor_a2a3.pdf", plot4]
-Export["./ZZZ/graphs/ZWW_2D_m2q.pdf", plot5]]
+Export[SavePath <> "ZWW_prefactor_a2a3.pdf", plot4];
+Export[SavePath <> "ZWW_2D_m2q.pdf", plot5]]
 
 
 (*(*\:0434\:0432\:0443\:0445\:043f\:0430\:0440\:0430\:043c \:0433\:0440\:0430\:0444\:0438\:043a\:0438 \:043f\:0440\:0438 \:0440\:0430\:0437\:043d\:044b\:0445 mc*)
@@ -661,7 +703,7 @@ ymax = Max[dataQ[[All,All,3]]];
 
 
 
-colors = GraphTheme /@ Rescale[Range[Length[col]], {1, Length[col]}];
+(*colors = GraphTheme /@ Rescale[Range[Length[col]], {1, Length[col]}];
 legend =SwatchLegend[colors,col,LegendLayout->"Column",LegendLabel->"\!\(\*TemplateBox[<|\"boxes\" -> FormBox[SubscriptBox[StyleBox[\"m\", \"TI\"], \"2\"], TraditionalForm], \"errors\" -> {}, \"input\" -> \"m_2\", \"state\" -> \"Boxes\"|>,\n\"TeXAssistantTemplate\"]\), TeV",LegendFunction->"Panel"];
 plots ={};
 Do[
@@ -701,22 +743,21 @@ LegendLabel -> Text[Style["\!\(\*TemplateBox[<|\"boxes\" -> FormBox[RowBox[{\"\[
   PlotRange -> {{xmin, xmax}, {ymin, ymax}}]];
 
 P = Show[plots, ImageSize -> 800]
-
-
 If[SavePDF == 1,
-Export["./ZZZ/graphs/ZWW_f4_m2fromQ2.pdf", P]]
+Export[SavePath <> "ZWW_f4_m2fromQ2.pdf", P]]
+*)
 
 
 (*2d graph no angels m2 mhc*)
-ReCalculateTable = 0
+(*
 If[Length[dataM2Mhc]==0||ReCalculateTable == 1,
 	dataM2Mhc=Table[{x,y,FZWWbar[p1,m1,x,y]},
 	{x, 0.13, 3, (3-0.13)/PointNumber},{y, 0.1, 3, 3/PointNumber}
 	];
 ];
 (*F4ZWW_hat with log10*)
-legend = BarLegend["Rainbow",{ScientificForm[2.4*10^(-3),2],ScientificForm[3.4*10^(-4),2],ScientificForm[4.5*10^(-5),2],ScientificForm[6.1*10^(-6),2],ScientificForm[8.3*10^(-7),2],ScientificForm[1.2*10^(-7),2]}]
-(*LegendMarkerSize\[Rule]400, LegendFunction\[Rule]"Panel", LegendLayout -> "Column",
+(*legend = BarLegend[,{ScientificForm[2.4*10^(-3),2],ScientificForm[3.4*10^(-4),2],ScientificForm[4.5*10^(-5),2],ScientificForm[6.1*10^(-6),2],ScientificForm[8.3*10^(-7),2],ScientificForm[1.2*10^(-7),2]}]
+LegendMarkerSize\[Rule]400, LegendFunction\[Rule]"Panel", LegendLayout -> "Column",
 LegendLabel\[Rule]"f4Z", LabelStyle\[Rule]Directive[Black,FontSize\[Rule]14]]*)
 
 plot1 = ListContourPlot[
@@ -730,6 +771,7 @@ plot1 = ListContourPlot[
     PlotRange -> All,
     LabelStyle -> Directive[FontSize -> 14, FontFamily -> "Helvetica"],
     BaseStyle -> {FontSize -> 14,FontFamily -> "Helvetica"},
+    PlotLegends->Automatic,
     Frame -> True
     ];
 
@@ -739,14 +781,10 @@ ContourStyle -> {Directive[Black, Thickness[0.003]], Directive[Darker[Blue], Thi
   SwatchLegend[{Red, Blue}, {"300", "3000"}, LegendLayout -> "Column", LegendFunction -> "Panel", 
   LabelStyle -> Directive[FontSize -> 14, FontFamily -> "Helvetica"],
 LegendLabel -> Text[Style["\!\(\*TemplateBox[<|\"boxes\" -> FormBox[RowBox[{\"\[Integral]\", StyleBox[\"L\", \"TI\"], StyleBox[\"d\", \"TI\"], StyleBox[\"t\", \"TI\"]}], TraditionalForm], \"errors\" -> {}, \"input\" -> \"\\\\int Ldt\", \"state\" -> \"Boxes\"|>,\n\"TeXAssistantTemplate\"]\), fb\!\(\*TemplateBox[<|\"boxes\" -> FormBox[SuperscriptBox[\"\[Null]\", \"-1\"], TraditionalForm], \"errors\" -> {}, \"input\" -> \"{}^{-1}\", \"state\" -> \"Boxes\"|>,\n\"TeXAssistantTemplate\"]\)", FontSize -> 14]]
-]]; 
+]];
 
-
- endplot= Show[plot1,conplot,ImageSize->800]
+endplot= Show[{plot1,conplot},ImageSize->800]
 
 If[SavePDF == 1,
-Export["./ZZZ/graphs/ZWW_f4hat_m2mhc.pdf", endplot]]
-
-
-
-
+Export[SavePath <> "ZWW_f4hat_m2mhc.pdf", endplot]]
+*) 

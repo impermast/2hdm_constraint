@@ -1,15 +1,11 @@
 (* ::Package:: *)
 
+(* Function to plot cross-section graph *)
+function plotCrossSectionGraph() {
 errorRelative = 0.05; 
 csFileU = "../buffer/cs_uuZZZ.mx"; 
 csFileD = "../buffer/cs_ddZZZ.mx"; 
-
-f4FileD = "../buffer/f4mean_ddZZZ.mx"; 
-
-crossGraphAdress = "crossSectionMh2.png"
-f4GraphAdress = "f4_from_Mh2.png"
-
-
+    crossGraphAdress = "crossSectionMh2.png";
 If[FileExistsQ[csFileU],
     dataU = Import[csFileU, "Table"];
     dataD = Import[csFileD, "Table"];
@@ -20,26 +16,29 @@ If[FileExistsQ[csFileU],
     crossSectionsU = dataU[[All, 2]];
     crossSectionsD = dataD[[All, 2]];
     crossSectionsNumU = ToExpression[StringReplace[crossSectionsU, "x10^" -> "*10^"]];
-    
      crossSectionsNumD = ToExpression[StringReplace[crossSectionsD, "x10^" -> "*10^"]];
     graph = ListPlot[
-        {Transpose[{mh2ValuesU, crossSectionsNumU}],Transpose[{mh2ValuesD, crossSectionsNumD}]}, 
+            {Transpose[{mh2ValuesU, crossSectionsNumU}], Transpose[{mh2ValuesD, crossSectionsNumD}]},
         Joined -> True, 
         PlotMarkers -> Automatic,
-        PlotLabels->Placed[{"uuCross","ddCross"},Above]
+            PlotLabels -> Placed[{"uuCross", "ddCross"}, Above]
     ];
 
     Print[graph];
     Export[crossGraphAdress, graph];
 
     Print["Graph saved"];
-
     ,
     Print["Error: File ", csFileU, " not found!"];
 ];
+}
 
+(* Function to plot f4 graph *)
+function plotF4Graph() {
+    f4FileD = "../buffer/f4mean_ddZZZ.mx";
+    f4GraphAdress = "f4_from_Mh2.png";
 
-If[FileExistsQ[csFileU],
+    If[FileExistsQ[f4FileD],
     dataD = Import[f4FileD, "Table"];
     dataD = Rest[dataD];
     mh2ValuesD = dataD[[All, 1]];
@@ -55,8 +54,16 @@ If[FileExistsQ[csFileU],
     Export[f4GraphAdress, graph];
 
     Print["Graph saved"];
-
     ,
-    Print["Error: File ", csFileU, " not found!"];
+        Print["Error: File ", f4FileD, " not found!"];
 ];
+}
 
+(* Main script execution *)
+function main() {
+    plotCrossSectionGraph;
+    plotF4Graph;
+}
+
+(* Execute the main function *)
+main;

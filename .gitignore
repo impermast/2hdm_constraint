@@ -38,14 +38,17 @@ debug.log
 *.sublime-workspace
 *.sublime-project
 
-#графики
-code_screenshorts/
-graphs/
-../graphs/
-subgraphs/
-../graphs_alphamax/
-backfiles/
+# ⛔ Игнорируем графики
+graphs/*.pdf
+graphs/*.png
+graphs_alphamax/
+code_screenshots/
 
+ZZZ_ZWW/graphs/*.pdf
+ZZZ_ZWW/graphs/*.png
+ZZZ_ZWW/subgraphs/*.pdf
+ZZZ_ZWW/subgraphs/*.png
+ZZZ_ZWW/backfiles/
 
 # ⛔ Игнорируем файлы Jupyter Notebook output
 .ipynb_checkpoints/

@@ -3,8 +3,6 @@
 BeginPackage["SaveToCSVmodule`"];
 SaveTableToCSV::usage = "SaveTableToCSV[names, table] saves the table to a CSV file with the given column names.";
 
-Begin["`Private`"];
-
 SaveTableToCSV[names_List, table_List,file_] := Module[{stream},
   stream = OpenWrite[file];
   WriteLine[stream, StringJoin[Riffle[names, ","]]];
@@ -13,5 +11,4 @@ SaveTableToCSV[names_List, table_List,file_] := Module[{stream},
   file
 ]
 
-End[];
 EndPackage[];

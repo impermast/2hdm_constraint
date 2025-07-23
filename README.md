@@ -17,23 +17,24 @@ Additionally, a test process **pp → H → gg** is used to verify cross-section
 
 ## **Project Structure**
 
-### **1. `ZZZ_ZWW/` – Core calculations for vertex functions**
-This directory contains essential scripts for computing amplitudes and interaction coefficients:
-- `Vertex_graphs.wl` – Graph generation and analysis for vertex functions.
-- `ZWW_full.wl` – Amplitude calculation and coefficient extraction for the \( ZWW \) process.
-- `ZZZ_amp.wl` – Amplitude calculation and coefficient extraction for the \( ZZZ \) process.
-- `SCRIPTqqZZZ.wls` – Executable script for computing the amplitude and matrix element squared for \( q\bar{q} \to Z \to ZZ \).
-- `SCRIPTcross.wls` – Computes the **cross-section** and saves results in a buffer.
-- `TESTqqZZZ.wl` – Test file for developing new computational methods.
+### **1. `ZZZ_ZWW/` – Main calculations for vertex functions**
+This directory contains the main scripts for calculating amplitudes and interaction coefficients:
+- `Vertex_graphs.wl` – generation of graphs and analysis of vertex functions.
+- `f4calc_ZWW.wl` – calculation of amplitude and extraction of coefficients for the \( ZWW \) process.
+- `f4calc_ZZZ.wl` – calculation of amplitude and extraction of coefficients for the \( ZZZ \) process.
+- `SCRIPTqqZZZ.wls` – executable script for calculating the amplitude and square of the matrix element for the \( q\bar{q} \to Z \to ZZ \) process.
+- `SCRIPTcross.wls` – calculates the **cross-section** of the process and saves the results to the buffer.
+- `TESTqqZZZ.wl` – test file for developing new computational methods.
+- `TestPVphysicalError.wl` – test file for checking physical errors in the \( PV \) process.
 
-Additionally, **backup calculation results** are stored here:
-- `.mx` files – Serialized intermediate computations.
-- `.txt` files – Stored numerical values of coefficients.
+Additionally, this directory stores **backup copies of calculation results**:
+- `.mx` files – serialized intermediate calculations.
+- `.txt` files – saved numerical values of coefficients.
 
-All buffer files, intermediate results, and additional plots are stored in:
-- `ZZZ_ZWW/buffer/` – Temporary buffer files for storing intermediate data.
-- `ZZZ_ZWW/graphs/` – Various graphical representations of calculations.
-- `ZZZ_ZWW/subgraphs/` – Additional subgraphs related to the analysis.
+All buffer files, intermediate results, and additional graphs are stored in:
+- `ZZZ_ZWW/buffer/` – temporary buffer files for storing intermediate data.
+- `ZZZ_ZWW/graphs/` – various graphical representations of calculations.
+- `ZZZ_ZWW/subgraphs/` – additional subgraphs related to the analysis.
 
 ---
 
@@ -104,11 +105,13 @@ For any questions, feel free to contact:
 ### **1. `ZZZ_ZWW/` – Основные вычисления для вершинных функций**
 Этот каталог содержит основные скрипты для вычисления амплитуд и коэффициентов взаимодействий:
 - `Vertex_graphs.wl` – генерация графиков и анализ вершинных функций.
-- `ZWW_full.wl` – расчёт амплитуды и извлечение коэффициентов для процесса \( ZWW \).
-- `ZZZ_amp.wl` – расчёт амплитуды и извлечение коэффициентов для процесса \( ZZZ \).
+- `f4calc_ZWW.wl` – расчёт амплитуды и извлечение коэффициентов для процесса \( ZWW \).
+- `f4calc_ZZZ.wl` – расчёт амплитуды и извлечение коэффициентов для процесса \( ZZZ \).
 - `SCRIPTqqZZZ.wls` – исполняемый скрипт для вычисления амплитуды и квадрата матричного элемента процесса \( q\bar{q} \to Z \to ZZ \).
 - `SCRIPTcross.wls` – вычисляет **сечение процесса** и сохраняет результаты в буфер.
+- `SCRIPT_f4meanvalue.wls` – исполняемый скрипт для вычисления среднего значения f4.
 - `TESTqqZZZ.wl` – тестовый файл для разработки новых вычислительных методов.
+- `TestPVphysicalError.wl` – тестовый файл для проверки физических ошибок в процессе \( PV \).
 
 Дополнительно здесь хранятся **резервные копии результатов вычислений**:
 - `.mx` файлы – сериализованные промежуточные вычисления.

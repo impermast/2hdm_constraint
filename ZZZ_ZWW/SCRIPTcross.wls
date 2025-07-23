@@ -10,9 +10,11 @@ logic = 0;
 	*)
 msg = False;
 particleID = 2;
-(* for PDF not FeynCalc
-*)
-ProcName = "ddZZZ";
+(* for PDF not FeynCalc*)
+
+RecName = "ZWW";
+ProcName = "dd"<>RecName;
+mh2 = 250;
 
 
 (* \:0427\:0442\:0435\:043d\:0438\:0435 \:0430\:0440\:0433\:0443\:043c\:0435\:043d\:0442\:043e\:0432 \:043a\:043e\:043c\:0430\:043d\:0434\:043d\:043e\:0439 \:0441\:0442\:0440\:043e\:043a\:0438 *)
@@ -38,8 +40,8 @@ If[ $Notebooks === False,
 
 (* \:041f\:043e\:0434\:043a\:043b\:044e\:0447\:0435\:043d\:0438\:0435 \:043d\:0435\:043e\:0431\:0445\:043e\:0434\:0438\:043c\:044b\:0445 \:043f\:0430\:043a\:0435\:0442\:043e\:0432 *)
 
-$LoadAddOns = {"FeynArts"};
-$PrePrint = InputForm;
+Quiet[$LoadAddOns = {"FeynArts"}];
+Quiet[$PrePrint = InputForm];
 
 Quiet[<<FeynCalc`] 
 AppendTo[$ModelPath, "/home/kds/.Mathematica/Applications/FeynArts/Models/"];
@@ -51,6 +53,7 @@ Unprotect[PaVe, Li2, A0, A00, B0, B1, B00, B11, DB0, DB1, C0, D0];
 Remove[PaVe, Li2, A0, A00, B0, B1, B00, B11, DB0, DB1, C0, D0];
 
 
+SetDirectory[NotebookDirectory[]];
 Get["../modules/ModelParams.wl"];
 Get["../modules/FunctionalModules.wl"];
 
@@ -61,12 +64,16 @@ csFile  = StringJoin["buffer/cs_", ProcName, ".mx"];
 
 
 (*model params*)
-mh3 = Sqrt[mh2^2+mh1^2];
+
+
+mh3 = Sqrt[mh2^2+mh1^2]//.Params//N;
 a2 = 0.1317; 
 a3 = 0.7854;
+mhc = 400;
+
 Print["-------
 Model parameters in code:
-mh2 = ",mh2,
+mh2 = ",mh2//.Params,
 "\nmh3    = ",mh3,
 "\nalpha2    = ",a2,
 "\nalpha3  = ",a3,
@@ -74,8 +81,8 @@ mh2 = ",mh2,
 
 (*Integration limits*)
 f4experimental = 0.001;
-s0 = 13000^2;
-smin =(2*MZ+0.05)^2;  
+s0 = 1000^2;
+smin =(2*MZ+0.05)^2//.Params;  
 xmin = Sqrt[smin/s0];
 Print["-------\nIntegration limits in code:",
 "\nf4exp    = ",f4experimental,
@@ -89,20 +96,20 @@ If[logic < 2,
 	PrintTG["Loading matrix element."]];
 	
 	{MaElread,MaElreadExp} = Get[meFile];
-	MaElread = MaElread//.SmpChanger//.Params//.AngleChanger;
-	MaElreadExp = MaElreadExp//.SmpChanger//.Params//.AngleChanger//.PaveToLooptools/.{FeynCalc`CA->3}/.{f4exp->f4experimental,SMP["e"]->e};
+	MaElread = MaElread//.SmpChanger//.Params/.{SUNFDelta[SUNFIndex[Col1], SUNFIndex[Col2]]^2->1};
+	MaElreadExp = MaElreadExp//.SmpChanger//.Params//.PaveToLooptools/.{FeynCalc`CA->3}/.{f4exp->f4experimental};
 	MaElreadPTL = MaElread//.PaveToLooptools/.{FeynCalc`CA->3};
 	MaEl[sX_,tX_] := MaElreadPTL/.{s->sX,t->tX};
 	MaElExp[sX_,tX_] := MaElreadExp/.{s->sX,t->tX};
 	,
 	Print["Using demo matrix element."];
-	MaEldemo = Abs[(t^2+s^2)*C0i[cc001,MZ^2,s,MZ^2,mh1^2,mh2^2,mh3^2]/(s-MZ^2)^2];
+	MaEldemo = Abs[(t^2+s^2)*C0i[cc001,MZ^2,s,MZ^2,mh1^2,mh2^2,mh3^2]/(s-MZ^2)^2]//.Params;
 	MaEl[sX_,tX_] := MaEldemo/.{s->sX,t->tX}//N
 ]
 
 If[$Notebooks,
 	Print["Test of matrix function:\n";
-	"Numericaly: ",Abs[MaElExp[(s)^2,900]]];
+	"Numericaly: ",Abs[MaElExp[(s0)^2,900]]];
 ];
 CheckTime[]
 
@@ -145,9 +152,9 @@ If[ logic == 0 || logic == 2 || logic == 4,
 If[msg === True, PrintTG["Working on WidthCross"]];
 Pref[x_] := 1/(16 Pi x^2);
 
-lambda[s_] := s^2 - 4 s MZ^2;
-tmin[s_] := -(s - 2*MZ^2)/2 - Sqrt[lambda[s]]/2;
-tmax[s_] := -(s - 2*MZ^2)/2 + Sqrt[lambda[s]]/2;
+lambda[s_] := s^2 - 4 s MZ^2//.Params;
+tmin[s_] := -(s - 2*MZ^2)/2 - Sqrt[lambda[s]]/2//.Params;
+tmax[s_] := -(s - 2*MZ^2)/2 + Sqrt[lambda[s]]/2//.Params;
 
 (*-s/2 * (1 + Sqrt[1 - (4*ptmin/Sqrt[s0])^2])   -s/2 * (1 - Sqrt[1 - (4*ptmin/Sqrt[s0])^2])*)
 WidthCrossExp[s_] := Pref[s] Integrate[
@@ -214,7 +221,7 @@ CrossSvertkaExp = NIntegrate[
 ];
 formatSciPrec[x_, prec_:3] := ScientificForm[x, prec, NumberFormat -> (Row[{#1, "\[Times]10^", #3}] &)];
 strOutput = StringJoin[
-"params: sqrt(s0) = ",ToString[Sqrt[s0]], ",  f4exp = ",ToString[f4experimental], ",  mh2 = ",ToString[mh2],"\n",
+"params: sqrt(s0) = ",ToString[Sqrt[s0]], ",  f4exp = ",ToString[f4experimental], ",  mh2 = ",ToString[mh2],"  mhc = ",ToString[mhc],"\n",
 "\nCrossSection: ", ToString[formatSciPrec[CrossSvertka*3.9*10^8]], " pb\n",
 "\nCrossSectionExp: ", ToString[formatSciPrec[CrossSvertkaExp*3.9*10^8]], " pb\n"];
 PrintTG[strOutput];

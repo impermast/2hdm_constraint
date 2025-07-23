@@ -1,0 +1,63 @@
+(g^3*MZ^2*Cos[a2]*Cos[a3]*
+  (-(mZ^2*PaVe[1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh1^2, MZ^2, mh2^2}, 
+      PaVeAutoOrder -> True, PaVeAutoReduce -> True]) + 
+   mZ^2*PaVe[1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh1^2, MZ^2, mh3^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True] + 
+   mZ^2*PaVe[1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh2^2, MZ^2, mh1^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True] - 
+   mZ^2*PaVe[1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh2^2, MZ^2, mh3^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True] - 
+   mZ^2*PaVe[1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh3^2, MZ^2, mh1^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True] + 
+   mZ^2*PaVe[1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh3^2, MZ^2, mh2^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True] + 
+   PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh1^2, mh2^2, mh3^2}, 
+    PaVeAutoOrder -> True, PaVeAutoReduce -> True] - 
+   PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh1^2, mh2^2, MZ^2}, 
+    PaVeAutoOrder -> True, PaVeAutoReduce -> True] - 
+   PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh1^2, mh3^2, mh2^2}, 
+    PaVeAutoOrder -> True, PaVeAutoReduce -> True] + 
+   PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh1^2, mh3^2, MZ^2}, 
+    PaVeAutoOrder -> True, PaVeAutoReduce -> True] + 
+   PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh1^2, MZ^2, mh2^2}, 
+    PaVeAutoOrder -> True, PaVeAutoReduce -> True] - 
+   PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh1^2, MZ^2, mh3^2}, 
+    PaVeAutoOrder -> True, PaVeAutoReduce -> True] - 
+   PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh2^2, mh1^2, mh3^2}, 
+    PaVeAutoOrder -> True, PaVeAutoReduce -> True] + 
+   PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh2^2, mh1^2, MZ^2}, 
+    PaVeAutoOrder -> True, PaVeAutoReduce -> True] + 
+   PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh2^2, mh3^2, mh1^2}, 
+    PaVeAutoOrder -> True, PaVeAutoReduce -> True] - 
+   PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh2^2, mh3^2, MZ^2}, 
+    PaVeAutoOrder -> True, PaVeAutoReduce -> True] - 
+   PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh2^2, MZ^2, mh1^2}, 
+    PaVeAutoOrder -> True, PaVeAutoReduce -> True] + 
+   PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh2^2, MZ^2, mh3^2}, 
+    PaVeAutoOrder -> True, PaVeAutoReduce -> True] + 
+   PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh3^2, mh1^2, mh2^2}, 
+    PaVeAutoOrder -> True, PaVeAutoReduce -> True] - 
+   PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh3^2, mh1^2, MZ^2}, 
+    PaVeAutoOrder -> True, PaVeAutoReduce -> True] - 
+   PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh3^2, mh2^2, mh1^2}, 
+    PaVeAutoOrder -> True, PaVeAutoReduce -> True] + 
+   PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh3^2, mh2^2, MZ^2}, 
+    PaVeAutoOrder -> True, PaVeAutoReduce -> True] + 
+   PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh3^2, MZ^2, mh1^2}, 
+    PaVeAutoOrder -> True, PaVeAutoReduce -> True] - 
+   PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh3^2, MZ^2, mh2^2}, 
+    PaVeAutoOrder -> True, PaVeAutoReduce -> True] - 
+   PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {MZ^2, mh1^2, mh2^2}, 
+    PaVeAutoOrder -> True, PaVeAutoReduce -> True] + 
+   PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {MZ^2, mh1^2, mh3^2}, 
+    PaVeAutoOrder -> True, PaVeAutoReduce -> True] + 
+   PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {MZ^2, mh2^2, mh1^2}, 
+    PaVeAutoOrder -> True, PaVeAutoReduce -> True] - 
+   PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {MZ^2, mh2^2, mh3^2}, 
+    PaVeAutoOrder -> True, PaVeAutoReduce -> True] - 
+   PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {MZ^2, mh3^2, mh1^2}, 
+    PaVeAutoOrder -> True, PaVeAutoReduce -> True] + 
+   PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {MZ^2, mh3^2, mh2^2}, 
+    PaVeAutoOrder -> True, PaVeAutoReduce -> True])*Sin[a2]^2*Sin[a3]*
+  SUNFDelta[SUNFIndex[Col1], SUNFIndex[Col2]])/
+ (4*cw^3*Pi^2*SMP["e"]*(s - SMP["m_Z"]^2))

@@ -12,7 +12,8 @@ msg = False;
 particleID = 2;
 (* for PDF not FeynCalc
 *)
-ProcName = "ddZZZ";
+ReactionName = "ZWW";
+ProcName = "dd"<>ReactionName;
 
 
 (* \:0427\:0442\:0435\:043d\:0438\:0435 \:0430\:0440\:0433\:0443\:043c\:0435\:043d\:0442\:043e\:0432 \:043a\:043e\:043c\:0430\:043d\:0434\:043d\:043e\:0439 \:0441\:0442\:0440\:043e\:043a\:0438 *)
@@ -25,7 +26,7 @@ If[Length[$ScriptCommandLine] > 1,
 If[ $FrontEnd === Null, 
     $FeynCalcStartupMessages = False; 
     $LoadFeynCalcMessages = False; 
-    Print["tt>Z>ZZ calculation in 2HDM CPV, 1-loop.\nCalcultion of cross from PDF and matrix."]; 
+    Print["tt>Z>ZZ calculation in 2HDM CPV, 1-loop.\nCalcultion of f4mean."]; 
   ];
 If[ $Notebooks === False, 
 	$FeynCalcStartupMessages = False;
@@ -52,31 +53,33 @@ Unprotect[PaVe, Li2, A0, A00, B0, B1, B00, B11, DB0, DB1, C0, D0];
 Remove[PaVe, Li2, A0, A00, B0, B1, B00, B11, DB0, DB1, C0, D0];
 
 
+SetDirectory[NotebookDirectory[]];
+
 Get["../modules/ModelParams.wl"];
 Get["../modules/FunctionalModules.wl"];
 
 ampFile = StringJoin["buffer/amp_", ProcName, ".mx"];
 meFile  = StringJoin["buffer/me_", ProcName, ".mx"];
 wcFile  = StringJoin["buffer/wc_", ProcName, ".mx"];
-f4teorFile  = "buffer/f4_teor.mx";
+f4teorFile  = "buffer/f4_teor"<>ReactionName<>".mx";
 F4meanFile  = StringJoin["buffer/f4mean_", ProcName, ".mx"];
 
 
 If[ logic === 0,
 If[FileExistsQ[wcFile],
 	WCread = Get[wcFile];
-	WidthCross[ST_] := WCread/.{s->ST};
+	WidthCross[ST_] := WCread[[1]]/.{s->ST,St->ST};
 	,
 	If[msg === True, PrintTG["File with Widthcross not found. Loading matrix element."]];
 	{MaElread,MaElreadExp} = Get[meFile];
 	MaElread = MaElread//.AngleChanger//.Params//.SmpChanger//.PaveToLooptools/.{FeynCalc`CA->3}/.{SMP["m_q"]->0};
-	MaEl[sX_,tX_] := MaElread/.{s->sX,t->tX};
+	MaEl[sX_,tX_] := MaElread/.{St->sX,s->sX,t->tX};
 	If[msg === True, PrintTG["Working on WidthCross"]];
 	Pref[x_] := 1/(16 Pi x^2);
 
-	lambda[s_] := s^2 - 4 s MZ^2;
-	tmin[s_] := -(s - 2*MZ^2)/2 - Sqrt[lambda[s]]/2;
-	tmax[s_] := -(s - 2*MZ^2)/2 + Sqrt[lambda[s]]/2;
+	lambda[s_] := s^2 - 4 s MZ^2//.Params;
+	tmin[s_] := -(s - 2*MZ^2)/2 - Sqrt[lambda[s]]/2//.Params;
+	tmax[s_] := -(s - 2*MZ^2)/2 + Sqrt[lambda[s]]/2//.Params;
 	(*-s/2 * (1 + Sqrt[1 - (4*ptmin/Sqrt[s0])^2])   -s/2 * (1 - Sqrt[1 - (4*ptmin/Sqrt[s0])^2])*)
 	WidthCross[s_] := Abs[Pref[s] Integrate[MaEl[s, t], 
     {t,  tmin[s], tmax[s]}]];                                                                               
@@ -88,6 +91,7 @@ If[FileExistsQ[wcFile],
 If[msg === True,PrintTG["WidthCross calculated."]];
 If[$Notebooks,
 Print[WidthCross[s]//Simplify];
+Print[WidthCross[s0]]
 ];
 ];
 
@@ -107,7 +111,7 @@ xPDF[x_, Q_, id_] := Module[{result, scriptPath, output},
 ]
 
 F4teor = Get[f4teorFile];
-	F4teor = F4teor//.AngleChanger//.Params//.SmpChanger//.PaveToLooptools/.{FeynCalc`CA->3}/.{SMP["m_q"]->0};
+	F4teor = F4teor/.{SMP["m_q"]->0, mZ->MZ, (SUNFDelta[SUNFIndex[Col1], SUNFIndex[Col2]])->1}//.AngleChanger//.Params//.SmpChanger//.PaveToLooptools/.{FeynCalc`CA->3};
 	f4[sX_] := F4teor/.{s->sX};
 	
 
@@ -118,7 +122,8 @@ CheckTime[];
 
 (*model params*)
 mh2 = mh2num;
-mh3 = Sqrt[mh2^2+mh1^2];
+mh3 = Sqrt[mh2^2+mh1^2]//.Params;
+mhc=400;
 a2 = 0.1317; 
 a3 = 0.7854;
 Print["-------
@@ -131,13 +136,16 @@ mh2 = ",mh2,
 
 (*Integration limits*)
 f4experimental = 0.001;
-s0 = 8000^2;
-smin =(2*MZ+0.05)^2;  
+s0 = 1000^2;
+smin =(2*MZ+0.05)^2//.Params;  
 xmin = Sqrt[smin/s0];
 Print["-------\nIntegration limits in code:",
 "\nf4exp    = ",f4experimental,
 "\nsqrt(s0)    = ",Sqrt[s0],
 "\nxmin  = ",xmin//N,"\n--------"];
+
+
+f4[s0]
 
 
 If[ logic === 0,
@@ -156,14 +164,14 @@ Norma = NIntegrate[
    )*)];
 
 CrossSvertka = NIntegrate[
-		f4[s0*(10^kt)]*WidthCross[s0*(10^kt)]*Lexp[10^(kt)]* (Log[10])
+		Abs[f4[s0*(10^kt)]]*WidthCross[s0*(10^kt)]*Lexp[10^(kt)]* (Log[10])
    ,
    {kt, Log10[xmin*xmin], 0},
    Method -> "AdaptiveMonteCarlo"
 ]; 
 F4mean =  Abs[CrossSvertka/Norma];
 
-formatSciPrec[x_] := ScientificForm[x, 3, NumberFormat -> (Row[{#1, "\[Times]10^", #3}] &)];
+formatSciPrec[x_] := ScientificForm[x, 3, NumberFormat -> (Row[{#1, "*10^", #3}] &)];
 strOutput = StringJoin[
 "params: sqrt(s0) = ",ToString[Sqrt[s0]], ",  f4exp = ",ToString[f4experimental], ",  mh2 = ",ToString[mh2],"\n",
 "\n F4mean: ", ToString[formatSciPrec[F4mean]], " \n",

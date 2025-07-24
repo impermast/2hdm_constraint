@@ -62,9 +62,9 @@ AngleRules = Join[
   {
    
    (* ---- 3rd column of R --------------------------------------------------- *)
-    R1x1 | ModelParams`R1x1 :>  pC1 pC2,                      R1x2 | ModelParams`R1x2 :> pS1 pC2                  ,     R1x3 | ModelParams`R1x3 :>  pS2,
-    R2x1 | ModelParams`R2x1 :>  -(pC1 pS2 pS3 + pS1 pC3),     R2x2 | ModelParams`R2x2 :>  -(pS1 pS2 pS3 - pC1 pC3),     R2x3 | ModelParams`R2x3 :>  pS3 pC2,     
-    R3x1 | ModelParams`R3x1 :>  -pC1 pS2 pC3 + pS1 pS3  ,     R3x2 | ModelParams`R3x2 :>  -(pS1 pS2 pC3 + pC1 pS3),     R3x3 | ModelParams`R3x3 :>  pC2 pC3,                   
+    Global`R1x1 | ModelParams`R1x1 :>  pC1 pC2,                      Global`R1x2 | ModelParams`R1x2 :> pS1 pC2                  ,     Global`R1x3 | ModelParams`R1x3 :>  pS2,
+    Global`R2x1 | ModelParams`R2x1 :>  -(pC1 pS2 pS3 + pS1 pC3),     Global`R2x2 | ModelParams`R2x2 :>  -(pS1 pS2 pS3 - pC1 pC3),     Global`R2x3 | ModelParams`R2x3 :>  pS3 pC2,     
+    Global`R3x1 | ModelParams`R3x1 :>  -pC1 pS2 pC3 + pS1 pS3  ,     Global`R3x2 | ModelParams`R3x2 :>  -(pS1 pS2 pC3 + pC1 pS3),     Global`R3x3 | ModelParams`R3x3 :>  pC2 pC3,                   
 
     (* ---- first two columns ------------------------------------------------- *)
     X1 | ModelParams`X1 :>  pC2 (  pCb pC1 + pSb pS1 ),
@@ -125,10 +125,10 @@ SmpChanger = {
 };
 
 PaveToLooptools = {
-   FeynCalc`PaVe[0, 0, 1, {a_, b_, c_}, {d_, e_, f_}, ___] -> LoopTools`C0i[LoopTools`cc001, a, b, c, d, e, f],
-   FeynCalc`PaVe[0, 0, 2, {a_, b_, c_}, {d_, e_, f_}, ___] -> LoopTools`C0i[LoopTools`cc002, a, b, c, d, e, f],
-   FeynCalc`PaVe[1, {a_, b_, c_}, {d_, e_, f_}, ___] -> LoopTools`C0i[LoopTools`cc1, a, b, c, d, e, f],
-   FeynCalc`PaVe[2, {a_, b_, c_}, {d_, e_, f_}, ___] -> LoopTools`C0i[LoopTools`cc2, a, b, c, d, e, f],
+   FeynCalc`PaVe[0, 0, 1, {pa_, pb_, pc_}, {pd_, pE_, pf_}, ___] -> LoopTools`C0i[LoopTools`cc001, pb, pa, pc, pd, pE, pf],
+   FeynCalc`PaVe[0, 0, 2, {pa_, pb_, pc_}, {pd_, pE_, pf_}, ___] -> LoopTools`C0i[LoopTools`cc002, pb, pa, pc, pd, pE, pf],
+   FeynCalc`PaVe[1,  {pa_, pb_, pc_}, {pd_, pE_, pf_}, ___] -> LoopTools`C0i[LoopTools`cc1, pb, pa, pc, pd, pE, pf],
+   FeynCalc`PaVe[2,  {pa_, pb_, pc_}, {pd_, pE_, pf_}, ___] -> LoopTools`C0i[LoopTools`cc2, pb, pa, pc, pd, pE, pf],
    FeynCalc`PaVeAutoOrder -> Sequence[],
    FeynCalc`PaVeAutoReduce -> Sequence[]
 };

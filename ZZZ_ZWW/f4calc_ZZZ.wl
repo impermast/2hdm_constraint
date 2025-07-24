@@ -18,7 +18,11 @@ Install["LoopTools"]
 Needs["LoopTools`"]
 
 
-f4adress = "/home/kds/sci/zzz/2hdm_constraint/ZZZ_ZWW/buffer/F4ZZZ.txt"
+SetDirectory[NotebookDirectory[]];
+f4adress = "buffer/F4ZZZ.txt"
+
+Get["../modules/FunctionalModules.wl"];
+Get["../modules/ModelParams.wl"];
 
 
 (* ::Section:: *)
@@ -53,6 +57,7 @@ Model -> THDMCPV, ExcludeParticles -> {F[_], V[1], V[3], S[2], S[3], U[_]}, Last
 diags1 = DiagramExtract[diagsHHZ, {1..6}];
 diags2 = DiagramExtract[diagsHHZ, {7..12}];
 diags3 = DiagramExtract[diagsHHZ, {13..18}];
+diagsZZZ = DiagramExtract[diagsHHZ, {1..18}];
 diags4 = diagsHHH;
 diags5 = diagsHHG;
 
@@ -93,21 +98,21 @@ Paint[diags5, ColumnsXRows -> {6, 1}, Numbering -> Simple, SheetHeader -> None, 
 (*Obtain the amplitude*)
 
 
-ampHHZ[0] = FCFAConvert[CreateFeynAmp[diags1,Truncated -> True], 
+ampHHZ[0] = FCFAConvert[CreateFeynAmp[diagsZZZ,Truncated -> True], 
 		IncomingMomenta->{P}, OutgoingMomenta->{p1,p2},LorentzIndexNames->{\[Mu],\[Alpha],\[Beta]},LoopMomenta->{q},
-		UndoChiralSplittings->True,ChangeDimension->D,List->False, SMP->False, Contract-> True, DropSumOver->True]/.q->q+P
-ampHHZ[0]+= FCFAConvert[CreateFeynAmp[diags2,Truncated -> True], 
+		UndoChiralSplittings->True,ChangeDimension->D,List->False, SMP->True, Contract-> True, DropSumOver->True]
+(*ampHHZ[0]+= FCFAConvert[CreateFeynAmp[diags2,Truncated -> True], 
 		IncomingMomenta->{P}, OutgoingMomenta->{p1,p2},LorentzIndexNames->{\[Mu],\[Alpha],\[Beta]},LoopMomenta->{q},
-		UndoChiralSplittings->True,ChangeDimension->D,List->False, SMP->False, Contract-> True, DropSumOver->True]/.q->q+P/.p2->P-p1
+		UndoChiralSplittings->True,ChangeDimension->D,List->False, SMP->False, Contract-> True, DropSumOver->True](*/.q->q+P/.p2->P-p1*)
 ampHHZ[0]+= FCFAConvert[CreateFeynAmp[diags3,Truncated -> True], 
 		IncomingMomenta->{P}, OutgoingMomenta->{p1,p2},LorentzIndexNames->{\[Mu],\[Alpha],\[Beta]},LoopMomenta->{q},
-		UndoChiralSplittings->True,ChangeDimension->D,List->False, SMP->False, Contract-> True, DropSumOver->True]/.q->q+P/.p1->P-p2
+		UndoChiralSplittings->True,ChangeDimension->D,List->False, SMP->False, Contract-> True, DropSumOver->True](*/.q->q+P/.p1->P-p2*)*)
 ampHHH[0]= FCFAConvert[CreateFeynAmp[diags4,Truncated -> True], 
 		IncomingMomenta->{P}, OutgoingMomenta->{p1,p2},LorentzIndexNames->{\[Mu],\[Alpha],\[Beta]},LoopMomenta->{q},
-		UndoChiralSplittings->True,ChangeDimension->D,List->False, SMP->False, Contract-> True, DropSumOver->True]/.q->q+P/.p1->P-p2/.p2->P-p1;
+		UndoChiralSplittings->True,ChangeDimension->D,List->False, SMP->True, Contract-> True, DropSumOver->True](*/.q->q+P/.p1->P-p2/.p2->P-p1*);
 ampHHG[0]= FCFAConvert[CreateFeynAmp[diags5,Truncated -> True], 
 		IncomingMomenta->{P}, OutgoingMomenta->{p1,p2},LorentzIndexNames->{\[Mu],\[Alpha],\[Beta]},LoopMomenta->{q},
-		UndoChiralSplittings->True,ChangeDimension->D,List->False, SMP->False, Contract-> True, DropSumOver->True]/.q->q+P/.p1->P-p2/.p2->P-p1;
+		UndoChiralSplittings->True,ChangeDimension->D,List->False, SMP->True, Contract-> True, DropSumOver->True](*/.q->q+P/.p1->P-p2/.p2->P-p1*);
 		
 (* \:0421 \:043f\:0440\:0435\:0444\:0430\:043a\:0442\:043e\:0440\:043e\:043c =1
 ampHHZ[0] = FCFAConvert[CreateFeynAmp[diags1,Truncated -> True,PreFactor->1], 
@@ -157,8 +162,9 @@ MZ=mZ;
 
 
 Print["HHZ"]
-ampHHZ[2]=ampHHZ[1]//DiracSimplify//TID[#(*/.{p2->P-p1, p1->P-p2}*),q,ToPaVe->True,UsePaVeBasis->True]&//Simplify
+ampHHZ[2]=ampHHZ[1]//DiracSimplify//TID[#/.{p1->P-p2}(*/.{p2->P-p1, p1->P-p2}*),q,ToPaVe->True,UsePaVeBasis->True]&//Simplify;
 (*ampHHZ[2] =  ampHHZ[2]/.{Momentum[P,\[Mu]]->0, Momentum[p1,\[Mu]]->0, Momentum[p2,\[Mu]]->0};*)
+ampHHZ[2]//Simplify
 Print["HHH"]
 ampHHH[2]=ampHHH[1]//DiracSimplify//TID[#,q,ToPaVe->True,UsePaVeBasis->True]&//Simplify
 (*ampHHH[2] =  ampHHH[2]/.{Momentum[P,\[Mu]]->0, Momentum[p1,\[Mu]]->0, Momentum[p2,\[Mu]]->0}*)
@@ -175,70 +181,47 @@ ampHHG[2]=ampHHG[1]//DiracSimplify//TID[#(*/.{p2->P-p1, p1->P-p2}*),q,ToPaVe->Tr
 
 
 Print["HHZ:"];
-HHZcheck = Coefficient[ampHHZ[2],{FCI[FVD[P,\[Alpha]]MTD[\[Beta],\[Mu]]],FCI[FVD[P,\[Beta]]MTD[\[Alpha],\[Mu]]]}];
-If[HHZcheck[[1]]===HHZcheck[[2]],
-f4ZHHZ[s_,mh1_,mh2_,mh3_]:= FullSimplify[ HHZcheck[[1]]];
+f4ZHHZ[s_,mh1_,mh2_,mh3_]:= FullSimplify[
+(*Coefficient[ampHHZ[2],FCI[FVD[P,\[Alpha]] MTD[\[Mu],\[Beta]]]]+*)
+Coefficient[ampHHZ[2],FCI[MTD[\[Alpha],\[Mu]]FVD[P,\[Beta]]]]
 ];
 FullSimplify[f4ZHHZ[s,mh1,mh2,mh3]]
 (* 
 FVD[P,beta] -- D lorenz vector p^beta|
 MTD[mu,alpha] -- metric with mu alpha indexes
 *)
-Print["HHH:"];
-HHHcheck = Coefficient[ampHHH[2],{FCI[FVD[P,\[Alpha]]MTD[\[Beta],\[Mu]]],FCI[FVD[P,\[Beta]]MTD[\[Alpha],\[Mu]]]}];
-If[HHHcheck[[1]]===HHHcheck[[2]],
-f4ZHHH[s_,mh1_,mh2_,mh3_]:= FullSimplify[ HHHcheck[[1]]];
-];
+Print["HHH:"]
+f4ZHHH[s_,mh1_,mh2_,mh3_]:= FullSimplify[
+Coefficient[ampHHH[2],FCI[FVD[p1,\[Alpha]] MTD[\[Mu],\[Beta]]]]+
+Coefficient[ampHHH[2],FCI[FVD[p2,\[Alpha]] MTD[\[Mu],\[Beta]]]]+
+Coefficient[ampHHH[2],FCI[MTD[\[Alpha],\[Mu]]FVD[p2,\[Beta]]]]+
+Coefficient[ampHHH[2],FCI[MTD[\[Alpha],\[Mu]]FVD[p1,\[Beta]]]]
+]/4;
 FullSimplify[f4ZHHH[s,mh1,mh2,mh3]]
 
 
-Print["HHG:"];
-HHGcheck = Coefficient[ampHHG[2],{FCI[FVD[P,\[Alpha]]MTD[\[Beta],\[Mu]]],FCI[FVD[P,\[Beta]]MTD[\[Alpha],\[Mu]]]}];
-If[HHGcheck[[1]]===HHGcheck[[2]],
-f4ZHHG[s_,mh1_,mh2_,mh3_]:= FullSimplify[ HHGcheck[[1]]],
-f4ZHHG[s_,mh1_,mh2_,mh3_]:=0;
-];
+Print["HHG:"]
+f4ZHHG[s_,mh1_,mh2_,mh3_]:= FullSimplify[
+Coefficient[ampHHG[2],FCI[FVD[p1,\[Alpha]] MTD[\[Mu],\[Beta]]]]+
+Coefficient[ampHHG[2],FCI[FVD[p2,\[Alpha]] MTD[\[Mu],\[Beta]]]]+
+Coefficient[ampHHG[2],FCI[MTD[\[Alpha],\[Mu]]FVD[p2,\[Beta]]]]+
+Coefficient[ampHHG[2],FCI[MTD[\[Alpha],\[Mu]]FVD[p1,\[Beta]]]]
+]/4;
 FullSimplify[f4ZHHG[s,mh1,mh2,mh3]]
+
+
 Print["Summ = "]
-f4Z[s_,mh1_,mh2_,mh3_,pref_]:=pref*f4ZHHZ[s,mh1,mh2,mh3]+f4ZHHH[s,mh1,mh2,mh3]+f4ZHHG[s,mh1,mh2,mh3];
-FullSimplify[f4Z[s,mh1,mh2,mh3,pref]]
+f4Z[s_,mh1_,mh2_,mh3_]:=f4ZHHZ[s,mh1,mh2,mh3]+f4ZHHH[s,mh1,mh2,mh3]+f4ZHHG[s,mh1,mh2,mh3];
+FullSimplify[f4Z[s,mh1,mh2,mh3]]
 
 
 (* ::Section:: *)
 (*Parsing to LoopTools*)
 
 
-args = {s,mh1,mh2,mh3,pref};
-str=f4Z[s,mh1,mh2,mh3,pref];
 Print["Before changes:"]
-str=ToString[str, InputForm];
-(*
-str=StringReplace[str, {"PaVe[1, {" -> "PaVe[0, 1, 0, {"}];
-str=StringReplace[str, {"PaVe[2, {" -> "PaVe[0, 0, 1, {"}];
-str=StringReplace[str, {"A0[" -> "PaVe[0, "}];
-str=StringReplace[str, {"B0[" -> "PaVe[0, 0, "}];
-str=StringReplace[str, {"C0[" -> "PaVe[0, 0, 0, "}];
-str=StringReplace[str, {"C1[" -> "PaVe[0, 1, 0, "}];
-str=StringReplace[str, {"C2[" -> "PaVe[0, 0, 1, "}];
-str=StringReplace[str, {"PaVe[0, 0, {" -> "PaVe[1, 0, 0, {"}];
-str=StringReplace[str, {"PaVe[0, 0, 1, {" -> "PaVe[1, 1, 0, {"}];
-str=StringReplace[str, {"PaVe[0, 0, 2, {" -> "PaVe[1, 0, 1, {"}];
-str=StringReplace[str, {", PaVeAutoOrder -> True, PaVeAutoReduce -> True" -> "", "{" -> "", "}" -> "", "PaVe" -> "PVX"}];
-str=StringReplace[str, {"SMP[\"m_W\"]" -> "mW"}];
-*)
-str=StringReplace[str, {"PaVe[1, {" -> "C0i[cc1, {"}];
-str=StringReplace[str, {"PaVe[2, {" -> "PaVe[0, 0, 1, {"}];
-str=StringReplace[str, {"C1[" -> "C0i[cc1, "}];
-str=StringReplace[str, {"C2[" -> "C0i[cc2, "}];
-str=StringReplace[str, {"PaVe[0, 0, {" -> "PaVe[1, 0, 0, {"}];
-str=StringReplace[str, {"PaVe[0, 0, 1, {" -> "C0i[cc001, {"}];
-str=StringReplace[str, {"PaVe[0, 0, 2, {" -> "PaVe[1, 0, 1, {"}];
-str=StringReplace[str, {"FeynCalc`" -> "LoopTools`"}];
-str=StringReplace[str, {"X1*X2*X3" -> "pref"}];
-str=StringReplace[str, {", PaVeAutoOrder -> True, PaVeAutoReduce -> True" -> "", "{" -> "", "}" -> ""}];
-str=StringReplace[str, {"SMP[\"m_W\"]" -> "mW"}];
-
-
+f4Z[s,m1,m2,m3]//Simplify
+str = f4Z[s,m1,m2,m3]//.AngleChanger//.PaveToLooptools//Simplify;
 Print["After changes:"]
 str
 
@@ -248,6 +231,9 @@ str
 
 
 Export[f4adress,str,"Text"]
+
+
+ 
 
 
 (* ::Section:: *)

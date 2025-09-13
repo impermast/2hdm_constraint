@@ -211,7 +211,7 @@ FullSimplify[f4ZHHG[s,mh1,mh2,mh3]]
 
 
 Print["Summ = "]
-f4Z[s_,mh1_,mh2_,mh3_]:=f4ZHHZ[s,mh1,mh2,mh3]+f4ZHHH[s,mh1,mh2,mh3]+f4ZHHG[s,mh1,mh2,mh3];
+f4Z[s_,mh1_,mh2_,mh3_]:=(f4ZHHZ[s,mh1,mh2,mh3]+f4ZHHH[s,mh1,mh2,mh3]+f4ZHHG[s,mh1,mh2,mh3])*mZ^2/(SMP["e"]*(s-mZ^2));
 FullSimplify[f4Z[s,mh1,mh2,mh3]]
 
 

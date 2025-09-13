@@ -4,7 +4,7 @@
 (*PV-graphs*)
 
 
-description="Mnel El -> Mnel El, MSSM, matrix element squared, tree";
+description="Graphs for ZZZ ZWW from txt files of f4Z 2hdm";
 If[ $FrontEnd === Null,
 	$FeynCalcStartupMessages = False;
 	Print[description];
@@ -33,26 +33,27 @@ LogRange1[a_?NumericQ, b_?NumericQ, n_Integer] :=
 
 (*Main params of graphs*)
 (*Number of points in graphs  N=*)
-PointNumber = 1000;
-ContoursNumber = 30;
+PointNumber = 200;
+ContoursNumber = 10;
 GraphTheme = ColorData["Rainbow"];
 SavePDF = 1; (*1--save, 0--dont*)
-ReCalculateTable = 0; (*1--recalculate,  0 -- no*)
+ReCalculateTable = 1; (*1--recalculate,  0 -- no*)
 
 
 SetDirectory[NotebookDirectory[]]
+Get["../modules/ModelParams.wl"];
 Get["../modules/SaveToCSVmodule.wl"];
 
 
-SavePath = "graphs/";
+SavePath = "subgraphs/";
 str    = Import["buffer/F4ZZZ.txt"];
 strZWW = Import["buffer/F4ZWW.txt"];
 
 
-\[Alpha]2max =  0.955317;(* Lightest Higgs is a pure scalar*)
+\[Alpha]2max =  0.955317;(* optimal alpha*)
 \[Alpha]3max = 0.785398;
 \[Alpha]2=0.5
-\[Alpha]3=0.1
+\[Alpha]3=\[Alpha]3max
 (*constraints on f4 ZZZ*)
 constraitF4Z300 = 1.9*10^(-4);
 constraitF4Z3000 = 2*10^(-5);
@@ -64,54 +65,21 @@ constraitF4ZWW = 2*10^(-4);
 constraitF2ZWW = 2*10^(-4);
 
 
-(*mhc=300*10^(-3);*)
-
-
-gw = 1/sw;
-g1 = 1/cw;
-g=g1;
-gc22 = -gw*sw; gc24 =  gw*sw; gc26 = -gw*sw;
-gc29 =  cw*gw; gc31 = -cw*gw; gc33 =  gw*sw;
-gc36 = -cw*gw; gc38 =  cw*gw; gc40 = -cw*gw;
-gc42 =  cw*gw;
-
-k = 10^(-3);
-
-mZ=91.187*k;
-m_Z=mZ;
-SMP["m_Z"]=mZ;
-mW=80.385*k;
-m_W=mW;
-m1=125.5*k;
-m2=500*k;
-m3=Sqrt[m2^2+v^2];
-mc=m2*1.2;
-v=246.22*k;
-vev=v;
-cw=mW/mZ;
-sw=Sqrt[1-cw^2];
-(*g=2*mW/v;
-q=g*sw;*)
-SP[P,P]=s;
-
-
 (* ::Section:: *)
 (*Getting F4 funcs from file*)
 
 
-args = {s,mh1,mh2,mh3,pref};
+args = {s,mh1,mh2,mh3,a1,a2,a3};
 argsZWW = {s,mh1,mh2,mh3,mhc,a1,a2,a3};
-Print["Funcs:"]
+Print["input Funcs:"]
 str
 strZWW
 Activate[Inactive[SetDelayed][ToExpression["FZZZ"]@@(Pattern[#,_]&/@args),ToExpression[str]]];
 Activate[Inactive[SetDelayed][ToExpression["FZWW"]@@(Pattern[#,_]&/@argsZWW),ToExpression[strZWW]]];
 (*Abs[FZZZ[1,0.3,0.4,0.5,1]]*)
-FullSimplify[FZZZ[s,mh1,mh2,mh3,pref]]
-FullSimplify[FZWW[s,mh1,mh2,mh3,mhc,a1,a2,a3]];
-
-
-prefactorZWW[a1_,a2_,a3_] := g^3/(16\[Pi]^2 cw) x1[a1,a2,a3] x2[a1,a2,a3] x3[a1,a2,a3];
+Print["generated funcs"]
+FullSimplify[FZZZ[s,mh1,mh2,mh3,a1,a2,a3]//.SmpChanger//.Params]
+FullSimplify[FZWW[Q^2,mh1,mh2,mh3,MHC,a1,a2,a3]//.SmpChanger//.Params];
 
 
 (* ::Section:: *)
@@ -120,8 +88,6 @@ prefactorZWW[a1_,a2_,a3_] := g^3/(16\[Pi]^2 cw) x1[a1,a2,a3] x2[a1,a2,a3] x3[a1,
 
 Print["Work with alpha params:"];
 \[Alpha]1 = \[Pi]/20;
-\[Alpha]2max =  0.955317;(* Lightest Higgs is a pure scalar*)
-\[Alpha]3max = 0.785398;
 
 
 beta = \[Alpha]1;
@@ -138,8 +104,6 @@ Y2[a1_,a2_,a3_]:=R22[a1,a2,a3]*Cos[a1]-R21[a1,a2,a3]*Sin[a1];
 Y3[a1_,a2_,a3_]:=R32[a1,a2,a3]*Cos[a1]-R31[a1,a2,a3]*Sin[a1];
 
 Print["Prefactor:"]
-FullSimplify[(Y1[a1,a2,a3]*R23[a1,a2,a3]-R13[a1,a2,a3]*Y2[a1,a2,a3])];
-FullSimplify[(Y1[a1,a2,a3]*Y2[a1,a2,a3]+R23[a1,a2,a3]*R13[a1,a2,a3])x3[a1,a2,a3]];
 
 prefactor[a1_,a2_,a3_] := x1[a1,a2,a3] x2[a1,a2,a3] x3[a1,a2,a3];
 FullSimplify[prefactor[a1,a2,a3]]
@@ -152,9 +116,22 @@ SuperscriptBox[\(g\), \(3\)], \(16
 \*SuperscriptBox[\(cw\), \(3\)]\)]\)prefactor[\[Alpha]1,\[Alpha]2,\[Alpha]3];
 
 
-FZWWbar[q_,mh1_,mh2_,mhc_] := Abs[Abs[FZWW[q^2,mh1,mh2,Sqrt[mh2^2+v^2],mhc,\[Alpha]1,\[Alpha]2,\[Alpha]3]]/prefmax];
-FplotZWW[q_,mh1_,mh2_,mhc_]:=Abs[Abs[FZWW[q^2,mh1,mh2,Sqrt[mh2^2+v^2],mhc,\[Alpha]1,\[Alpha]2,\[Alpha]3]]];(*x^2 -- \:0447\:0442\:043e\:0431\:044b \:043f\:043e\:0434\:0441\:0442\:0430\:0432\:043b\:044f\:0442\:044c sqrt(s)=TeV *)
+k=1;
+mZ= MZ;
+v=vev;
+mW=MW;
 
+
+(* X3 (R1x3+\[ImaginaryI] Y1) (Y2+\[ImaginaryI] R2x3)//.AngleChanger//Simplify
+FullSimplify[x3[a1,a2,a3](I*Y1[a1,a2,a3]+R13[a1,a2,a3])(I R23[a1,a2,a3]+Y2[a1,a2,a3])]*)
+
+
+FplotZZZ[s_,mh2_,mhc_]:=Abs[FZZZ[s,mh1,mh2,Sqrt[mh2^2+v^2],\[Alpha]1,\[Alpha]2max,\[Alpha]3max]]//.SmpChanger//.Params;
+FplotZWW[s_,mh2_,mhc_]:=Abs[FZWW[s,mh1,mh2,Sqrt[mh2^2+v^2],mhc,\[Alpha]1,\[Alpha]2max,\[Alpha]3max]]//.SmpChanger//.Params;
+
+
+FplotZZZ[200^2,100,400]
+FplotZZZ[s,mh2,mhc]
 
 
 (* ::Section:: *)
@@ -162,62 +139,101 @@ FplotZWW[q_,mh1_,mh2_,mhc_]:=Abs[Abs[FZWW[q^2,mh1,mh2,Sqrt[mh2^2+v^2],mhc,\[Alph
 
 
 (* ::Subsection:: *)
+(*CSV data*)
+
+
+FplotZZZ[300^2, 250, mhc] //.SmpChanger//.Params
+
+
+PointNumber = 500;
+xmin = 183.4; xmax = 600;
+ymin = 183.4; ymax = 600;
+
+xs = Subdivide[xmin, xmax, PointNumber];
+ys = Subdivide[ymin, ymax, PointNumber];
+pairs = Tuples[{xs,ys}];
+
+ClearAll[fNum, fNumW];
+fNum[x_?NumericQ, y_?NumericQ] := Log10 @ N @ (FplotZZZ[x^2, y, 1] //.SmpChanger//.Params);
+
+fNumW[x_?NumericQ, y_?NumericQ] := Module[{val},
+  val = FplotZWW[x^2, y, Sqrt[y^2+v^2]] //. SmpChanger//. Params;
+  Log10 @ N[val]
+];
+Print[First[xs]]
+
+
+(*\:043f\:043e\:0434\:043a\:043b\:044e\:0447\:0435\:043d\:0438\:0435 \:0437\:0430\:043c\:0435\:043d smpchanger params \:0432 \:043f\:0430\:0440\:0430\:043b\:0435\:043b\:0435\:0437\:0430\:0446\:0438\:044e*)
+DistributeDefinitions[FplotZZZ, SmpChanger, Params, mhc, xs, ys,pairs];
+ParallelEvaluate[{Head[SmpChanger], Head[Params]}]
+
+
+vals = Map[({#1, #2, fNum[#1, #2]} & @@ #) &, pairs];
+Print["Ready"];
+vals[[2]]
+
+
+Export[FileNameJoin[{Directory[], "backfiles", "f4Z_m2q.csv"}],
+       Prepend[vals, {"q","m2","log10_f4ZZZ"}], "CSV"];
+
+
+ 
+
+
+(*vals1 = Parallelize @ Outer[fNumW, xs, ys];
+
+(* \:0424\:043e\:0440\:043c\:0438\:0440\:0443\:0435\:043c \:043f\:043b\:043e\:0441\:043a\:0443\:044e \:0442\:0430\:0431\:043b\:0438\:0446\:0443 {q, m2, log10_f4ZZZ} *)
+table1 = Flatten[
+  Table[{xs[[i]], ys[[j]], vals1[[i, j]]}, {i, Length[xs]}, {j, Length[ys]}]
+, 1];*)
+
+
+Print["Ready"];
+Export[FileNameJoin[{Directory[], "backfiles", "f4W_m2q.csv"}], table, "CSV"];
+
+(* \:041f\:0440\:043e\:0432\:0435\:0440\:043a\:0430 *)
+Print[First[table1]];
+
+
+(* ::Subsection:: *)
 (*F4 ZZZ*)
 
 
-(*b=m2
-label0 = Text[Style["m_H=" <> ToString[b] <> " TeV", FontSize -> 14, FontFamily -> "Arial", 
-       Background -> LightGray, Frame -> True, FrameStyle -> Directive[Thick, Black]], {1.3, -10}];
-plot1 = LogPlot[N[Abs[FZZZ[x,m1,b,Sqrt[b^2+v^2],prefactor[\[Alpha]1,\[Alpha]2,\[Alpha]3]]/pref0]],{x,0.2,1.0},
+FplotZZZ[s,mh2,mhc]
+
+
+b=250;
+c= 400;
+label0 = Text[Style["m_H=" <> ToString[b] <> " TeV", FontSize -> 14, FontFamily -> "Arial", {1.3, -10}]];
+plot1 = Plot[
+		{Re[FZZZ[x*MZ^2,mh1,b,c,\[Alpha]1,\[Alpha]2max,\[Alpha]3max]]/.SmpChanger/.Params,
+		Im[FZZZ[x*MZ^2,mh1,b,c,\[Alpha]1,\[Alpha]2max,\[Alpha]3max]]/.SmpChanger/.Params}
+		,{x,6,40},
   GridLines -> Automatic,
   ImageSize->400,
-  PlotRange->{10^(-5),1},
+  PlotRange->{-0.3*10^(-4),0.3*10^(-4)},
   Epilog -> label0,
-  AxesLabel -> {"q, TeV", "f4_hat"}];
-  (*Pic logic*)
- If[b === 0.5, img1 = Import["/home/kds/ZZZ/plot500.pdf"];,
- If[b === 1, img1 = Import["/home/kds/ZZZ/plot1000.pdf"];, 
- img1 = Import["/home/kds/ZZZ/plot2000.pdf"];]];
-Row[{plot1, Graphics[{Inset[img1, Scaled[{0.5, 0.5}], Automatic, Scaled[1]]}, ImageSize -> 400]}]*)
+  AxesLabel -> {"q^2/MZ^2", "f4"}];
+Show[plot1]
 
 
-(*p = 0.5
-img2 = Import["/home/kds/ZZZ/plot2.pdf"]
-label1 = Text[Style["p=" <> ToString[p] <> " TeV", FontSize -> 14, FontFamily -> "Arial", FontWeight -> Bold, 
-       Background -> LightGray], {1, 10^(-5)}];
-data = Table[{x, N[Abs[FZZZ[p, m1, x, Sqrt[x^2+v^2],prefactor[\[Alpha]1,\[Alpha]2,Pi/4]]]]}, {x, 0.1, 10,0.01}] // N;
-l = ListLogLogPlot[data,
-PlotMarkers -> Automatic,
-Epilog -> label1, 
-AxesLabel -> {"m_H, TeV", "Abs[f4]"}, 
-PlotRange -> {10^-8,10^-4},
-GridLines -> Automatic];
-
-Show[l]*)
-
-
-
+b=250;
+c= 400;
+label0 = Text[Style["m_H=" <> ToString[b] <> " TeV", FontSize -> 14, FontFamily -> "Arial", {1.3, -10}]];
+plotZWW = Plot[
+		{Re[FZWW[x*MW^2,mh1,b,c,c,\[Alpha]1,\[Alpha]2max,\[Alpha]3max]]//.SmpChanger//.Params,
+		Im[FZWW[x*MW^2,mh1,b,c,c,\[Alpha]1,\[Alpha]2max,\[Alpha]3max]]//.SmpChanger//.Params}
+		,{x,10,100},
+  GridLines -> Automatic,
+  ImageSize->400,
+  PlotRange->{-3*10^(-4),3*10^(-4)},
+  Epilog -> label0,
+  AxesLabel -> {"q^2/MW^2", "f4_{ZWW}"}];
+Show[plotZWW]
 
 
 (* ::Text:: *)
 (*2d graph of prefactor*)
-
-
-(*p1 = 0.5
-b = m2
-
-plotZZZa2a3 = ContourPlot[
-  Abs[prefactor[\[Alpha]1,x,y]], 
-  {x, -\[Pi]/2, \[Pi]/2}, {y, 0, \[Pi]/2},
-  ColorFunction -> GraphTheme, 
-  LabelStyle -> Directive[FontSize -> 14, FontFamily -> "Helvetica"],
-    BaseStyle -> {FontSize -> 18},
-  PlotPoints->PointNumber,
-  ImageSize->600,
-  FrameLabel -> {"\[Alpha]2", "\[Alpha]3"},
-  PlotLegends -> Automatic
-];
-*)
 
 
 (* ::Text:: *)
@@ -254,35 +270,18 @@ Export[SavePath <> "ZZZ_f4_m2a3.pdf", plotZZZm2s];
 
 
 
-xmin = 0.2; xmax = 3;
-ymin = 0.2; ymax = 3;
-step = 0.05;
-table = Reap[
-  Do[
-    f = Log10[Abs[FZZZ[x, m1, y, Sqrt[y^2 + v^2], prefmax]]];
-    Sow[{N[x], N[y], N[f]}],
-    {x, xmin, xmax, step},
-    {y, ymin, ymax, step}
-  ]
-][[2, 1]];
-Print[table[[1]]]
 
-SaveTableToCSV[
-	{"q","m2","log10_f4ZZZ"},
-	table,
-	FileNameJoin[{Directory[],"backfiles/f4Z_m2q.csv"}]
-];
 
 
 (* ::Text:: *)
 (*F4ZZZ from m2 for different s*)
 
 
-p=0.5
+p=500
 Print["Start graph F4Z(m2) for different q"]
-xmin = 0.1;     xmax = 4.0;
+xmin = 408.5*k;     xmax = 409*k;
 ymin = 10^(-8); ymax = 10^(-3);
-data = Table[{x,N[Abs[FZZZ[p, m1, x, Sqrt[x^2+v^2],prefmax]]]}, {x,LogRange1[xmin,xmax,PointNumber]}]//N;
+data = Table[{x,FplotZZZ[p^2,x,1]}, {x,LogRange1[xmin,xmax,PointNumber]}]//N;
 l = ListLogLogPlot[data,
     PlotMarkers -> None,
     Ticks->Automatic,
@@ -295,13 +294,17 @@ l = ListLogLogPlot[data,
 
 
 
+FplotZZZ[p^2,408.82,1]
+(*\:0440\:0430\:0437\:0440\:044b\:0432\:0430 \:043d\:0435\:0442, \:0430\:0440\:0442\:0435\:0444\:0430\:043a\:0442 \:0432\:044b\:0447\:0438\:0441\:043b\:0435\:043d\:0438\:044f looptools*)
+
+
 (* ::Text:: *)
 (*Start graph F4Z(m2) for different q*)
 
 
-xmin = 0.126;     xmax = 2.1;
-ymin = 10^(-7); ymax = 10^(-3);
-slist = {0.2,0.3,0.4, 0.5,0.7, 1, 2};
+xmin = 126*k;     xmax = 500*k;
+ymin = 10^(-6); ymax =0.5 10^(-3);
+slist = {200,250,300,350,500}*k;
 plots = {};
 extr={};
 hiConstr={};
@@ -316,9 +319,9 @@ Do[
   	, {i, Length[slistextr]}];*)
 
 colors = GraphTheme /@ Rescale[Range[Length[slist]], {1, Length[slist]}];
-legend = SwatchLegend[colors, slist, LegendLayout -> "Column", LegendLabel -> "q, TeV", LegendFunction -> Framed];
+legend = SwatchLegend[colors, slist, LegendLayout -> "Column", LegendLabel -> "q, GeV", LegendFunction -> Framed];
 Do[
-     data = Table[{x, N[Abs[FZZZ[slist[[i]]^2, m1, x, Sqrt[x^2 + v^2], prefmax]]]}, {x, LogRange1[xmin, xmax, PointNumber]}];
+     data = Table[{x, FplotZZZ[slist[[i]]^2, x, 1]}, {x, LogRange1[xmin, xmax, PointNumber]}];
      
      level = constraitF4Z3000;
 		crossings = Select[
@@ -342,8 +345,8 @@ Do[
       PlotLegends -> legend,
       LabelStyle -> Directive[FontSize -> 14, FontFamily -> "Helvetica"],
       BaseStyle -> {FontSize->14},
-      AxesLabel -> {Text[Style["\!\(\*TemplateBox[<|\"boxes\" -> FormBox[RowBox[{SubscriptBox[StyleBox[\"m\", \"TI\"], \"2\"], \",\"}], TraditionalForm], \"errors\" -> {}, \"input\" -> \"m_2,\", \"state\" -> \"Boxes\"|>,\n\"TeXAssistantTemplate\"]\) TeV", FontSize -> 16]],
-         Text[Style["\!\(\*TemplateBox[<|\"boxes\" -> FormBox[SubsuperscriptBox[StyleBox[\"f\", \"TI\"], \"4\", StyleBox[\"Z\", \"TI\"]], TraditionalForm], \"errors\" -> {}, \"input\" -> \"f_ 4^Z\", \"state\" -> \"Boxes\"|>,\n\"TeXAssistantTemplate\"]\)", FontSize -> 16]]},
+      AxesLabel -> {Text[Style["\!\(\*TemplateBox[<|\"boxes\" -> FormBox[RowBox[{SubscriptBox[StyleBox[\"m\", \"TI\"], \"2\"], \",\"}], TraditionalForm], \"errors\" -> {}, \"input\" -> \"m_2,\", \"state\" -> \"Boxes\"|>,\n\"TeXAssistantTemplate\"]\) GeV", FontSize -> 16]],
+         Text[Style["\!\(\*TemplateBox[<|\"boxes\" -> FormBox[SubsuperscriptBox[StyleBox[\"f\", \"TI\"], \"4\", StyleBox[\"Z\", \"TI\"]], TraditionalForm], \"errors\" -> {}, \"input\" -> \"|f_ 4^Z|\", \"state\" -> \"Boxes\"|>,\n\"TeXAssistantTemplate\"]\)", FontSize -> 16]]},
       
       GridLines -> None,
       PlotRange -> {{xmin, xmax}, {ymin, ymax}}
@@ -499,12 +502,12 @@ If[SavePDF == 1,
 Export[SavePath <> "ZZZ_f4_s.pdf", Sh]]      *)
 
 
-(* ::Subsection:: *)
+(* ::Subsection::Closed:: *)
 (*ZWW f4*)
 
 
-mh2 = 250;
-mhc = 400;
+mh2 = 250*k;
+mhc = 400*k;
 f4teorFile  = "buffer/f4_teorZWW.mx";
 F4teorZ = Get[f4teorFile];
 	F4teorZ = F4teorZ/.{SMP["m_q"]->0, mZ->MZ,SUNFDelta[SUNFIndex[Col1], SUNFIndex[Col2]]->1}//.AngleChanger//.Params//.SmpChanger//.PaveToLooptools/.{FeynCalc`CA->3};
@@ -569,10 +572,10 @@ Export["./ZZZ/graphs/ZWW_f4_m2.pdf", plot3]]
 (*1d: f4zww  from q (m2 -diff colors)*)
 
 
-xmin = 0.2;
+xmin = 0;
 xmax = 3;
 dataQ = Table[
-	{x,y, FplotZWW[x,m1,y,Sqrt[y^2+v^2]]},
+	{x,y, FplotZWW[x,y,Sqrt[y^2+v^2]]},
    {y, {1.5,1.7,2,3,4,5,7.5,10}},{x,LogRange1[xmin,xmax,PointNumber]}
    ];
 col = dataQ[[All,1,2]] (*znachenie parametrov v graph*)
@@ -703,7 +706,7 @@ If[SavePDF == 1,
 Export["./ZZZ/graphs/ZWW_2Dseries_m2a3.pdf", plot2d]]*)
 
 
-(* ::Subsection:: *)
+(* ::Subsection::Closed:: *)
 (*Graph F4ZWW no angels included*)
 
 
@@ -758,7 +761,7 @@ Export["./ZZZ/graphs/ZWW_f4hat_m2.pdf", plot3]]*)
 xmin = 0.2;
 xmax = 3;
 dataQ = Table[
-	{x,y, FZWWbar[x,m1,y,Sqrt[y^2+v^2]]},
+	{x,y, FplotZWW[x,m1,y,Sqrt[y^2+v^2]]},
    {y, LogRange1[0.1,2,6]},{x,LogRange1[xmin,xmax,PointNumber]}
    ];
 col = dataQ[[All,1,2]] (*znachenie parametrov v graph*)

@@ -29,18 +29,19 @@ LogRange1[a_?NumericQ, b_?NumericQ, n_Integer] :=
 
 (*Main params of graphs*)
 (*Number of points in graphs  N=*)
-PointNumber = 300;
+PointNumber = 800;
 ContoursNumber = 10;
 GraphTheme = ColorData["Rainbow"];
-SavePDF = 1; (*1--save, 0--dont*)
-ReCalculateTable = 0; (*1--recalculate,  0 -- no*)
+
+constraitF4Z3000 = 2*10^-5;
+
+Validate = True; (*1--graph plot?,  0 -- no*)
+
 
 SetDirectory[NotebookDirectory[]]
 Get["../modules/ModelParams.wl"];
 Get["../modules/FunctionalModules.wl"];
 Get["../modules/SaveToCSVmodule.wl"];
-
-
 SavePath = "subgraphs/";
 str    = Import["buffer/F4ZZZ.txt"];
 strZWW = Import["buffer/F4ZWW.txt"];
@@ -111,10 +112,11 @@ Export[FileNameJoin[{Directory[], "backfiles", "f4Z_m2q.csv"}],
 (*For ZWW*)
 
 
-If[True,
+If[False,
 xmin = 183.4; xmax = 600;
 ymin = 183.4; ymax = 600;
-c = 400;
+c[y_] := Sqrt[y^2+v^2];
+CSVname = "f4W_m2q_mhc"<>ToString[c[mh2]]<>".csv";
 
 PrintTG["Started calculation of csv for ZWW"];
 
@@ -123,7 +125,7 @@ ys = Subdivide[ymin, ymax, PointNumber];
 pairs = Tuples[{xs,ys}];
 
 fNumW[x_?NumericQ, y_?NumericQ] := Module[{val},
-  val = FplotZWW[x^2, y, Sqrt[y^2+v^2]] //. SmpChanger//. Params;
+  val = FplotZWW[x^2, y, c[y]] //. SmpChanger//. Params;
   Log10 @ N[val]
 ];
 Print[First[xs]];
@@ -135,10 +137,81 @@ ParallelEvaluate[{Head[SmpChanger], Head[Params]}];
 valsW = Map[({#1, #2, fNumW[#1, #2]} & @@ #) &, pairs];
 Print["Ready"];
 Print[valsW[[2]]];
-Export[FileNameJoin[{Directory[], "backfiles", "f4W_m2q.csv"}],
+
+Export[FileNameJoin[{Directory[], "backfiles", CSVname}],
        Prepend[valsW, {"q","m2","log10_f4ZWW"}], "CSV"];
 PrintTG["Finished calculation of csv for ZWW"];
 ];
 
 
+(* ::Subsubsection:: *)
+(*Graph validation*)
 
+
+If[Validate,
+
+Fname = "f4W_m2q_mhcSqrt.csv";  
+filePath = FileNameJoin[{Directory[], "backfiles", Fname}];
+
+raw  = Import[filePath, "CSV"];
+headers = First@raw;          (* {"q","m2","log10_f4ZWW"} *)
+data = N @ Rest@raw;          (* {q, m2, z} *)
+
+{qmin, qmax} = MinMax[data[[All, 1]]];
+{mmin, mmax} = MinMax[data[[All, 2]]];
+
+base = ListContourPlot[
+  data,
+  InterpolationOrder -> 2,        
+  Contours -> 10,                 
+  ContourShading -> True,
+  ColorFunction -> "SunsetColors",
+  ColorFunctionScaling -> True,
+  PlotRange -> All,
+  Frame -> True,
+  FrameLabel -> (Style[#, 14] & /@ {"q, GeV", "m_{h2}, GeV"}),
+  PlotLegends -> BarLegend[Automatic,
+    LabelStyle -> 12,
+    LegendLabel -> Style[TraditionalForm[Log10[f4^{ZWW}]], 12]
+  ],
+  AspectRatio -> 1,               (* \:043a\:0432\:0430\:0434\:0440\:0430\:0442\:043d\:0430\:044f \:043e\:0431\:043b\:0430\:0441\:0442\:044c *)
+  ImagePadding -> 50
+];
+
+densplot = ListDensityPlot[
+  data,
+  InterpolationOrder -> 2,
+  ColorFunction -> "SunsetColors",
+  ColorFunctionScaling -> True,
+  PlotRange -> All,
+  FrameLabel -> (Style[#, 14] & /@ {"q, GeV", "m_{h2}, GeV"}),
+  PlotLegends -> BarLegend[Automatic,
+    LegendLabel -> Style[TraditionalForm[Log10[f4^ZWW]], 12]
+  ],
+  AspectRatio -> 1
+];
+
+c = Log10[constraitF4Z3000];   
+line3000 = ListContourPlot[
+  data,
+  InterpolationOrder -> 2,
+  Contours -> {c},
+  ContourShading -> False,
+  ContourStyle -> Directive[Thick, Black],
+  PlotRange -> All,
+  Frame -> False, Axes -> False,
+  ContourLabels -> (
+    Placed[
+      Style["f4^{ZWW} = 2\[Times]10^-5", 12, Black, Background -> White],
+      Center
+    ]
+  )
+];
+
+];
+
+
+If[Validate,Show[base]]
+
+
+If[Validate,Show[densplot, line3000]]

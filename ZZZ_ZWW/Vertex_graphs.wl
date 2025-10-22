@@ -36,7 +36,7 @@ LogRange1[a_?NumericQ, b_?NumericQ, n_Integer] :=
 PointNumber = 200;
 ContoursNumber = 10;
 GraphTheme = ColorData["Rainbow"];
-SavePDF = 1; (*1--save, 0--dont*)
+SavePDF = 0; (*1--save, 0--dont*)
 ReCalculateTable = 0; (*1--recalculate,  0 -- no*)
 
 
@@ -63,7 +63,6 @@ constraitF4Z3000 = 2*10^(-5);
 constraitF4ZWW = 2*10^(-4);
 
 (*constraints on f2 ZWW*)
-constraitF2ZWW = 2*10^(-4);
 
 
 (* ::Section:: *)
@@ -403,7 +402,7 @@ Do[
 
 
 legend =SwatchLegend[colors,mlist,
-			LegendLayout->"Column", LegendFunction->Framed,
+			LegendLayout->"Column", LegendFunction->Framed[Background->"White"],
 			LegendLabel->Text[Style["\!\(\*TemplateBox[<|\"boxes\" -> FormBox[SubscriptBox[StyleBox[\"m\", \"TI\"], \"2\"], TraditionalForm], \"errors\" -> {}, \"input\" -> \"m_2\", \"state\" -> \"Boxes\"|>,\n\"TeXAssistantTemplate\"]\), GeV"
 			, FontSize -> 14]]
 			];
@@ -415,7 +414,7 @@ legend1 = SwatchLegend[
   },
   {"300", "3000"},
   LegendLayout   -> "Column",
-  LegendFunction -> Framed,
+  LegendFunction -> Framed[Background->"White"],
   LabelStyle     -> Directive[FontSize -> 14, FontFamily -> "Helvetica"],
   LegendLabel -> Text[Style["\!\(\*TemplateBox[<|\"boxes\" -> FormBox[RowBox[{\"\[Integral]\", StyleBox[\"L\", \"TI\"], StyleBox[\"d\", \"TI\"], StyleBox[\"t\", \"TI\"]}], TraditionalForm], \"errors\" -> {}, \"input\" -> \"\\\\int Ldt\", \"state\" -> \"Boxes\"|>,\n\"TeXAssistantTemplate\"]\), fb\!\(\*TemplateBox[<|\"boxes\" -> FormBox[SuperscriptBox[\"\[Null]\", \"-1\"], TraditionalForm], \"errors\" -> {}, \"input\" -> \"{}^{-1}\", \"state\" -> \"Boxes\"|>,\n\"TeXAssistantTemplate\"]\)", 
 	FontSize -> 14]]
@@ -542,7 +541,10 @@ plots={};
 xmin = 200;     xmax = 1000;
 ymin = 5* 10^(-6); ymax = 5*10^(-4);
 colors = GraphTheme /@ Rescale[Range[Length[mlist]], {1, Length[mlist]}];
-legend =SwatchLegend[colors,mlist,LegendLayout->"Column",LegendLabel->"\!\(\*TemplateBox[<|\"boxes\" -> FormBox[SubscriptBox[StyleBox[\"m\", \"TI\"], \"2\"], TraditionalForm], \"errors\" -> {}, \"input\" -> \"m_2\", \"state\" -> \"Boxes\"|>,\n\"TeXAssistantTemplate\"]\), GeV",LegendFunction->"Framed"];
+legend =SwatchLegend[colors,mlist,
+	LegendLayout->"Column",
+	LegendLabel->"\!\(\*TemplateBox[<|\"boxes\" -> FormBox[SubscriptBox[StyleBox[\"m\", \"TI\"], \"2\"], TraditionalForm], \"errors\" -> {}, \"input\" -> \"m_2\", \"state\" -> \"Boxes\"|>,\n\"TeXAssistantTemplate\"]\), GeV",
+	LegendFunction->Framed[Background->"White"]];
 Do[
    data = Table[{x, FplotZWW[x^2, mlist[[i]], mhc]}, {x,LogRange1[xmin,xmax,PointNumber]}];
    If[i ==1,(*\:0443\:0441\:043b\:043e\:0432\:0438\:0435 = \:043a\:043e\:0441\:0442\:044b\:043b\:044c \:0434\:043b\:044f \:0432\:044b\:0432\:043e\:0434\:0430 \:043b\:0435\:0433\:0435\:043d\:0434\:044b*)
@@ -566,8 +568,12 @@ Do[
   {i, Length[mlist]}
 ];
 
-legend1 = SwatchLegend[{Red, Blue}, {"300", "3000"}, LegendLayout -> "Column", LegendFunction -> Framed, LabelStyle -> Directive[FontSize -> 14, FontFamily -> "Helvetica"],
-LegendLabel -> Text[Style["\!\(\*TemplateBox[<|\"boxes\" -> FormBox[RowBox[{\"\[Integral]\", StyleBox[\"L\", \"TI\"], StyleBox[\"d\", \"TI\"], StyleBox[\"t\", \"TI\"]}], TraditionalForm], \"errors\" -> {}, \"input\" -> \"\\\\int Ldt\", \"state\" -> \"Boxes\"|>,\n\"TeXAssistantTemplate\"]\), fb\!\(\*TemplateBox[<|\"boxes\" -> FormBox[SuperscriptBox[\"\[Null]\", \"-1\"], TraditionalForm], \"errors\" -> {}, \"input\" -> \"{}^{-1}\", \"state\" -> \"Boxes\"|>,\n\"TeXAssistantTemplate\"]\)", FontSize -> 14]]];
+legend1 = SwatchLegend[{Red, Blue}, {"300", "3000"}, 
+	LegendLayout -> "Column", 
+	LegendFunction -> Framed[Background->"White"], 
+	LabelStyle -> Directive[FontSize -> 14, FontFamily -> "Helvetica"],
+	LegendLabel -> Text[Style["\!\(\*TemplateBox[<|\"boxes\" -> FormBox[RowBox[{\"\[Integral]\", StyleBox[\"L\", \"TI\"], StyleBox[\"d\", \"TI\"], StyleBox[\"t\", \"TI\"]}], TraditionalForm], \"errors\" -> {}, \"input\" -> \"\\\\int Ldt\", \"state\" -> \"Boxes\"|>,\n\"TeXAssistantTemplate\"]\), fb\!\(\*TemplateBox[<|\"boxes\" -> FormBox[SuperscriptBox[\"\[Null]\", \"-1\"], TraditionalForm], \"errors\" -> {}, \"input\" -> \"{}^{-1}\", \"state\" -> \"Boxes\"|>,\n\"TeXAssistantTemplate\"]\)", 
+	FontSize -> 14]]];
 
 mhcLabel =
   Row[{
@@ -577,12 +583,17 @@ mhcLabel =
     NumberForm[mhc, {4, 0}], " GeV"
   }];
 epilogTag = Inset[
-   Style[mhcLabel, 14, Black, Background -> Directive[White, Opacity[0.5]]],
-   Scaled[{0.93, 0.2}] (* \:043f\:043e\:0437\:0438\:0446\:0438\:044f \:0432 \:0434\:043e\:043b\:044f\:0445 \:043a\:0430\:0434\:0440\:0430: {x,y} *)
+   Style[mhcLabel, 14, Black, Background -> Directive[White, Opacity[0.2]]],
+   Scaled[{0.93, 0.6}] (* \:043f\:043e\:0437\:0438\:0446\:0438\:044f \:0432 \:0434\:043e\:043b\:044f\:0445 \:043a\:0430\:0434\:0440\:0430: {x,y} *)
 ];
 
 AppendTo[plots,
-LogLogPlot[{constraitF4Z300,constraitF4Z3000}, {x, xmin, xmax}, Filling -> Top, FillingStyle -> Directive[Opacity[0.05]],PlotStyle->{Red,Blue},PlotLegends->legend1,PlotRange -> {{xmin, xmax}, {ymin, ymax}}]
+LogLogPlot[{constraitF4Z300,constraitF4Z3000}, {x, xmin, xmax}, 
+	Filling -> Top, 
+	FillingStyle -> Directive[Opacity[0.05]],
+	PlotStyle->{Red,Blue},
+	PlotLegends->legend1,
+	PlotRange -> {{xmin, xmax}, {ymin, ymax}}]
 ];
 Sh = Show[plots, Epilog -> {epilogTag}, ImageSize -> 800]
 
@@ -658,7 +669,7 @@ Export[SavePath <> "ZWW_f4_mhc.pdf", Sh]]
 
 PrintTG["Starting 2d plot for zww"];
 c = 600;
-Func[x_,y_]:=FplotZWW[x^2,y,c];
+Func[x_,y_]:=FplotZWW[x^2,y,Sqrt[y^2+v^2]];
 plot5 = ContourPlot[
   Func[x,y], 
   {x, 200, 600}, {y, 200, 600},

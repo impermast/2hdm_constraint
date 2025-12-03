@@ -15,12 +15,18 @@ logic = 0;
 ReactionName = "ZWW";
 pID = "dd";
 
+If[pId === "dd", particleID = 1];
+If[pId === "uu", particleID = 2];
+If[pId === "gg", particleID = 21];
+
 (* \:0447\:0438\:0441\:043b\:043e\:0432\:044b\:0435 \:043f\:0430\:0440\:0430\:043c\:0435\:0442\:0440\:044b *)
-sqrts0    = 1000;           (* \:0434\:0435\:0444\:043e\:043b\:0442, \:0435\:0441\:043b\:0438 \:043d\:0435 \:043f\:0435\:0440\:0435\:0434\:0430\:043d *)
+(* \:0434\:0435\:0444\:043e\:043b\:0442, \:0435\:0441\:043b\:0438 \:043d\:0435 \:043f\:0435\:0440\:0435\:0434\:0430\:043d *)
+sqrts0    = 1000;         
 mh2num = 250.;
 mhc    =400.;                
-
 (* --- CLI:  s0  mh2  mhc  pID  ReactionName  [msg] --- *)
+If[Length[$ScriptCommandLine] > 1,
+
 args = Rest[$ScriptCommandLine];
 
 toNum[x_] := Quiet@Check[ToExpression[x], $Failed];
@@ -36,8 +42,10 @@ If[Length[args] >= 3 && toNum[args[[3]]] =!= $Failed, mhc    = N@toNum[args[[3]]
 If[Length[args] >= 4, pID          = ToString@args[[4]]];
 If[Length[args] >= 5, ReactionName = ToUpperCase@ToString@args[[5]]];
 If[Length[args] >= 6, msg          = toBool@args[[6]]];
+];
 
 ProcName = StringJoin[pID, ReactionName];
+s0 = sqrts0*sqrts0;
 
 Off[General::shdw]; Off[C0::"msg"];  (* \:043f\:043e\:0434\:0430\:0432\:0438\:0442\:044c \:043b\:0438\:0448\:043d\:0438\:0435 \:0432\:043e\:0440\:043d\:0438\:043d\:0433\:0438 *)
 
@@ -52,9 +60,11 @@ If[ $FrontEnd === Null,
 $LoadAddOns = {"FeynArts"};
 $PrePrint = InputForm;
 
-Quiet[<<FeynCalc`] 
-AppendTo[$ModelPath, "/home/kds/.Mathematica/Applications/FeynArts/Models/"];
-Quiet[Install["LoopTools"]];
+Quiet[<<FeynCalc`];
+AppendTo[$ModelPath, "/home/kds/progs/math/FeynArts-3.12/Models/"]
+
+
+Install["/home/kds/progs/math/LoopTools-2.16/x86_64-Linux/bin/LoopTools"];
 Quiet[Needs["LoopTools`"]];
 $FAVerbose = 0; 
 
@@ -62,7 +72,7 @@ Unprotect[PaVe, Li2, A0, A00, B0, B1, B00, B11, DB0, DB1, C0, D0];
 Remove[PaVe, Li2, A0, A00, B0, B1, B00, B11, DB0, DB1, C0, D0];
 
 
-scriptDir = If[StringQ[$InputFileName], DirectoryName[$InputFileName], $InitialDirectory];
+scriptDir = "/home/kds/sci/zzz/2hdm_constraint/ZZZ_ZWW";
 SetDirectory[scriptDir];
 
 Get["../modules/SaveToCSVmodule.wl"];
@@ -102,7 +112,7 @@ If[FileExistsQ[wcFile],
 If[msg === True,PrintTG["WidthCross calculated."]];
 If[$Notebooks,
 Print[WidthCross[s]//Simplify];
-Print[WidthCross[s0]]
+Print[s0,"; ",WidthCross[s0]]
 ];
 ];
 
@@ -111,7 +121,6 @@ Print[WidthCross[s0]]
 (*download PDFs*)
 If[msg === True,
 PrintTG["Loading pdf for run."]];
-\:0430 \:043f\:043e
 xPDF[x_, Q_, id_] := Module[{result, scriptPath, output},
   scriptPath = "../pdfcode/xPDF.py";
   result = RunProcess[{"sh", "-c", 
@@ -130,8 +139,10 @@ L[t_]:=Integrate[(1/x) *xPDF[x,t*s0,-particleID]*xPDF[t/x,t*s0,particleID],{x,t,
 Lexp[t_]:=Log[10]*Integrate[xPDF[10^yt,t*s0,particleID] * xPDF[t*10^(-yt),t*s0,-particleID] ,{yt, Log10[t],0}]/Null^2;
 
 
+
 (*model params*)
-mh2 = mh2num;
+mh2 = mh2num//N;
+Print[mh2num," ",mh2];
 mh3 = Sqrt[mh2^2+vev^2]//.Params;
 mhc= mhc;
 a2 = 0.1317; 
@@ -181,7 +192,7 @@ val[x_] := If[NumericQ[x], ToString@fmt[x], "-"];
 
 msgText = StringJoin[
   ToString[ProcName], ":\n",
-  "params: sqrts0 ", val[Sqrt[s0]], " mh2 ", val[mh2], " mhc ", val[mhc], "\n",
+  "params: sqrts0 = ", val[Sqrt[s0]], " mh2 = ", val[mh2], " mhc = ", val[mhc], "\n",
   "f4mean: ", val[F4mean], "\n",
   "crosssection: ", val[Norma*3.9*10^8], " pb\n",
   " =========================== \n"

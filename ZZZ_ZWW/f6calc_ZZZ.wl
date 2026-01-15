@@ -11,7 +11,7 @@ Print[Directory[]]
 
 
 LogicSave = False;
-AmpFileName = "F4ZZZ.txt";
+AmpFileName = "F6ZZZ.txt";
 AmpPath = "buffer/"<> AmpFileName;
 
 

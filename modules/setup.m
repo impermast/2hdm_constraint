@@ -13,7 +13,7 @@ $PrePrint = InputForm;
 
 Quiet[<<FeynCalc`];
 AppendTo[$ModelPath, "/home/kds/progs/math/FeynArts-3.12/Models/"]
-
+AppendTo[$ModelPath, "/home/kds/.Mathematica/Applications/FeynArts/Models/"];
 $FAVerbose = 0;
 
 (* --- \:041f\:0443\:0442\:0438 --- *)
@@ -42,3 +42,13 @@ Unset[$Post];
 
 $FormatType = StandardForm;
 SetOptions[EvaluationNotebook[], FormatType -> StandardForm];
+
+
+
+(* EXAMPLE OF USE
+SetDirectory[NotebookDirectory[]];
+<< "../modules/setup.m"
+SetDirectory[NotebookDirectory[]];
+Print[Directory[]]
+
+*)

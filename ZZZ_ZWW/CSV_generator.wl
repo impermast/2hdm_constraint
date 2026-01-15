@@ -4,27 +4,9 @@
 (*Script for scv data generation.*)
 
 
-description="CSV data generation";
-If[ $FrontEnd === Null,
-	$FeynCalcStartupMessages = False;
-	Print[description];
-];
-If[ $Notebooks === False,
-	$FeynCalcStartupMessages = False
-];
-(*$LoadAddOns={"FeynArts", "FeynHelpers"};*)
-$LoadAddOns={"FeynArts"};
-<<FeynCalc`
-$FAVerbose = 0;
-
-FCCheckVersion[9,3,0];
-
-Install["LoopTools"]
-Needs["LoopTools`"]
-
-
-LogRange1[a_?NumericQ, b_?NumericQ, n_Integer] := 
-	Table[10^i,{i,Range[Log10[a],Log10[b],(Log10[b]-Log10[a])/n]}];
+SetDirectory[NotebookDirectory[]];
+<< "../modules/setup.m"
+SetDirectory[NotebookDirectory[]];
 
 
 (*Main params of graphs*)
@@ -38,10 +20,6 @@ constraitF4Z3000 = 2*10^-5;
 Validate = True; (*1--graph plot?,  0 -- no*)
 
 
-SetDirectory[NotebookDirectory[]]
-Get["../modules/ModelParams.wl"];
-Get["../modules/FunctionalModules.wl"];
-Get["../modules/SaveToCSVmodule.wl"];
 SavePath = "subgraphs/";
 str    = Import["buffer/F4ZZZ.txt"];
 strZWW = Import["buffer/F4ZWW.txt"];
@@ -112,10 +90,10 @@ Export[FileNameJoin[{Directory[], "backfiles", "f4Z_m2q.csv"}],
 (*For ZWW*)
 
 
-If[False,
-xmin = 183.4; xmax = 600;
-ymin = 183.4; ymax = 600;
-c[y_] := Sqrt[y^2+v^2];
+If[True,
+xmin = 200; xmax = 800;
+ymin = 200; ymax = 800;
+c[y_] := 1000;
 CSVname = "f4W_m2q_mhc"<>ToString[c[mh2]]<>".csv";
 
 PrintTG["Started calculation of csv for ZWW"];

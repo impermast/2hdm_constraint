@@ -1,7 +1,7 @@
 (* ::Package:: *)
 
-LogRange1[a_?NumericQ, b_?NumericQ, n_Integer] := 
-	Table[10^i,{i,Range[Log10[a],Log10[b],(Log10[b]-Log10[a])/n]}];
+SetDirectory[NotebookDirectory[]];
+<< "../modules/setup.m"
 
 
 (*Main params of graphs*)
@@ -12,11 +12,6 @@ GraphTheme = ColorData["Rainbow"];
 SavePDF = True;
 
 
-scriptDir = NotebookDirectory[];
-SetDirectory[scriptDir];
-Get["../modules/ModelParams.wl"];
-Get["../modules/SaveToCSVmodule.wl"];
-Get["../modules/FunctionalModules.wl"];
 SavePath = "subgraphs/";
 dir     = "buffer";
 pattern = "f4mean_*.csv";

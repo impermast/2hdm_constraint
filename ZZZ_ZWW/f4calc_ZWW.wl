@@ -8,31 +8,15 @@
 (*Load FeynCalc and the necessary add-ons or other packages*)
 
 
-description="Mnel El -> Mnel El, MSSM, matrix element squared, tree";
-If[ $FrontEnd === Null,
-	$FeynCalcStartupMessages = False;
-	Print[description];
-];
-If[ $Notebooks === False,
-	$FeynCalcStartupMessages = False
-];
-(*$LoadAddOns={"FeynArts", "FeynHelpers"};*)
-$LoadAddOns={"FeynArts"};
-<<FeynCalc`
-$FAVerbose = 0;
-
-FCCheckVersion[9,3,0];
-AppendTo[$ModelPath, "/home/kds/.Mathematica/Applications/FeynArts/Models/"];
-
-Install["LoopTools"]
-Needs["LoopTools`"]
-
-
 SetDirectory[NotebookDirectory[]];
-f4adress = "buffer/F4ZWW.txt"
+<< "../modules/setup.m"
+SetDirectory[NotebookDirectory[]];
+Print[Directory[]]
 
-Get["../modules/FunctionalModules.wl"];
-Get["../modules/ModelParams.wl"];
+
+LogicSave = False;
+AmpFileName = "F4ZWW.txt";
+AmpPath = "buffer/"<> AmpFileName;
 
 
 (* ::Section:: *)
@@ -200,6 +184,8 @@ FullSimplify[f4HcHcH[s,mh1,mh2,mh3]]
 Print["Summ:"]
 f4Z[s_, mh1_, mh2_, mh3_, mhc_] := 
     (f4ZHHG[s, mh1, mh2, mh3] + f4ZHHHc[s, mh1, mh2, mh3, mhc]) //. AngleChanger//.PaveToLooptools;
+
+
 f4Z[s,m1,m2,m3,m4]//Simplify
 
 
@@ -240,8 +226,8 @@ str*)
 (*Saving amplitude to file*)
 
 
-f4Z[s,mh1,mh2,mh3,mhc]//Simplify
-Export[f4adress,f4Z[s,mh1,mh2,mh3,mhc]//Simplify,"Text"]
+If[LogicSave,
+Export[AmpPath,f4Z[s,mh1,mh2,mh3,mhc]//Simplify,"Text"]];
 
 
 (* ::Section:: *)

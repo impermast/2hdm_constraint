@@ -16,7 +16,6 @@ env/
 # ⛔ Игнорируем конфиденциальные файлы и токены
 *.env
 *.json
-*.ini
 *.toml
 *.cfg
 secrets.yaml
@@ -59,10 +58,3 @@ lhapdf/
 lhapdf-data/
 lhapdf-sets/
 pdfcode/*.csv
-
-# ⛔ Игнорируем скомпилированные бинарные файлы
-*.o
-*.obj
-*.dll
-*.exe
-*.dylib

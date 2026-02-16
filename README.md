@@ -78,6 +78,51 @@ To work with the project, you need:
 2. **Python 3** for working with PDFs (`pdfcode/`).
 3. **LHAPDF** for accessing and managing parton distribution functions.
 
+# LoopTools install
+# Windows (use prebuilt `LoopTools-Cygwin.exe`)
+1) Put everything into:
+`%APPDATA%\Mathematica\Applications\LoopTools\Windows-x86-64\`
+Required files in that folder:
+- `LoopTools.exe` (unpacked from `LoopTools-Cygwin.exe.gz`)
+- `ml64i4.dll`, `wstp64i4.dll` (from Mathematica:
+  `...\Mathematica\<ver>\SystemFiles\Libraries\Windows-x86-64\`)
+- `cygwin1.dll` (+ any other missing `cyg*.dll` if Windows asks for them)
+
+2) Test in Mathematica:
+```wl
+exe  = FileNameJoin[{$UserBaseDirectory,"Applications","LoopTools","Windows-x86-64","LoopTools.exe"}];
+link = Install[exe];
+N@B0[1000,50,80]
+Uninstall[link];
+```
+> Do **not** run `LoopTools.exe` manually. Always use `Install[...]`.
+
+# Linux (build from source)
+
+1. Unpack and enter sources:
+```bash
+tar -xzf LoopTools-2.16.tar.gz
+cd LoopTools-2.16
+```
+2. Add WSTP DeveloperKit to `PATH`:
+
+```bash
+export PATH="$(math -noprompt -run 'Print[FileNameJoin[{$InstallationDirectory,"SystemFiles","Links","WSTP","DeveloperKit",$SystemID,"CompilerAdditions"}]]; Quit[]' | tr -d '\r'):$PATH"
+```
+3. Configure / build / install into Mathematica Applications:
+```bash
+PREFIX="$(math -noprompt -run 'Print[FileNameJoin[{$UserBaseDirectory,"Applications","LoopTools"}]]; Quit[]' | tr -d '\r')"
+./configure --prefix="$PREFIX"
+make -j"$(nproc)"
+make install
+```
+4. Test in Mathematica:
+
+```wl
+link = Install[FileNameJoin[{$UserBaseDirectory,"Applications","LoopTools","bin","LoopTools"}]];
+N@B0[1000,50,80]
+Uninstall[link];
+```
 ---
 
 ## **Contact**

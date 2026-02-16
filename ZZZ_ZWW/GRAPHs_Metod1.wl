@@ -95,7 +95,7 @@ Print[FplotZZZ[400^2,200,400],"\nNext\n",FplotZZZ[s,mh2,mhc]]
 shadowbox[legend_] := Framed[
   legend,
   Background   -> White,                (* \:0431\:0435\:043b\:0430\:044f \:043d\:0435\:043f\:0440\:043e\:0437\:0440\:0430\:0447\:043d\:0430\:044f \:043f\:0430\:043d\:0435\:043b\:044c *)
-  FrameStyle -> Black,     (* \:0440\:0430\:043c\:043a\:0430 *)
+  FrameStyle -> None,     (* \:0440\:0430\:043c\:043a\:0430 *)
   FrameMargins -> {{8, 8}, {5, 5}}    (* \:043e\:0442\:0441\:0442\:0443\:043f\:044b \:0432\:043d\:0443\:0442\:0440\:0438 \:0440\:0430\:043c\:043a\:0438 *)
 ];
 
@@ -104,35 +104,58 @@ textscale = 16;
 base1DOpts := Sequence[
   Frame        -> True,
   Axes         -> False,
-  PlotMarkers -> None,
-  Joined -> True,
-  FrameStyle   -> Directive[Black, Thickness[0.002]],
-  FrameTicksStyle -> Directive[textscale - 2],
+  PlotMarkers  -> None,
+  Joined       -> True,
+
+  (* \:0442\:043e\:043b\:0449\:0435 \:043b\:0438\:043d\:0438\:0438 *)
+  PlotStyle    -> Directive[AbsoluteThickness[2.6]],
+
+  (* \:0442\:043e\:043b\:0449\:0435 \:0444\:0440\:0435\:0439\:043c *)
+  FrameStyle   -> Directive[Black, AbsoluteThickness[1.6]],
+
+  (* \:0436\:0438\:0440\:043d\:044b\:0435 \:043f\:043e\:0434\:043f\:0438\:0441\:0438/\:0442\:0438\:043a\:0438 *)
+  FrameTicksStyle -> Directive[Black, textscale - 2, FontFamily -> "Helvetica", FontWeight -> "Bold"],
+  LabelStyle      -> Directive[Black, textscale,     FontFamily -> "Helvetica", FontWeight -> "Bold"],
+  BaseStyle       -> Directive[Black, textscale,     FontFamily -> "Helvetica", FontWeight -> "Bold"],
+
   FrameLabel   -> {xLab, yLab},
-  LabelStyle   -> Directive[textscale, FontFamily -> "Helvetica"],
-  BaseStyle    -> Directive[textscale, FontFamily -> "Helvetica"],
   PlotRange    -> {{xmin, xmax}, {ymin, ymax}},
   GridLines    -> None,
   PlotRangePadding -> Scaled[0.005]
 ];
+
 base2DcontOpts := Sequence[
   Frame        -> True,
-  LabelStyle   -> Directive[textscale, FontFamily -> "Helvetica"],
-  BaseStyle    -> Directive[textscale, FontFamily -> "Helvetica"],
+
+  (* \:0436\:0438\:0440\:043d\:044b\:0435 \:043f\:043e\:0434\:043f\:0438\:0441\:0438 *)
+  LabelStyle   -> Directive[Black, textscale, FontFamily -> "Helvetica", FontWeight -> "Bold"],
+  BaseStyle    -> Directive[Black, textscale, FontFamily -> "Helvetica", FontWeight -> "Bold"],
   FrameLabel   -> {xLab2D, yLab2D},
-  FrameStyle -> Directive[Black, Thickness[0.002]],
-  FrameTicksStyle -> Directive[textscale - 2],
+
+  (* \:0442\:043e\:043b\:0449\:0435 \:0444\:0440\:0435\:0439\:043c/\:0442\:0438\:043a\:0438 *)
+  FrameStyle      -> Directive[Black, AbsoluteThickness[1.6]],
+  FrameTicksStyle -> Directive[Black, textscale - 2, FontFamily -> "Helvetica", FontWeight -> "Bold"],
+
+  (* \:0442\:043e\:043b\:0449\:0435 \:043a\:043e\:043d\:0442\:0443\:0440\:043d\:044b\:0435 \:043b\:0438\:043d\:0438\:0438 *)
+  ContourStyle -> Directive[AbsoluteThickness[2.2]],
+
   Contours        -> ContoursNumber,
   ColorFunction   -> GraphTheme,
   PlotPoints      -> PointNumber,
-  PlotRange    -> All,
+  PlotRange       -> All,
+
+  (* \:0440\:0430\:0441\:0442\:044f\:043d\:0443\:0442\:044c 2D \:043f\:043e \:0432\:044b\:0441\:043e\:0442\:0435 *)
+  AspectRatio  -> 1,
+  ImageSize    -> {Automatic, 520},
+
   PlotLegends -> BarLegend[
-      Automatic,
-      LegendLabel -> Placed[zLab2D, Top],
-      LabelStyle -> Directive[textscale - 2, FontFamily -> "Helvetica"],
-      LegendFunction -> shadowbox
-    ]
+    Automatic,
+    LegendLabel    -> Placed[zLab2D, Top],
+    LabelStyle     -> Directive[Black, textscale - 2, FontFamily -> "Helvetica", FontWeight -> "Bold"],
+    LegendFunction -> shadowbox
+  ]
 ];
+
 
 
 legendLumi = SwatchLegend[
@@ -142,17 +165,20 @@ legendLumi = SwatchLegend[
   },
   {"300", "3000"},
   LegendLayout   -> "Column",
-  LegendFunction -> shadowbox, 
-  LabelStyle     -> Directive[textscale, FontFamily -> "Helvetica"],
+  LegendFunction -> shadowbox,
+
+  (* \:0436\:0438\:0440\:043d\:0435\:0435/\:0442\:043e\:043b\:0449\:0435 *)
+  LabelStyle     -> Directive[Black, textscale, FontFamily -> "Helvetica", FontWeight -> "Bold"],
+
   LegendLabel    -> Style[
     Row[{
-      "\[Integral] ", Style["L", Italic],
-      Style["d", Italic], Style["t", Italic],
+      "\[Integral] ", Style["L", Italic], Style["d", Italic], Style["t", Italic],
       ", ", Superscript["fb", -1]
     }],
-    textscale
+    {textscale, FontFamily -> "Helvetica", FontWeight -> "Bold"}
   ]
 ];
+
 
 
 (* ::Section::Closed:: *)

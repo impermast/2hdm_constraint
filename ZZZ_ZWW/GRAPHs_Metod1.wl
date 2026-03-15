@@ -700,5 +700,3 @@ PrintTG["All plots are finished"];
 
 
 
-
-

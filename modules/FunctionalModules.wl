@@ -37,10 +37,17 @@ CheckTime[] := Module[{elapsed, hours, minutes, seconds},
 ResetCheckTime[] := (startTime = AbsoluteTime[]; Print["Timer reset."]);
 
 (* \:0424\:0443\:043d\:043a\:0446\:0438\:044f \:0434\:043b\:044f \:043e\:0442\:043f\:0440\:0430\:0432\:043a\:0438 \:0441\:043e\:043e\:0431\:0449\:0435\:043d\:0438\:044f \:0432 Telegram *)
-PrintTG[msg_String] := Module[{command, result},
+PrintTG[msg_String] := Module[{command, result, isWindows, pythonCmd, scriptPath},
   Print[msg];
-  command = StringJoin["python3 ../tg/notifier_console.py \"", msg, "\""];
-  result = RunProcess[{"bash", "-c", command}];
+  isWindows = $OperatingSystem === "Windows";
+  pythonCmd = If[isWindows, "python", "python3"];
+  scriptPath = FileNameJoin[{DirectoryName[NotebookDirectory[], 2], "tg", "notifier_console.py"}];
+  scriptPath = StringReplace[scriptPath, "\\" -> "/"];
+  command = StringJoin[pythonCmd, " ", scriptPath, " \"", msg, "\""];
+  If[isWindows,
+    result = RunProcess[{"cmd", "/c", command}],
+    result = RunProcess[{"bash", "-c", command}]
+  ];
   result["StandardOutput"]
 ];
 

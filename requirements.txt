@@ -1,0 +1,14 @@
+# Python dependencies for 2hdm_constraint project
+
+# PDF (Parton Distribution Functions)
+lhapdf>=6.5.0
+
+# Numerical computing and data analysis
+numpy>=1.24.0
+pandas>=2.0.0
+
+# Plotting
+matplotlib>=3.7.0
+
+# Telegram bot for notifications
+python-telegram-bot>=20.0

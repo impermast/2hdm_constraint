@@ -38,6 +38,14 @@ debug.log
 *.sublime-workspace
 *.sublime-project
 
+# ⛔ Игнорируем файлы Cline и AI ассистентов
+.clinerules
+.cline/
+.copilot/
+.cursor/
+.continue/
+.windsurf/
+
 # ⛔ Игнорируем графики
 graphs/*.pdf
 graphs/*.png

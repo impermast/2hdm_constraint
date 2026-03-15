@@ -134,15 +134,15 @@ SciLbl[v_, nd_: 1] := Style[
     {Infinity, nd},
     ExponentFunction -> (Null &)
   ],
-  textscale - 4, FontFamily -> fontFam, FontWeight -> fontWeight, Black
+  textscale - 2, FontFamily -> fontFam, FontWeight -> fontWeight, Black
 ];
 
 plotH = 500;    
-legW  = 22;     
-legH  = plotH - 2*(textscale + 10);  
+legW  = 30;     
+legH  = plotH+50;  
   base2DLegend := BarLegend[Automatic,
 	  LabelingFunction -> (SciLbl[#1, 1] &),
-	  LegendLabel -> Placed[zLab2D, Top],
+	  LegendLabel -> Placed[Rotate[zLab2D, -Pi/2], Right],
 	  LegendMarkerSize -> {legW, legH},
 	  LabelStyle -> Directive[textscale - 2, FontFamily -> fontFam, FontWeight -> fontWeight, Black],
 	  Method -> {
@@ -354,7 +354,7 @@ m2Legend = LineLegend[
   LegendMarkerSize -> {20, 10},          (* \:043a\:043b\:044e\:0447\:0435\:0432\:043e\:0435: \:0443\:043c\:0435\:043d\:044c\:0448\:0430\:0435\:0442 "\:0438\:043a\:043e\:043d\:043a\:0438" \:043b\:0438\:043d\:0438\:0439 *)
   LegendFunction -> shadowbox
 ];
-legAll = niceLegendBox @ Column[
+legAll = shadowbox @ Column[
   {m2Legend, Spacer[6], legendLumi},
   Spacings -> 0.15, Alignment -> Left
 ];
@@ -400,7 +400,36 @@ conplot = ContourPlot[{Func[x, y] == constraitF4Z300, Func[x, y] == constraitF4Z
 ShZZZ=Show[plot5,conplot,ImageSize -> imgSize]
 
 
-If[SavePDF==1,Export[SavePath<>"ZZZ_f4_2d.pdf",ShZZZ]]
+If[SavePDF==1,Export[SavePath<>"ZZZ_f4_2d_qm2.pdf",ShZZZ]]
+
+
+(* ::Subsection:: *)
+(*zzz 2d mh2 mh3*)
+
+
+PrintTG["Starting 2d plot for zzz mh2 mh3"];
+s = 320^2;
+Func[x_,y_]:=Abs[10^stepen*FZZZ[s,mh1,x,y,\[Alpha]1,\[Alpha]2max,\[Alpha]3max]]//. SmpChanger//. Params;
+xmin=190;xmax=800;
+ymin=190;ymax=800;
+
+xLab2D=Style[Row[{Subscript[m, 2]," [GeV]"}],1.2 textscale];
+yLab2D=Style[Row[{Subscript[m, 3]," [GeV]"}],1.2 textscale];
+
+plot5 = DensityPlot[
+  Func[x, y],
+  {x, xmin, xmax}, {y, ymin, ymax},
+  ScalingFunctions -> "Linear",
+  Evaluate @ base2DdensOpts,
+  PlotLegends->Placed[base2DLegend,Right]
+];
+conplot = ContourPlot[{Func[x, y] == constraitF4Z300, Func[x, y] == constraitF4Z3000}, {x, xmin, xmax}, 
+    {y, ymin, ymax}, ContourStyle -> {Directive[Red, Thickness[0.007]], Directive[Black, Dashed, Thickness[0.007]]}, 
+    PlotLegends -> None]; 
+ShZZZ=Show[plot5,conplot,ImageSize -> imgSize]
+
+
+If[SavePDF==1,Export[SavePath<>"ZZZ_f4_2d_m2m3.pdf",ShZZZ]]
 
 
 (* ::Subsection:: *)
@@ -435,7 +464,7 @@ m2Legend = LineLegend[
   LegendMarkerSize -> {20, 10},          (* \:043a\:043b\:044e\:0447\:0435\:0432\:043e\:0435: \:0443\:043c\:0435\:043d\:044c\:0448\:0430\:0435\:0442 "\:0438\:043a\:043e\:043d\:043a\:0438" \:043b\:0438\:043d\:0438\:0439 *)
   LegendFunction -> shadowbox
 ];
-legAll = niceLegendBox @ Column[
+legAll = shadowbox @ Column[
   {m2Legend, Spacer[6], legendLumi},
   Spacings -> 0.15, Alignment -> Left
 ];
@@ -588,7 +617,7 @@ m2Legend = LineLegend[
   LegendMarkerSize -> {20, 10},          (* \:043a\:043b\:044e\:0447\:0435\:0432\:043e\:0435: \:0443\:043c\:0435\:043d\:044c\:0448\:0430\:0435\:0442 "\:0438\:043a\:043e\:043d\:043a\:0438" \:043b\:0438\:043d\:0438\:0439 *)
   LegendFunction -> shadowbox
 ];
-legAll = niceLegendBox @ Column[
+legAll = shadowbox @ Column[
   {m2Legend, Spacer[6], legendLumi},
   Spacings -> 0.15, Alignment -> Left
 ];
@@ -667,6 +696,8 @@ PrintTG["Finishing 2d plot for zww"];
 
 
 PrintTG["All plots are finished"];
+
+
 
 
 

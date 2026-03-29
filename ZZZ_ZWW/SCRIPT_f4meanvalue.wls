@@ -12,19 +12,15 @@ logic = 0;
 
 (* \:0427\:0442\:0435\:043d\:0438\:0435 \:0430\:0440\:0433\:0443\:043c\:0435\:043d\:0442\:043e\:0432 \:043a\:043e\:043c\:0430\:043d\:0434\:043d\:043e\:0439 \:0441\:0442\:0440\:043e\:043a\:0438 *)
 (* --- Defaults --- *)
-ReactionName = "ZWW";
-pID = "dd";
-
-If[pId === "dd", particleID = 1];
-If[pId === "uu", particleID = 2];
-If[pId === "gg", particleID = 21];
+ReactionName = "ZZZ";
+pID = "uu";
 
 (* \:0447\:0438\:0441\:043b\:043e\:0432\:044b\:0435 \:043f\:0430\:0440\:0430\:043c\:0435\:0442\:0440\:044b *)
 (* \:0434\:0435\:0444\:043e\:043b\:0442, \:0435\:0441\:043b\:0438 \:043d\:0435 \:043f\:0435\:0440\:0435\:0434\:0430\:043d *)
 sqrts0    = 1000;         
-mh2num = 250.;
-mhc    =400.;                
-(* --- CLI:  s0  mh2  mhc  pID  ReactionName  [msg] --- *)
+mh2num = 250;
+mhcnum    =400;                
+(* --- CLI:  s0  mh2  mhcnum  pID  ReactionName  [msg] --- *)
 If[Length[$ScriptCommandLine] > 1,
 
 args = Rest[$ScriptCommandLine];
@@ -38,46 +34,38 @@ toBool[x_] := Which[
 
 If[Length[args] >= 1 && toNum[args[[1]]] =!= $Failed, sqrts0     = N@toNum[args[[1]]]];
 If[Length[args] >= 2 && toNum[args[[2]]] =!= $Failed, mh2num = N@toNum[args[[2]]]];
-If[Length[args] >= 3 && toNum[args[[3]]] =!= $Failed, mhc    = N@toNum[args[[3]]]];
+If[Length[args] >= 3 && toNum[args[[3]]] =!= $Failed, mhcnum    = N@toNum[args[[3]]]];
 If[Length[args] >= 4, pID          = ToString@args[[4]]];
 If[Length[args] >= 5, ReactionName = ToUpperCase@ToString@args[[5]]];
 If[Length[args] >= 6, msg          = toBool@args[[6]]];
 ];
 
+If[pID === "dd", particleID = 1];
+If[pID === "uu", particleID = 2];
+If[pID === "gg", particleID = 21];
 ProcName = StringJoin[pID, ReactionName];
-s0 = sqrts0*sqrts0;
-
-Off[General::shdw]; Off[C0::"msg"];  (* \:043f\:043e\:0434\:0430\:0432\:0438\:0442\:044c \:043b\:0438\:0448\:043d\:0438\:0435 \:0432\:043e\:0440\:043d\:0438\:043d\:0433\:0438 *)
-
-If[ $FrontEnd === Null, 
-    $FeynCalcStartupMessages = False; 
-    $LoadFeynCalcMessages = False;  
-  ];
+s0 = sqrts0^2;
 
 
-(* \:041f\:043e\:0434\:043a\:043b\:044e\:0447\:0435\:043d\:0438\:0435 \:043d\:0435\:043e\:0431\:0445\:043e\:0434\:0438\:043c\:044b\:0445 \:043f\:0430\:043a\:0435\:0442\:043e\:0432 *)
-
-$LoadAddOns = {"FeynArts"};
-$PrePrint = InputForm;
-
-Quiet[<<FeynCalc`];
-AppendTo[$ModelPath, "/home/kds/progs/math/FeynArts-3.12/Models/"]
 
 
-Install["/home/kds/progs/math/LoopTools-2.16/x86_64-Linux/bin/LoopTools"];
-Quiet[Needs["LoopTools`"]];
-$FAVerbose = 0; 
+Off[General::shdw]; Off[C0::"msg"];
+If[$FrontEnd === Null,
+  $FeynCalcStartupMessages = False;
+  $LoadFeynCalcMessages = False;
+];
 
-Unprotect[PaVe, Li2, A0, A00, B0, B1, B00, B11, DB0, DB1, C0, D0];
-Remove[PaVe, Li2, A0, A00, B0, B1, B00, B11, DB0, DB1, C0, D0];
+If[$Notebooks,
+  $ScriptDir = NotebookDirectory[],
+  $ScriptDir = DirectoryName @ ExpandFileName[$InputFileName]
+];
+SetDirectory[$ScriptDir];
 
+<< "../modules/setup.m";
 
-scriptDir = "/home/kds/sci/zzz/2hdm_constraint/ZZZ_ZWW";
-SetDirectory[scriptDir];
+(* \:041f\:043e\:0441\:043b\:0435 setup.m \[LongDash] \:0432\:043e\:0437\:0432\:0440\:0430\:0449\:0430\:0435\:043c \:0434\:0438\:0440\:0435\:043a\:0442\:043e\:0440\:0438\:044e \:043e\:0431\:0440\:0430\:0442\:043d\:043e \:043d\:0430 \:0442\:0435\:043a\:0443\:0449\:0438\:0439 \:0444\:0430\:0439\:043b *)
+SetDirectory[$ScriptDir];
 
-Get["../modules/SaveToCSVmodule.wl"];
-Get["../modules/ModelParams.wl"];
-Get["../modules/FunctionalModules.wl"];
 
 ampFile = StringJoin["buffer/amp_", ProcName, ".mx"];
 meFile  = StringJoin["buffer/me_", ProcName, ".mx"];
@@ -94,8 +82,8 @@ If[FileExistsQ[wcFile],
 	,
 	If[msg === True, PrintTG["File with Widthcross not found. Loading matrix element."]];
 	{MaElread,MaElreadExp} = Get[meFile];
-	MaElread = MaElread//.AngleChanger//.Params//.SmpChanger//.PaveToLooptools/.{FeynCalc`CA->3}/.{SMP["m_q"]->0};
-	MaEl[sX_,tX_] := MaElread/.{St->sX,s->sX,t->tX};
+	MaElread = MaElread//.AngleChanger//.Params//.SmpChanger//.PaveToLooptools/.{SMP["m_q"]->0};
+	MaEl[sX_,tX_] := MaElread/.{St->sX,s->sX,t->tX, SUNFDelta[__]-> 1, FeynCalc`CA->3};
 	If[msg === True, PrintTG["Working on WidthCross"]];
 	Pref[x_] := 1/(16 Pi x^2);
 
@@ -111,6 +99,7 @@ If[FileExistsQ[wcFile],
                 
 If[msg === True,PrintTG["WidthCross calculated."]];
 If[$Notebooks,
+Print[MaEl[s,t]//Simplify];
 Print[WidthCross[s]//Simplify];
 Print[s0,"; ",WidthCross[s0]]
 ];
@@ -121,30 +110,30 @@ Print[s0,"; ",WidthCross[s0]]
 (*download PDFs*)
 If[msg === True,
 PrintTG["Loading pdf for run."]];
-xPDF[x_, Q_, id_] := Module[{result, scriptPath, output},
-  scriptPath = "../pdfcode/xPDF.py";
-  result = RunProcess[{"sh", "-c", 
-    "LD_LIBRARY_PATH=/usr/local/lib python3 " <> scriptPath <> " " <> ToString[x] <> " " <> ToString[Q] <> " " <> ToString[id]
-  }];
-  output = StringTrim[result["StandardOutput"]];
-  If[StringMatchQ[output, NumberString], ToExpression[output], Null]
-]
-
 F4teor = Get[f4teorFile];
-	F4teor = F4teor/.{SMP["m_q"]->0, mZ->MZ, (SUNFDelta[SUNFIndex[Col1], SUNFIndex[Col2]])->1}//.AngleChanger//.Params//.SmpChanger//.PaveToLooptools/.{FeynCalc`CA->3};
-	f4[sX_] := F4teor/.{s->sX};
-	
 
-L[t_]:=Integrate[(1/x) *xPDF[x,t*s0,-particleID]*xPDF[t/x,t*s0,particleID],{x,t,1}]/Null^2;
-Lexp[t_]:=Log[10]*Integrate[xPDF[10^yt,t*s0,particleID] * xPDF[t*10^(-yt),t*s0,-particleID] ,{yt, Log10[t],0}]/Null^2;
+F4teor = F4teor //. SmpChanger //. AngleChanger //. Params /. {SUNFDelta[__] -> 1} //. PaveToLooptools;
+f4[sVal_?NumericQ] := N @ (F4teor /. {
+  s   -> sVal,
+  mh2 -> mh2num,
+  mhc -> mhcnum
+});
+
+
+L[t_]:=Integrate[
+	(1/x) *xPDF[x,t*s0,-particleID]*xPDF[t/x,t*s0,particleID]
+		,{x,t,1}]/Null^2;
+Lexp[t_]:=Log[10]*Integrate[
+xPDF[10^yt,t*s0,particleID] * xPDF[t*10^(-yt),t*s0,-particleID] ,
+{yt, Log10[t],0}]/Null^2;
 
 
 
 (*model params*)
 mh2 = mh2num//N;
-Print[mh2num," ",mh2];
-mh3 = Sqrt[mh2^2+vev^2]//.Params;
-mhc= mhc;
+mh3 = Sqrt[mh2^2+vev^2]/.Params;
+mhc = N[mhcnum];
+mZ = MZ/.Params;
 a2 = 0.1317; 
 a3 = 0.7854;
 
@@ -161,9 +150,6 @@ If[msg,
 ];
 
 
-
-
-
 If[ logic === 0,
 If[msg === True,PrintTG["Integrate crosssection log scale"]];
  
@@ -171,7 +157,7 @@ iteration = 0;
 Norma = NIntegrate[
 		progress = WidthCross[s0*(10^kt)]*Lexp[10^(kt)]* (Log[10])
    ,
-   {kt, Log10[xmin*xmin], 0},
+   {kt, Log10[xmin], 0},
    Method -> "AdaptiveMonteCarlo"(*,
    EvaluationMonitor :> (
       iteration++;
@@ -182,7 +168,7 @@ Norma = NIntegrate[
 CrossSvertka = NIntegrate[
 		Abs[f4[s0*(10^kt)]]*WidthCross[s0*(10^kt)]*Lexp[10^(kt)]* (Log[10])
    ,
-   {kt, Log10[xmin*xmin], 0},
+   {kt, Log10[xmin], 0},
    Method -> "AdaptiveMonteCarlo"
 ]; 
 F4mean =  Abs[CrossSvertka/Norma];
@@ -192,7 +178,7 @@ val[x_] := If[NumericQ[x], ToString@fmt[x], "-"];
 
 msgText = StringJoin[
   ToString[ProcName], ":\n",
-  "params: sqrts0 = ", val[Sqrt[s0]], " mh2 = ", val[mh2], " mhc = ", val[mhc], "\n",
+  "params: sqrts0 = ", val[Sqrt[s0]], " mh2 = ", val[mh2], " mhc = ", val[mhcnum], "\n",
   "f4mean: ", val[F4mean], "\n",
   "crosssection: ", val[Norma*3.9*10^8], " pb\n",
   " =========================== \n"
@@ -229,7 +215,7 @@ If[Length[$ScriptCommandLine] > 1,
 	  DateString[],
 	  fmt1[Sqrt[s0]],
 	  fmt1[mh2],
-	  If[ValueQ[mhc], fmt1[mhc], ""],
+	  If[ValueQ[mhcnum], fmt1[mhcnum], ""],
 	  fmt1[safeLog10[F4mean]],
 	  fmt1[safeLog10[Norma*3.9*10^8]]
 	};

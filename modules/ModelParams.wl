@@ -109,6 +109,7 @@ Params = {
   Global`ca -> ModelParams`pca
 };
 
+
 (* --------------------------------------------------------------------------- *)
 (* 4.  SMP\[RightArrow]Model translation (FeynCalc)                                        *)
 (* --------------------------------------------------------------------------- *)
@@ -124,14 +125,6 @@ SmpChanger = {
   FeynCalc`CA          -> ModelParams`pca
 };
 
-PaveToLooptools = {
-   FeynCalc`PaVe[0, 0, 1, {pa_, pb_, pc_}, {pd_, pE_, pf_}, ___] -> LoopTools`C0i[LoopTools`cc001, pb, pa, pc, pd, pE, pf],
-   FeynCalc`PaVe[0, 0, 2, {pa_, pb_, pc_}, {pd_, pE_, pf_}, ___] -> LoopTools`C0i[LoopTools`cc002, pb, pa, pc, pd, pE, pf],
-   FeynCalc`PaVe[1,  {pa_, pb_, pc_}, {pd_, pE_, pf_}, ___] -> LoopTools`C0i[LoopTools`cc1, pb, pa, pc, pd, pE, pf],
-   FeynCalc`PaVe[2,  {pa_, pb_, pc_}, {pd_, pE_, pf_}, ___] -> LoopTools`C0i[LoopTools`cc2, pb, pa, pc, pd, pE, pf],
-   FeynCalc`PaVeAutoOrder -> Sequence[],
-   FeynCalc`PaVeAutoReduce -> Sequence[]
-};
 
 (* --------------------------------------------------------------------------- *)
 (* 5.  Convenience wrappers                                                    *)
@@ -140,4 +133,27 @@ ClearAll[AngleChanger];
 AngleChanger = Join[AngleRules, pTrigRules];
 
 End[];  (* `Private` *)
+
+(* PaveToLooptools \:041f\:041e\:0421\:041b\:0415 End[] \[LongDash] \:043f\:0430\:0442\:0442\:0435\:0440\:043d\:044b \:0431\:0443\:0434\:0443\:0442 \:0432 Global` *)
+PaveToLooptools = {
+  FeynCalc`PaVe[0, 0, 1, {pa_, pb_, pc_}, {pd_, pE_, pf_}, ___] :>
+    LoopTools`C0i[LoopTools`cc001, pb, pa, pc, pd, pE, pf],
+  FeynCalc`PaVe[0, 0, 2, {pa_, pb_, pc_}, {pd_, pE_, pf_}, ___] :>
+    LoopTools`C0i[LoopTools`cc002, pb, pa, pc, pd, pE, pf],
+  FeynCalc`PaVe[1, {pa_, pb_, pc_}, {pd_, pE_, pf_}, ___] :>
+    LoopTools`C0i[LoopTools`cc1, pb, pa, pc, pd, pE, pf],
+  FeynCalc`PaVe[2, {pa_, pb_, pc_}, {pd_, pE_, pf_}, ___] :>
+    LoopTools`C0i[LoopTools`cc2, pb, pa, pc, pd, pE, pf],
+    PaVe[0, 0, 1, {pa_, pb_, pc_}, {pd_, pE_, pf_}, ___] :>
+    LoopTools`C0i[LoopTools`cc001, pb, pa, pc, pd, pE, pf],
+  PaVe[0, 0, 2, {pa_, pb_, pc_}, {pd_, pE_, pf_}, ___] :>
+    LoopTools`C0i[LoopTools`cc002, pb, pa, pc, pd, pE, pf],
+  PaVe[1, {pa_, pb_, pc_}, {pd_, pE_, pf_}, ___] :>
+    LoopTools`C0i[LoopTools`cc1, pb, pa, pc, pd, pE, pf],
+  PaVe[2, {pa_, pb_, pc_}, {pd_, pE_, pf_}, ___] :>
+    LoopTools`C0i[LoopTools`cc2, pb, pa, pc, pd, pE, pf],
+  PaVeAutoOrder  -> Sequence[],
+  PaVeAutoReduce -> Sequence[]
+};
+
 EndPackage[];

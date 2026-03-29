@@ -41,7 +41,7 @@ PrintTG[msg_String] := Module[{command, result, isWindows, pythonCmd, scriptPath
   Print[msg];
   isWindows = $OperatingSystem === "Windows";
   pythonCmd = If[isWindows, "python", "python3"];
-  scriptPath = FileNameJoin[{DirectoryName[NotebookDirectory[], 2], "tg", "notifier_console.py"}];
+  scriptPath = FileNameJoin[{Global`ProjectRoot, "tg", "notifier_console.py"}];
   scriptPath = StringReplace[scriptPath, "\\" -> "/"];
   command = StringJoin[pythonCmd, " ", scriptPath, " \"", msg, "\""];
   If[isWindows,

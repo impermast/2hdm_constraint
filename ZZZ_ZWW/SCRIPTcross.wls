@@ -13,8 +13,13 @@ particleID = 2;
 (* for PDF not FeynCalc*)
 
 RecName = "ZWW";
+If[pID === "dd", particleID = 1];
+If[pID === "uu", particleID = 2];
+If[pID === "gg", particleID = 21];
 ProcName = "dd"<>RecName;
-mh2 = 250;
+sqrts0    = 1000;         
+mh2num = 250.;
+mhc    =400.;  
 
 
 (* \:0427\:0442\:0435\:043d\:0438\:0435 \:0430\:0440\:0433\:0443\:043c\:0435\:043d\:0442\:043e\:0432 \:043a\:043e\:043c\:0430\:043d\:0434\:043d\:043e\:0439 \:0441\:0442\:0440\:043e\:043a\:0438 *)
@@ -26,8 +31,7 @@ If[Length[$ScriptCommandLine] > 1,
 If[ $FrontEnd === Null, 
     $FeynCalcStartupMessages = False; 
     $LoadFeynCalcMessages = False; 
-    Print["tt>Z>ZZ calculation in 2HDM CPV, 1-loop.\nCalcultion of cross from PDF and matrix."]; 
-  ];
+     ];
 If[ $Notebooks === False, 
 	$FeynCalcStartupMessages = False;
 	$LoadFeynCalcMessages = False; 
@@ -39,21 +43,21 @@ If[ $Notebooks === False,
 
 
 (* \:041f\:043e\:0434\:043a\:043b\:044e\:0447\:0435\:043d\:0438\:0435 \:043d\:0435\:043e\:0431\:0445\:043e\:0434\:0438\:043c\:044b\:0445 \:043f\:0430\:043a\:0435\:0442\:043e\:0432 *)
+Off[General::shdw]; Off[C0::"msg"];  (* \:043f\:043e\:0434\:0430\:0432\:0438\:0442\:044c \:043b\:0438\:0448\:043d\:0438\:0435 \:0432\:043e\:0440\:043d\:0438\:043d\:0433\:0438 *)
 
-Quiet[$LoadAddOns = {"FeynArts"}];
-Quiet[$PrePrint = InputForm];
-
-Quiet[<<FeynCalc`] 
-AppendTo[$ModelPath, "/home/kds/.Mathematica/Applications/FeynArts/Models/"];
-Quiet[Install["LoopTools"]];
-Quiet[Needs["LoopTools`"]];
-$FAVerbose = 0; 
+If[ $FrontEnd === Null, 
+    $FeynCalcStartupMessages = False; 
+    $LoadFeynCalcMessages = False;  
+  ];
+SetDirectory[DirectoryName[$InputFileName]];
+<<"../modules/setup.m"
+SetDirectory[DirectoryName[$InputFileName]];
 
 Unprotect[PaVe, Li2, A0, A00, B0, B1, B00, B11, DB0, DB1, C0, D0];
 Remove[PaVe, Li2, A0, A00, B0, B1, B00, B11, DB0, DB1, C0, D0];
 
 
-SetDirectory[NotebookDirectory[]];
+
 Get["../modules/ModelParams.wl"];
 Get["../modules/FunctionalModules.wl"];
 

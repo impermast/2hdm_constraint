@@ -1,136 +1,368 @@
 (* ::Package:: *)
 
+(* ::Section:: *)
+(*Setup*)
+
+
 SetDirectory[NotebookDirectory[]];
 << "../modules/setup.m"
-
-
-(*Main params of graphs*)
-(*Number of points in graphs  N=*)
-PointNumber = 200;
-ContoursNumber = 10;
-GraphTheme = ColorData["Rainbow"];
-SavePDF = True;
-
+SetDirectory[NotebookDirectory[]];
+Print[Directory[]]
 
 SavePath = "subgraphs/";
+SavePDF  = 1;
 dir     = "buffer";
 pattern = "f4mean_*.csv";
 
 
 (*constraints on f4 ZZZ*)
-constraitF4Z300 = 1.9*10^(-4);
-constraitF4Z3000 = 2*10^(-5);
 
-constrait = constraitF4Z3000;
-styleLim = Directive[GrayLevel[.2], DotDashed, AbsoluteThickness[2]];
-
-
-(* ::Subsection:: *)
-(*\:0433\:0440\:0430\:0444\:0438\:043a f4 (zzz zww) from mh2 (fix s0, mhc)*)
+constraitF4Z300=1.3/10^4;
+constraitF4Z3000=3.7/10^5;
+constraitF4ZWW=2/10^4;
 
 
-(* ============================================== *)
-(* f4 CSV -> \:0442\:0430\:0431\:043b\:0438\:0446\:044b                  *)
-(* ============================================== *)
-ds  = SaveToCSVmodule`LoadF4Data["buffer","f4mean_*.csv"];
-useLog10 = (yKey === "log10_f4mean");
-mhcSel = 800;
-sSel   = 1000;
-dsCut  = ds[Select[ #sqrts0 == sSel &]];
-yKey   = If[
-  Length[dsCut] > 0 && MemberQ[Keys@First@Normal@dsCut, "f4mean"],
+(* ::Section:: *)
+(*graphs design*)
+
+
+Clear[base1DOpts, base2DcontOpts, shadowbox, legendLumi, base2DdensOpts];
+Clear[shadowbox];
+
+
+textscale = 20;
+imgSize = 600;
+fontFam = "Helvetica";
+fontWeight = "Plain";
+frameThick = 2.2;
+lineThick = 2.6;
+
+styleLim300  = Directive[Red,  Dashed, AbsoluteThickness[2.2]];
+styleLim3000 = Directive[Blue, Dashed, AbsoluteThickness[2.2]];
+
+PointNumber=50;
+ContoursNumber=6;
+GraphTheme=ColorData["Rainbow"];
+
+
+shadowbox[legend_] := Framed[legend, Background -> White, FrameStyle -> None, FrameMargins -> 0];
+
+SciLbl[v_, nd_: 1] := Style[
+  NumberForm[
+    N[v],
+    {Infinity, nd},
+    ExponentFunction -> (Null &)
+  ],
+  textscale - 2, FontFamily -> fontFam, FontWeight -> fontWeight, Black
+];
+
+legendLumi = SwatchLegend[
+  {Directive[Red], Directive[Blue]},
+  {"300", "4000"},
+  LegendLayout -> "Column",
+  LegendFunction -> shadowbox,
+  LabelStyle -> Directive[textscale, FontFamily -> fontFam, FontWeight -> fontWeight],
+  LegendLabel -> Style[
+    Row[{"\[Integral] ", Style["L", Italic], Style["d", Italic], Style["t", Italic], ", ", Superscript["fb", -1]}],
+    textscale
+  ]
+];
+
+
+base1DOpts := Sequence[
+  Frame      -> True,
+  Axes       -> False,
+  Joined     -> True,
+  PlotMarkers -> None,
+  FrameStyle -> Directive[Black, AbsoluteThickness[frameThick]],
+  FrameTicksStyle -> Directive[
+    textscale - 2, FontFamily -> fontFam, FontWeight -> fontWeight
+  ],
+  LabelStyle -> Directive[textscale, FontFamily -> fontFam, FontWeight -> fontWeight],
+  BaseStyle  -> Directive[textscale, FontFamily -> fontFam, FontWeight -> fontWeight],
+  GridLines  -> None,
+  PlotRangePadding -> None,
+  PlotRangeClipping -> True
+];
+
+
+xLabM2  = Style[
+  Row[{Subscript[Style["m", Italic], "2"], " [GeV]"}],
+  textscale, FontFamily -> fontFam, FontWeight -> fontWeight
+];
+yLabF4Log = Style[Row[{Subscript["Log", 10], " |f\!\(\*SuperscriptBox[\(4\), \(\)]\)|"}], textscale];
+yLabF4Lin = Style["|f4|", textscale];
+yLabZZZ = Style[
+  TraditionalForm @ Row[{
+    HoldForm @ Abs[Subsuperscript[Style["f", Italic], 4, Style["Z", Italic]]],
+    "\[Times]", Superscript[10, -stepen]
+  }], textscale
+];
+makePlotLabel[sSel_, mhcSel_] := Style[
+  Row[{
+    TraditionalForm @ HoldForm[Sqrt[Subscript[s, 0]]],
+    " = ", sSel, " GeV,  ",
+    TraditionalForm @ HoldForm[Subscript[m, Superscript[H, "\[PlusMinus]"]]],
+    " = ", mhcSel, " GeV"
+  }],
+  textscale, FontFamily -> fontFam, FontWeight -> fontWeight
+];
+
+
+(* ::Section:: *)
+(*Download data*)
+
+
+(* Data loading *)
+ds = SaveToCSVmodule`LoadF4Data[dir, pattern];
+rawUU = Import["buffer/f4mean_uuZZZ.csv", "Dataset", "HeaderLines" -> 1];
+rawDD = Import["buffer/f4mean_ddZZZ.csv", "Dataset", "HeaderLines" -> 1];
+
+
+Clear[extractPairs, sumPairsLin];
+(* \:0418\:0437\:0432\:043b\:0435\:0447\:044c \:043e\:0442\:0441\:043e\:0440\:0442\:0438\:0440\:043e\:0432\:0430\:043d\:043d\:044b\:0435 \:043f\:0430\:0440\:044b {mh2, yKey} \:0438\:0437 \:0434\:0430\:0442\:0430\:0441\:0435\:0442\:0430 *)
+extractPairs[d_, yKey_] := Module[{rows},
+  rows = Normal @ raw[Select[#sqrts0 == sSel &]];
+  rows = Select[rows, NumericQ[#["mh2"]] && NumericQ[#["log10_f4mean"]] &];
+  SortBy[{#["mh2"], yNorm * 10.^#["log10_f4mean"]} & /@ rows, First]
+];
+extractLog[raw_, sSel_] := Module[{rows},
+  rows = Normal @ raw[Select[#sqrts0 == sSel &]];
+  rows = Select[rows, NumericQ[#["mh2"]] && NumericQ[#["log10_f4mean"]] &];
+  SortBy[{#["mh2"], #["log10_f4mean"]} & /@ rows, First]
+];
+
+(* \:0421\:0443\:043c\:043c\:0438\:0440\:043e\:0432\:0430\:0442\:044c \:0434\:0432\:0435 \:0441\:0435\:0440\:0438\:0438 {mh2, y}; yLog10=True \:043e\:0437\:043d\:0430\:0447\:0430\:0435\:0442 \:0434\:0430\:043d\:043d\:044b\:0435 \:0432 log10 *)
+sumPairsLin[a_, b_] := Module[{Ha, Hb, H, xs, ys},
+  Ha = AssociationThread[a[[All, 1]] -> a[[All, 2]]];
+  Hb = AssociationThread[b[[All, 1]] -> b[[All, 2]]];
+  H  = Merge[{Ha, Hb}, Total];
+  xs = Sort @ Keys[H];
+  ys = Lookup[H, xs];
+  Transpose[{xs, ys}]
+];
+eps = 10.^-300;
+sumLog[a_, b_] := Module[{Ha, Hb, H, xs, ys},
+  Ha = AssociationThread[a[[All, 1]] -> 10.^a[[All, 2]]];
+  Hb = AssociationThread[b[[All, 1]] -> 10.^b[[All, 2]]];
+  H  = Merge[{Ha, Hb}, Total];
+  xs = Sort @ Keys[H];
+  ys = Log10 @ Clip[Lookup[H, xs], {eps, Infinity}];
+  Transpose[{xs, ys}]
+];
+(* \:041e\:043f\:0440\:0435\:0434\:0435\:043b\:0438\:0442\:044c yKey \:043f\:043e \:043f\:0435\:0440\:0432\:043e\:043c\:0443 \:0434\:043e\:0441\:0442\:0443\:043f\:043d\:043e\:043c\:0443 \:0441\:0442\:043e\:043b\:0431\:0446\:0443 *)
+detectYKey[dataset_] := If[
+  Length[dataset] > 0 && MemberQ[Keys @ First @ Normal @ dataset, "f4mean"],
   "f4mean",
   "log10_f4mean"
 ];
-useLog10 = (yKey === "log10_f4mean");
 
 
-dsZZZuu = dsCut[Select[#procname == "uuZZZ" &]];
-dsZZZdd = dsCut[Select[#procname == "ddZZZ" &]];
-dsZWWuu = dsCut[Select[#mhc == mhcSel && #procname == "uuZWW" &]];
-dsZWWdd = dsCut[Select[#mhc == mhcSel && #procname == "ddZWW" &]];
-(* \:0432 \:043f\:0430\:0440\:044b {mh2, f4mean} *)
-pairs[d_] := Module[{rows},
-  rows = Normal @ d[All, (Function[r, {r["mh2"], r[yKey]}])];
-  rows = Select[rows, VectorQ[#, NumericQ] &];
-  SortBy[rows, First]
+(* ::Section:: *)
+(*Graphs*)
+
+
+(* ::Subsection:: *)
+(*ZZZ*)
+
+
+stepen = 5;
+yNorm  = 10.^stepen;
+limZZZ300  = constraitF4Z300  *yNorm;   (* ~1.11  *)
+limZZZ3000 = constraitF4Z3000 *yNorm;
+toPairs[logPairs_] := {#[[1]], 10.^(stepen + #[[2]])} & /@ logPairs;
+shiftPairs[pairs_] := {#[[1]], #[[2]] + stepen} & /@ pairs;
+
+
+(* ::Subsubsection:: *)
+(*\:0433\:0440\:0430\:0444\:0438\:043a f4 (zzz) from mh2 (fix s0, mhc)*)
+
+
+sSel1   = 1000;
+mhcSel1 = 400;
+
+dsCut1  = ds[Select[#sqrts0 == sSel1 &]];
+yKey1   = detectYKey[dsCut1];
+useLog1 = (yKey1 === "log10_f4mean");
+
+
+(* ZZZ *)
+pUU1  = toPairs @ extractLog[rawUU, sSel1];
+pDD1  = toPairs @ extractLog[rawDD, sSel1];
+pSum1 = toPairs @ sumLog[
+  extractLog[rawUU, sSel1],
+  extractLog[rawDD, sSel1]
 ];
-
-pZZZuu = pairs[dsZZZuu];
-pZZZdd = pairs[dsZZZdd];
-pZWWuu = pairs[dsZWWuu];
-pZWWdd = pairs[dsZWWdd];
-
-(* \:0441\:0443\:043c\:043c\:0438\:0440\:043e\:0432\:0430\:043d\:0438\:0435 \:0434\:0432\:0443\:0445 \:043a\:0440\:0438\:0432\:044b\:0445 {mh2, y}; y \:043c\:043e\:0436\:0435\:0442 \:0431\:044b\:0442\:044c \:0432 log10 *)
-sumPairsLin[a_, b_, yLog10_: False] := Module[{toAssoc, H, xs, ysLin, eps = 10.^-300},
-  toAssoc[list_] := AssociationThread[
-    list[[All, 1]] -> If[yLog10, 10.^list[[All, 2]], list[[All, 2]]]
-  ];
-  H = Merge[{toAssoc[a], toAssoc[b]}, Total];
-  xs = Sort @ Keys[H];
-  ysLin = Lookup[H, xs];
-  Transpose[{xs, If[yLog10, Log10[Clip[ysLin, {eps, Infinity}]], ysLin]}]
-];
-
-pZZZsum = sumPairsLin[pZZZuu, pZZZdd, useLog10];
-pZWWsum = sumPairsLin[pZWWuu, pZWWdd, useLog10];
+Print["pUU1 first: ", First[pUU1]];
+Print["pSum1 range y: ", Min[pSum1[[All,2]]], " .. ", Max[pSum1[[All,2]]]];
+Print["lim: ", limZZZ3000, "     f4ZZZlim: ", constraitF4Z300];
+xmin1 = 200;  xmax1 = 800;
+ymin1 = -7.5; ymax1 = 2.05;
 
 
-(* \:0434\:0438\:0430\:043f\:0430\:0437\:043e\:043d \:043f\:043e \:043e\:0441\:0438 x *)
-xmin = Min @ (First /@ pZWWsum);
-xmax = Max @ (First /@ pZWWsum);
+colorUU1 = Darker[Brown,  0.1];
+colorDD1 = Darker[Yellow, 0.2];
 
-styles = {
-  {Blue, Dotted}, {Blue, Dashed}, Blue,
-  {Darker[Green], Dotted}, {Darker[Green], Dashed}, Darker[Green],
-  styleLim  (* f4exp *)
-};
-labels = {
-  "ZZZ uu","ZZZ dd","ZZZ sum",
-  "ZWW uu","ZWW dd","ZWW sum",
-  "f4 limit"
+stylesLines1 = {
+  Directive[colorUU1, Dashed, AbsoluteThickness[lineThick]],
+  Directive[colorDD1, Dashed, AbsoluteThickness[lineThick]],
+  Directive[Black,            AbsoluteThickness[lineThick + 1.0]]
 };
 
-legend = Placed[LineLegend[styles, labels, 
-		LegendLayout -> "Column", 
-		LegendFunction->(Framed[#, Background->White,
-                                 FrameStyle->GrayLevel[.85],
-                                 FrameMargins->{{10,10},{8,8}}] &)],
-       {Left, Bottom}
-                             ];
-
-(* \:043e\:0441\:043d\:043e\:0432\:043d\:043e\:0439 \:0433\:0440\:0430\:0444\:0438\:043a *)
-pltMain = Show[
+legendLines1 = LineLegend[
+  stylesLines1,
   {
-    ListPlot[pZZZuu,  Joined->True, PlotStyle->styles[[1]]],
-    ListPlot[pZZZdd,  Joined->True, PlotStyle->styles[[2]]],
-    ListPlot[pZZZsum, Joined->True, PlotStyle->styles[[3]]],
-    ListPlot[pZWWuu,  Joined->True, PlotStyle->styles[[4]]],
-    ListPlot[pZWWdd,  Joined->True, PlotStyle->styles[[5]]],
-    ListPlot[pZWWsum, Joined->True, PlotStyle->styles[[6]]],
-    Plot[Log10[constrait], {x, xmin, xmax}, PlotStyle->styles[[7]]]
+    Style["ZZZ \!\(\*StyleBox[\"uu\",FontSlant->\"Italic\"]\)", textscale - 2],
+    Style["ZZZ \!\(\*StyleBox[\"dd\",FontSlant->\"Italic\"]\)", textscale - 2],
+    Style["ZZZ sum", textscale - 2]
   },
-  Frame -> True, FrameLabel -> {"\!\(\*TemplateBox[<|\"boxes\" -> FormBox[SubscriptBox[StyleBox[\"m\", \"TI\"], \"2\"], TraditionalForm], \"errors\" -> {}, \"input\" -> \"m_{2}\", \"state\" -> \"Boxes\"|>,\n\"TeXAssistantTemplate\"]\) GeV", "\!\(\*TemplateBox[<|\"boxes\" -> FormBox[SubscriptBox[\"Log\", \"10\"], TraditionalForm], \"errors\" -> {}, \"input\" -> \"\\\\text{Log}_{10}\", \"state\" -> \"Boxes\"|>,\n\"TeXAssistantTemplate\"]\)|f4|"},
-  GridLines -> None, 
-  PlotRange -> {{xmin,xmax},{-4.49,-7.5}}, 
-  ImageSize -> 720, Axes -> False,  Frame -> True, PlotRangeClipping -> True,
-  PlotLabel -> Row[{"\!\(\*TemplateBox[<|\"boxes\" -> FormBox[RowBox[{SqrtBox[SubscriptBox[StyleBox[\"s\", \"TI\"], \"0\"]], \"\[LongEqual]\"}], TraditionalForm], \"errors\" -> {}, \"input\" -> \"\\\\sqrt{s_0}=\", \"state\" -> \"Boxes\"|>,\n\"TeXAssistantTemplate\"]\)", sSel, " GeV,  ","\!\(\*TemplateBox[<|\"boxes\" -> FormBox[SubscriptBox[StyleBox[\"m\", \"TI\"], SuperscriptBox[StyleBox[\"H\", \"TI\"], \"\[PlusMinus]\"]], TraditionalForm], \"errors\" -> {}, \"input\" -> \"m_{H^\\\\pm}\", \"state\" -> \"Boxes\"|>,\n\"TeXAssistantTemplate\"]\)= ", mhcSel, " GeV"}]
+  LegendLayout     -> "Column",
+  LegendFunction   -> shadowbox,
+  LegendMarkerSize -> {32, 2},
+  LabelStyle       -> Directive[textscale - 2, FontFamily -> fontFam, FontWeight -> fontWeight]
+];
+legAll = shadowbox @ Column[
+  {legendLines1, legendLumi},
+  Spacings -> 0.01, Alignment -> Left
 ];
 
 
-finalPlot1 = Legended[pltMain,legend]
+(* Graph ZZZ-1 | Plot *)
+
+limEpilog1 = {
+  styleLim300,
+  Line[{{xmin1, Log10@limZZZ300},
+        {xmax1, Log10@limZZZ300}}],
+  styleLim3000,
+  Line[{{xmin1, Log10@limZZZ3000},
+        {xmax1, Log10@limZZZ3000}}]
+};
+
+pltZZZ1 = Show[
+  ListLogPlot[pUU1,  PlotStyle -> stylesLines1[[1]], Joined -> True, PlotMarkers -> None],
+  ListLogPlot[pDD1,  PlotStyle -> stylesLines1[[2]], Joined -> True, PlotMarkers -> None],
+  ListLogPlot[pSum1, PlotStyle -> stylesLines1[[3]], Joined -> True, PlotMarkers -> None],
+  Evaluate @ base1DOpts,
+  Epilog     -> limEpilog1,
+  FrameLabel -> {xLabM2, yLabZZZ},
+  PlotRange  -> {{xmin1, xmax1}, {ymin1, ymax1}},
+  PlotLabel -> Style[
+  Row[{
+    TraditionalForm @ HoldForm[Sqrt[Subscript[s, 0]]],
+    " = ", sSel1, " GeV"}],
+  textscale, FontFamily -> fontFam
+   ],
+  ImageSize -> imgSize
+];
+
+
+
+finalPlot1 = Legended[pltZZZ1, Placed[legAll, Scaled[{0.88, 0.34}]] ]
 
 
 (* ::InheritFromParent:: *)
 (**)
 
 
-If[SavePDF,
-	graphpath = SavePath <> "f4mean_s"<>ToString[sSel]<>"mhc"<>ToString[mhcSel]<>".pdf";
-  Export[graphpath, finalPlot1]];
+If[SavePDF == 1,
+  Export[SavePath <> "ZZZ_uudd_sum_s" <> ToString[sSel1] <> "_mhc" <> ToString[mhcSel1] <> ".pdf",
+         finalPlot1]
+];
 
 
-(* ::Subsection:: *)
+(* ::Subsubsection:: *)
+(* Graph ZZZ-2|Data:ZZZ sum for s0=1000,10000,13000*)
+
+
+s0List2 = {1000, 10000, 13000};
+mhcSel2 = 400;
+
+pSumByS0 = Association @ Table[
+  s -> shiftPairs @ sumLog[extractLog[rawUU, s], extractLog[rawDD, s]],
+  {s, s0List2}
+];
+
+xmin2 = 200;  xmax2 = 800;
+ymin2 = -3.2; ymax2 = 1.8;
+
+
+cols2   = {Darker[Blue, 0.1], Darker[Green, 0.15], Darker[Red, 0.15]};
+styles2 = Directive[#, AbsoluteThickness[lineThick]] & /@ cols2;
+
+sLbl[v_] := Style[
+  Row[{"\[Sqrt]", Subscript[Style["s", Italic], "0"],
+       " = ", Style[ToString[Round@v], Bold], " GeV"}],
+  textscale - 2
+];
+
+legendLines2 = LineLegend[
+  styles2, sLbl /@ s0List2,
+  LegendLayout     -> "Column",
+  LegendFunction   -> shadowbox,
+  LegendMarkerSize -> {32, 2},
+  LabelStyle       -> Directive[textscale - 2, FontFamily -> fontFam, FontWeight -> fontWeight]
+];
+
+legAll2 = shadowbox @ Column[
+  {legendLines2, Spacer[4], legendLumi},
+  Spacings -> 0.1, Alignment -> Left
+];
+
+limEpilog2 = {
+  styleLim300,
+  Line[{{xmin2, limZZZ300},  {xmax2, limZZZ300}}],
+  styleLim3000,
+  Line[{{xmin2, limZZZ3000}, {xmax2, limZZZ3000}}]
+};
+
+
+
+
+
+limPlot2 = Plot[
+  {limZZZ300, limZZZ3000},
+  {x, xmin2, xmax2},
+  PlotStyle -> {styleLim300, styleLim3000}
+];
+
+pltZZZ2 = Show[
+  MapThread[
+    ListLinePlot[#1, PlotStyle -> #2] &,
+    {Values[pSumByS0], styles2}
+  ],
+  limPlot2,
+  Evaluate @ base1DOpts,
+  FrameLabel -> {xLabM2, yLabZZZ},
+  PlotRange  -> {{xmin2, xmax2}, {ymin2, ymax2}},
+  PlotLabel  -> Style[
+    Row[{
+      "ZZZ sum,  ",
+      Subscript[Style["m", Italic], Superscript[Style["H", Italic], "\[PlusMinus]"]],
+      " = ", mhcSel2, " GeV"
+    }],
+    textscale, FontFamily -> fontFam
+  ],
+  ImageSize -> imgSize
+];
+
+
+
+finalPlot2 = Legended[
+  Legended[pltZZZ2, Placed[legendLines2, Scaled[{0.8, 0.81}]]],
+  Placed[legendLumi, Scaled[{0.12, 0.81}]]
+]
+
+
+If[SavePDF == 1,
+  Export[SavePath <> "ZZZ_sum_diffS0_mhc" <> ToString[mhcSel2] <> ".pdf", finalPlot2]
+]
+
+
+(* ::Subsection::Closed:: *)
+(*ZWW*)
+
+
+(* ::Subsubsection:: *)
 (*\:0433\:0440\:0430\:0444\:0438\:043a f4 ZWW from mh2 (different mhc)*)
 
 
@@ -174,7 +406,6 @@ pZWWsumByMhc = Association @ Table[
   ],
   {mhc, mhcList}
 ];
-First[pZWWsumByMhc]
 
 
 allPairs = Values[pZWWsumByMhc];
@@ -240,7 +471,7 @@ If[SavePDF,
   Export[graphpath, finalPlot2]];
 
 
-(* ::Subsection:: *)
+(* ::Subsubsection:: *)
 (*\:0413\:0440\:0430\:0444\:0438\:043a f4 ZZZ ZWW from mh2 (fix mhc) for different s0*)
 
 

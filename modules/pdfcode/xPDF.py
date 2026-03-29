@@ -52,8 +52,8 @@ def graphics():
     
     print("Test graph.")
     x_values = np.logspace(-5, 0, 50)
-    pdf_values = [get_pdf_values(x, 125, 1) / x for x in x_values]
-    pdf_values2 = [get_pdf_values(x, 125, 1) for x in x_values]
+    pdf_values = [get_pdf_values( 125, x, 1) / x for x in x_values]
+    pdf_values2 = [get_pdf_values(125,x, 1) for x in x_values]
 
     fig, ax = plt.subplots(figsize=(8, 6))
 

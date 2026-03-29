@@ -65,4 +65,7 @@ ZZZ_ZWW/backfiles/
 lhapdf/
 lhapdf-data/
 lhapdf-sets/
-pdfcode/*.csv
+*.csv
+
+setup/lhapdf_install/*
+setup/LHAPDF-6.5.4/*

@@ -142,16 +142,16 @@ install_linux() {
 
   echo "[linux] build+install..."
   local srcdir="$SRC/LoopTools-$VER"
-  cd "$srcdir"
+  cd "$srcdir" || { echo "ERROR: cannot cd to $srcdir"; exit 1; }
 
   # add WSTP CompilerAdditions to PATH (so mcc/mprep are found)
   local cadds
   cadds="$("$MATH_BIN" -noprompt -run 'Print[FileNameJoin[{$InstallationDirectory,"SystemFiles","Links","WSTP","DeveloperKit",$SystemID,"CompilerAdditions"}]]; Quit[]' 2>/dev/null | tr -d '\r')"
   export PATH="$cadds:$PATH"
 
-  ./configure --prefix="$lt"
-  make -j"$(getconf _NPROCESSORS_ONLN 2>/dev/null || echo 2)"
-  make install
+  ./configure --prefix="$lt" || { echo "ERROR: configure failed"; exit 1; }
+  make -j"$(getconf _NPROCESSORS_ONLN 2>/dev/null || echo 2)" || { echo "ERROR: make failed"; exit 1; }
+  make install || { echo "ERROR: make install failed"; exit 1; }
 
   echo "[linux] write LoopTools.m wrapper..."
   cat > "$lt/LoopTools.m" <<EOF
@@ -164,7 +164,7 @@ EndPackage[];
 EOF
 
   echo "[linux] short test..."
-  "$MATH_BIN" -noprompt -run "TimeConstrained[(l=Install[\"$lt/bin/LoopTools\"]; Print[\"B0=\", N@B0[1000,50,80]]; Uninstall[l];),10,Print[\"FAIL\"]]; Quit[]"
+  "$MATH_BIN" -noprompt -run "TimeConstrained[(l=Install[\"$lt/bin/LoopTools\"]; Print[\"B0=\", N@B0[1000,50,80]]; Uninstall(l);),10,Print[\"FAIL\"]]; Quit[]"
   echo "[linux] DONE -> $lt"
 }
 

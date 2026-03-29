@@ -7,7 +7,7 @@ Procs = {
 };
 
 GridSqrts0 = {320, 500, 1000, 10000, 13000};
-GridMh2    = Range[200, 250, 1];
+GridMh2    = Range[200, 600, 5];
 GridMhc    = {400};
 
 Alpha2Fixed = 0.955317;
@@ -120,7 +120,5 @@ Do[
   , {sqrts0v, GridSqrts0}];
 
 , {prc, Procs}];
-
-
 
 

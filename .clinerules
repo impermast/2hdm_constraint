@@ -1,0 +1,175 @@
+# .clinerules — 2hdm_constraint
+# Автоматизация физических вычислений 2HDM CP-violating с LLM (Cline)
+
+## 1. Общие положения
+- **Проект:** Вычисление аномальных коэффициентов ZZZ/ZWW вершин (f4, f6) в модели 2HDM с CP-нарушением (THDMCPV)
+- **Валидация:** pp→H→gg cross-section
+- **Язык:** Код/комментарии: английский. Общение с пользователем: русский.
+- **Режим:** Полуавтоматический — LLM (Cline) выполняет операции с приоритетом safety и reproducibility
+
+## 2. Технологический стек
+- **Primary:** Wolfram Mathematica (.wl, .wls, .nb, .m)
+- **Secondary:** Python 3 (pdfcode/, tg/)
+- **Scripts:** Bash (.sh)
+- **Запрещено:** web/JS/TypeScript, новые зависимости без согласования
+
+## 3. Protected files — ТРЕБУЮТ РУЧНОГО ПОДТВЕРЖДЕНИЯ
+Изменения или удаление этих файлов требуют явного подтверждения пользователя:
+
+| Файл | Назначение | Риск при изменении |
+|------|-----------|-------------------|
+| `modules/ModelParams.wl` | Физические константы (MZ, vev, mixing angles) | поломка физической модели |
+| `setup/THDMCPV.mod` | FeynArts модель (частицы, индексы) | несовместимость FeynArts |
+| `setup/THDMCPV.pars` | Параметры модели для FeynArts | ошибки генерации диаграмм |
+| `modules/setup.m` | Порядок инициализации пакетов | FeynArts→FeynCalc→LoopTools |
+| `ZZZ_ZWW/buffer/*.mx` | Сериализованные результаты длительных вычислений | потерь часов/дней вычислений |
+| `ZZZ_ZWW/buffer/*.csv` | Финальные таблицы (f4mean, cross-sections) | потеря данных для анализа |
+
+## 4. Инициализация пакетов — КРИТИЧЕСКИ ВАЖНО
+Всегда загружайте через `modules/setup.m`:
+```Mathematica
+<< "../modules/setup.m"
+```
+Порядок: **FeynArts → FeynCalc → LoopTools**.
+
+LoopTools: используйте только `Install[path]`. НИКОГДА не запускайте `.exe` напрямую.
+
+## 5. Buffer Rule — САМАЯ ВАЖНАЯ ПРАВИЛО
+**Перед любым пересчётом:**
+1. Проверьте существование `buffer/*.mx` или `ZZZ_ZWW/buffer/*.mx`
+2. Если файл существует → используйте `Import[]`, НЕ пересчитывайте
+3. Вычисляйте ТОЛЬКО если файл отсутствует или повреждён
+4. Никогда не удаляйте `buffer/*.mx` без явного `requires_approval=true`
+
+**Сохранение промежуточных результатов:**
+```Mathematica
+Export["buffer/result.mx", data, "MX"];   (* Mathematica объекты *)
+SaveToCSVmodule`AppendRowToCSV["buffer/result.csv", row];  (* таблицы *)
+```
+
+## 6. Размещение нового кода (Where new code goes)
+| Тип | Путь | Пример |
+|-----|------|--------|
+| Утилиты (таймеры, нотификаторы) | `modules/FunctionalModules.wl` | `CheckTime[]`, `PrintTG[]` |
+| Новые параметры модели | `modules/ModelParams.wl` | ТОЛЬКО после согласования |
+| Новые вычисления (f4, f6) | `ZZZ_ZWW/` | `f4calc_ZZZ.wl`, `ORCHESTRATOR.wls` |
+| Тесты и проверки | `ZZZ_ZWW/TEST*.wl` | `TESTqqZZZ.wl` |
+| Python-утилиты | `modules/pdfcode/` | `xPDF.py`, `PDF_csv.py` |
+| Длительные вычисления | оборачивать в `CheckTime[]` + `PrintTG[]` |
+
+## 7. Auto-Approve зона (полуавтоматический режим)
+LLM (Cline) может выполнять БЕЗ подтверждения:
+- Чтение любых файлов проекта
+- Редактирование `ZZZ_ZWW/*.wl`, `ZZZ_ZWW/*.wls`
+- Редактирование `modules/pdfcode/*.py`
+- Редактирование `modules/FunctionalModules.wl` (утилиты)
+- Запуск скриптов в `ZZZ_ZWW/` (предварительно проверенных)
+- Файлы `tg/` (notifier_console.py)
+- Добавление тестов в `ZZZ_ZWW/TEST*.wl`
+- Редактирование `README.md`, документации
+
+Все изменения в Protected files (раздел 3) требуют `requires_approval=true`.
+
+## 8. Workflow guidelines
+1. **Запуск оркестратора:** `ZZZ_ZWW/ORCHESTRATOR.wls` (wolframscript)
+2. **Проверка буфера:** перед каждым новым сканированием GridMh2/GridSqrts0
+3. **Логирование:** используйте `PrintTG[]` для отправки в Telegram
+4. **Параллелизм:** `ParallelDo`, `ParallelTable` где возможно (указать `$ProcessorCount`)
+5. **NIntegrate настройки:** `Method -> "AdaptiveMonteCarlo"`, `MaxRecursion -> 15`, `WorkingPrecision -> 30`
+6. **Очистка памяти:** `Remove["Global`*"]`, `ClearSystemCache[]` после больших runs
+
+## 9. Валидация и quality assurance
+- **Обязательный тест:** pp→H→gg cross-section (сравнить с文献)
+- **Локальные тесты:** `ZZZ_ZWW/TESTqqZZZ.wl` (проверка подграфов)
+- **Теория vs numeric:** сравнивать `f4mean` с `f4_teor*.mx` через `SmpChanger`, `AngleChanger`
+- **Сходимость NIntegrate:** monitoring `NIntegrate::slwcon`, `NIntegrate::ncvb`
+- **Повторяемость:** одинаковые результаты при повторном импорте `buffer/*.mx`
+
+## 10. LHAPDF и PDF handling
+- Установка: `setup/lhapdf_install/`, `setup/looptools_install.sh`
+- Кэширование PDF: `modules/pdfcode/xPDF.py` → `xPDF.mx`
+- Формат: `pdf_1_13000.csv` (particleID=1, √s=13 TeV)
+- Загрузка в Mathematica: `Get["modules/pdfcode/xPDF.mx"]`
+
+## 11. Уведомления (Telegram)
+```Mathematica
+PrintTG["Starting f4 calculation for uuZZZ"]  (* отправит в Telegram *)
+```
+Настройка: `tg/notifier_console.py`, требуется токен бота.
+
+## 12. Error handling и recovery
+| Проблема | Действие |
+|----------|----------|
+| LoopTools не загружается | проверьте `modules/setup.m`, `Install[]` path |
+| NIntegrate не сходится | `AccuracyGoal -> 4`, `PrecisionGoal -> 4`, `Method -> "AdaptiveMonteCarlo"` |
+| Мало памяти | `Remove["Global`*"]`, `MemoryConstrained`, перезапустить kernel |
+| Отсутствует buffer/ | `CreateDirectory["buffer"]` |
+| Повреждённый .mx | удалите файл, пересчитайте (requires approval) |
+| Python PDF падает | проверьте `xPDF.py`, путь к LHAPDF, кэш |
+
+## 13. Производительность
+- **Параллелизм:** `SetSharedVariable[var]`, `ParallelTable`
+- **Кэширование:** всегда проверяйте `buffer/*.mx` перед `NIntegrate`
+- **Тайминг:** `CheckTime[]` каждые 100 итераций
+- **Оптимизация:** избегайте `Simplify` в циклах, используйте `N` вместо `Rationalize`
+
+## 14. Backup и data management
+**Версионировать (git):**
+- `modules/` (весь код)
+- `ZZZ_ZWW/` (скрипты, оркестратор)
+- `setup/THDMCPV.mod`, `.pars` (модель)
+- `buffer/*.csv` (финальные таблицы)
+- `README.md`, `.clinerules`
+
+**Не версионировать (.gitignore):**
+- `buffer/*.mx` (большие, можно пересчитать) — но НЕ удалять без необходимости!
+- `ZZZ_ZWW/graphs/`, `subgraphs/` (регенерируются)
+- `setup/lhapdf_install/`, `LHAPDF-6.5.4/` (большие, скачиваются)
+- Логи, временные файлы
+
+## 15. Security и safety
+- Никогда не запускайте сторонние `.sh` или `.exe` без проверки
+- LoopTools: только через `Install[]` из `setup/`
+- Не публикуйте `tg/` токены, `*.env`
+- Проверяйте `Checksum` больших загрузок (LHAPDF)
+
+## 16. Troubleshooting quick reference
+```Mathematica
+(* Перезагрузка пакетов *)
+Quit[]; << "../modules/setup.m"
+
+/* Проверка buffer */
+FileExistsQ["buffer/f4mean_uuZZZ.mx"]
+
+/* Принудительный пересчёт (requires approval) *)
+DeleteFile["buffer/f4mean_uuZZZ.mx"];
+
+/* Очистка памяти *)
+Remove["Global`*"]; ClearSystemCache[];
+
+/* Проверка PDF *)
+Get["modules/pdfcode/xPDF.mx"]; xPDF[1, 13000]
+
+/* LoopTools test *)
+LTTest[]  (* из LoopTools *)
+```
+
+## 17. Ключевые Aliases и shortcuts
+- `Params` — параметры модели из `ModelParams.wl`
+- `PaveToLooptools` — конвертер интегралов
+- `SmpChanger`, `AngleChanger` — подстановка параметров
+- `SaveToCSVmodule`EnsureCSVHeader, AppendRowToCSV
+- `PrintTG, CheckTime, ShowStep` — из `FunctionalModules.wl`
+
+## 18. Важные заметки
+- `Global`ProjectRoot** должен быть установлен в `setup.m` для `PrintTG`
+- Все `NIntegrate` с `Method -> "AdaptiveMonteCarlo"` для многомерных
+- `f4mean` — среднее по частичным сечениям, log10 сохраняется в CSV
+- `GridMh2` шаг 5 GeV, `GridSqrts0` в GeV, `vev = 246 GeV`
+- Alpha2Fixed, Alpha3Fixed — фиксированные углыmixings (проверить в ORCHESTRATOR)
+
+---
+
+**Последнее обновление:** 2026-03-30  
+**Статус:** semi-autonomous mode (Cline)  
+**Владелец:** impermast/2hdm_constraint

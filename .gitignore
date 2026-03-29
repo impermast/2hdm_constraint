@@ -8,29 +8,21 @@ __pycache__/
 # ⛔ Игнорируем виртуальное окружение (venv)
 venv/
 env/
-.vscode
-.continue
 .venv
 .virtualenv/
 
 # ⛔ Игнорируем конфиденциальные файлы и токены
 *.env
-*.json
-*.toml
-*.cfg
 secrets.yaml
 *.key
 *.pem
-
-# ⛔ Игнорируем зависимости (если используется venv, но нет pip freeze)
-pip-log.txt
-pip-delete-this-directory.txt
 
 # ⛔ Игнорируем логи и отладочную информацию
 *.log
 *.out
 *.err
 debug.log
+logs/
 
 # ⛔ Игнорируем файлы IDE и редакторов
 .vscode/
@@ -39,33 +31,37 @@ debug.log
 *.sublime-project
 
 # ⛔ Игнорируем файлы Cline и AI ассистентов
-.clinerules
 .cline/
 .copilot/
 .cursor/
 .continue/
 .windsurf/
 
-# ⛔ Игнорируем графики
-graphs/*.pdf
-graphs/*.png
-graphs_alphamax/
-code_screenshots/
-
-ZZZ_ZWW/graphs/*.pdf
-ZZZ_ZWW/graphs/*.png
-ZZZ_ZWW/subgraphs/*.pdf
-ZZZ_ZWW/subgraphs/*.png
+# ⛔ Игнорируем графики (регенерируются)
+ZZZ_ZWW/graphs/
+ZZZ_ZWW/subgraphs/
 ZZZ_ZWW/backfiles/
+code_screenshots/
 
 # ⛔ Игнорируем файлы Jupyter Notebook output
 .ipynb_checkpoints/
 
-# ⛔ Игнорируем файлы, связанные с LHAPDF и математическими вычислениями
-lhapdf/
-lhapdf-data/
-lhapdf-sets/
-*.csv
+# ⛔ Игнорируем большие устанавливаемые файлы LHAPDF и LoopTools
+setup/lhapdf_install/
+setup/LHAPDF-6.5.4/
 
-setup/lhapdf_install/*
-setup/LHAPDF-6.5.4/*
+# ⛔ Буферные файлы Mathematica (.mx) — большие, пересчитываются
+ZZZ_ZWW/buffer/*.mx
+
+# ⛔ Кэш Python PDF утилит (генерируется из LHAPDF)
+modules/pdfcode/xPDF.mx
+modules/pdfcode/pdf_mathematica_test.mx
+modules/pdfcode/pdf_*.csv
+
+# ⛔ Временные файлы Wolfram Script
+*.tmp
+*.temp
+
+# ⛔ Файлы операционной системы
+.DS_Store
+Thumbs.db

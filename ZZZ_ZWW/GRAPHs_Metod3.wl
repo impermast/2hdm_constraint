@@ -178,7 +178,7 @@ shiftPairs[pairs_] := {#[[1]], #[[2]] + stepen} & /@ pairs;
 (*\:0433\:0440\:0430\:0444\:0438\:043a f4 (zzz) from mh2 (fix s0, mhc)*)
 
 
-sSel1   = 1000;
+sSel1   = 500;
 mhcSel1 = 400;
 
 dsCut1  = ds[Select[#sqrts0 == sSel1 &]];
@@ -196,8 +196,8 @@ pSum1 = toPairs @ sumLog[
 Print["pUU1 first: ", First[pUU1]];
 Print["pSum1 range y: ", Min[pSum1[[All,2]]], " .. ", Max[pSum1[[All,2]]]];
 Print["lim: ", limZZZ3000, "     f4ZZZlim: ", constraitF4Z300];
-xmin1 = 200;  xmax1 = 800;
-ymin1 = -7.5; ymax1 = 2.05;
+xmin1 = 198;  xmax1 = 600;
+ymin1 = -1.5; ymax1 = 3.05;
 
 
 colorUU1 = Darker[Brown,  0.1];
@@ -235,7 +235,9 @@ limEpilog1 = {
         {xmax1, Log10@limZZZ300}}],
   styleLim3000,
   Line[{{xmin1, Log10@limZZZ3000},
-        {xmax1, Log10@limZZZ3000}}]
+        {xmax1, Log10@limZZZ3000}}],
+  Black,
+  Inset[Style[legAll, Black], Scaled[{0.89, 0.71}]]
 };
 
 pltZZZ1 = Show[
@@ -257,7 +259,7 @@ pltZZZ1 = Show[
 
 
 
-finalPlot1 = Legended[pltZZZ1, Placed[legAll, Scaled[{0.88, 0.34}]] ]
+finalPlot1 = pltZZZ1
 
 
 (* ::InheritFromParent:: *)
@@ -274,7 +276,7 @@ If[SavePDF == 1,
 (* Graph ZZZ-2|Data:ZZZ sum for s0=1000,10000,13000*)
 
 
-s0List2 = {1000, 10000, 13000};
+s0List2 = {320, 500, 1000, 10000, 13000};
 mhcSel2 = 400;
 
 pSumByS0 = Association @ Table[
@@ -282,38 +284,49 @@ pSumByS0 = Association @ Table[
   {s, s0List2}
 ];
 
-xmin2 = 200;  xmax2 = 800;
-ymin2 = -3.2; ymax2 = 1.8;
+
+xmin2 = 200;  xmax2 = 570;
+ymin2 = -7.2; ymax2 = 2.1;
 
 
-cols2   = {Darker[Blue, 0.1], Darker[Green, 0.15], Darker[Red, 0.15]};
+cols2   = {Darker[Blue, 0.1], Darker[Green, 0.15], Darker[Red, 0.15], Darker[Yellow, 0.15], Darker[Purple, 0.15]};
 styles2 = Directive[#, AbsoluteThickness[lineThick]] & /@ cols2;
 
 sLbl[v_] := Style[
-  Row[{"\[Sqrt]", Subscript[Style["s", Italic], "0"],
-       " = ", Style[ToString[Round@v], Bold], " GeV"}],
-  textscale - 2
+  Row[{
+    TraditionalForm @ HoldForm[Sqrt[Subscript[s, 0]]],
+    " = ", Style[ToString[Round @ v], Bold], " GeV"
+  }],
+  textscale - 2,
+  FontFamily -> fontFam,
+  FontWeight -> fontWeight,
+  Black
 ];
 
 legendLines2 = LineLegend[
-  styles2, sLbl /@ s0List2,
+  styles2,
+  s0List2,
   LegendLayout     -> "Column",
   LegendFunction   -> shadowbox,
   LegendMarkerSize -> {32, 2},
-  LabelStyle       -> Directive[textscale - 2, FontFamily -> fontFam, FontWeight -> fontWeight]
+  LabelStyle       -> Directive[
+    textscale - 2,
+    FontFamily -> fontFam,
+    FontWeight -> fontWeight,
+    Black
+  ],
+  LegendLabel -> Style[
+    Row[{
+      TraditionalForm @ HoldForm[Sqrt[Subscript[s, 0]]],
+      " [GeV]"
+    }],
+    textscale - 1,
+    FontFamily -> fontFam,
+    FontWeight -> fontWeight,
+    Black
+  ]
 ];
 
-legAll2 = shadowbox @ Column[
-  {legendLines2, Spacer[4], legendLumi},
-  Spacings -> 0.1, Alignment -> Left
-];
-
-limEpilog2 = {
-  styleLim300,
-  Line[{{xmin2, limZZZ300},  {xmax2, limZZZ300}}],
-  styleLim3000,
-  Line[{{xmin2, limZZZ3000}, {xmax2, limZZZ3000}}]
-};
 
 
 
@@ -327,11 +340,16 @@ limPlot2 = Plot[
 
 pltZZZ2 = Show[
   MapThread[
-    ListLinePlot[#1, PlotStyle -> #2] &,
+    ListLinePlot[#1, PlotStyle -> #2, Joined -> True, PlotMarkers -> None] &,
     {Values[pSumByS0], styles2}
   ],
   limPlot2,
   Evaluate @ base1DOpts,
+  Epilog -> {
+    Black,
+    Inset[legendLines2,   Scaled[{0.12, 0.33}]],
+    Inset[legendLumi, Scaled[{0.89, 0.18}]]
+  },
   FrameLabel -> {xLabM2, yLabZZZ},
   PlotRange  -> {{xmin2, xmax2}, {ymin2, ymax2}},
   PlotLabel  -> Style[
@@ -340,17 +358,16 @@ pltZZZ2 = Show[
       Subscript[Style["m", Italic], Superscript[Style["H", Italic], "\[PlusMinus]"]],
       " = ", mhcSel2, " GeV"
     }],
-    textscale, FontFamily -> fontFam
+    textscale,
+    FontFamily -> fontFam,
+    FontWeight -> fontWeight
   ],
   ImageSize -> imgSize
 ];
 
 
 
-finalPlot2 = Legended[
-  Legended[pltZZZ2, Placed[legendLines2, Scaled[{0.8, 0.81}]]],
-  Placed[legendLumi, Scaled[{0.12, 0.81}]]
-]
+finalPlot2 = pltZZZ2
 
 
 If[SavePDF == 1,

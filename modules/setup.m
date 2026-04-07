@@ -13,7 +13,6 @@ Print["Starting setup..."];
 $FeynCalcStartupMessages = False;
 $LoadFeynCalcMessages = False;
 $LoadAddOns = {"FeynArts"};
-$PrePrint = InputForm;
 
 (* --------------------------------------------------------------------------- *)
 (* 1. Determine project root directory   adn pathed                                   *)
@@ -161,6 +160,4 @@ LogRange1[a_?NumericQ, b_?NumericQ, n_Integer] :=
     Table[10^i, {i, Range[Log10[a], Log10[b], (Log10[b] - Log10[a])/n]}];
 
 Print["Setup complete."];
-
-
 

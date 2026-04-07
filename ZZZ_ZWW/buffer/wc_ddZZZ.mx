@@ -1,68 +1,50 @@
-Abs[Integrate[(g^6*s*(9*cw^2*gw^2 + 6*cw*g1*gw*sw + 5*g1^2*sw^2)*Cos[a2]^2*
-          Cos[a3]^2*(-(mZ^2*PaVe[1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh1^2, 
-                MZ^2, mh2^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> 
-                True]) + mZ^2*PaVe[1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, 
-              {mh1^2, MZ^2, mh3^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> 
-               True] + mZ^2*PaVe[1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, 
-              {mh2^2, MZ^2, mh1^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> 
-               True] - mZ^2*PaVe[1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, 
-              {mh2^2, MZ^2, mh3^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> 
-               True] - mZ^2*PaVe[1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, 
-              {mh3^2, MZ^2, mh1^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> 
-               True] + mZ^2*PaVe[1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, 
-              {mh3^2, MZ^2, mh2^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> 
-               True] + PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, 
-             {mh1^2, mh2^2, mh3^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> 
-              True] - PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, 
-             {mh1^2, mh2^2, MZ^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> 
-              True] - PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, 
-             {mh1^2, mh3^2, mh2^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> 
-              True] + PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, 
-             {mh1^2, mh3^2, MZ^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> 
-              True] + PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, 
-             {mh1^2, MZ^2, mh2^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> 
-              True] - PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, 
-             {mh1^2, MZ^2, mh3^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> 
-              True] - PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, 
-             {mh2^2, mh1^2, mh3^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> 
-              True] + PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, 
-             {mh2^2, mh1^2, MZ^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> 
-              True] + PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, 
-             {mh2^2, mh3^2, mh1^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> 
-              True] - PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, 
-             {mh2^2, mh3^2, MZ^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> 
-              True] - PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, 
-             {mh2^2, MZ^2, mh1^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> 
-              True] + PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, 
-             {mh2^2, MZ^2, mh3^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> 
-              True] + PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, 
-             {mh3^2, mh1^2, mh2^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> 
-              True] - PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, 
-             {mh3^2, mh1^2, MZ^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> 
-              True] - PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, 
-             {mh3^2, mh2^2, mh1^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> 
-              True] + PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, 
-             {mh3^2, mh2^2, MZ^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> 
-              True] + PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, 
-             {mh3^2, MZ^2, mh1^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> 
-              True] - PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, 
-             {mh3^2, MZ^2, mh2^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> 
-              True] - PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, 
-             {MZ^2, mh1^2, mh2^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> 
-              True] + PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, 
-             {MZ^2, mh1^2, mh3^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> 
-              True] + PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, 
-             {MZ^2, mh2^2, mh1^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> 
-              True] - PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, 
-             {MZ^2, mh2^2, mh3^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> 
-              True] - PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, 
-             {MZ^2, mh3^2, mh1^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> 
-              True] + PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, 
-             {MZ^2, mh3^2, mh2^2}, PaVeAutoOrder -> True, PaVeAutoReduce -> 
-              True])^2*Sin[a2]^4*Sin[a3]^2*(s^2 + 2*s*t + 2*t^2 - 
-           4*(s + t)*SMP["m_Z"]^2 + 2*SMP["m_Z"]^4))/(1152*cw^6*Pi^4*
-          SMP["m_Z"]^2*(s - SMP["m_Z"]^2)^2) //. AngleChanger //. Params //. 
-      SmpChanger //. PaveToLooptools, 
-    {t, (2*MZ^2 - s)/2 - Sqrt[-4*MZ^2*s + s^2 //. Params]/2 //. Params, 
-     (2*MZ^2 - s)/2 + Sqrt[-4*MZ^2*s + s^2 //. Params]/2 //. Params}]/s^2]/
- (16*Pi)
+2.7857369215311455*^-13*
+ Abs[(Sqrt[(-33260.713575040005 + s)*s]*(-33260.713575040005 + 1.*s)*
+    (C0i[cc001, s, 8315.178393760001, 8315.178393760001, 8315.178393760001, 
+       15625, mh2^2] - 1.*C0i[cc001, s, 8315.178393760001, 8315.178393760001, 
+        8315.178393760001, 15625, mh3^2] - 
+      1.*C0i[cc001, s, 8315.178393760001, 8315.178393760001, 
+        8315.178393760001, mh2^2, 15625] + C0i[cc001, s, 8315.178393760001, 
+       8315.178393760001, 8315.178393760001, mh2^2, mh3^2] + 
+      C0i[cc001, s, 8315.178393760001, 8315.178393760001, 8315.178393760001, 
+       mh3^2, 15625] - 1.*C0i[cc001, s, 8315.178393760001, 8315.178393760001, 
+        8315.178393760001, mh3^2, mh2^2] - 
+      1.*C0i[cc001, s, 8315.178393760001, 8315.178393760001, 15625, 
+        8315.178393760001, mh2^2] + C0i[cc001, s, 8315.178393760001, 
+       8315.178393760001, 15625, 8315.178393760001, mh3^2] + 
+      C0i[cc001, s, 8315.178393760001, 8315.178393760001, 15625, mh2^2, 
+       8315.178393760001] - 1.*C0i[cc001, s, 8315.178393760001, 
+        8315.178393760001, 15625, mh2^2, mh3^2] - 
+      1.*C0i[cc001, s, 8315.178393760001, 8315.178393760001, 15625, mh3^2, 
+        8315.178393760001] + C0i[cc001, s, 8315.178393760001, 
+       8315.178393760001, 15625, mh3^2, mh2^2] + 
+      C0i[cc001, s, 8315.178393760001, 8315.178393760001, mh2^2, 
+       8315.178393760001, 15625] - 1.*C0i[cc001, s, 8315.178393760001, 
+        8315.178393760001, mh2^2, 8315.178393760001, mh3^2] - 
+      1.*C0i[cc001, s, 8315.178393760001, 8315.178393760001, mh2^2, 15625, 
+        8315.178393760001] + C0i[cc001, s, 8315.178393760001, 
+       8315.178393760001, mh2^2, 15625, mh3^2] + 
+      C0i[cc001, s, 8315.178393760001, 8315.178393760001, mh2^2, mh3^2, 
+       8315.178393760001] - 1.*C0i[cc001, s, 8315.178393760001, 
+        8315.178393760001, mh2^2, mh3^2, 15625] - 
+      1.*C0i[cc001, s, 8315.178393760001, 8315.178393760001, mh3^2, 
+        8315.178393760001, 15625] + C0i[cc001, s, 8315.178393760001, 
+       8315.178393760001, mh3^2, 8315.178393760001, mh2^2] + 
+      C0i[cc001, s, 8315.178393760001, 8315.178393760001, mh3^2, 15625, 
+       8315.178393760001] - 1.*C0i[cc001, s, 8315.178393760001, 
+        8315.178393760001, mh3^2, 15625, mh2^2] - 
+      1.*C0i[cc001, s, 8315.178393760001, 8315.178393760001, mh3^2, mh2^2, 
+        8315.178393760001] + C0i[cc001, s, 8315.178393760001, 
+       8315.178393760001, mh3^2, mh2^2, 15625] + 8315.178393760001*
+       C0i[cc1, s, 8315.178393760001, 8315.178393760001, 15625, 
+        8315.178393760001, mh2^2] - 8315.178393760001*
+       C0i[cc1, s, 8315.178393760001, 8315.178393760001, 15625, 
+        8315.178393760001, mh3^2] - 8315.178393760001*
+       C0i[cc1, s, 8315.178393760001, 8315.178393760001, mh2^2, 
+        8315.178393760001, 15625] + 8315.178393760001*
+       C0i[cc1, s, 8315.178393760001, 8315.178393760001, mh2^2, 
+        8315.178393760001, mh3^2] + 8315.178393760001*
+       C0i[cc1, s, 8315.178393760001, 8315.178393760001, mh3^2, 
+        8315.178393760001, 15625] - 8315.178393760001*
+       C0i[cc1, s, 8315.178393760001, 8315.178393760001, mh3^2, 
+        8315.178393760001, mh2^2])^2)/(-8315.178393760001 + s)^2]

@@ -4,8 +4,8 @@
 (* \:041e\:043f\:0446\:0438\:0438 \:0440\:0430\:0431\:043e\:0442\:044b *)
 logic = 0; (* 0 - recalc All, 1 - download all from budder, 2 - recalc only some*)
 ReactionName = "ZZZ";
-ProcName = "uu"<>ReactionName;
-particleID = 7;
+ProcName = "dd"<>ReactionName;
+particleID = 10;
 
 (* For feynCalc not PDF
 7 u, 8 c, 9 t
@@ -218,7 +218,7 @@ gamma7check = Coefficient[expr,
 
 
 If[logic != 1,
-If[(gamma6check[[1]]+gamma6check[[2]])===0,
+If[(gamma6check[[1]]-gamma6check[[2]])===0,
 PrintTG["Correct selecttion "];
 Print[ gamma6check[[1]]+gamma6check[[2]]//Simplify],
 PrintTG["Not correct selection "];

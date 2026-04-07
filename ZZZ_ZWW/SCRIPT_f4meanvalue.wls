@@ -13,7 +13,7 @@ logic = 0;
 (* \:0427\:0442\:0435\:043d\:0438\:0435 \:0430\:0440\:0433\:0443\:043c\:0435\:043d\:0442\:043e\:0432 \:043a\:043e\:043c\:0430\:043d\:0434\:043d\:043e\:0439 \:0441\:0442\:0440\:043e\:043a\:0438 *)
 (* --- Defaults --- *)
 ReactionName = "ZZZ";
-pID = "uu";
+pID = "dd";
 
 (* \:0447\:0438\:0441\:043b\:043e\:0432\:044b\:0435 \:043f\:0430\:0440\:0430\:043c\:0435\:0442\:0440\:044b *)
 (* \:0434\:0435\:0444\:043e\:043b\:0442, \:0435\:0441\:043b\:0438 \:043d\:0435 \:043f\:0435\:0440\:0435\:0434\:0430\:043d *)
@@ -148,6 +148,64 @@ If[msg,
 	"\nsqrt(s0)    = ",Sqrt[s0],
 	"\nxmin  = ",xmin//N,"\n--------"];
 ];
+
+
+PPoints = 5;
+
+tGrid = N @ Subdivide[xmin, 0.5, PPoints - 1];
+
+dataWeight = Table[
+  {t, WidthCross[s0*t] * Lexp[t]},
+  {t, tGrid}
+];
+
+dataWC = Table[
+  {t, WidthCross[s0*t]},
+  {t, tGrid}
+];
+
+dataL = Table[
+  {t, Lexp[t]},
+  {t, tGrid}
+];
+
+p1 = ListLinePlot[
+  dataWeight,
+  PlotRange -> All,
+  Frame -> True,
+  Axes -> False,
+  FrameLabel -> {"t", "WidthCross \[Times] L"},
+  PlotLabel -> "Weight",
+  ImageSize -> 350,
+  PlotMarkers -> Automatic,
+  Joined -> True
+];
+
+p2 = ListLinePlot[
+  dataWC,
+  PlotRange -> All,
+  Frame -> True,
+  Axes -> False,
+  FrameLabel -> {"t", "WidthCross"},
+  PlotLabel -> "WidthCross",
+  ImageSize -> 350,
+  PlotMarkers -> Automatic,
+  Joined -> True
+];
+
+p3 = ListLinePlot[
+  dataL,
+  PlotRange -> All,
+  Frame -> True,
+  Axes -> False,
+  FrameLabel -> {"t", "Lexp"},
+  PlotLabel -> "Parton luminosity",
+  ImageSize -> 350,
+  PlotMarkers -> Automatic,
+  Joined -> True
+];
+
+GraphicsRow[{p1, p2, p3}, Spacings -> 0.8]
 
 
 If[ logic === 0,

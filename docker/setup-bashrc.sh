@@ -25,12 +25,12 @@ shopt -s checkwinsize
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 # Project environment.
-export TWOHDM_ROOT="${TWOHDM_ROOT:-/home/worker/2hdm}"
-export WOLFRAM_USERBASE="${WOLFRAM_USERBASE:-/opt/wolfram/userbase}"
-export MATHEMATICA_USERBASE="${MATHEMATICA_USERBASE:-/opt/wolfram/userbase}"
+export TWOHDM_ROOT="${TWOHDM_ROOT:-$HOME/2hdm}"
+export WOLFRAM_USERBASE="${WOLFRAM_USERBASE:-$HOME/.Mathematica}"
+export MATHEMATICA_USERBASE="${MATHEMATICA_USERBASE:-$HOME/.Mathematica}"
 export LHAPDF_PREFIX="${LHAPDF_PREFIX:-/opt/lhapdf}"
 export LHAPDF_DATA_PATH="${LHAPDF_DATA_PATH:-/opt/lhapdf/share/LHAPDF}"
-export PATH="/usr/local/bin:/opt/lhapdf/bin:/opt/wolfram/userbase/Applications/LoopTools/bin:${PATH}"
+export PATH="/usr/local/bin:/opt/lhapdf/bin:$HOME/.Mathematica/Applications/LoopTools/bin:${PATH}"
 export LD_LIBRARY_PATH="/opt/lhapdf/lib:${LD_LIBRARY_PATH:-}"
 
 # Completion.
@@ -94,10 +94,10 @@ alias gl='git log --oneline --graph --decorate --all -20'
 alias gp='git pull --ff-only'
 
 # Project shortcuts.
-alias c2='cd /home/worker/2hdm'
-alias cz='cd /home/worker/2hdm/ZZZ_ZWW'
-alias cm='cd /home/worker/2hdm/modules'
-alias cb='cd /home/worker/2hdm/ZZZ_ZWW/buffer'
+alias c2='cd "$TWOHDM_ROOT"'
+alias cz='cd "$TWOHDM_ROOT/ZZZ_ZWW"'
+alias cm='cd "$TWOHDM_ROOT/modules"'
+alias cb='cd "$TWOHDM_ROOT/ZZZ_ZWW/buffer"'
 
 # Wolfram shortcuts.
 alias mathgui='mathematica'
@@ -109,7 +109,7 @@ alias install='sudo apt-get install'
 alias update='sudo apt-get update'
 
 # Start in the project directory.
-cd /home/worker/2hdm 2>/dev/null || cd /home/worker
+cd "$TWOHDM_ROOT" 2>/dev/null || cd "$HOME"
 BASHRC_EOF
 
 chown "${USER_NAME}:${USER_NAME}" "${BASHRC}"

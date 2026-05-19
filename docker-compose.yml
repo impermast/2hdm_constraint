@@ -28,6 +28,13 @@ services:
     stdin_open: true
     shm_size: "2gb"
 
+    security_opt:
+      - seccomp=unconfined
+
+    tmpfs:
+      - /tmp/.X11-unix:rw,mode=1777
+      - /tmp/.ICE-unix:rw,mode=1777
+
     environment:
       TZ: ${TZ:-Europe/Moscow}
       WORKER_USER: ${WORKER_USER:-worker}
@@ -51,12 +58,12 @@ services:
       DISPLAY: :1
 
     ports:
-      - "${VNC_PORT:-5901}:5901"
-      - "${NOVNC_PORT:-6080}:6080"
+      - "127.0.0.1:${VNC_PORT:-5901}:5901"
+      - "127.0.0.1:${NOVNC_PORT:-6080}:6080"
 
     volumes:
       - ./2hdm:/home/${WORKER_USER:-worker}/2hdm
-      - ./setup/licensing:/usr/share/Mathematica/Licensing
+      - ./setup/licensing:/usr/share/Mathematica/Licensing:rw
 
     healthcheck:
       test: ["CMD-SHELL", "curl -fsS http://127.0.0.1:6080 >/dev/null && pgrep -f 'Xtigervnc|vncserver|tigervncserver' >/dev/null"]

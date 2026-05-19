@@ -39,8 +39,7 @@ RUN test -n "${WOLFRAM_INSTALLER}" && \
       -execdir=/usr/local/bin && \
     test -d "${WOLFRAM_INSTALL_DIR}" && \
     echo "Mathematica installed into ${WOLFRAM_INSTALL_DIR}"
-    
-    
+
 RUN echo "=== Mathematica executables ===" && \
     find "${WOLFRAM_INSTALL_DIR}/Executables" -maxdepth 1 -type f -printf '%f\n' | sort && \
     if [[ -x "${WOLFRAM_INSTALL_DIR}/Executables/Mathematica" ]]; then \
@@ -62,7 +61,7 @@ RUN echo "=== Mathematica executables ===" && \
     test -x /usr/local/bin/mathematica && \
     test -x /usr/local/bin/wolframscript && \
     test -x /usr/local/bin/WolframKernel
-    
+
 RUN if [[ -n "${WOLFRAM_DOC_INSTALLER}" ]]; then \
       test -f "/tmp/wolfram/${WOLFRAM_DOC_INSTALLER}" && \
       chmod +x "/tmp/wolfram/${WOLFRAM_DOC_INSTALLER}" && \
@@ -75,7 +74,7 @@ RUN if [[ -n "${WOLFRAM_DOC_INSTALLER}" ]]; then \
     else \
       echo "No WOLFRAM_DOC_INSTALLER specified; skipping Wolfram documentation"; \
     fi
-    
+
 RUN rm -rf /tmp/wolfram /tmp/wolfram-extract /var/tmp/*
 
 
@@ -122,16 +121,26 @@ RUN apt-get update && \
       locales tzdata sudo tini fzf ranger bat ripgrep fd-find \
       build-essential gcc g++ gfortran make cmake pkg-config autoconf automake libtool \
       python3 python3-pip python3-venv python3-dev \
-      dbus-x11 xauth x11-apps xvfb xfce4 xfce4-terminal \
+      dbus-x11 xauth x11-apps xvfb xfce4 xfce4-terminal thunar \
       tigervnc-standalone-server tigervnc-tools novnc websockify \
       libx11-6 libxext6 libxrender1 libxt6 libsm6 libice6 libglu1-mesa libgl1 \
       libgtk-3-0 libasound2 libfontconfig1 libfreetype6 \
       libxrandr2 libxfixes3 libxcursor1 libxi6 libxinerama1 libxdamage1 \
       libxcomposite1 libxss1 libxtst6 libnss3 libgbm1 \
+      libxkbcommon-x11-0 libxcb-xinerama0 libxcb-cursor0 libxcb-icccm4 \
+      libxcb-image0 libxcb-keysyms1 libxcb-render-util0 libxcb-randr0 \
+      libxcb-shape0 libxcb-sync1 libxcb-xfixes0 libxcb-xkb1 libxcb1 \
+      libdbus-1-3 libglib2.0-bin \
+      adwaita-icon-theme hicolor-icon-theme shared-mime-info desktop-file-utils \
+      librsvg2-common libgtk-3-bin xdg-utils \
       fonts-dejavu fonts-dejavu-core fonts-freefont-ttf \
       xfonts-base xfonts-100dpi xfonts-75dpi && \
     ln -sf /usr/bin/python3 /usr/local/bin/python && \
     locale-gen C.UTF-8 && \
+    (gtk-update-icon-cache -f -t /usr/share/icons/hicolor || true) && \
+    (gtk-update-icon-cache -f -t /usr/share/icons/Adwaita || true) && \
+    (update-mime-database /usr/share/mime || true) && \
+    (update-desktop-database /usr/share/applications || true) && \
     rm -rf /var/lib/apt/lists/*
 
 RUN if ! id -u "${USERNAME}" >/dev/null 2>&1; then \
@@ -147,6 +156,7 @@ RUN mkdir -p \
       /opt/dist /opt/src /opt/bootstrap \
       /opt/lhapdf/share/LHAPDF \
       /usr/share/Mathematica/Licensing \
+      /home/${USERNAME}/Desktop \
       /home/${USERNAME}/.vnc \
       /home/${USERNAME}/.config \
       /home/${USERNAME}/.cache \
@@ -184,7 +194,7 @@ RUN unzip -q /opt/dist/FeynCalc-hotfix-stable.zip -d /opt/src && \
     cp -a "${FA_SRC}/." /home/${USERNAME}/.Mathematica/Applications/FeynCalc/FeynArts/ && \
     chown -R ${USERNAME}:${USERNAME} /home/${USERNAME}/.Mathematica && \
     rm -rf /opt/src/feyncalc-* /opt/src/feynarts-mirror-*
-    
+
 RUN tar -xzf /opt/dist/LHAPDF-${LHAPDF_VERSION}.tar.gz -C /opt/src && \
     cd /opt/src/LHAPDF-${LHAPDF_VERSION} && \
     ./configure --prefix=/opt/lhapdf --disable-static --with-python="$(command -v python3)" && \

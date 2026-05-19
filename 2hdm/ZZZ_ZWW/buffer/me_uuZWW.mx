@@ -1,0 +1,34 @@
+{(g^6*s*(3*cw*gw - 5*g1*sw)^2*Cos[a2]^2*
+   (PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh1^2, mh2^2, mhc^2}, 
+      PaVeAutoOrder -> True, PaVeAutoReduce -> True] - 
+     PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh1^2, mh2^2, MW^2}, 
+      PaVeAutoOrder -> True, PaVeAutoReduce -> True] - 
+     PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh1^2, mh3^2, mhc^2}, 
+      PaVeAutoOrder -> True, PaVeAutoReduce -> True] + 
+     PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh1^2, mh3^2, MW^2}, 
+      PaVeAutoOrder -> True, PaVeAutoReduce -> True] - 
+     PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh2^2, mh1^2, mhc^2}, 
+      PaVeAutoOrder -> True, PaVeAutoReduce -> True] + 
+     PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh2^2, mh1^2, MW^2}, 
+      PaVeAutoOrder -> True, PaVeAutoReduce -> True] + 
+     PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh2^2, mh3^2, mhc^2}, 
+      PaVeAutoOrder -> True, PaVeAutoReduce -> True] - 
+     PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh2^2, mh3^2, MW^2}, 
+      PaVeAutoOrder -> True, PaVeAutoReduce -> True] + 
+     PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh3^2, mh1^2, mhc^2}, 
+      PaVeAutoOrder -> True, PaVeAutoReduce -> True] - 
+     PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh3^2, mh1^2, MW^2}, 
+      PaVeAutoOrder -> True, PaVeAutoReduce -> True] - 
+     PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh3^2, mh2^2, mhc^2}, 
+      PaVeAutoOrder -> True, PaVeAutoReduce -> True] + 
+     PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh3^2, mh2^2, MW^2}, 
+      PaVeAutoOrder -> True, PaVeAutoReduce -> True])^2*Sin[a2]^4*Sin[2*a3]^2*
+   (4*SMP["m_q"]^4*SMP["m_Z"]^2 + 2*SMP["m_Z"]^2*(s^2 + 2*s*t + 2*t^2 - 
+      4*(s + t)*SMP["m_Z"]^2 + 2*SMP["m_Z"]^4) + 
+    SMP["m_q"]^2*(s^2 - 4*(3*s + 2*t)*SMP["m_Z"]^2 + 24*SMP["m_Z"]^4))*
+   SUNFDelta[SUNFIndex[Col1], SUNFIndex[Col2]]^2)/
+  (18432*cw^2*Pi^4*SMP["m_Z"]^4*(s - SMP["m_Z"]^2)^2), 
+ (f4exp^2*s*SMP["e"]^2*(4*SMP["m_q"]^4*SMP["m_Z"]^2 + 
+    2*SMP["m_Z"]^2*(s^2 + 2*s*t + 2*t^2 - 4*(s + t)*SMP["m_Z"]^2 + 
+      2*SMP["m_Z"]^4) + SMP["m_q"]^2*(s^2 - 4*(3*s + 2*t)*SMP["m_Z"]^2 + 
+      24*SMP["m_Z"]^4)))/(2*MZ^4*SMP["m_Z"]^4)}

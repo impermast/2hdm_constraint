@@ -1,0 +1,66 @@
+services:
+  workstation:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        USERNAME: ${WORKER_USER:-worker}
+        USER_UID: ${WORKER_UID:-1000}
+        USER_GID: ${WORKER_GID:-1000}
+        TZ: ${TZ:-Europe/Moscow}
+
+        WOLFRAM_VERSION: ${WOLFRAM_VERSION:-13.1}
+        WOLFRAM_INSTALLER: ${WOLFRAM_INSTALLER:?set WOLFRAM_INSTALLER in .env}
+        WOLFRAM_DOC_INSTALLER: ${WOLFRAM_DOC_INSTALLER:-}
+
+        LHAPDF_VERSION: ${LHAPDF_VERSION:-6.5.6}
+        LHAPDF_SETS: ${LHAPDF_SETS:-NNPDF30_nnlo_as_0118}
+        LHAPDF_SET: ${LHAPDF_SET:-NNPDF30_nnlo_as_0118}
+
+    image: 2hdm-mathematica:${WOLFRAM_VERSION:-13.1}
+    container_name: 2hdm-mathematica
+    hostname: 2hdm-mathematica
+    mac_address: "02:42:ac:11:00:02"
+
+    restart: unless-stopped
+    init: false
+    tty: true
+    stdin_open: true
+    shm_size: "2gb"
+
+    environment:
+      TZ: ${TZ:-Europe/Moscow}
+      WORKER_USER: ${WORKER_USER:-worker}
+      WORKER_UID: ${WORKER_UID:-1000}
+      WORKER_GID: ${WORKER_GID:-1000}
+
+      TWOHDM_ROOT: /home/${WORKER_USER:-worker}/2hdm
+
+      VNC_PASSWORD: ${VNC_PASSWORD:-kds}
+      VNC_GEOMETRY: ${VNC_GEOMETRY:-1920x1080}
+      VNC_DEPTH: ${VNC_DEPTH:-24}
+      VNC_PORT: 5901
+      NOVNC_PORT: 6080
+
+      WOLFRAM_VERSION: ${WOLFRAM_VERSION:-13.1}
+      WOLFRAM_USERBASE: /home/${WORKER_USER:-worker}/.Mathematica
+      MATHEMATICA_USERBASE: /home/${WORKER_USER:-worker}/.Mathematica
+      LHAPDF_PREFIX: /opt/lhapdf
+      LHAPDF_DATA_PATH: /opt/lhapdf/share/LHAPDF
+      LHAPDF_SET: ${LHAPDF_SET:-NNPDF30_nnlo_as_0118}
+      DISPLAY: :1
+
+    ports:
+      - "${VNC_PORT:-5901}:5901"
+      - "${NOVNC_PORT:-6080}:6080"
+
+    volumes:
+      - ./2hdm:/home/${WORKER_USER:-worker}/2hdm
+      - ./setup/licensing:/usr/share/Mathematica/Licensing
+
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fsS http://127.0.0.1:6080 >/dev/null && pgrep -f 'Xtigervnc|vncserver|tigervncserver' >/dev/null"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 90s

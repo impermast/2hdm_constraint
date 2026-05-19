@@ -8,7 +8,8 @@ __pycache__/
 # ⛔ Игнорируем виртуальное окружение (venv)
 venv/
 env/
-.venv
+**/.venv
+**/.env
 .virtualenv/
 
 # ⛔ Игнорируем конфиденциальные файлы и токены
@@ -32,6 +33,7 @@ logs/
 
 # ⛔ Игнорируем файлы Cline и AI ассистентов
 .cline/
+.clinerules
 .copilot/
 .cursor/
 .continue/
@@ -49,6 +51,7 @@ code_screenshots/
 # ⛔ Игнорируем большие устанавливаемые файлы LHAPDF и LoopTools
 setup/lhapdf_install/
 setup/LHAPDF-6.5.4/
+setup/wolfram/
 
 # ⛔ Буферные файлы Mathematica (.mx) — большие, пересчитываются
 ZZZ_ZWW/buffer/*.mx
@@ -65,3 +68,6 @@ modules/pdfcode/pdf_*.csv
 # ⛔ Файлы операционной системы
 .DS_Store
 Thumbs.db
+
+
+

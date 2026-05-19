@@ -1,0 +1,231 @@
+# Full Mathematica desktop workstation for 2HDM/ZZZ development.
+# Build-time assets expected locally:
+#   setup/wolfram/${WOLFRAM_INSTALLER}
+#   setup/wolfram/${WOLFRAM_DOC_INSTALLER}  optional
+
+# -----------------------------------------------------------------------------
+# Stage 1: install Wolfram Mathematica Desktop without keeping installers
+# -----------------------------------------------------------------------------
+FROM ubuntu:22.04 AS mathematica_131
+
+USER root
+
+ARG WOLFRAM_VERSION=13.1
+ARG WOLFRAM_INSTALLER
+ARG WOLFRAM_DOC_INSTALLER=""
+
+ENV DEBIAN_FRONTEND=noninteractive \
+    WOLFRAM_INSTALL_DIR=/opt/Wolfram/Mathematica/${WOLFRAM_VERSION}
+
+SHELL ["/bin/bash", "-lc"]
+
+COPY setup/wolfram/ /tmp/wolfram/
+
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+      bash ca-certificates coreutils findutils grep sed tar gzip xz-utils && \
+    rm -rf /var/lib/apt/lists/*
+
+RUN test -n "${WOLFRAM_INSTALLER}" && \
+    test -f "/tmp/wolfram/${WOLFRAM_INSTALLER}" && \
+    chmod +x "/tmp/wolfram/${WOLFRAM_INSTALLER}" && \
+    "/tmp/wolfram/${WOLFRAM_INSTALLER}" \
+      --nox11 \
+      -- \
+      -auto \
+      -createdir=y \
+      -overwrite=y \
+      -targetdir="${WOLFRAM_INSTALL_DIR}" \
+      -execdir=/usr/local/bin && \
+    test -d "${WOLFRAM_INSTALL_DIR}" && \
+    echo "Mathematica installed into ${WOLFRAM_INSTALL_DIR}"
+    
+    
+RUN echo "=== Mathematica executables ===" && \
+    find "${WOLFRAM_INSTALL_DIR}/Executables" -maxdepth 1 -type f -printf '%f\n' | sort && \
+    if [[ -x "${WOLFRAM_INSTALL_DIR}/Executables/Mathematica" ]]; then \
+      ln -sf "${WOLFRAM_INSTALL_DIR}/Executables/Mathematica" /usr/local/bin/Mathematica; \
+      ln -sf "${WOLFRAM_INSTALL_DIR}/Executables/Mathematica" /usr/local/bin/mathematica; \
+    fi && \
+    if [[ -x "${WOLFRAM_INSTALL_DIR}/Executables/wolframscript" ]]; then \
+      ln -sf "${WOLFRAM_INSTALL_DIR}/Executables/wolframscript" /usr/local/bin/wolframscript; \
+    fi && \
+    if [[ -x "${WOLFRAM_INSTALL_DIR}/Executables/WolframKernel" ]]; then \
+      ln -sf "${WOLFRAM_INSTALL_DIR}/Executables/WolframKernel" /usr/local/bin/WolframKernel; \
+    elif [[ -x "${WOLFRAM_INSTALL_DIR}/Executables/MathKernel" ]]; then \
+      ln -sf "${WOLFRAM_INSTALL_DIR}/Executables/MathKernel" /usr/local/bin/WolframKernel; \
+      ln -sf "${WOLFRAM_INSTALL_DIR}/Executables/MathKernel" /usr/local/bin/MathKernel; \
+    fi && \
+    if [[ -x "${WOLFRAM_INSTALL_DIR}/Executables/math" ]]; then \
+      ln -sf "${WOLFRAM_INSTALL_DIR}/Executables/math" /usr/local/bin/math; \
+    fi && \
+    test -x /usr/local/bin/mathematica && \
+    test -x /usr/local/bin/wolframscript && \
+    test -x /usr/local/bin/WolframKernel
+    
+RUN if [[ -n "${WOLFRAM_DOC_INSTALLER}" ]]; then \
+      test -f "/tmp/wolfram/${WOLFRAM_DOC_INSTALLER}" && \
+      chmod +x "/tmp/wolfram/${WOLFRAM_DOC_INSTALLER}" && \
+      "/tmp/wolfram/${WOLFRAM_DOC_INSTALLER}" \
+        --nox11 \
+        -- \
+        -auto \
+        -targetdir="${WOLFRAM_INSTALL_DIR}" \
+        -execdir=/usr/local/bin; \
+    else \
+      echo "No WOLFRAM_DOC_INSTALLER specified; skipping Wolfram documentation"; \
+    fi
+    
+RUN rm -rf /tmp/wolfram /tmp/wolfram-extract /var/tmp/*
+
+
+# -----------------------------------------------------------------------------
+# Stage 2: final workstation image
+# -----------------------------------------------------------------------------
+FROM mathematica_131 AS feyncalc_looptools
+
+USER root
+
+ARG USERNAME=worker
+ARG USER_UID=1000
+ARG USER_GID=1000
+ARG TZ=Europe/Moscow
+ARG WOLFRAM_VERSION=13.1
+ARG LHAPDF_VERSION=6.5.6
+ARG LHAPDF_SETS="NNPDF30_nnlo_as_0118"
+ARG LHAPDF_SET="NNPDF30_nnlo_as_0118"
+
+ENV DEBIAN_FRONTEND=noninteractive \
+    LANG=C.UTF-8 \
+    LC_ALL=C.UTF-8 \
+    TZ=${TZ} \
+    PYTHONUNBUFFERED=1 \
+    PIP_NO_CACHE_DIR=1 \
+    TWOHDM_ROOT=/home/worker/2hdm \
+    WOLFRAM_VERSION=${WOLFRAM_VERSION} \
+    WOLFRAM_INSTALL_DIR=/opt/Wolfram/Mathematica/${WOLFRAM_VERSION} \
+    WOLFRAM_USERBASE=/opt/wolfram/userbase \
+    MATHEMATICA_USERBASE=/opt/wolfram/userbase \
+    LHAPDF_PREFIX=/opt/lhapdf \
+    LHAPDF_DATA_PATH=/opt/lhapdf/share/LHAPDF \
+    LHAPDF_SET=${LHAPDF_SET} \
+    DISPLAY=:1 \
+    PATH=/usr/local/bin:/opt/lhapdf/bin:/opt/wolfram/userbase/Applications/LoopTools/bin:${PATH} \
+    LD_LIBRARY_PATH=/opt/lhapdf/lib
+
+SHELL ["/bin/bash", "-lc"]
+
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+      bash bash-completion ca-certificates curl wget git rsync tree \
+      unzip zip xz-utils tar file less nano vim tmux htop procps lsof net-tools iputils-ping \
+      locales tzdata sudo tini fzf ranger bat ripgrep fd-find \
+      build-essential gcc g++ gfortran make cmake pkg-config autoconf automake libtool \
+      python3 python3-pip python3-venv python3-dev \
+      dbus-x11 xauth x11-apps xvfb xfce4 xfce4-terminal \
+      tigervnc-standalone-server novnc websockify \
+      libx11-6 libxext6 libxrender1 libxt6 libsm6 libice6 libglu1-mesa libgl1 \
+      libgtk-3-0 libasound2 libfontconfig1 libfreetype6 \
+      libxrandr2 libxfixes3 libxcursor1 libxi6 libxinerama1 libxdamage1 \
+      libxcomposite1 libxss1 libxtst6 libnss3 libgbm1 \
+      fonts-dejavu fonts-dejavu-core fonts-freefont-ttf \
+      xfonts-base xfonts-100dpi xfonts-75dpi && \
+    ln -sf /usr/bin/python3 /usr/local/bin/python && \
+    locale-gen C.UTF-8 && \
+    rm -rf /var/lib/apt/lists/*
+
+RUN if ! id -u "${USERNAME}" >/dev/null 2>&1; then \
+      groupadd --gid "${USER_GID}" "${USERNAME}" && \
+      useradd --uid "${USER_UID}" --gid "${USER_GID}" -m -s /bin/bash "${USERNAME}"; \
+    fi && \
+    usermod -aG sudo "${USERNAME}" && \
+    echo "${USERNAME} ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/90-${USERNAME} && \
+    chmod 0440 /etc/sudoers.d/90-${USERNAME}
+
+RUN mkdir -p \
+      /home/${USERNAME}/2hdm \
+      /opt/dist /opt/src /opt/bootstrap \
+      /opt/wolfram/userbase/Applications \
+      /opt/lhapdf/share/LHAPDF \
+      /usr/share/Mathematica/Licensing \
+      /home/${USERNAME}/.vnc \
+      /home/${USERNAME}/.config \
+      /home/${USERNAME}/.cache \
+      /home/${USERNAME}/.Mathematica \
+      /home/${USERNAME}/.WolframEngine && \
+    chown -R ${USERNAME}:${USERNAME} \
+      /home/${USERNAME} \
+      /opt/wolfram \
+      /opt/lhapdf \
+      /usr/share/Mathematica/Licensing
+
+RUN curl -L --fail https://github.com/FeynCalc/feyncalc/archive/hotfix-stable.zip \
+      -o /opt/dist/FeynCalc-hotfix-stable.zip && \
+    curl -L --fail https://github.com/FeynCalc/feynarts-mirror/archive/master.zip \
+      -o /opt/dist/FeynArts-master.zip && \
+    curl -L --fail https://feynarts.de/looptools/LoopTools-2.16.tar.gz \
+      -o /opt/dist/LoopTools-2.16.tar.gz && \
+    curl -L --fail "https://lhapdf.hepforge.org/downloads/?f=LHAPDF-${LHAPDF_VERSION}.tar.gz" \
+      -o /opt/dist/LHAPDF-${LHAPDF_VERSION}.tar.gz
+
+RUN unzip -q /opt/dist/FeynCalc-hotfix-stable.zip -d /opt/src && \
+    FC_SRC="$(find /opt/src -maxdepth 1 -type d -name 'feyncalc-*' | head -n 1)" && \
+    test -n "${FC_SRC}" && \
+    mkdir -p /opt/wolfram/userbase/Applications/FeynCalc && \
+    cp -a "${FC_SRC}/." /opt/wolfram/userbase/Applications/FeynCalc/ && \
+    unzip -q /opt/dist/FeynArts-master.zip -d /opt/src && \
+    FA_SRC="$(find /opt/src -maxdepth 1 -type d -name 'feynarts-mirror-*' | head -n 1)" && \
+    test -n "${FA_SRC}" && \
+    mkdir -p /opt/wolfram/userbase/Applications/FeynCalc/FeynArts && \
+    cp -a "${FA_SRC}/." /opt/wolfram/userbase/Applications/FeynCalc/FeynArts/ && \
+    chown -R ${USERNAME}:${USERNAME} /opt/wolfram/userbase && \
+    rm -rf /opt/src/feyncalc-* /opt/src/feynarts-mirror-*
+
+RUN tar -xzf /opt/dist/LHAPDF-${LHAPDF_VERSION}.tar.gz -C /opt/src && \
+    cd /opt/src/LHAPDF-${LHAPDF_VERSION} && \
+    ./configure --prefix=/opt/lhapdf --disable-static --with-python="$(command -v python3)" && \
+    make -j"$(nproc)" && make install && ldconfig && \
+    py_site="$(python3 -c 'import site; print(site.getsitepackages()[0])')" && \
+    py_ver="$(python3 -c 'import sys; print(f"{sys.version_info.major}.{sys.version_info.minor}")')" && \
+    printf '%s\n' "/opt/lhapdf/lib/python${py_ver}/site-packages" > "${py_site}/lhapdf-local.pth" && \
+    for pdfset in ${LHAPDF_SETS}; do /opt/lhapdf/bin/lhapdf install "${pdfset}"; done && \
+    rm -rf /opt/src/LHAPDF-${LHAPDF_VERSION}
+
+RUN set -euo pipefail && \
+    PREFIX="/opt/wolfram/userbase/Applications/LoopTools" && \
+    WSTP_DIR="$(find "${WOLFRAM_INSTALL_DIR}/SystemFiles/Links/WSTP/DeveloperKit" \
+      -type d -name CompilerAdditions 2>/dev/null | head -n 1)" && \
+    test -n "${WSTP_DIR}" && export PATH="${WSTP_DIR}:${PATH}" && \
+    BUILD_DIR="$(mktemp -d)" && \
+    tar -xzf /opt/dist/LoopTools-2.16.tar.gz -C "${BUILD_DIR}" && \
+    SRC_DIR="$(find "${BUILD_DIR}" -maxdepth 1 -type d -name 'LoopTools-*' | head -n 1)" && \
+    test -n "${SRC_DIR}" && mkdir -p "${PREFIX}" && cd "${SRC_DIR}" && \
+    ./configure --prefix="${PREFIX}" && make -j"$(nproc)" && make install && \
+    test -x "${PREFIX}/bin/LoopTools" && \
+    printf '%s\n' 'Install[FileNameJoin[{DirectoryName[$InputFileName], "bin", "LoopTools"}]]' > "${PREFIX}/LoopTools.m" && \
+    chown -R ${USERNAME}:${USERNAME} "${PREFIX}" && \
+    rm -rf "${BUILD_DIR}"
+
+COPY requirements.txt /tmp/requirements.txt
+
+RUN python3 -m pip install --upgrade pip setuptools wheel && \
+    grep -viE '^\s*lhapdf([<>=!~].*)?$' /tmp/requirements.txt | sed '/^\s*#/d;/^\s*$/d' > /tmp/requirements.docker.txt && \
+    python3 -m pip install -r /tmp/requirements.docker.txt && \
+    python3 -m pip install numpy pandas matplotlib python-telegram-bot
+
+COPY docker/entrypoint.sh /usr/local/sbin/entrypoint.sh
+COPY docker/setup-bashrc.sh /usr/local/bin/setup-bashrc.sh
+
+RUN chmod +x /usr/local/sbin/entrypoint.sh /usr/local/bin/setup-bashrc.sh && \
+    /usr/local/bin/setup-bashrc.sh "${USERNAME}" && \
+    chown -R ${USERNAME}:${USERNAME} \
+      /opt/wolfram \
+      /opt/lhapdf \
+      /home/${USERNAME}
+
+WORKDIR /home/worker/2hdm
+
+EXPOSE 5901 6080
+
+ENTRYPOINT ["/usr/bin/tini", "--", "/usr/local/sbin/entrypoint.sh"]
+CMD ["start"]

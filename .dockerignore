@@ -1,0 +1,25 @@
+.git
+.vscode
+
+__pycache__
+**/__pycache__
+*.pyc
+*.pyo
+
+# Runtime/project data are mounted by docker-compose, not copied during build.
+2hdm/
+2hdm/.venv/
+
+# Do not send local license/state to Docker build context.
+setup/licensing/
+setup/wolfram-userbase/
+.state/
+
+# Common runtime artifacts.
+*.mx
+*.csv
+*.log
+*.tmp
+
+# Keep Wolfram installers visible to Dockerfile:
+# setup/wolfram/ must NOT be ignored.

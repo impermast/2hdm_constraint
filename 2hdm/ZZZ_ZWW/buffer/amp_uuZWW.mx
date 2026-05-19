@@ -1,0 +1,2508 @@
+(g^3*(-(C0[SMP["m_Z"]^2, SMP["m_Z"]^2, s, mh1^2, MW^2, mh2^2]*Cos[a2]*Cos[a3]*
+     (gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+        DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+      gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+        DiracGamma[7] . Spinor[Momentum[p1], 0, 1] - 
+      gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+        DiracGamma[6] . Spinor[Momentum[p1], 0, 1] - 
+      gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+        DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+     (Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+       Pair[Momentum[k2], Momentum[Polarization[k2, -I]]] + 
+      4*mW^2*Pair[Momentum[Polarization[k1, -I]], 
+        Momentum[Polarization[k2, -I]]])*Sin[a2]^2*Sin[a3]) + 
+   C0[SMP["m_Z"]^2, SMP["m_Z"]^2, s, mh1^2, MW^2, mh3^2]*Cos[a2]*Cos[a3]*
+    (gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1] - 
+     gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1] - 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+    (Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+      Pair[Momentum[k2], Momentum[Polarization[k2, -I]]] + 
+     4*mW^2*Pair[Momentum[Polarization[k1, -I]], 
+       Momentum[Polarization[k2, -I]]])*Sin[a2]^2*Sin[a3] + 
+   C0[SMP["m_Z"]^2, SMP["m_Z"]^2, s, mh2^2, MW^2, mh1^2]*Cos[a2]*Cos[a3]*
+    (gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1] - 
+     gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1] - 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+    (Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+      Pair[Momentum[k2], Momentum[Polarization[k2, -I]]] + 
+     4*mW^2*Pair[Momentum[Polarization[k1, -I]], 
+       Momentum[Polarization[k2, -I]]])*Sin[a2]^2*Sin[a3] - 
+   C0[SMP["m_Z"]^2, SMP["m_Z"]^2, s, mh2^2, MW^2, mh3^2]*Cos[a2]*Cos[a3]*
+    (gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1] - 
+     gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1] - 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+    (Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+      Pair[Momentum[k2], Momentum[Polarization[k2, -I]]] + 
+     4*mW^2*Pair[Momentum[Polarization[k1, -I]], 
+       Momentum[Polarization[k2, -I]]])*Sin[a2]^2*Sin[a3] - 
+   C0[SMP["m_Z"]^2, SMP["m_Z"]^2, s, mh3^2, MW^2, mh1^2]*Cos[a2]*Cos[a3]*
+    (gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1] - 
+     gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1] - 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+    (Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+      Pair[Momentum[k2], Momentum[Polarization[k2, -I]]] + 
+     4*mW^2*Pair[Momentum[Polarization[k1, -I]], 
+       Momentum[Polarization[k2, -I]]])*Sin[a2]^2*Sin[a3] + 
+   C0[SMP["m_Z"]^2, SMP["m_Z"]^2, s, mh3^2, MW^2, mh2^2]*Cos[a2]*Cos[a3]*
+    (gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1] - 
+     gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1] - 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+    (Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+      Pair[Momentum[k2], Momentum[Polarization[k2, -I]]] + 
+     4*mW^2*Pair[Momentum[Polarization[k1, -I]], 
+       Momentum[Polarization[k2, -I]]])*Sin[a2]^2*Sin[a3] + 
+   2*Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+    (gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      (Pair[Momentum[k1], Momentum[Polarization[k2, -I]]] - 
+       2*Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]) + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      (Pair[Momentum[k1], Momentum[Polarization[k2, -I]]] - 
+       2*Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]) - 
+     (gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+         DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+       gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+         DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+      (Pair[Momentum[k1], Momentum[Polarization[k2, -I]]] - 
+       Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]))*
+    PaVe[1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh3^2, mh1^2, mhc^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*
+    (Cos[a2]*Cos[a3] - I*Sin[a3])*Sin[a3] + 
+   4*(gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[
+        Momentum[Polarization[k2, -I]]] . DiracGamma[6] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k1], 
+       Momentum[Polarization[k1, -I]]] + gc357L*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k2, -I]]] . DiracGamma[7] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k1], 
+       Momentum[Polarization[k1, -I]]] - gc357R*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k1, -I]]] . DiracGamma[6] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k2], 
+       Momentum[Polarization[k2, -I]]] - gc357L*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k1, -I]]] . DiracGamma[7] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k2], 
+       Momentum[Polarization[k2, -I]]] + gc357R*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[k1]] . DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      Pair[Momentum[Polarization[k1, -I]], Momentum[Polarization[k2, -I]]] + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      Pair[Momentum[Polarization[k1, -I]], Momentum[Polarization[k2, -I]]] - 
+     gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      Pair[Momentum[Polarization[k1, -I]], Momentum[Polarization[k2, -I]]] - 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      Pair[Momentum[Polarization[k1, -I]], Momentum[Polarization[k2, -I]]])*
+    PaVe[0, 0, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh1^2, mh3^2, mhc^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*
+    (Cos[a2]*Cos[a3] - I*Sin[a3])*Sin[a3] + 
+   4*(gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      (Pair[Momentum[k1], Momentum[Polarization[k1, -I]]] - 
+       2*Pair[Momentum[k2], Momentum[Polarization[k1, -I]]]) + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      (Pair[Momentum[k1], Momentum[Polarization[k1, -I]]] - 
+       2*Pair[Momentum[k2], Momentum[Polarization[k1, -I]]]) + 
+     (gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+         DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+       gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+         DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+      Pair[Momentum[k2], Momentum[Polarization[k1, -I]]])*
+    Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]*
+    PaVe[1, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh1^2, mh3^2, mhc^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*
+    (Cos[a2]*Cos[a3] - I*Sin[a3])*Sin[a3] + 
+   4*Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+    (-((gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+          DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+        gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+          DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+       Pair[Momentum[k1], Momentum[Polarization[k2, -I]]]) + 
+     gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      (2*Pair[Momentum[k1], Momentum[Polarization[k2, -I]]] - 
+       Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]) + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      (2*Pair[Momentum[k1], Momentum[Polarization[k2, -I]]] - 
+       Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]))*
+    PaVe[1, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh3^2, mh1^2, mhc^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*
+    (Cos[a2]*Cos[a3] - I*Sin[a3])*Sin[a3] + 
+   8*(gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[
+        Momentum[Polarization[k2, -I]]] . DiracGamma[6] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k1], 
+       Momentum[Polarization[k1, -I]]] + gc357L*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k2, -I]]] . DiracGamma[7] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k1], 
+       Momentum[Polarization[k1, -I]]] + gc357R*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k1, -I]]] . DiracGamma[6] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k1], 
+       Momentum[Polarization[k2, -I]]] + gc357L*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k1, -I]]] . DiracGamma[7] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k1], 
+       Momentum[Polarization[k2, -I]]] + gc357R*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[k1]] . DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      Pair[Momentum[Polarization[k1, -I]], Momentum[Polarization[k2, -I]]] + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      Pair[Momentum[Polarization[k1, -I]], Momentum[Polarization[k2, -I]]])*
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh3^2, mh1^2, mhc^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*
+    (Cos[a2]*Cos[a3] - I*Sin[a3])*Sin[a3] + 
+   8*(gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+    Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+    Pair[Momentum[k1], Momentum[Polarization[k2, -I]]]*
+    PaVe[1, 1, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh3^2, mh1^2, mhc^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*
+    (Cos[a2]*Cos[a3] - I*Sin[a3])*Sin[a3] + 
+   8*((gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+         DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+       gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+         DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+      Pair[Momentum[k2], Momentum[Polarization[k1, -I]]]*
+      Pair[Momentum[k2], Momentum[Polarization[k2, -I]]] + 
+     gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      (Pair[Momentum[k1], Momentum[Polarization[k2, -I]]]*
+        Pair[Momentum[k2], Momentum[Polarization[k1, -I]]] + 
+       Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+        Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]) + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      (Pair[Momentum[k1], Momentum[Polarization[k2, -I]]]*
+        Pair[Momentum[k2], Momentum[Polarization[k1, -I]]] + 
+       Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+        Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]))*
+    PaVe[1, 1, 2, {SMP["m_Z"]^2, s, SMP["m_Z"]^2}, {mhc^2, mh3^2, mh1^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*
+    (Cos[a2]*Cos[a3] - I*Sin[a3])*Sin[a3] + 
+   C0[SMP["m_Z"]^2, SMP["m_Z"]^2, s, mh3^2, mhc^2, mh1^2]*
+    (gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1] - 
+     gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1] - 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+    Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+    Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]*Sin[a2]^2*
+    (Cos[a2]*Cos[a3] + I*Sin[a3])*Sin[a3] - 
+   4*(gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[
+        Momentum[Polarization[k2, -I]]] . DiracGamma[6] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k1], 
+       Momentum[Polarization[k1, -I]]] + gc357L*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k2, -I]]] . DiracGamma[7] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k1], 
+       Momentum[Polarization[k1, -I]]] - gc357R*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k1, -I]]] . DiracGamma[6] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k2], 
+       Momentum[Polarization[k2, -I]]] - gc357L*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k1, -I]]] . DiracGamma[7] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k2], 
+       Momentum[Polarization[k2, -I]]] + gc357R*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[k1]] . DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      Pair[Momentum[Polarization[k1, -I]], Momentum[Polarization[k2, -I]]] + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      Pair[Momentum[Polarization[k1, -I]], Momentum[Polarization[k2, -I]]] - 
+     gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      Pair[Momentum[Polarization[k1, -I]], Momentum[Polarization[k2, -I]]] - 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      Pair[Momentum[Polarization[k1, -I]], Momentum[Polarization[k2, -I]]])*
+    PaVe[0, 0, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh1^2, mh3^2, mhc^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*
+    (Cos[a2]*Cos[a3] + I*Sin[a3])*Sin[a3] - 
+   8*(gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[
+        Momentum[Polarization[k2, -I]]] . DiracGamma[6] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k1], 
+       Momentum[Polarization[k1, -I]]] + gc357L*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k2, -I]]] . DiracGamma[7] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k1], 
+       Momentum[Polarization[k1, -I]]] + gc357R*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k1, -I]]] . DiracGamma[6] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k1], 
+       Momentum[Polarization[k2, -I]]] + gc357L*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k1, -I]]] . DiracGamma[7] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k1], 
+       Momentum[Polarization[k2, -I]]] + gc357R*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[k1]] . DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      Pair[Momentum[Polarization[k1, -I]], Momentum[Polarization[k2, -I]]] + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      Pair[Momentum[Polarization[k1, -I]], Momentum[Polarization[k2, -I]]])*
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh1^2, mh3^2, mhc^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*
+    (Cos[a2]*Cos[a3] + I*Sin[a3])*Sin[a3] + 
+   8*(gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[
+        Momentum[Polarization[k2, -I]]] . DiracGamma[6] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k2], 
+       Momentum[Polarization[k1, -I]]] + gc357L*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k2, -I]]] . DiracGamma[7] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k2], 
+       Momentum[Polarization[k1, -I]]] + gc357R*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k1, -I]]] . DiracGamma[6] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k2], 
+       Momentum[Polarization[k2, -I]]] + gc357L*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k1, -I]]] . DiracGamma[7] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k2], 
+       Momentum[Polarization[k2, -I]]] + gc357R*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[k2]] . DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      Pair[Momentum[Polarization[k1, -I]], Momentum[Polarization[k2, -I]]] + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      Pair[Momentum[Polarization[k1, -I]], Momentum[Polarization[k2, -I]]])*
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh3^2, mh1^2, mhc^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*
+    (Cos[a2]*Cos[a3] + I*Sin[a3])*Sin[a3] - 
+   8*(gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+    Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+    Pair[Momentum[k1], Momentum[Polarization[k2, -I]]]*
+    PaVe[1, 1, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh1^2, mh3^2, mhc^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*
+    (Cos[a2]*Cos[a3] + I*Sin[a3])*Sin[a3] + 
+   8*(gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+    Pair[Momentum[k2], Momentum[Polarization[k1, -I]]]*
+    Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]*
+    PaVe[1, 1, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh3^2, mh1^2, mhc^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*
+    (Cos[a2]*Cos[a3] + I*Sin[a3])*Sin[a3] - 
+   8*((gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+         DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+       gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+         DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+      Pair[Momentum[k2], Momentum[Polarization[k1, -I]]]*
+      Pair[Momentum[k2], Momentum[Polarization[k2, -I]]] + 
+     gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      (Pair[Momentum[k1], Momentum[Polarization[k2, -I]]]*
+        Pair[Momentum[k2], Momentum[Polarization[k1, -I]]] + 
+       Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+        Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]) + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      (Pair[Momentum[k1], Momentum[Polarization[k2, -I]]]*
+        Pair[Momentum[k2], Momentum[Polarization[k1, -I]]] + 
+       Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+        Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]))*
+    PaVe[1, 1, 2, {SMP["m_Z"]^2, s, SMP["m_Z"]^2}, {mhc^2, mh1^2, mh3^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*
+    (Cos[a2]*Cos[a3] + I*Sin[a3])*Sin[a3] + 
+   8*(gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k1], 
+       Momentum[Polarization[k1, -I]]]*Pair[Momentum[k1], 
+       Momentum[Polarization[k2, -I]]] + gc357L*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[k2]] . DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+      Pair[Momentum[k1], Momentum[Polarization[k2, -I]]] + 
+     (gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+         DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+       gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+         DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+      (Pair[Momentum[k1], Momentum[Polarization[k2, -I]]]*
+        Pair[Momentum[k2], Momentum[Polarization[k1, -I]]] + 
+       Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+        Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]))*
+    PaVe[1, 1, 2, {SMP["m_Z"]^2, s, SMP["m_Z"]^2}, {mhc^2, mh3^2, mh1^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*
+    (Cos[a2]*Cos[a3] + I*Sin[a3])*Sin[a3] - 
+   Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+    (gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      (Pair[Momentum[k1], Momentum[Polarization[k2, -I]]] - 
+       2*Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]) + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      (Pair[Momentum[k1], Momentum[Polarization[k2, -I]]] - 
+       2*Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]) - 
+     (gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+         DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+       gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+         DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+      (Pair[Momentum[k1], Momentum[Polarization[k2, -I]]] - 
+       Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]))*
+    PaVe[1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh1^2, mh3^2, mhc^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*
+    (2*Cos[a2]*Cos[a3] + (2*I)*Sin[a3])*Sin[a3] + 
+   (gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      (Pair[Momentum[k1], Momentum[Polarization[k1, -I]]] - 
+       Pair[Momentum[k2], Momentum[Polarization[k1, -I]]]) + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      (Pair[Momentum[k1], Momentum[Polarization[k1, -I]]] - 
+       Pair[Momentum[k2], Momentum[Polarization[k1, -I]]]) - 
+     (gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+         DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+       gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+         DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+      (2*Pair[Momentum[k1], Momentum[Polarization[k1, -I]]] - 
+       Pair[Momentum[k2], Momentum[Polarization[k1, -I]]]))*
+    Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]*
+    PaVe[1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh3^2, mh1^2, mhc^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*
+    (2*Cos[a2]*Cos[a3] + (2*I)*Sin[a3])*Sin[a3] - 
+   2*Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+    (-((gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+          DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+        gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+          DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+       Pair[Momentum[k1], Momentum[Polarization[k2, -I]]]) + 
+     gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      (2*Pair[Momentum[k1], Momentum[Polarization[k2, -I]]] - 
+       Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]) + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      (2*Pair[Momentum[k1], Momentum[Polarization[k2, -I]]] - 
+       Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]))*
+    PaVe[1, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh1^2, mh3^2, mhc^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*
+    (2*Cos[a2]*Cos[a3] + (2*I)*Sin[a3])*Sin[a3] - 
+   2*(gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      (Pair[Momentum[k1], Momentum[Polarization[k1, -I]]] - 
+       2*Pair[Momentum[k2], Momentum[Polarization[k1, -I]]]) + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      (Pair[Momentum[k1], Momentum[Polarization[k1, -I]]] - 
+       2*Pair[Momentum[k2], Momentum[Polarization[k1, -I]]]) + 
+     (gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+         DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+       gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+         DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+      Pair[Momentum[k2], Momentum[Polarization[k1, -I]]])*
+    Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]*
+    PaVe[1, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh3^2, mh1^2, mhc^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*
+    (2*Cos[a2]*Cos[a3] + (2*I)*Sin[a3])*Sin[a3] + 
+   2*(gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      (-(Pair[Momentum[k1], Momentum[Polarization[k2, -I]]]*
+         Pair[Momentum[k2], Momentum[Polarization[k1, -I]]]) + 
+       Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+        (Pair[Momentum[k1], Momentum[Polarization[k2, -I]]] - 
+         2*Pair[Momentum[k2], Momentum[Polarization[k2, -I]]])) + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      (-(Pair[Momentum[k1], Momentum[Polarization[k2, -I]]]*
+         Pair[Momentum[k2], Momentum[Polarization[k1, -I]]]) + 
+       Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+        (Pair[Momentum[k1], Momentum[Polarization[k2, -I]]] - 
+         2*Pair[Momentum[k2], Momentum[Polarization[k2, -I]]])) + 
+     (gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+         DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+       gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+         DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+      (Pair[Momentum[k1], Momentum[Polarization[k2, -I]]]*
+        Pair[Momentum[k2], Momentum[Polarization[k1, -I]]] + 
+       (2*Pair[Momentum[k1], Momentum[Polarization[k1, -I]]] - 
+         Pair[Momentum[k2], Momentum[Polarization[k1, -I]]])*
+        Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]))*
+    PaVe[1, 2, {SMP["m_Z"]^2, s, SMP["m_Z"]^2}, {mhc^2, mh1^2, mh3^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*
+    (2*Cos[a2]*Cos[a3] + (2*I)*Sin[a3])*Sin[a3] + 
+   I*C0[SMP["m_Z"]^2, SMP["m_Z"]^2, s, mh1^2, mhc^2, mh3^2]*
+    (gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1] - 
+     gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1] - 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+    Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+    Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]*Sin[a2]^2*Sin[a3]*
+    (I*Cos[a2]*Cos[a3] + Sin[a3]) + 
+   (2*I)*(gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      (Pair[Momentum[k1], Momentum[Polarization[k1, -I]]] - 
+       Pair[Momentum[k2], Momentum[Polarization[k1, -I]]]) + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      (Pair[Momentum[k1], Momentum[Polarization[k1, -I]]] - 
+       Pair[Momentum[k2], Momentum[Polarization[k1, -I]]]) - 
+     (gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+         DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+       gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+         DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+      (2*Pair[Momentum[k1], Momentum[Polarization[k1, -I]]] - 
+       Pair[Momentum[k2], Momentum[Polarization[k1, -I]]]))*
+    Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]*
+    PaVe[1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh1^2, mh3^2, mhc^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*Sin[a3]*
+    (I*Cos[a2]*Cos[a3] + Sin[a3]) + 
+   (4*I)*(gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      (-(Pair[Momentum[k1], Momentum[Polarization[k2, -I]]]*
+         Pair[Momentum[k2], Momentum[Polarization[k1, -I]]]) + 
+       Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+        (Pair[Momentum[k1], Momentum[Polarization[k2, -I]]] - 
+         2*Pair[Momentum[k2], Momentum[Polarization[k2, -I]]])) + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      (-(Pair[Momentum[k1], Momentum[Polarization[k2, -I]]]*
+         Pair[Momentum[k2], Momentum[Polarization[k1, -I]]]) + 
+       Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+        (Pair[Momentum[k1], Momentum[Polarization[k2, -I]]] - 
+         2*Pair[Momentum[k2], Momentum[Polarization[k2, -I]]])) + 
+     (gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+         DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+       gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+         DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+      (Pair[Momentum[k1], Momentum[Polarization[k2, -I]]]*
+        Pair[Momentum[k2], Momentum[Polarization[k1, -I]]] + 
+       (2*Pair[Momentum[k1], Momentum[Polarization[k1, -I]]] - 
+         Pair[Momentum[k2], Momentum[Polarization[k1, -I]]])*
+        Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]))*
+    PaVe[1, 2, {SMP["m_Z"]^2, s, SMP["m_Z"]^2}, {mhc^2, mh1^2, mh3^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*Sin[a3]*
+    (I*Cos[a2]*Cos[a3] + Sin[a3]) + 
+   (8*I)*(gc357R*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k2, -I]]] . DiracGamma[6] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k2], 
+       Momentum[Polarization[k1, -I]]] + gc357L*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k2, -I]]] . DiracGamma[7] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k2], 
+       Momentum[Polarization[k1, -I]]] + gc357R*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k1, -I]]] . DiracGamma[6] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k2], 
+       Momentum[Polarization[k2, -I]]] + gc357L*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k1, -I]]] . DiracGamma[7] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k2], 
+       Momentum[Polarization[k2, -I]]] + gc357R*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[k2]] . DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      Pair[Momentum[Polarization[k1, -I]], Momentum[Polarization[k2, -I]]] + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      Pair[Momentum[Polarization[k1, -I]], Momentum[Polarization[k2, -I]]])*
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh1^2, mh3^2, mhc^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*Sin[a3]*
+    (I*Cos[a2]*Cos[a3] + Sin[a3]) + 
+   (8*I)*(gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+    Pair[Momentum[k2], Momentum[Polarization[k1, -I]]]*
+    Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]*
+    PaVe[1, 1, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh1^2, mh3^2, mhc^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*Sin[a3]*
+    (I*Cos[a2]*Cos[a3] + Sin[a3]) + 
+   (8*I)*(gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k1], 
+       Momentum[Polarization[k1, -I]]]*Pair[Momentum[k1], 
+       Momentum[Polarization[k2, -I]]] + gc357L*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[k2]] . DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+      Pair[Momentum[k1], Momentum[Polarization[k2, -I]]] + 
+     (gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+         DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+       gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+         DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+      (Pair[Momentum[k1], Momentum[Polarization[k2, -I]]]*
+        Pair[Momentum[k2], Momentum[Polarization[k1, -I]]] + 
+       Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+        Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]))*
+    PaVe[1, 1, 2, {SMP["m_Z"]^2, s, SMP["m_Z"]^2}, {mhc^2, mh1^2, mh3^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*Sin[a3]*
+    (I*Cos[a2]*Cos[a3] + Sin[a3]) - (2*I)*Cos[a3]*
+    Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+    (gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      (Pair[Momentum[k1], Momentum[Polarization[k2, -I]]] - 
+       2*Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]) + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      (Pair[Momentum[k1], Momentum[Polarization[k2, -I]]] - 
+       2*Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]) - 
+     (gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+         DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+       gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+         DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+      (Pair[Momentum[k1], Momentum[Polarization[k2, -I]]] - 
+       Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]))*
+    PaVe[1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh2^2, mh1^2, mhc^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*
+    (Cos[a3] - I*Cos[a2]*Sin[a3]) - (4*I)*Cos[a3]*
+    (gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[
+        Momentum[Polarization[k2, -I]]] . DiracGamma[6] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k1], 
+       Momentum[Polarization[k1, -I]]] + gc357L*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k2, -I]]] . DiracGamma[7] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k1], 
+       Momentum[Polarization[k1, -I]]] - gc357R*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k1, -I]]] . DiracGamma[6] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k2], 
+       Momentum[Polarization[k2, -I]]] - gc357L*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k1, -I]]] . DiracGamma[7] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k2], 
+       Momentum[Polarization[k2, -I]]] + gc357R*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[k1]] . DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      Pair[Momentum[Polarization[k1, -I]], Momentum[Polarization[k2, -I]]] + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      Pair[Momentum[Polarization[k1, -I]], Momentum[Polarization[k2, -I]]] - 
+     gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      Pair[Momentum[Polarization[k1, -I]], Momentum[Polarization[k2, -I]]] - 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      Pair[Momentum[Polarization[k1, -I]], Momentum[Polarization[k2, -I]]])*
+    PaVe[0, 0, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh1^2, mh2^2, mhc^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*
+    (Cos[a3] - I*Cos[a2]*Sin[a3]) - (4*I)*Cos[a3]*
+    (gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      (Pair[Momentum[k1], Momentum[Polarization[k1, -I]]] - 
+       2*Pair[Momentum[k2], Momentum[Polarization[k1, -I]]]) + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      (Pair[Momentum[k1], Momentum[Polarization[k1, -I]]] - 
+       2*Pair[Momentum[k2], Momentum[Polarization[k1, -I]]]) + 
+     (gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+         DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+       gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+         DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+      Pair[Momentum[k2], Momentum[Polarization[k1, -I]]])*
+    Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]*
+    PaVe[1, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh1^2, mh2^2, mhc^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*
+    (Cos[a3] - I*Cos[a2]*Sin[a3]) - (4*I)*Cos[a3]*
+    Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+    (-((gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+          DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+        gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+          DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+       Pair[Momentum[k1], Momentum[Polarization[k2, -I]]]) + 
+     gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      (2*Pair[Momentum[k1], Momentum[Polarization[k2, -I]]] - 
+       Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]) + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      (2*Pair[Momentum[k1], Momentum[Polarization[k2, -I]]] - 
+       Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]))*
+    PaVe[1, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh2^2, mh1^2, mhc^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*
+    (Cos[a3] - I*Cos[a2]*Sin[a3]) - (8*I)*Cos[a3]*
+    (gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[
+        Momentum[Polarization[k2, -I]]] . DiracGamma[6] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k1], 
+       Momentum[Polarization[k1, -I]]] + gc357L*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k2, -I]]] . DiracGamma[7] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k1], 
+       Momentum[Polarization[k1, -I]]] + gc357R*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k1, -I]]] . DiracGamma[6] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k1], 
+       Momentum[Polarization[k2, -I]]] + gc357L*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k1, -I]]] . DiracGamma[7] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k1], 
+       Momentum[Polarization[k2, -I]]] + gc357R*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[k1]] . DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      Pair[Momentum[Polarization[k1, -I]], Momentum[Polarization[k2, -I]]] + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      Pair[Momentum[Polarization[k1, -I]], Momentum[Polarization[k2, -I]]])*
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh2^2, mh1^2, mhc^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*
+    (Cos[a3] - I*Cos[a2]*Sin[a3]) - (8*I)*Cos[a3]*
+    (gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+    Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+    Pair[Momentum[k1], Momentum[Polarization[k2, -I]]]*
+    PaVe[1, 1, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh2^2, mh1^2, mhc^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*
+    (Cos[a3] - I*Cos[a2]*Sin[a3]) - (8*I)*Cos[a3]*
+    ((gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+         DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+       gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+         DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+      Pair[Momentum[k2], Momentum[Polarization[k1, -I]]]*
+      Pair[Momentum[k2], Momentum[Polarization[k2, -I]]] + 
+     gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      (Pair[Momentum[k1], Momentum[Polarization[k2, -I]]]*
+        Pair[Momentum[k2], Momentum[Polarization[k1, -I]]] + 
+       Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+        Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]) + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      (Pair[Momentum[k1], Momentum[Polarization[k2, -I]]]*
+        Pair[Momentum[k2], Momentum[Polarization[k1, -I]]] + 
+       Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+        Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]))*
+    PaVe[1, 1, 2, {SMP["m_Z"]^2, s, SMP["m_Z"]^2}, {mhc^2, mh2^2, mh1^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*
+    (Cos[a3] - I*Cos[a2]*Sin[a3]) + I*C0[SMP["m_Z"]^2, SMP["m_Z"]^2, s, 
+     mh2^2, mhc^2, mh1^2]*Cos[a3]*
+    (gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1] - 
+     gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1] - 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+    Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+    Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]*Sin[a2]^2*
+    (Cos[a3] + I*Cos[a2]*Sin[a3]) + (2*I)*Cos[a3]*
+    (gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      (Pair[Momentum[k1], Momentum[Polarization[k1, -I]]] - 
+       Pair[Momentum[k2], Momentum[Polarization[k1, -I]]]) + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      (Pair[Momentum[k1], Momentum[Polarization[k1, -I]]] - 
+       Pair[Momentum[k2], Momentum[Polarization[k1, -I]]]) - 
+     (gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+         DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+       gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+         DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+      (2*Pair[Momentum[k1], Momentum[Polarization[k1, -I]]] - 
+       Pair[Momentum[k2], Momentum[Polarization[k1, -I]]]))*
+    Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]*
+    PaVe[1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh2^2, mh1^2, mhc^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*
+    (Cos[a3] + I*Cos[a2]*Sin[a3]) + (4*I)*Cos[a3]*
+    (gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      (-(Pair[Momentum[k1], Momentum[Polarization[k2, -I]]]*
+         Pair[Momentum[k2], Momentum[Polarization[k1, -I]]]) + 
+       Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+        (Pair[Momentum[k1], Momentum[Polarization[k2, -I]]] - 
+         2*Pair[Momentum[k2], Momentum[Polarization[k2, -I]]])) + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      (-(Pair[Momentum[k1], Momentum[Polarization[k2, -I]]]*
+         Pair[Momentum[k2], Momentum[Polarization[k1, -I]]]) + 
+       Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+        (Pair[Momentum[k1], Momentum[Polarization[k2, -I]]] - 
+         2*Pair[Momentum[k2], Momentum[Polarization[k2, -I]]])) + 
+     (gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+         DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+       gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+         DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+      (Pair[Momentum[k1], Momentum[Polarization[k2, -I]]]*
+        Pair[Momentum[k2], Momentum[Polarization[k1, -I]]] + 
+       (2*Pair[Momentum[k1], Momentum[Polarization[k1, -I]]] - 
+         Pair[Momentum[k2], Momentum[Polarization[k1, -I]]])*
+        Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]))*
+    PaVe[1, 2, {SMP["m_Z"]^2, s, SMP["m_Z"]^2}, {mhc^2, mh1^2, mh2^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*
+    (Cos[a3] + I*Cos[a2]*Sin[a3]) + (8*I)*Cos[a3]*
+    (gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[
+        Momentum[Polarization[k2, -I]]] . DiracGamma[6] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k2], 
+       Momentum[Polarization[k1, -I]]] + gc357L*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k2, -I]]] . DiracGamma[7] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k2], 
+       Momentum[Polarization[k1, -I]]] + gc357R*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k1, -I]]] . DiracGamma[6] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k2], 
+       Momentum[Polarization[k2, -I]]] + gc357L*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k1, -I]]] . DiracGamma[7] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k2], 
+       Momentum[Polarization[k2, -I]]] + gc357R*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[k2]] . DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      Pair[Momentum[Polarization[k1, -I]], Momentum[Polarization[k2, -I]]] + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      Pair[Momentum[Polarization[k1, -I]], Momentum[Polarization[k2, -I]]])*
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh2^2, mh1^2, mhc^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*
+    (Cos[a3] + I*Cos[a2]*Sin[a3]) + (8*I)*Cos[a3]*
+    (gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+    Pair[Momentum[k2], Momentum[Polarization[k1, -I]]]*
+    Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]*
+    PaVe[1, 1, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh2^2, mh1^2, mhc^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*
+    (Cos[a3] + I*Cos[a2]*Sin[a3]) + (8*I)*Cos[a3]*
+    (gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k1], 
+       Momentum[Polarization[k1, -I]]]*Pair[Momentum[k1], 
+       Momentum[Polarization[k2, -I]]] + gc357L*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[k2]] . DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+      Pair[Momentum[k1], Momentum[Polarization[k2, -I]]] + 
+     (gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+         DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+       gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+         DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+      (Pair[Momentum[k1], Momentum[Polarization[k2, -I]]]*
+        Pair[Momentum[k2], Momentum[Polarization[k1, -I]]] + 
+       Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+        Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]))*
+    PaVe[1, 1, 2, {SMP["m_Z"]^2, s, SMP["m_Z"]^2}, {mhc^2, mh2^2, mh1^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*
+    (Cos[a3] + I*Cos[a2]*Sin[a3]) + 2*Cos[a3]*Pair[Momentum[k1], 
+     Momentum[Polarization[k1, -I]]]*
+    (gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      (Pair[Momentum[k1], Momentum[Polarization[k2, -I]]] - 
+       2*Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]) + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      (Pair[Momentum[k1], Momentum[Polarization[k2, -I]]] - 
+       2*Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]) - 
+     (gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+         DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+       gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+         DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+      (Pair[Momentum[k1], Momentum[Polarization[k2, -I]]] - 
+       Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]))*
+    PaVe[1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh1^2, mh2^2, mhc^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*
+    ((-I)*Cos[a3] + Cos[a2]*Sin[a3]) + 
+   4*Cos[a3]*(gc357R*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k2, -I]]] . DiracGamma[6] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k1], 
+       Momentum[Polarization[k1, -I]]] + gc357L*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k2, -I]]] . DiracGamma[7] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k1], 
+       Momentum[Polarization[k1, -I]]] - gc357R*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k1, -I]]] . DiracGamma[6] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k2], 
+       Momentum[Polarization[k2, -I]]] - gc357L*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k1, -I]]] . DiracGamma[7] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k2], 
+       Momentum[Polarization[k2, -I]]] + gc357R*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[k1]] . DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      Pair[Momentum[Polarization[k1, -I]], Momentum[Polarization[k2, -I]]] + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      Pair[Momentum[Polarization[k1, -I]], Momentum[Polarization[k2, -I]]] - 
+     gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      Pair[Momentum[Polarization[k1, -I]], Momentum[Polarization[k2, -I]]] - 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      Pair[Momentum[Polarization[k1, -I]], Momentum[Polarization[k2, -I]]])*
+    PaVe[0, 0, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh1^2, mh2^2, mhc^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*
+    ((-I)*Cos[a3] + Cos[a2]*Sin[a3]) + 
+   4*Cos[a3]*Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+    (-((gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+          DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+        gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+          DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+       Pair[Momentum[k1], Momentum[Polarization[k2, -I]]]) + 
+     gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      (2*Pair[Momentum[k1], Momentum[Polarization[k2, -I]]] - 
+       Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]) + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      (2*Pair[Momentum[k1], Momentum[Polarization[k2, -I]]] - 
+       Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]))*
+    PaVe[1, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh1^2, mh2^2, mhc^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*
+    ((-I)*Cos[a3] + Cos[a2]*Sin[a3]) + 
+   4*Cos[a3]*(gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      (Pair[Momentum[k1], Momentum[Polarization[k1, -I]]] - 
+       2*Pair[Momentum[k2], Momentum[Polarization[k1, -I]]]) + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      (Pair[Momentum[k1], Momentum[Polarization[k1, -I]]] - 
+       2*Pair[Momentum[k2], Momentum[Polarization[k1, -I]]]) + 
+     (gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+         DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+       gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+         DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+      Pair[Momentum[k2], Momentum[Polarization[k1, -I]]])*
+    Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]*
+    PaVe[1, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh2^2, mh1^2, mhc^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*
+    ((-I)*Cos[a3] + Cos[a2]*Sin[a3]) + 
+   8*Cos[a3]*(gc357R*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k2, -I]]] . DiracGamma[6] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k1], 
+       Momentum[Polarization[k1, -I]]] + gc357L*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k2, -I]]] . DiracGamma[7] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k1], 
+       Momentum[Polarization[k1, -I]]] + gc357R*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k1, -I]]] . DiracGamma[6] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k1], 
+       Momentum[Polarization[k2, -I]]] + gc357L*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k1, -I]]] . DiracGamma[7] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k1], 
+       Momentum[Polarization[k2, -I]]] + gc357R*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[k1]] . DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      Pair[Momentum[Polarization[k1, -I]], Momentum[Polarization[k2, -I]]] + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      Pair[Momentum[Polarization[k1, -I]], Momentum[Polarization[k2, -I]]])*
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh1^2, mh2^2, mhc^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*
+    ((-I)*Cos[a3] + Cos[a2]*Sin[a3]) + 
+   8*Cos[a3]*(gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+    Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+    Pair[Momentum[k1], Momentum[Polarization[k2, -I]]]*
+    PaVe[1, 1, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh1^2, mh2^2, mhc^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*
+    ((-I)*Cos[a3] + Cos[a2]*Sin[a3]) + 
+   8*Cos[a3]*((gc357R*Spinor[-Momentum[p2], 0, 1] . 
+         DiracGamma[Momentum[k1]] . DiracGamma[6] . Spinor[Momentum[p1], 0, 
+          1] + gc357L*Spinor[-Momentum[p2], 0, 1] . 
+         DiracGamma[Momentum[k1]] . DiracGamma[7] . Spinor[Momentum[p1], 0, 
+          1])*Pair[Momentum[k2], Momentum[Polarization[k1, -I]]]*
+      Pair[Momentum[k2], Momentum[Polarization[k2, -I]]] + 
+     gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      (Pair[Momentum[k1], Momentum[Polarization[k2, -I]]]*
+        Pair[Momentum[k2], Momentum[Polarization[k1, -I]]] + 
+       Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+        Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]) + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      (Pair[Momentum[k1], Momentum[Polarization[k2, -I]]]*
+        Pair[Momentum[k2], Momentum[Polarization[k1, -I]]] + 
+       Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+        Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]))*
+    PaVe[1, 1, 2, {SMP["m_Z"]^2, s, SMP["m_Z"]^2}, {mhc^2, mh1^2, mh2^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*
+    ((-I)*Cos[a3] + Cos[a2]*Sin[a3]) - 
+   C0[SMP["m_Z"]^2, SMP["m_Z"]^2, s, mh2^2, mhc^2, mh3^2]*Cos[a2]*
+    (gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1] - 
+     gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1] - 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+    Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+    Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]*
+    (Cos[a2]*Cos[a3] - I*Sin[a3])*((-I)*Cos[a3] + Cos[a2]*Sin[a3]) + 
+   4*Cos[a2]*(gc357R*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k2, -I]]] . DiracGamma[6] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k1], 
+       Momentum[Polarization[k1, -I]]] + gc357L*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k2, -I]]] . DiracGamma[7] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k1], 
+       Momentum[Polarization[k1, -I]]] - gc357R*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k1, -I]]] . DiracGamma[6] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k2], 
+       Momentum[Polarization[k2, -I]]] - gc357L*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k1, -I]]] . DiracGamma[7] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k2], 
+       Momentum[Polarization[k2, -I]]] + gc357R*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[k1]] . DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      Pair[Momentum[Polarization[k1, -I]], Momentum[Polarization[k2, -I]]] + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      Pair[Momentum[Polarization[k1, -I]], Momentum[Polarization[k2, -I]]] - 
+     gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      Pair[Momentum[Polarization[k1, -I]], Momentum[Polarization[k2, -I]]] - 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      Pair[Momentum[Polarization[k1, -I]], Momentum[Polarization[k2, -I]]])*
+    PaVe[0, 0, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh2^2, mh3^2, mhc^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    (Cos[a2]*Cos[a3] - I*Sin[a3])*((-I)*Cos[a3] + Cos[a2]*Sin[a3]) - 
+   8*Cos[a2]*(gc357R*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k2, -I]]] . DiracGamma[6] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k2], 
+       Momentum[Polarization[k1, -I]]] + gc357L*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k2, -I]]] . DiracGamma[7] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k2], 
+       Momentum[Polarization[k1, -I]]] + gc357R*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k1, -I]]] . DiracGamma[6] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k2], 
+       Momentum[Polarization[k2, -I]]] + gc357L*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k1, -I]]] . DiracGamma[7] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k2], 
+       Momentum[Polarization[k2, -I]]] + gc357R*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[k2]] . DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      Pair[Momentum[Polarization[k1, -I]], Momentum[Polarization[k2, -I]]] + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      Pair[Momentum[Polarization[k1, -I]], Momentum[Polarization[k2, -I]]])*
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh2^2, mh3^2, mhc^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    (Cos[a2]*Cos[a3] - I*Sin[a3])*((-I)*Cos[a3] + Cos[a2]*Sin[a3]) + 
+   8*Cos[a2]*(gc357R*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k2, -I]]] . DiracGamma[6] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k1], 
+       Momentum[Polarization[k1, -I]]] + gc357L*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k2, -I]]] . DiracGamma[7] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k1], 
+       Momentum[Polarization[k1, -I]]] + gc357R*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k1, -I]]] . DiracGamma[6] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k1], 
+       Momentum[Polarization[k2, -I]]] + gc357L*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k1, -I]]] . DiracGamma[7] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k1], 
+       Momentum[Polarization[k2, -I]]] + gc357R*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[k1]] . DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      Pair[Momentum[Polarization[k1, -I]], Momentum[Polarization[k2, -I]]] + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      Pair[Momentum[Polarization[k1, -I]], Momentum[Polarization[k2, -I]]])*
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh3^2, mh2^2, mhc^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    (Cos[a2]*Cos[a3] - I*Sin[a3])*((-I)*Cos[a3] + Cos[a2]*Sin[a3]) - 
+   8*Cos[a2]*(gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+    Pair[Momentum[k2], Momentum[Polarization[k1, -I]]]*
+    Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]*
+    PaVe[1, 1, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh2^2, mh3^2, mhc^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    (Cos[a2]*Cos[a3] - I*Sin[a3])*((-I)*Cos[a3] + Cos[a2]*Sin[a3]) + 
+   8*Cos[a2]*(gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+    Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+    Pair[Momentum[k1], Momentum[Polarization[k2, -I]]]*
+    PaVe[1, 1, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh3^2, mh2^2, mhc^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    (Cos[a2]*Cos[a3] - I*Sin[a3])*((-I)*Cos[a3] + Cos[a2]*Sin[a3]) - 
+   8*Cos[a2]*(gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k1], 
+       Momentum[Polarization[k1, -I]]]*Pair[Momentum[k1], 
+       Momentum[Polarization[k2, -I]]] + gc357L*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[k2]] . DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+      Pair[Momentum[k1], Momentum[Polarization[k2, -I]]] + 
+     (gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+         DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+       gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+         DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+      (Pair[Momentum[k1], Momentum[Polarization[k2, -I]]]*
+        Pair[Momentum[k2], Momentum[Polarization[k1, -I]]] + 
+       Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+        Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]))*
+    PaVe[1, 1, 2, {SMP["m_Z"]^2, s, SMP["m_Z"]^2}, {mhc^2, mh2^2, mh3^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    (Cos[a2]*Cos[a3] - I*Sin[a3])*((-I)*Cos[a3] + Cos[a2]*Sin[a3]) + 
+   8*Cos[a2]*((gc357R*Spinor[-Momentum[p2], 0, 1] . 
+         DiracGamma[Momentum[k1]] . DiracGamma[6] . Spinor[Momentum[p1], 0, 
+          1] + gc357L*Spinor[-Momentum[p2], 0, 1] . 
+         DiracGamma[Momentum[k1]] . DiracGamma[7] . Spinor[Momentum[p1], 0, 
+          1])*Pair[Momentum[k2], Momentum[Polarization[k1, -I]]]*
+      Pair[Momentum[k2], Momentum[Polarization[k2, -I]]] + 
+     gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      (Pair[Momentum[k1], Momentum[Polarization[k2, -I]]]*
+        Pair[Momentum[k2], Momentum[Polarization[k1, -I]]] + 
+       Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+        Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]) + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      (Pair[Momentum[k1], Momentum[Polarization[k2, -I]]]*
+        Pair[Momentum[k2], Momentum[Polarization[k1, -I]]] + 
+       Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+        Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]))*
+    PaVe[1, 1, 2, {SMP["m_Z"]^2, s, SMP["m_Z"]^2}, {mhc^2, mh3^2, mh2^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    (Cos[a2]*Cos[a3] - I*Sin[a3])*((-I)*Cos[a3] + Cos[a2]*Sin[a3]) + 
+   C0[SMP["m_Z"]^2, SMP["m_Z"]^2, s, mh1^2, mhc^2, mh2^2]*Cos[a3]*
+    (gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1] - 
+     gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1] - 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+    Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+    Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]*Sin[a2]^2*
+    (I*Cos[a3] + Cos[a2]*Sin[a3]) + 
+   2*Cos[a3]*(gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      (Pair[Momentum[k1], Momentum[Polarization[k1, -I]]] - 
+       Pair[Momentum[k2], Momentum[Polarization[k1, -I]]]) + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      (Pair[Momentum[k1], Momentum[Polarization[k1, -I]]] - 
+       Pair[Momentum[k2], Momentum[Polarization[k1, -I]]]) - 
+     (gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+         DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+       gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+         DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+      (2*Pair[Momentum[k1], Momentum[Polarization[k1, -I]]] - 
+       Pair[Momentum[k2], Momentum[Polarization[k1, -I]]]))*
+    Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]*
+    PaVe[1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh1^2, mh2^2, mhc^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*
+    (I*Cos[a3] + Cos[a2]*Sin[a3]) + 
+   4*Cos[a3]*(gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      (-(Pair[Momentum[k1], Momentum[Polarization[k2, -I]]]*
+         Pair[Momentum[k2], Momentum[Polarization[k1, -I]]]) + 
+       Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+        (Pair[Momentum[k1], Momentum[Polarization[k2, -I]]] - 
+         2*Pair[Momentum[k2], Momentum[Polarization[k2, -I]]])) + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      (-(Pair[Momentum[k1], Momentum[Polarization[k2, -I]]]*
+         Pair[Momentum[k2], Momentum[Polarization[k1, -I]]]) + 
+       Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+        (Pair[Momentum[k1], Momentum[Polarization[k2, -I]]] - 
+         2*Pair[Momentum[k2], Momentum[Polarization[k2, -I]]])) + 
+     (gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+         DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+       gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+         DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+      (Pair[Momentum[k1], Momentum[Polarization[k2, -I]]]*
+        Pair[Momentum[k2], Momentum[Polarization[k1, -I]]] + 
+       (2*Pair[Momentum[k1], Momentum[Polarization[k1, -I]]] - 
+         Pair[Momentum[k2], Momentum[Polarization[k1, -I]]])*
+        Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]))*
+    PaVe[1, 2, {SMP["m_Z"]^2, s, SMP["m_Z"]^2}, {mhc^2, mh1^2, mh2^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*
+    (I*Cos[a3] + Cos[a2]*Sin[a3]) + 
+   8*Cos[a3]*(gc357R*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k2, -I]]] . DiracGamma[6] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k2], 
+       Momentum[Polarization[k1, -I]]] + gc357L*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k2, -I]]] . DiracGamma[7] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k2], 
+       Momentum[Polarization[k1, -I]]] + gc357R*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k1, -I]]] . DiracGamma[6] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k2], 
+       Momentum[Polarization[k2, -I]]] + gc357L*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k1, -I]]] . DiracGamma[7] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k2], 
+       Momentum[Polarization[k2, -I]]] + gc357R*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[k2]] . DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      Pair[Momentum[Polarization[k1, -I]], Momentum[Polarization[k2, -I]]] + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      Pair[Momentum[Polarization[k1, -I]], Momentum[Polarization[k2, -I]]])*
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh1^2, mh2^2, mhc^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*
+    (I*Cos[a3] + Cos[a2]*Sin[a3]) + 
+   8*Cos[a3]*(gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+    Pair[Momentum[k2], Momentum[Polarization[k1, -I]]]*
+    Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]*
+    PaVe[1, 1, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh1^2, mh2^2, mhc^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*
+    (I*Cos[a3] + Cos[a2]*Sin[a3]) + 
+   8*Cos[a3]*(gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k1], 
+       Momentum[Polarization[k1, -I]]]*Pair[Momentum[k1], 
+       Momentum[Polarization[k2, -I]]] + gc357L*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[k2]] . DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+      Pair[Momentum[k1], Momentum[Polarization[k2, -I]]] + 
+     (gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+         DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+       gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+         DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+      (Pair[Momentum[k1], Momentum[Polarization[k2, -I]]]*
+        Pair[Momentum[k2], Momentum[Polarization[k1, -I]]] + 
+       Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+        Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]))*
+    PaVe[1, 1, 2, {SMP["m_Z"]^2, s, SMP["m_Z"]^2}, {mhc^2, mh1^2, mh2^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*
+    (I*Cos[a3] + Cos[a2]*Sin[a3]) + C0[SMP["m_Z"]^2, SMP["m_Z"]^2, s, mh3^2, 
+     mhc^2, mh2^2]*Cos[a2]*(gc357R*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[k1]] . DiracGamma[6] . Spinor[Momentum[p1], 0, 
+        1] + gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1] - 
+     gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1] - 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+    Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+    Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]*
+    (Cos[a2]*Cos[a3] + I*Sin[a3])*(I*Cos[a3] + Cos[a2]*Sin[a3]) - 
+   4*Cos[a2]*(gc357R*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k2, -I]]] . DiracGamma[6] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k1], 
+       Momentum[Polarization[k1, -I]]] + gc357L*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k2, -I]]] . DiracGamma[7] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k1], 
+       Momentum[Polarization[k1, -I]]] - gc357R*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k1, -I]]] . DiracGamma[6] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k2], 
+       Momentum[Polarization[k2, -I]]] - gc357L*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k1, -I]]] . DiracGamma[7] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k2], 
+       Momentum[Polarization[k2, -I]]] + gc357R*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[k1]] . DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      Pair[Momentum[Polarization[k1, -I]], Momentum[Polarization[k2, -I]]] + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      Pair[Momentum[Polarization[k1, -I]], Momentum[Polarization[k2, -I]]] - 
+     gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      Pair[Momentum[Polarization[k1, -I]], Momentum[Polarization[k2, -I]]] - 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      Pair[Momentum[Polarization[k1, -I]], Momentum[Polarization[k2, -I]]])*
+    PaVe[0, 0, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh2^2, mh3^2, mhc^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    (Cos[a2]*Cos[a3] + I*Sin[a3])*(I*Cos[a3] + Cos[a2]*Sin[a3]) - 
+   8*Cos[a2]*(gc357R*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k2, -I]]] . DiracGamma[6] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k1], 
+       Momentum[Polarization[k1, -I]]] + gc357L*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k2, -I]]] . DiracGamma[7] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k1], 
+       Momentum[Polarization[k1, -I]]] + gc357R*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k1, -I]]] . DiracGamma[6] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k1], 
+       Momentum[Polarization[k2, -I]]] + gc357L*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k1, -I]]] . DiracGamma[7] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k1], 
+       Momentum[Polarization[k2, -I]]] + gc357R*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[k1]] . DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      Pair[Momentum[Polarization[k1, -I]], Momentum[Polarization[k2, -I]]] + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      Pair[Momentum[Polarization[k1, -I]], Momentum[Polarization[k2, -I]]])*
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh2^2, mh3^2, mhc^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    (Cos[a2]*Cos[a3] + I*Sin[a3])*(I*Cos[a3] + Cos[a2]*Sin[a3]) + 
+   8*Cos[a2]*(gc357R*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k2, -I]]] . DiracGamma[6] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k2], 
+       Momentum[Polarization[k1, -I]]] + gc357L*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k2, -I]]] . DiracGamma[7] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k2], 
+       Momentum[Polarization[k1, -I]]] + gc357R*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k1, -I]]] . DiracGamma[6] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k2], 
+       Momentum[Polarization[k2, -I]]] + gc357L*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k1, -I]]] . DiracGamma[7] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k2], 
+       Momentum[Polarization[k2, -I]]] + gc357R*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[k2]] . DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      Pair[Momentum[Polarization[k1, -I]], Momentum[Polarization[k2, -I]]] + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      Pair[Momentum[Polarization[k1, -I]], Momentum[Polarization[k2, -I]]])*
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh3^2, mh2^2, mhc^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    (Cos[a2]*Cos[a3] + I*Sin[a3])*(I*Cos[a3] + Cos[a2]*Sin[a3]) - 
+   8*Cos[a2]*(gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+    Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+    Pair[Momentum[k1], Momentum[Polarization[k2, -I]]]*
+    PaVe[1, 1, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh2^2, mh3^2, mhc^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    (Cos[a2]*Cos[a3] + I*Sin[a3])*(I*Cos[a3] + Cos[a2]*Sin[a3]) + 
+   8*Cos[a2]*(gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+    Pair[Momentum[k2], Momentum[Polarization[k1, -I]]]*
+    Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]*
+    PaVe[1, 1, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh3^2, mh2^2, mhc^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    (Cos[a2]*Cos[a3] + I*Sin[a3])*(I*Cos[a3] + Cos[a2]*Sin[a3]) - 
+   8*Cos[a2]*((gc357R*Spinor[-Momentum[p2], 0, 1] . 
+         DiracGamma[Momentum[k1]] . DiracGamma[6] . Spinor[Momentum[p1], 0, 
+          1] + gc357L*Spinor[-Momentum[p2], 0, 1] . 
+         DiracGamma[Momentum[k1]] . DiracGamma[7] . Spinor[Momentum[p1], 0, 
+          1])*Pair[Momentum[k2], Momentum[Polarization[k1, -I]]]*
+      Pair[Momentum[k2], Momentum[Polarization[k2, -I]]] + 
+     gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      (Pair[Momentum[k1], Momentum[Polarization[k2, -I]]]*
+        Pair[Momentum[k2], Momentum[Polarization[k1, -I]]] + 
+       Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+        Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]) + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      (Pair[Momentum[k1], Momentum[Polarization[k2, -I]]]*
+        Pair[Momentum[k2], Momentum[Polarization[k1, -I]]] + 
+       Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+        Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]))*
+    PaVe[1, 1, 2, {SMP["m_Z"]^2, s, SMP["m_Z"]^2}, {mhc^2, mh2^2, mh3^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    (Cos[a2]*Cos[a3] + I*Sin[a3])*(I*Cos[a3] + Cos[a2]*Sin[a3]) + 
+   8*Cos[a2]*(gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k1], 
+       Momentum[Polarization[k1, -I]]]*Pair[Momentum[k1], 
+       Momentum[Polarization[k2, -I]]] + gc357L*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[k2]] . DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+      Pair[Momentum[k1], Momentum[Polarization[k2, -I]]] + 
+     (gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+         DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+       gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+         DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+      (Pair[Momentum[k1], Momentum[Polarization[k2, -I]]]*
+        Pair[Momentum[k2], Momentum[Polarization[k1, -I]]] + 
+       Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+        Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]))*
+    PaVe[1, 1, 2, {SMP["m_Z"]^2, s, SMP["m_Z"]^2}, {mhc^2, mh3^2, mh2^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    (Cos[a2]*Cos[a3] + I*Sin[a3])*(I*Cos[a3] + Cos[a2]*Sin[a3]) - 
+   (Cos[a2]*(gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+        DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+       (Pair[Momentum[k1], Momentum[Polarization[k1, -I]]] - 
+        Pair[Momentum[k2], Momentum[Polarization[k1, -I]]]) + 
+      gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+        DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+       (Pair[Momentum[k1], Momentum[Polarization[k1, -I]]] - 
+        Pair[Momentum[k2], Momentum[Polarization[k1, -I]]]) - 
+      (gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+          DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+        gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+          DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+       (2*Pair[Momentum[k1], Momentum[Polarization[k1, -I]]] - 
+        Pair[Momentum[k2], Momentum[Polarization[k1, -I]]]))*
+     Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]*
+     PaVe[1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh2^2, mh3^2, mhc^2}, 
+      PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+     (2*Cos[a2]*Cos[a3] - (2*I)*Sin[a3])*((-2*I)*Cos[a3] + 
+      2*Cos[a2]*Sin[a3]))/2 + 
+   (Cos[a2]*Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+     (gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+        DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+       (Pair[Momentum[k1], Momentum[Polarization[k2, -I]]] - 
+        2*Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]) + 
+      gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+        DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+       (Pair[Momentum[k1], Momentum[Polarization[k2, -I]]] - 
+        2*Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]) - 
+      (gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+          DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+        gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+          DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+       (Pair[Momentum[k1], Momentum[Polarization[k2, -I]]] - 
+        Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]))*
+     PaVe[1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh3^2, mh2^2, mhc^2}, 
+      PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+     (2*Cos[a2]*Cos[a3] - (2*I)*Sin[a3])*((-2*I)*Cos[a3] + 
+      2*Cos[a2]*Sin[a3]))/2 + 
+   Cos[a2]*(gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      (Pair[Momentum[k1], Momentum[Polarization[k1, -I]]] - 
+       2*Pair[Momentum[k2], Momentum[Polarization[k1, -I]]]) + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      (Pair[Momentum[k1], Momentum[Polarization[k1, -I]]] - 
+       2*Pair[Momentum[k2], Momentum[Polarization[k1, -I]]]) + 
+     (gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+         DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+       gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+         DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+      Pair[Momentum[k2], Momentum[Polarization[k1, -I]]])*
+    Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]*
+    PaVe[1, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh2^2, mh3^2, mhc^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    (2*Cos[a2]*Cos[a3] - (2*I)*Sin[a3])*((-2*I)*Cos[a3] + 
+     2*Cos[a2]*Sin[a3]) + Cos[a2]*Pair[Momentum[k1], 
+     Momentum[Polarization[k1, -I]]]*
+    (-((gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+          DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+        gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+          DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+       Pair[Momentum[k1], Momentum[Polarization[k2, -I]]]) + 
+     gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      (2*Pair[Momentum[k1], Momentum[Polarization[k2, -I]]] - 
+       Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]) + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      (2*Pair[Momentum[k1], Momentum[Polarization[k2, -I]]] - 
+       Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]))*
+    PaVe[1, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh3^2, mh2^2, mhc^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    (2*Cos[a2]*Cos[a3] - (2*I)*Sin[a3])*((-2*I)*Cos[a3] + 
+     2*Cos[a2]*Sin[a3]) - 
+   Cos[a2]*(gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      (-(Pair[Momentum[k1], Momentum[Polarization[k2, -I]]]*
+         Pair[Momentum[k2], Momentum[Polarization[k1, -I]]]) + 
+       Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+        (Pair[Momentum[k1], Momentum[Polarization[k2, -I]]] - 
+         2*Pair[Momentum[k2], Momentum[Polarization[k2, -I]]])) + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      (-(Pair[Momentum[k1], Momentum[Polarization[k2, -I]]]*
+         Pair[Momentum[k2], Momentum[Polarization[k1, -I]]]) + 
+       Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+        (Pair[Momentum[k1], Momentum[Polarization[k2, -I]]] - 
+         2*Pair[Momentum[k2], Momentum[Polarization[k2, -I]]])) + 
+     (gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+         DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+       gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+         DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+      (Pair[Momentum[k1], Momentum[Polarization[k2, -I]]]*
+        Pair[Momentum[k2], Momentum[Polarization[k1, -I]]] + 
+       (2*Pair[Momentum[k1], Momentum[Polarization[k1, -I]]] - 
+         Pair[Momentum[k2], Momentum[Polarization[k1, -I]]])*
+        Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]))*
+    PaVe[1, 2, {SMP["m_Z"]^2, s, SMP["m_Z"]^2}, {mhc^2, mh2^2, mh3^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    (2*Cos[a2]*Cos[a3] - (2*I)*Sin[a3])*((-2*I)*Cos[a3] + 
+     2*Cos[a2]*Sin[a3]) - 
+   (Cos[a2]*Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+     (gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+        DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+       (Pair[Momentum[k1], Momentum[Polarization[k2, -I]]] - 
+        2*Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]) + 
+      gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+        DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+       (Pair[Momentum[k1], Momentum[Polarization[k2, -I]]] - 
+        2*Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]) - 
+      (gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+          DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+        gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+          DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+       (Pair[Momentum[k1], Momentum[Polarization[k2, -I]]] - 
+        Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]))*
+     PaVe[1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh2^2, mh3^2, mhc^2}, 
+      PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+     (2*Cos[a2]*Cos[a3] + (2*I)*Sin[a3])*((2*I)*Cos[a3] + 2*Cos[a2]*Sin[a3]))/
+    2 + (Cos[a2]*(gc357R*Spinor[-Momentum[p2], 0, 1] . 
+        DiracGamma[Momentum[k1]] . DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+       (Pair[Momentum[k1], Momentum[Polarization[k1, -I]]] - 
+        Pair[Momentum[k2], Momentum[Polarization[k1, -I]]]) + 
+      gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+        DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+       (Pair[Momentum[k1], Momentum[Polarization[k1, -I]]] - 
+        Pair[Momentum[k2], Momentum[Polarization[k1, -I]]]) - 
+      (gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+          DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+        gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+          DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+       (2*Pair[Momentum[k1], Momentum[Polarization[k1, -I]]] - 
+        Pair[Momentum[k2], Momentum[Polarization[k1, -I]]]))*
+     Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]*
+     PaVe[1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh3^2, mh2^2, mhc^2}, 
+      PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+     (2*Cos[a2]*Cos[a3] + (2*I)*Sin[a3])*((2*I)*Cos[a3] + 2*Cos[a2]*Sin[a3]))/
+    2 - Cos[a2]*Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+    (-((gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+          DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+        gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+          DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+       Pair[Momentum[k1], Momentum[Polarization[k2, -I]]]) + 
+     gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      (2*Pair[Momentum[k1], Momentum[Polarization[k2, -I]]] - 
+       Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]) + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      (2*Pair[Momentum[k1], Momentum[Polarization[k2, -I]]] - 
+       Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]))*
+    PaVe[1, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh2^2, mh3^2, mhc^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    (2*Cos[a2]*Cos[a3] + (2*I)*Sin[a3])*((2*I)*Cos[a3] + 2*Cos[a2]*Sin[a3]) - 
+   Cos[a2]*(gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      (Pair[Momentum[k1], Momentum[Polarization[k1, -I]]] - 
+       2*Pair[Momentum[k2], Momentum[Polarization[k1, -I]]]) + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      (Pair[Momentum[k1], Momentum[Polarization[k1, -I]]] - 
+       2*Pair[Momentum[k2], Momentum[Polarization[k1, -I]]]) + 
+     (gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+         DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+       gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+         DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+      Pair[Momentum[k2], Momentum[Polarization[k1, -I]]])*
+    Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]*
+    PaVe[1, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh3^2, mh2^2, mhc^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    (2*Cos[a2]*Cos[a3] + (2*I)*Sin[a3])*((2*I)*Cos[a3] + 2*Cos[a2]*Sin[a3]) + 
+   Cos[a2]*(gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      (-(Pair[Momentum[k1], Momentum[Polarization[k2, -I]]]*
+         Pair[Momentum[k2], Momentum[Polarization[k1, -I]]]) + 
+       Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+        (Pair[Momentum[k1], Momentum[Polarization[k2, -I]]] - 
+         2*Pair[Momentum[k2], Momentum[Polarization[k2, -I]]])) + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      (-(Pair[Momentum[k1], Momentum[Polarization[k2, -I]]]*
+         Pair[Momentum[k2], Momentum[Polarization[k1, -I]]]) + 
+       Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+        (Pair[Momentum[k1], Momentum[Polarization[k2, -I]]] - 
+         2*Pair[Momentum[k2], Momentum[Polarization[k2, -I]]])) + 
+     (gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+         DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+       gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+         DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+      (Pair[Momentum[k1], Momentum[Polarization[k2, -I]]]*
+        Pair[Momentum[k2], Momentum[Polarization[k1, -I]]] + 
+       (2*Pair[Momentum[k1], Momentum[Polarization[k1, -I]]] - 
+         Pair[Momentum[k2], Momentum[Polarization[k1, -I]]])*
+        Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]))*
+    PaVe[1, 2, {SMP["m_Z"]^2, s, SMP["m_Z"]^2}, {mhc^2, mh2^2, mh3^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*
+    (2*Cos[a2]*Cos[a3] + (2*I)*Sin[a3])*((2*I)*Cos[a3] + 2*Cos[a2]*Sin[a3]) - 
+   Cos[a2]*(-((gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[
+           Momentum[k2]] . DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+        gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+          DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+       Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+       (Pair[Momentum[k1], Momentum[Polarization[k2, -I]]] - 
+        Pair[Momentum[k2], Momentum[Polarization[k2, -I]]])) + 
+     gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      (Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+        (Pair[Momentum[k1], Momentum[Polarization[k2, -I]]] - 
+         2*Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]) - 
+       4*mW^2*Pair[Momentum[Polarization[k1, -I]], 
+         Momentum[Polarization[k2, -I]]]) + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      (Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+        (Pair[Momentum[k1], Momentum[Polarization[k2, -I]]] - 
+         2*Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]) - 
+       4*mW^2*Pair[Momentum[Polarization[k1, -I]], 
+         Momentum[Polarization[k2, -I]]]))*
+    PaVe[1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh1^2, mh2^2, MW^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*Sin[2*a3] - 
+   Cos[a2]*(gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      (Pair[Momentum[k1], Momentum[Polarization[k1, -I]]] - 
+       Pair[Momentum[k2], Momentum[Polarization[k1, -I]]])*
+      Pair[Momentum[k2], Momentum[Polarization[k2, -I]]] + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      (Pair[Momentum[k1], Momentum[Polarization[k1, -I]]] - 
+       Pair[Momentum[k2], Momentum[Polarization[k1, -I]]])*
+      Pair[Momentum[k2], Momentum[Polarization[k2, -I]]] - 
+     (gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+         DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+       gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+         DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+      (2*Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+        Pair[Momentum[k2], Momentum[Polarization[k2, -I]]] - 
+       Pair[Momentum[k2], Momentum[Polarization[k1, -I]]]*
+        Pair[Momentum[k2], Momentum[Polarization[k2, -I]]] + 
+       4*mW^2*Pair[Momentum[Polarization[k1, -I]], 
+         Momentum[Polarization[k2, -I]]]))*
+    PaVe[1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh1^2, mh2^2, MW^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*Sin[2*a3] + 
+   Cos[a2]*(-((gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[
+           Momentum[k2]] . DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+        gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+          DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+       Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+       (Pair[Momentum[k1], Momentum[Polarization[k2, -I]]] - 
+        Pair[Momentum[k2], Momentum[Polarization[k2, -I]]])) + 
+     gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      (Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+        (Pair[Momentum[k1], Momentum[Polarization[k2, -I]]] - 
+         2*Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]) - 
+       4*mW^2*Pair[Momentum[Polarization[k1, -I]], 
+         Momentum[Polarization[k2, -I]]]) + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      (Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+        (Pair[Momentum[k1], Momentum[Polarization[k2, -I]]] - 
+         2*Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]) - 
+       4*mW^2*Pair[Momentum[Polarization[k1, -I]], 
+         Momentum[Polarization[k2, -I]]]))*
+    PaVe[1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh1^2, mh3^2, MW^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*Sin[2*a3] + 
+   Cos[a2]*(gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      (Pair[Momentum[k1], Momentum[Polarization[k1, -I]]] - 
+       Pair[Momentum[k2], Momentum[Polarization[k1, -I]]])*
+      Pair[Momentum[k2], Momentum[Polarization[k2, -I]]] + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      (Pair[Momentum[k1], Momentum[Polarization[k1, -I]]] - 
+       Pair[Momentum[k2], Momentum[Polarization[k1, -I]]])*
+      Pair[Momentum[k2], Momentum[Polarization[k2, -I]]] - 
+     (gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+         DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+       gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+         DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+      (2*Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+        Pair[Momentum[k2], Momentum[Polarization[k2, -I]]] - 
+       Pair[Momentum[k2], Momentum[Polarization[k1, -I]]]*
+        Pair[Momentum[k2], Momentum[Polarization[k2, -I]]] + 
+       4*mW^2*Pair[Momentum[Polarization[k1, -I]], 
+         Momentum[Polarization[k2, -I]]]))*
+    PaVe[1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh1^2, mh3^2, MW^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*Sin[2*a3] + 
+   Cos[a2]*(-((gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[
+           Momentum[k2]] . DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+        gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+          DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+       Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+       (Pair[Momentum[k1], Momentum[Polarization[k2, -I]]] - 
+        Pair[Momentum[k2], Momentum[Polarization[k2, -I]]])) + 
+     gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      (Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+        (Pair[Momentum[k1], Momentum[Polarization[k2, -I]]] - 
+         2*Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]) - 
+       4*mW^2*Pair[Momentum[Polarization[k1, -I]], 
+         Momentum[Polarization[k2, -I]]]) + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      (Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+        (Pair[Momentum[k1], Momentum[Polarization[k2, -I]]] - 
+         2*Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]) - 
+       4*mW^2*Pair[Momentum[Polarization[k1, -I]], 
+         Momentum[Polarization[k2, -I]]]))*
+    PaVe[1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh2^2, mh1^2, MW^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*Sin[2*a3] + 
+   Cos[a2]*(gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      (Pair[Momentum[k1], Momentum[Polarization[k1, -I]]] - 
+       Pair[Momentum[k2], Momentum[Polarization[k1, -I]]])*
+      Pair[Momentum[k2], Momentum[Polarization[k2, -I]]] + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      (Pair[Momentum[k1], Momentum[Polarization[k1, -I]]] - 
+       Pair[Momentum[k2], Momentum[Polarization[k1, -I]]])*
+      Pair[Momentum[k2], Momentum[Polarization[k2, -I]]] - 
+     (gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+         DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+       gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+         DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+      (2*Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+        Pair[Momentum[k2], Momentum[Polarization[k2, -I]]] - 
+       Pair[Momentum[k2], Momentum[Polarization[k1, -I]]]*
+        Pair[Momentum[k2], Momentum[Polarization[k2, -I]]] + 
+       4*mW^2*Pair[Momentum[Polarization[k1, -I]], 
+         Momentum[Polarization[k2, -I]]]))*
+    PaVe[1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh2^2, mh1^2, MW^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*Sin[2*a3] - 
+   Cos[a2]*(-((gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[
+           Momentum[k2]] . DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+        gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+          DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+       Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+       (Pair[Momentum[k1], Momentum[Polarization[k2, -I]]] - 
+        Pair[Momentum[k2], Momentum[Polarization[k2, -I]]])) + 
+     gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      (Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+        (Pair[Momentum[k1], Momentum[Polarization[k2, -I]]] - 
+         2*Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]) - 
+       4*mW^2*Pair[Momentum[Polarization[k1, -I]], 
+         Momentum[Polarization[k2, -I]]]) + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      (Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+        (Pair[Momentum[k1], Momentum[Polarization[k2, -I]]] - 
+         2*Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]) - 
+       4*mW^2*Pair[Momentum[Polarization[k1, -I]], 
+         Momentum[Polarization[k2, -I]]]))*
+    PaVe[1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh2^2, mh3^2, MW^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*Sin[2*a3] - 
+   Cos[a2]*(gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      (Pair[Momentum[k1], Momentum[Polarization[k1, -I]]] - 
+       Pair[Momentum[k2], Momentum[Polarization[k1, -I]]])*
+      Pair[Momentum[k2], Momentum[Polarization[k2, -I]]] + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      (Pair[Momentum[k1], Momentum[Polarization[k1, -I]]] - 
+       Pair[Momentum[k2], Momentum[Polarization[k1, -I]]])*
+      Pair[Momentum[k2], Momentum[Polarization[k2, -I]]] - 
+     (gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+         DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+       gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+         DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+      (2*Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+        Pair[Momentum[k2], Momentum[Polarization[k2, -I]]] - 
+       Pair[Momentum[k2], Momentum[Polarization[k1, -I]]]*
+        Pair[Momentum[k2], Momentum[Polarization[k2, -I]]] + 
+       4*mW^2*Pair[Momentum[Polarization[k1, -I]], 
+         Momentum[Polarization[k2, -I]]]))*
+    PaVe[1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh2^2, mh3^2, MW^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*Sin[2*a3] - 
+   Cos[a2]*(-((gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[
+           Momentum[k2]] . DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+        gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+          DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+       Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+       (Pair[Momentum[k1], Momentum[Polarization[k2, -I]]] - 
+        Pair[Momentum[k2], Momentum[Polarization[k2, -I]]])) + 
+     gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      (Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+        (Pair[Momentum[k1], Momentum[Polarization[k2, -I]]] - 
+         2*Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]) - 
+       4*mW^2*Pair[Momentum[Polarization[k1, -I]], 
+         Momentum[Polarization[k2, -I]]]) + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      (Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+        (Pair[Momentum[k1], Momentum[Polarization[k2, -I]]] - 
+         2*Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]) - 
+       4*mW^2*Pair[Momentum[Polarization[k1, -I]], 
+         Momentum[Polarization[k2, -I]]]))*
+    PaVe[1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh3^2, mh1^2, MW^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*Sin[2*a3] - 
+   Cos[a2]*(gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      (Pair[Momentum[k1], Momentum[Polarization[k1, -I]]] - 
+       Pair[Momentum[k2], Momentum[Polarization[k1, -I]]])*
+      Pair[Momentum[k2], Momentum[Polarization[k2, -I]]] + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      (Pair[Momentum[k1], Momentum[Polarization[k1, -I]]] - 
+       Pair[Momentum[k2], Momentum[Polarization[k1, -I]]])*
+      Pair[Momentum[k2], Momentum[Polarization[k2, -I]]] - 
+     (gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+         DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+       gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+         DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+      (2*Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+        Pair[Momentum[k2], Momentum[Polarization[k2, -I]]] - 
+       Pair[Momentum[k2], Momentum[Polarization[k1, -I]]]*
+        Pair[Momentum[k2], Momentum[Polarization[k2, -I]]] + 
+       4*mW^2*Pair[Momentum[Polarization[k1, -I]], 
+         Momentum[Polarization[k2, -I]]]))*
+    PaVe[1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh3^2, mh1^2, MW^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*Sin[2*a3] + 
+   Cos[a2]*(-((gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[
+           Momentum[k2]] . DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+        gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+          DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+       Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+       (Pair[Momentum[k1], Momentum[Polarization[k2, -I]]] - 
+        Pair[Momentum[k2], Momentum[Polarization[k2, -I]]])) + 
+     gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      (Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+        (Pair[Momentum[k1], Momentum[Polarization[k2, -I]]] - 
+         2*Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]) - 
+       4*mW^2*Pair[Momentum[Polarization[k1, -I]], 
+         Momentum[Polarization[k2, -I]]]) + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      (Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+        (Pair[Momentum[k1], Momentum[Polarization[k2, -I]]] - 
+         2*Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]) - 
+       4*mW^2*Pair[Momentum[Polarization[k1, -I]], 
+         Momentum[Polarization[k2, -I]]]))*
+    PaVe[1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh3^2, mh2^2, MW^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*Sin[2*a3] + 
+   Cos[a2]*(gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      (Pair[Momentum[k1], Momentum[Polarization[k1, -I]]] - 
+       Pair[Momentum[k2], Momentum[Polarization[k1, -I]]])*
+      Pair[Momentum[k2], Momentum[Polarization[k2, -I]]] + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      (Pair[Momentum[k1], Momentum[Polarization[k1, -I]]] - 
+       Pair[Momentum[k2], Momentum[Polarization[k1, -I]]])*
+      Pair[Momentum[k2], Momentum[Polarization[k2, -I]]] - 
+     (gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+         DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+       gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+         DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+      (2*Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+        Pair[Momentum[k2], Momentum[Polarization[k2, -I]]] - 
+       Pair[Momentum[k2], Momentum[Polarization[k1, -I]]]*
+        Pair[Momentum[k2], Momentum[Polarization[k2, -I]]] + 
+       4*mW^2*Pair[Momentum[Polarization[k1, -I]], 
+         Momentum[Polarization[k2, -I]]]))*
+    PaVe[1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh3^2, mh2^2, MW^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*Sin[2*a3] - 
+   2*Cos[a2]*Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+    (-((gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+          DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+        gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+          DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+       Pair[Momentum[k1], Momentum[Polarization[k2, -I]]]) + 
+     gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      (2*Pair[Momentum[k1], Momentum[Polarization[k2, -I]]] - 
+       Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]) + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      (2*Pair[Momentum[k1], Momentum[Polarization[k2, -I]]] - 
+       Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]))*
+    PaVe[1, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh1^2, mh2^2, MW^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*Sin[2*a3] - 
+   2*Cos[a2]*(gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      (Pair[Momentum[k1], Momentum[Polarization[k1, -I]]] - 
+       2*Pair[Momentum[k2], Momentum[Polarization[k1, -I]]]) + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      (Pair[Momentum[k1], Momentum[Polarization[k1, -I]]] - 
+       2*Pair[Momentum[k2], Momentum[Polarization[k1, -I]]]) + 
+     (gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+         DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+       gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+         DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+      Pair[Momentum[k2], Momentum[Polarization[k1, -I]]])*
+    Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]*
+    PaVe[1, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh1^2, mh3^2, MW^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*Sin[2*a3] - 
+   2*Cos[a2]*(gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      (Pair[Momentum[k1], Momentum[Polarization[k1, -I]]] - 
+       2*Pair[Momentum[k2], Momentum[Polarization[k1, -I]]]) + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      (Pair[Momentum[k1], Momentum[Polarization[k1, -I]]] - 
+       2*Pair[Momentum[k2], Momentum[Polarization[k1, -I]]]) + 
+     (gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+         DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+       gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+         DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+      Pair[Momentum[k2], Momentum[Polarization[k1, -I]]])*
+    Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]*
+    PaVe[1, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh2^2, mh1^2, MW^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*Sin[2*a3] - 
+   2*Cos[a2]*Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+    (-((gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+          DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+        gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+          DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+       Pair[Momentum[k1], Momentum[Polarization[k2, -I]]]) + 
+     gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      (2*Pair[Momentum[k1], Momentum[Polarization[k2, -I]]] - 
+       Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]) + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      (2*Pair[Momentum[k1], Momentum[Polarization[k2, -I]]] - 
+       Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]))*
+    PaVe[1, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh2^2, mh3^2, MW^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*Sin[2*a3] - 
+   2*Cos[a2]*Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+    (-((gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+          DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+        gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+          DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+       Pair[Momentum[k1], Momentum[Polarization[k2, -I]]]) + 
+     gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      (2*Pair[Momentum[k1], Momentum[Polarization[k2, -I]]] - 
+       Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]) + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      (2*Pair[Momentum[k1], Momentum[Polarization[k2, -I]]] - 
+       Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]))*
+    PaVe[1, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh3^2, mh1^2, MW^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*Sin[2*a3] - 
+   2*Cos[a2]*(gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      (Pair[Momentum[k1], Momentum[Polarization[k1, -I]]] - 
+       2*Pair[Momentum[k2], Momentum[Polarization[k1, -I]]]) + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      (Pair[Momentum[k1], Momentum[Polarization[k1, -I]]] - 
+       2*Pair[Momentum[k2], Momentum[Polarization[k1, -I]]]) + 
+     (gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+         DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+       gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+         DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+      Pair[Momentum[k2], Momentum[Polarization[k1, -I]]])*
+    Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]*
+    PaVe[1, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh3^2, mh2^2, MW^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*Sin[2*a3] - 
+   4*Cos[a2]*(gc357R*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k2, -I]]] . DiracGamma[6] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k1], 
+       Momentum[Polarization[k1, -I]]] + gc357L*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k2, -I]]] . DiracGamma[7] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k1], 
+       Momentum[Polarization[k1, -I]]] + gc357R*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k1, -I]]] . DiracGamma[6] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k1], 
+       Momentum[Polarization[k2, -I]]] + gc357L*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k1, -I]]] . DiracGamma[7] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k1], 
+       Momentum[Polarization[k2, -I]]] + gc357R*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[k1]] . DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      Pair[Momentum[Polarization[k1, -I]], Momentum[Polarization[k2, -I]]] + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      Pair[Momentum[Polarization[k1, -I]], Momentum[Polarization[k2, -I]]])*
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh1^2, mh2^2, MW^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*Sin[2*a3] - 
+   4*Cos[a2]*(gc357R*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k2, -I]]] . DiracGamma[6] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k2], 
+       Momentum[Polarization[k1, -I]]] + gc357L*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k2, -I]]] . DiracGamma[7] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k2], 
+       Momentum[Polarization[k1, -I]]] + gc357R*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k1, -I]]] . DiracGamma[6] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k2], 
+       Momentum[Polarization[k2, -I]]] + gc357L*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k1, -I]]] . DiracGamma[7] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k2], 
+       Momentum[Polarization[k2, -I]]] + gc357R*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[k2]] . DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      Pair[Momentum[Polarization[k1, -I]], Momentum[Polarization[k2, -I]]] + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      Pair[Momentum[Polarization[k1, -I]], Momentum[Polarization[k2, -I]]])*
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh1^2, mh2^2, MW^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*Sin[2*a3] + 
+   4*Cos[a2]*(gc357R*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k2, -I]]] . DiracGamma[6] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k1], 
+       Momentum[Polarization[k1, -I]]] + gc357L*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k2, -I]]] . DiracGamma[7] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k1], 
+       Momentum[Polarization[k1, -I]]] + gc357R*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k1, -I]]] . DiracGamma[6] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k1], 
+       Momentum[Polarization[k2, -I]]] + gc357L*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k1, -I]]] . DiracGamma[7] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k1], 
+       Momentum[Polarization[k2, -I]]] + gc357R*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[k1]] . DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      Pair[Momentum[Polarization[k1, -I]], Momentum[Polarization[k2, -I]]] + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      Pair[Momentum[Polarization[k1, -I]], Momentum[Polarization[k2, -I]]])*
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh1^2, mh3^2, MW^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*Sin[2*a3] + 
+   4*Cos[a2]*(gc357R*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k2, -I]]] . DiracGamma[6] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k2], 
+       Momentum[Polarization[k1, -I]]] + gc357L*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k2, -I]]] . DiracGamma[7] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k2], 
+       Momentum[Polarization[k1, -I]]] + gc357R*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k1, -I]]] . DiracGamma[6] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k2], 
+       Momentum[Polarization[k2, -I]]] + gc357L*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k1, -I]]] . DiracGamma[7] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k2], 
+       Momentum[Polarization[k2, -I]]] + gc357R*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[k2]] . DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      Pair[Momentum[Polarization[k1, -I]], Momentum[Polarization[k2, -I]]] + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      Pair[Momentum[Polarization[k1, -I]], Momentum[Polarization[k2, -I]]])*
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh1^2, mh3^2, MW^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*Sin[2*a3] + 
+   4*Cos[a2]*(gc357R*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k2, -I]]] . DiracGamma[6] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k1], 
+       Momentum[Polarization[k1, -I]]] + gc357L*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k2, -I]]] . DiracGamma[7] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k1], 
+       Momentum[Polarization[k1, -I]]] + gc357R*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k1, -I]]] . DiracGamma[6] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k1], 
+       Momentum[Polarization[k2, -I]]] + gc357L*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k1, -I]]] . DiracGamma[7] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k1], 
+       Momentum[Polarization[k2, -I]]] + gc357R*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[k1]] . DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      Pair[Momentum[Polarization[k1, -I]], Momentum[Polarization[k2, -I]]] + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      Pair[Momentum[Polarization[k1, -I]], Momentum[Polarization[k2, -I]]])*
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh2^2, mh1^2, MW^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*Sin[2*a3] + 
+   4*Cos[a2]*(gc357R*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k2, -I]]] . DiracGamma[6] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k2], 
+       Momentum[Polarization[k1, -I]]] + gc357L*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k2, -I]]] . DiracGamma[7] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k2], 
+       Momentum[Polarization[k1, -I]]] + gc357R*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k1, -I]]] . DiracGamma[6] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k2], 
+       Momentum[Polarization[k2, -I]]] + gc357L*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k1, -I]]] . DiracGamma[7] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k2], 
+       Momentum[Polarization[k2, -I]]] + gc357R*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[k2]] . DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      Pair[Momentum[Polarization[k1, -I]], Momentum[Polarization[k2, -I]]] + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      Pair[Momentum[Polarization[k1, -I]], Momentum[Polarization[k2, -I]]])*
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh2^2, mh1^2, MW^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*Sin[2*a3] - 
+   4*Cos[a2]*(gc357R*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k2, -I]]] . DiracGamma[6] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k1], 
+       Momentum[Polarization[k1, -I]]] + gc357L*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k2, -I]]] . DiracGamma[7] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k1], 
+       Momentum[Polarization[k1, -I]]] + gc357R*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k1, -I]]] . DiracGamma[6] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k1], 
+       Momentum[Polarization[k2, -I]]] + gc357L*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k1, -I]]] . DiracGamma[7] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k1], 
+       Momentum[Polarization[k2, -I]]] + gc357R*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[k1]] . DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      Pair[Momentum[Polarization[k1, -I]], Momentum[Polarization[k2, -I]]] + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      Pair[Momentum[Polarization[k1, -I]], Momentum[Polarization[k2, -I]]])*
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh2^2, mh3^2, MW^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*Sin[2*a3] - 
+   4*Cos[a2]*(gc357R*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k2, -I]]] . DiracGamma[6] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k2], 
+       Momentum[Polarization[k1, -I]]] + gc357L*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k2, -I]]] . DiracGamma[7] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k2], 
+       Momentum[Polarization[k1, -I]]] + gc357R*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k1, -I]]] . DiracGamma[6] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k2], 
+       Momentum[Polarization[k2, -I]]] + gc357L*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k1, -I]]] . DiracGamma[7] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k2], 
+       Momentum[Polarization[k2, -I]]] + gc357R*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[k2]] . DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      Pair[Momentum[Polarization[k1, -I]], Momentum[Polarization[k2, -I]]] + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      Pair[Momentum[Polarization[k1, -I]], Momentum[Polarization[k2, -I]]])*
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh2^2, mh3^2, MW^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*Sin[2*a3] - 
+   4*Cos[a2]*(gc357R*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k2, -I]]] . DiracGamma[6] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k1], 
+       Momentum[Polarization[k1, -I]]] + gc357L*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k2, -I]]] . DiracGamma[7] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k1], 
+       Momentum[Polarization[k1, -I]]] + gc357R*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k1, -I]]] . DiracGamma[6] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k1], 
+       Momentum[Polarization[k2, -I]]] + gc357L*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k1, -I]]] . DiracGamma[7] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k1], 
+       Momentum[Polarization[k2, -I]]] + gc357R*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[k1]] . DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      Pair[Momentum[Polarization[k1, -I]], Momentum[Polarization[k2, -I]]] + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      Pair[Momentum[Polarization[k1, -I]], Momentum[Polarization[k2, -I]]])*
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh3^2, mh1^2, MW^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*Sin[2*a3] - 
+   4*Cos[a2]*(gc357R*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k2, -I]]] . DiracGamma[6] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k2], 
+       Momentum[Polarization[k1, -I]]] + gc357L*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k2, -I]]] . DiracGamma[7] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k2], 
+       Momentum[Polarization[k1, -I]]] + gc357R*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k1, -I]]] . DiracGamma[6] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k2], 
+       Momentum[Polarization[k2, -I]]] + gc357L*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k1, -I]]] . DiracGamma[7] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k2], 
+       Momentum[Polarization[k2, -I]]] + gc357R*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[k2]] . DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      Pair[Momentum[Polarization[k1, -I]], Momentum[Polarization[k2, -I]]] + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      Pair[Momentum[Polarization[k1, -I]], Momentum[Polarization[k2, -I]]])*
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh3^2, mh1^2, MW^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*Sin[2*a3] + 
+   4*Cos[a2]*(gc357R*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k2, -I]]] . DiracGamma[6] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k1], 
+       Momentum[Polarization[k1, -I]]] + gc357L*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k2, -I]]] . DiracGamma[7] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k1], 
+       Momentum[Polarization[k1, -I]]] + gc357R*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k1, -I]]] . DiracGamma[6] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k1], 
+       Momentum[Polarization[k2, -I]]] + gc357L*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k1, -I]]] . DiracGamma[7] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k1], 
+       Momentum[Polarization[k2, -I]]] + gc357R*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[k1]] . DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      Pair[Momentum[Polarization[k1, -I]], Momentum[Polarization[k2, -I]]] + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      Pair[Momentum[Polarization[k1, -I]], Momentum[Polarization[k2, -I]]])*
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh3^2, mh2^2, MW^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*Sin[2*a3] + 
+   4*Cos[a2]*(gc357R*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k2, -I]]] . DiracGamma[6] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k2], 
+       Momentum[Polarization[k1, -I]]] + gc357L*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k2, -I]]] . DiracGamma[7] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k2], 
+       Momentum[Polarization[k1, -I]]] + gc357R*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k1, -I]]] . DiracGamma[6] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k2], 
+       Momentum[Polarization[k2, -I]]] + gc357L*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[Polarization[k1, -I]]] . DiracGamma[7] . 
+       Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k2], 
+       Momentum[Polarization[k2, -I]]] + gc357R*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[k2]] . DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      Pair[Momentum[Polarization[k1, -I]], Momentum[Polarization[k2, -I]]] + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      Pair[Momentum[Polarization[k1, -I]], Momentum[Polarization[k2, -I]]])*
+    PaVe[0, 0, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh3^2, mh2^2, MW^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*Sin[2*a3] - 
+   4*Cos[a2]*(gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+    Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+    Pair[Momentum[k1], Momentum[Polarization[k2, -I]]]*
+    PaVe[1, 1, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh1^2, mh2^2, MW^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*Sin[2*a3] - 
+   4*Cos[a2]*(gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+    Pair[Momentum[k2], Momentum[Polarization[k1, -I]]]*
+    Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]*
+    PaVe[1, 1, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh1^2, mh2^2, MW^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*Sin[2*a3] + 
+   4*Cos[a2]*(gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+    Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+    Pair[Momentum[k1], Momentum[Polarization[k2, -I]]]*
+    PaVe[1, 1, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh1^2, mh3^2, MW^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*Sin[2*a3] + 
+   4*Cos[a2]*(gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+    Pair[Momentum[k2], Momentum[Polarization[k1, -I]]]*
+    Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]*
+    PaVe[1, 1, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh1^2, mh3^2, MW^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*Sin[2*a3] + 
+   4*Cos[a2]*(gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+    Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+    Pair[Momentum[k1], Momentum[Polarization[k2, -I]]]*
+    PaVe[1, 1, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh2^2, mh1^2, MW^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*Sin[2*a3] + 
+   4*Cos[a2]*(gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+    Pair[Momentum[k2], Momentum[Polarization[k1, -I]]]*
+    Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]*
+    PaVe[1, 1, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh2^2, mh1^2, MW^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*Sin[2*a3] - 
+   4*Cos[a2]*(gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+    Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+    Pair[Momentum[k1], Momentum[Polarization[k2, -I]]]*
+    PaVe[1, 1, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh2^2, mh3^2, MW^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*Sin[2*a3] - 
+   4*Cos[a2]*(gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+    Pair[Momentum[k2], Momentum[Polarization[k1, -I]]]*
+    Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]*
+    PaVe[1, 1, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh2^2, mh3^2, MW^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*Sin[2*a3] - 
+   4*Cos[a2]*(gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+    Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+    Pair[Momentum[k1], Momentum[Polarization[k2, -I]]]*
+    PaVe[1, 1, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh3^2, mh1^2, MW^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*Sin[2*a3] - 
+   4*Cos[a2]*(gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+    Pair[Momentum[k2], Momentum[Polarization[k1, -I]]]*
+    Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]*
+    PaVe[1, 1, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh3^2, mh1^2, MW^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*Sin[2*a3] + 
+   4*Cos[a2]*(gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+    Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+    Pair[Momentum[k1], Momentum[Polarization[k2, -I]]]*
+    PaVe[1, 1, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh3^2, mh2^2, MW^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*Sin[2*a3] + 
+   4*Cos[a2]*(gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+    Pair[Momentum[k2], Momentum[Polarization[k1, -I]]]*
+    Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]*
+    PaVe[1, 1, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh3^2, mh2^2, MW^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*Sin[2*a3] - 
+   4*Cos[a2]*(gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k1], 
+       Momentum[Polarization[k1, -I]]]*Pair[Momentum[k1], 
+       Momentum[Polarization[k2, -I]]] + gc357L*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[k2]] . DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+      Pair[Momentum[k1], Momentum[Polarization[k2, -I]]] + 
+     (gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+         DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+       gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+         DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+      (Pair[Momentum[k1], Momentum[Polarization[k2, -I]]]*
+        Pair[Momentum[k2], Momentum[Polarization[k1, -I]]] + 
+       Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+        Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]))*
+    PaVe[1, 1, 2, {SMP["m_Z"]^2, s, SMP["m_Z"]^2}, {MW^2, mh1^2, mh2^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*Sin[2*a3] - 
+   4*Cos[a2]*((gc357R*Spinor[-Momentum[p2], 0, 1] . 
+         DiracGamma[Momentum[k1]] . DiracGamma[6] . Spinor[Momentum[p1], 0, 
+          1] + gc357L*Spinor[-Momentum[p2], 0, 1] . 
+         DiracGamma[Momentum[k1]] . DiracGamma[7] . Spinor[Momentum[p1], 0, 
+          1])*Pair[Momentum[k2], Momentum[Polarization[k1, -I]]]*
+      Pair[Momentum[k2], Momentum[Polarization[k2, -I]]] + 
+     gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      (Pair[Momentum[k1], Momentum[Polarization[k2, -I]]]*
+        Pair[Momentum[k2], Momentum[Polarization[k1, -I]]] + 
+       Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+        Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]) + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      (Pair[Momentum[k1], Momentum[Polarization[k2, -I]]]*
+        Pair[Momentum[k2], Momentum[Polarization[k1, -I]]] + 
+       Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+        Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]))*
+    PaVe[1, 1, 2, {SMP["m_Z"]^2, s, SMP["m_Z"]^2}, {MW^2, mh1^2, mh2^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*Sin[2*a3] + 
+   4*Cos[a2]*(gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k1], 
+       Momentum[Polarization[k1, -I]]]*Pair[Momentum[k1], 
+       Momentum[Polarization[k2, -I]]] + gc357L*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[k2]] . DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+      Pair[Momentum[k1], Momentum[Polarization[k2, -I]]] + 
+     (gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+         DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+       gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+         DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+      (Pair[Momentum[k1], Momentum[Polarization[k2, -I]]]*
+        Pair[Momentum[k2], Momentum[Polarization[k1, -I]]] + 
+       Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+        Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]))*
+    PaVe[1, 1, 2, {SMP["m_Z"]^2, s, SMP["m_Z"]^2}, {MW^2, mh1^2, mh3^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*Sin[2*a3] + 
+   4*Cos[a2]*((gc357R*Spinor[-Momentum[p2], 0, 1] . 
+         DiracGamma[Momentum[k1]] . DiracGamma[6] . Spinor[Momentum[p1], 0, 
+          1] + gc357L*Spinor[-Momentum[p2], 0, 1] . 
+         DiracGamma[Momentum[k1]] . DiracGamma[7] . Spinor[Momentum[p1], 0, 
+          1])*Pair[Momentum[k2], Momentum[Polarization[k1, -I]]]*
+      Pair[Momentum[k2], Momentum[Polarization[k2, -I]]] + 
+     gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      (Pair[Momentum[k1], Momentum[Polarization[k2, -I]]]*
+        Pair[Momentum[k2], Momentum[Polarization[k1, -I]]] + 
+       Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+        Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]) + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      (Pair[Momentum[k1], Momentum[Polarization[k2, -I]]]*
+        Pair[Momentum[k2], Momentum[Polarization[k1, -I]]] + 
+       Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+        Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]))*
+    PaVe[1, 1, 2, {SMP["m_Z"]^2, s, SMP["m_Z"]^2}, {MW^2, mh1^2, mh3^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*Sin[2*a3] + 
+   4*Cos[a2]*(gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k1], 
+       Momentum[Polarization[k1, -I]]]*Pair[Momentum[k1], 
+       Momentum[Polarization[k2, -I]]] + gc357L*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[k2]] . DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+      Pair[Momentum[k1], Momentum[Polarization[k2, -I]]] + 
+     (gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+         DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+       gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+         DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+      (Pair[Momentum[k1], Momentum[Polarization[k2, -I]]]*
+        Pair[Momentum[k2], Momentum[Polarization[k1, -I]]] + 
+       Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+        Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]))*
+    PaVe[1, 1, 2, {SMP["m_Z"]^2, s, SMP["m_Z"]^2}, {MW^2, mh2^2, mh1^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*Sin[2*a3] + 
+   4*Cos[a2]*((gc357R*Spinor[-Momentum[p2], 0, 1] . 
+         DiracGamma[Momentum[k1]] . DiracGamma[6] . Spinor[Momentum[p1], 0, 
+          1] + gc357L*Spinor[-Momentum[p2], 0, 1] . 
+         DiracGamma[Momentum[k1]] . DiracGamma[7] . Spinor[Momentum[p1], 0, 
+          1])*Pair[Momentum[k2], Momentum[Polarization[k1, -I]]]*
+      Pair[Momentum[k2], Momentum[Polarization[k2, -I]]] + 
+     gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      (Pair[Momentum[k1], Momentum[Polarization[k2, -I]]]*
+        Pair[Momentum[k2], Momentum[Polarization[k1, -I]]] + 
+       Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+        Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]) + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      (Pair[Momentum[k1], Momentum[Polarization[k2, -I]]]*
+        Pair[Momentum[k2], Momentum[Polarization[k1, -I]]] + 
+       Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+        Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]))*
+    PaVe[1, 1, 2, {SMP["m_Z"]^2, s, SMP["m_Z"]^2}, {MW^2, mh2^2, mh1^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*Sin[2*a3] - 
+   4*Cos[a2]*(gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k1], 
+       Momentum[Polarization[k1, -I]]]*Pair[Momentum[k1], 
+       Momentum[Polarization[k2, -I]]] + gc357L*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[k2]] . DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+      Pair[Momentum[k1], Momentum[Polarization[k2, -I]]] + 
+     (gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+         DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+       gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+         DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+      (Pair[Momentum[k1], Momentum[Polarization[k2, -I]]]*
+        Pair[Momentum[k2], Momentum[Polarization[k1, -I]]] + 
+       Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+        Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]))*
+    PaVe[1, 1, 2, {SMP["m_Z"]^2, s, SMP["m_Z"]^2}, {MW^2, mh2^2, mh3^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*Sin[2*a3] - 
+   4*Cos[a2]*((gc357R*Spinor[-Momentum[p2], 0, 1] . 
+         DiracGamma[Momentum[k1]] . DiracGamma[6] . Spinor[Momentum[p1], 0, 
+          1] + gc357L*Spinor[-Momentum[p2], 0, 1] . 
+         DiracGamma[Momentum[k1]] . DiracGamma[7] . Spinor[Momentum[p1], 0, 
+          1])*Pair[Momentum[k2], Momentum[Polarization[k1, -I]]]*
+      Pair[Momentum[k2], Momentum[Polarization[k2, -I]]] + 
+     gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      (Pair[Momentum[k1], Momentum[Polarization[k2, -I]]]*
+        Pair[Momentum[k2], Momentum[Polarization[k1, -I]]] + 
+       Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+        Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]) + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      (Pair[Momentum[k1], Momentum[Polarization[k2, -I]]]*
+        Pair[Momentum[k2], Momentum[Polarization[k1, -I]]] + 
+       Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+        Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]))*
+    PaVe[1, 1, 2, {SMP["m_Z"]^2, s, SMP["m_Z"]^2}, {MW^2, mh2^2, mh3^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*Sin[2*a3] - 
+   4*Cos[a2]*(gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k1], 
+       Momentum[Polarization[k1, -I]]]*Pair[Momentum[k1], 
+       Momentum[Polarization[k2, -I]]] + gc357L*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[k2]] . DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+      Pair[Momentum[k1], Momentum[Polarization[k2, -I]]] + 
+     (gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+         DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+       gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+         DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+      (Pair[Momentum[k1], Momentum[Polarization[k2, -I]]]*
+        Pair[Momentum[k2], Momentum[Polarization[k1, -I]]] + 
+       Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+        Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]))*
+    PaVe[1, 1, 2, {SMP["m_Z"]^2, s, SMP["m_Z"]^2}, {MW^2, mh3^2, mh1^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*Sin[2*a3] - 
+   4*Cos[a2]*((gc357R*Spinor[-Momentum[p2], 0, 1] . 
+         DiracGamma[Momentum[k1]] . DiracGamma[6] . Spinor[Momentum[p1], 0, 
+          1] + gc357L*Spinor[-Momentum[p2], 0, 1] . 
+         DiracGamma[Momentum[k1]] . DiracGamma[7] . Spinor[Momentum[p1], 0, 
+          1])*Pair[Momentum[k2], Momentum[Polarization[k1, -I]]]*
+      Pair[Momentum[k2], Momentum[Polarization[k2, -I]]] + 
+     gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      (Pair[Momentum[k1], Momentum[Polarization[k2, -I]]]*
+        Pair[Momentum[k2], Momentum[Polarization[k1, -I]]] + 
+       Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+        Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]) + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      (Pair[Momentum[k1], Momentum[Polarization[k2, -I]]]*
+        Pair[Momentum[k2], Momentum[Polarization[k1, -I]]] + 
+       Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+        Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]))*
+    PaVe[1, 1, 2, {SMP["m_Z"]^2, s, SMP["m_Z"]^2}, {MW^2, mh3^2, mh1^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*Sin[2*a3] + 
+   4*Cos[a2]*(gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*Pair[Momentum[k1], 
+       Momentum[Polarization[k1, -I]]]*Pair[Momentum[k1], 
+       Momentum[Polarization[k2, -I]]] + gc357L*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[k2]] . DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+      Pair[Momentum[k1], Momentum[Polarization[k2, -I]]] + 
+     (gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+         DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+       gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+         DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+      (Pair[Momentum[k1], Momentum[Polarization[k2, -I]]]*
+        Pair[Momentum[k2], Momentum[Polarization[k1, -I]]] + 
+       Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+        Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]))*
+    PaVe[1, 1, 2, {SMP["m_Z"]^2, s, SMP["m_Z"]^2}, {MW^2, mh3^2, mh2^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*Sin[2*a3] + 
+   4*Cos[a2]*((gc357R*Spinor[-Momentum[p2], 0, 1] . 
+         DiracGamma[Momentum[k1]] . DiracGamma[6] . Spinor[Momentum[p1], 0, 
+          1] + gc357L*Spinor[-Momentum[p2], 0, 1] . 
+         DiracGamma[Momentum[k1]] . DiracGamma[7] . Spinor[Momentum[p1], 0, 
+          1])*Pair[Momentum[k2], Momentum[Polarization[k1, -I]]]*
+      Pair[Momentum[k2], Momentum[Polarization[k2, -I]]] + 
+     gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      (Pair[Momentum[k1], Momentum[Polarization[k2, -I]]]*
+        Pair[Momentum[k2], Momentum[Polarization[k1, -I]]] + 
+       Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+        Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]) + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      (Pair[Momentum[k1], Momentum[Polarization[k2, -I]]]*
+        Pair[Momentum[k2], Momentum[Polarization[k1, -I]]] + 
+       Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+        Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]))*
+    PaVe[1, 1, 2, {SMP["m_Z"]^2, s, SMP["m_Z"]^2}, {MW^2, mh3^2, mh2^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]^2*Sin[2*a3] + 
+   (gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      (Pair[Momentum[k1], Momentum[Polarization[k1, -I]]] - 
+       2*Pair[Momentum[k2], Momentum[Polarization[k1, -I]]]) + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      (Pair[Momentum[k1], Momentum[Polarization[k1, -I]]] - 
+       2*Pair[Momentum[k2], Momentum[Polarization[k1, -I]]]) + 
+     (gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+         DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+       gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+         DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+      Pair[Momentum[k2], Momentum[Polarization[k1, -I]]])*
+    Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]*
+    PaVe[1, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh1^2, mh2^2, MW^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]*Sin[2*a2]*
+    Sin[2*a3] + Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+    (-((gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+          DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+        gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+          DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+       Pair[Momentum[k1], Momentum[Polarization[k2, -I]]]) + 
+     gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      (2*Pair[Momentum[k1], Momentum[Polarization[k2, -I]]] - 
+       Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]) + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      (2*Pair[Momentum[k1], Momentum[Polarization[k2, -I]]] - 
+       Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]))*
+    PaVe[1, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh1^2, mh3^2, MW^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]*Sin[2*a2]*
+    Sin[2*a3] + Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+    (-((gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+          DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+        gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+          DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+       Pair[Momentum[k1], Momentum[Polarization[k2, -I]]]) + 
+     gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      (2*Pair[Momentum[k1], Momentum[Polarization[k2, -I]]] - 
+       Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]) + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      (2*Pair[Momentum[k1], Momentum[Polarization[k2, -I]]] - 
+       Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]))*
+    PaVe[1, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh2^2, mh1^2, MW^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]*Sin[2*a2]*
+    Sin[2*a3] + (gc357R*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[k2]] . DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      (Pair[Momentum[k1], Momentum[Polarization[k1, -I]]] - 
+       2*Pair[Momentum[k2], Momentum[Polarization[k1, -I]]]) + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      (Pair[Momentum[k1], Momentum[Polarization[k1, -I]]] - 
+       2*Pair[Momentum[k2], Momentum[Polarization[k1, -I]]]) + 
+     (gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+         DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+       gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+         DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+      Pair[Momentum[k2], Momentum[Polarization[k1, -I]]])*
+    Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]*
+    PaVe[1, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh2^2, mh3^2, MW^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]*Sin[2*a2]*
+    Sin[2*a3] + (gc357R*Spinor[-Momentum[p2], 0, 1] . 
+       DiracGamma[Momentum[k2]] . DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      (Pair[Momentum[k1], Momentum[Polarization[k1, -I]]] - 
+       2*Pair[Momentum[k2], Momentum[Polarization[k1, -I]]]) + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      (Pair[Momentum[k1], Momentum[Polarization[k1, -I]]] - 
+       2*Pair[Momentum[k2], Momentum[Polarization[k1, -I]]]) + 
+     (gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+         DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+       gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+         DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+      Pair[Momentum[k2], Momentum[Polarization[k1, -I]]])*
+    Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]*
+    PaVe[1, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh3^2, mh1^2, MW^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]*Sin[2*a2]*
+    Sin[2*a3] + Pair[Momentum[k1], Momentum[Polarization[k1, -I]]]*
+    (-((gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+          DiracGamma[6] . Spinor[Momentum[p1], 0, 1] + 
+        gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k2]] . 
+          DiracGamma[7] . Spinor[Momentum[p1], 0, 1])*
+       Pair[Momentum[k1], Momentum[Polarization[k2, -I]]]) + 
+     gc357R*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[6] . Spinor[Momentum[p1], 0, 1]*
+      (2*Pair[Momentum[k1], Momentum[Polarization[k2, -I]]] - 
+       Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]) + 
+     gc357L*Spinor[-Momentum[p2], 0, 1] . DiracGamma[Momentum[k1]] . 
+       DiracGamma[7] . Spinor[Momentum[p1], 0, 1]*
+      (2*Pair[Momentum[k1], Momentum[Polarization[k2, -I]]] - 
+       Pair[Momentum[k2], Momentum[Polarization[k2, -I]]]))*
+    PaVe[1, 1, {s, SMP["m_Z"]^2, SMP["m_Z"]^2}, {mh3^2, mh2^2, MW^2}, 
+     PaVeAutoOrder -> True, PaVeAutoReduce -> True]*Sin[a2]*Sin[2*a2]*
+    Sin[2*a3])*SUNFDelta[SUNFIndex[Col1], SUNFIndex[Col2]])/
+ (128*cw*Pi^2*(s - SMP["m_Z"]^2))

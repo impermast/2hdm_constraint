@@ -1,0 +1,645 @@
+timestamp,sqrts0,mh2,mhc,log10_f4mean,log10_norma_pb
+Fri 20 Mar 2026 14:40:29,240.,200.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.39864 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.55464086628549
+Fri 20 Mar 2026 14:41:06,240.,205.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.37682 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.54781183959703
+Fri 20 Mar 2026 14:41:40,240.,210.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.37073 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.54588646685135
+Fri 20 Mar 2026 14:42:15,240.,215.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.39094 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.55224381055911
+Fri 20 Mar 2026 14:42:49,240.,220.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.35493 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.54085238296809
+Fri 20 Mar 2026 14:43:24,240.,225.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.38933 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.55174172903914
+Fri 20 Mar 2026 14:43:59,240.,230.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.38727 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.55109653128987
+Fri 20 Mar 2026 14:44:34,240.,235.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.38203 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.5494518945718
+Fri 20 Mar 2026 14:45:09,240.,240.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.35991 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.54244504623669
+Fri 20 Mar 2026 14:45:43,240.,245.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.37817 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.54823675925084
+Fri 20 Mar 2026 14:46:19,240.,250.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.38182 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.54938823761301
+Fri 20 Mar 2026 14:46:53,240.,255.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.38075 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.54905102802119
+Fri 20 Mar 2026 14:47:28,240.,260.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.38257 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.54962231702947
+Fri 20 Mar 2026 14:48:02,240.,265.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.38616 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.55074766973381
+Fri 20 Mar 2026 14:48:37,240.,270.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.38337 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.54987432243943
+Fri 20 Mar 2026 14:49:11,240.,275.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.38917 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.55169154385568
+Fri 20 Mar 2026 14:49:46,240.,280.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.39048 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.55210020740662
+Fri 20 Mar 2026 14:50:20,240.,285.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.37807 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.54820755589572
+Fri 20 Mar 2026 14:50:55,240.,290.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.38916 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.5516876451532
+Fri 20 Mar 2026 14:51:29,240.,295.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.37172 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.54619935188398
+Fri 20 Mar 2026 14:52:04,240.,300.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.39502 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.55351672718768
+Fri 20 Mar 2026 14:52:38,240.,305.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.38584 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.55064836642252
+Fri 20 Mar 2026 14:53:13,240.,310.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.38954 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.55180677882345
+Fri 20 Mar 2026 14:53:47,240.,315.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.37861 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.54837645985826
+Fri 20 Mar 2026 14:54:22,240.,320.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.38537 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.550501939211
+Fri 20 Mar 2026 14:54:57,240.,325.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.38897 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.55162689270927
+Fri 20 Mar 2026 14:55:31,240.,330.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.39026 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.55203020820736
+Fri 20 Mar 2026 14:56:06,240.,335.,400.,                        24                            kt                   kt         kt
+fmt1[safeLog10[1.4008 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.55531136170059
+Fri 20 Mar 2026 14:56:41,240.,340.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.38093 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.54910638837081
+Fri 20 Mar 2026 14:57:16,240.,345.,400.,                        24                            kt                   kt         kt
+fmt1[safeLog10[1.3832 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.54982146483515
+Fri 20 Mar 2026 14:57:50,240.,350.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.40335 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.55610011455437
+Fri 20 Mar 2026 14:58:24,240.,355.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.41171 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.55868105462824
+Fri 20 Mar 2026 14:58:58,240.,360.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.37718 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.54792637969996
+Fri 20 Mar 2026 14:59:33,240.,365.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.37728 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.54795849175404
+Fri 20 Mar 2026 15:00:07,240.,370.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.37042 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.54578992670729
+Fri 20 Mar 2026 15:00:42,240.,375.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.38886 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.55159270192097
+Fri 20 Mar 2026 15:01:15,240.,380.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.39003 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.55195977021797
+Fri 20 Mar 2026 15:01:50,240.,385.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.35112 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.53963002471705
+Fri 20 Mar 2026 15:02:24,240.,390.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.37986 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.5487712888129
+Fri 20 Mar 2026 15:02:59,240.,395.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.37219 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.54634950834889
+Fri 20 Mar 2026 15:03:33,240.,400.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.39265 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.55277738022566
+Fri 20 Mar 2026 15:04:08,240.,405.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.36518 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.54412540725843
+Fri 20 Mar 2026 15:04:42,240.,410.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.36365 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.54363788938479
+Fri 20 Mar 2026 15:05:17,240.,415.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.37949 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.54865317843232
+Fri 20 Mar 2026 15:05:52,240.,420.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.36652 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.54454997590412
+Fri 20 Mar 2026 15:06:27,240.,425.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.38277 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.54968387384062
+Fri 20 Mar 2026 15:07:01,240.,430.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.37883 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.54844696233714
+Fri 20 Mar 2026 15:07:36,240.,435.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.38878 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.5515702243895
+Fri 20 Mar 2026 15:08:11,240.,440.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.37768 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.54808496078533
+Fri 20 Mar 2026 15:08:45,240.,445.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.38476 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.550308723575
+Fri 20 Mar 2026 15:09:20,240.,450.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.40107 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.55539581211408
+Fri 20 Mar 2026 15:09:55,240.,455.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.38498 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.55037997022415
+Fri 20 Mar 2026 15:10:30,240.,460.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.36129 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.54288605511962
+Fri 20 Mar 2026 15:11:05,240.,465.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.36665 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.54459116032932
+Fri 20 Mar 2026 15:11:40,240.,470.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.38229 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.54953430689249
+Fri 20 Mar 2026 15:12:14,240.,475.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.38932 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.55173858319824
+Fri 20 Mar 2026 15:12:48,240.,480.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.38307 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.54977929110669
+Fri 20 Mar 2026 15:13:23,240.,485.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.38042 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.54894646570998
+Fri 20 Mar 2026 15:13:57,240.,490.,400.,                        24                            kt                   kt         kt
+fmt1[safeLog10[1.3853 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.55047803535018
+Fri 20 Mar 2026 15:14:32,240.,495.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.37838 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.54830401870703
+Fri 20 Mar 2026 15:15:07,240.,500.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.35652 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.54136236782601
+Fri 20 Mar 2026 15:15:41,240.,505.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.38137 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.54924412952698
+Fri 20 Mar 2026 15:16:16,240.,510.,400.,                        24                            kt                   kt         kt
+fmt1[safeLog10[1.3911 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.55229229328275
+Fri 20 Mar 2026 15:16:51,240.,515.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.38299 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.54975445712802
+Fri 20 Mar 2026 15:17:26,240.,520.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.37753 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.54803593581433
+Fri 20 Mar 2026 15:18:00,240.,525.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.39991 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.55503504172535
+Fri 20 Mar 2026 15:18:35,240.,530.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.37708 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.54789517309968
+Fri 20 Mar 2026 15:19:09,240.,535.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.39767 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.55434082386512
+Fri 20 Mar 2026 15:19:43,240.,540.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.39133 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.55236427175854
+Fri 20 Mar 2026 15:20:18,240.,545.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.38153 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.54929582723592
+Fri 20 Mar 2026 15:20:53,240.,550.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.35754 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.54168835240361
+Fri 20 Mar 2026 15:21:27,240.,555.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.37613 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.5475934894327
+Fri 20 Mar 2026 15:22:02,240.,560.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.39962 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.5549448033614
+Fri 20 Mar 2026 15:22:35,240.,565.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.37258 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.54647292635188
+Fri 20 Mar 2026 15:23:10,240.,570.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.38089 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.54909577014751
+Fri 20 Mar 2026 15:23:44,240.,575.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.35617 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.54124841602018
+Fri 20 Mar 2026 15:24:18,240.,580.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.37362 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.54680113116685
+Fri 20 Mar 2026 15:24:53,240.,585.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.37397 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.5469141050986
+Fri 20 Mar 2026 15:25:27,240.,590.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.37457 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.54710160066566
+Fri 20 Mar 2026 15:26:02,240.,595.,400.,                        24                            kt                   kt         kt
+fmt1[safeLog10[1.3517 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.53981597188752
+Fri 20 Mar 2026 15:26:36,240.,600.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.37913 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.54853907136068
+Fri 20 Mar 2026 15:27:10,240.,605.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.35966 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.54236595909799
+Fri 20 Mar 2026 15:27:45,240.,610.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.38414 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.55011591115576
+Fri 20 Mar 2026 15:28:19,240.,615.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.37156 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.54615054403566
+Fri 20 Mar 2026 15:28:53,240.,620.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.38625 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.55077681912262
+Fri 20 Mar 2026 15:29:27,240.,625.,400.,                        24                            kt                   kt         kt
+fmt1[safeLog10[1.3882 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.55138731724204
+Fri 20 Mar 2026 15:30:01,240.,630.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.39214 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.55261740975539
+Fri 20 Mar 2026 15:30:35,240.,635.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.38337 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.54987474335066
+Fri 20 Mar 2026 15:31:09,240.,640.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.36411 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.54378453739105
+Fri 20 Mar 2026 15:31:44,240.,645.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.37086 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.54592974117246
+Fri 20 Mar 2026 15:32:31,240.,650.,400.,                       24                            kt                   kt         kt
+fmt1[safeLog10[1.393 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.55288652783203
+Fri 20 Mar 2026 15:33:05,240.,655.,400.,                        24                            kt                   kt         kt
+fmt1[safeLog10[1.3696 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.54552767270498
+Fri 20 Mar 2026 15:33:39,240.,660.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.38531 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.55048302467629
+Fri 20 Mar 2026 15:34:13,240.,665.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.37507 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.54726018595464
+Fri 20 Mar 2026 15:34:48,240.,670.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.36418 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.54380765412098
+Fri 20 Mar 2026 15:35:22,240.,675.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.39042 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.55208002087485
+Fri 20 Mar 2026 15:35:56,240.,680.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.38125 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.54920735347271
+Fri 20 Mar 2026 15:36:30,240.,685.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.37197 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.54627883436818
+Fri 20 Mar 2026 15:37:04,240.,690.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.37023 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.54572872685465
+Fri 20 Mar 2026 15:37:39,240.,695.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.38278 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.54969003645942
+Fri 20 Mar 2026 15:38:13,240.,700.,400.,                        24                            kt                   kt         kt
+fmt1[safeLog10[1.3563 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.54129271649356
+Fri 20 Mar 2026 15:38:47,240.,705.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.38437 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.55018638401699
+Fri 20 Mar 2026 15:39:22,240.,710.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.38922 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.55170770418836
+Fri 20 Mar 2026 15:39:56,240.,715.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.38093 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.5491078517446
+Fri 20 Mar 2026 15:40:30,240.,720.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.37783 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.54813116848161
+Fri 20 Mar 2026 15:41:04,240.,725.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.37753 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.54803623913855
+Fri 20 Mar 2026 15:41:39,240.,730.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.37803 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.54819427208384
+Fri 20 Mar 2026 15:42:13,240.,735.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.39388 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.55316025944453
+Fri 20 Mar 2026 15:42:48,240.,740.,400.,                        24                            kt                   kt         kt
+fmt1[safeLog10[1.3668 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.54464012677401
+Fri 20 Mar 2026 15:43:22,240.,745.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.38284 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.54970647519061
+Fri 20 Mar 2026 15:43:56,240.,750.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.38187 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.54940163584972
+Fri 20 Mar 2026 15:44:30,240.,755.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.36217 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.54316532293848
+Fri 20 Mar 2026 15:45:04,240.,760.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.37848 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.54833702957989
+Fri 20 Mar 2026 15:45:39,240.,765.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.37599 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.54754962798754
+Fri 20 Mar 2026 15:46:13,240.,770.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.37564 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.54743885550342
+Fri 20 Mar 2026 15:46:48,240.,775.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.37796 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.54817070819097
+Fri 20 Mar 2026 15:47:22,240.,780.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.37723 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.54794266193518
+Fri 20 Mar 2026 15:47:56,240.,785.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.39296 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.55287416340996
+Fri 20 Mar 2026 15:48:30,240.,790.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.37637 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.54766914101691
+Fri 20 Mar 2026 15:49:04,240.,795.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.37642 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.54768669462243
+Fri 20 Mar 2026 15:49:39,240.,800.,400.,                         24                            kt                   kt         kt
+fmt1[safeLog10[1.38477 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-15.55031419730376
+Fri 20 Mar 2026 15:50:14,1000.,200.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.04038 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.89186391393281
+Fri 20 Mar 2026 15:50:51,1000.,205.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.11169 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.90193237471245
+Fri 20 Mar 2026 15:51:27,1000.,210.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.09691 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.89986382305735
+Fri 20 Mar 2026 15:52:03,1000.,215.,400.,                        20                            kt                   kt         kt
+fmt1[safeLog10[3.0801 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.89750024069941
+Fri 20 Mar 2026 15:52:39,1000.,220.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.09004 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.89889921622357
+Fri 20 Mar 2026 15:53:16,1000.,225.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.05943 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.89457577779097
+Fri 20 Mar 2026 15:53:52,1000.,230.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.08335 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.89795884272795
+Fri 20 Mar 2026 15:54:29,1000.,235.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.06775 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.89575476071297
+Fri 20 Mar 2026 15:55:05,1000.,240.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.09154 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.8991108857423
+Fri 20 Mar 2026 15:55:41,1000.,245.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.06897 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.89592764881783
+Fri 20 Mar 2026 15:56:17,1000.,250.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.08378 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.898018668122
+Fri 20 Mar 2026 15:56:53,1000.,255.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.07966 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.89743774213027
+Fri 20 Mar 2026 15:57:30,1000.,260.,400.,                       20                            kt                   kt         kt
+fmt1[safeLog10[3.063 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.89508216468056
+Fri 20 Mar 2026 15:58:06,1000.,265.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.09244 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.89923606704218
+Fri 20 Mar 2026 15:58:42,1000.,270.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.05677 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.89419750159636
+Fri 20 Mar 2026 15:59:18,1000.,275.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.07099 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.89621398886357
+Fri 20 Mar 2026 15:59:55,1000.,280.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.10828 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.90145602914191
+Fri 20 Mar 2026 16:00:31,1000.,285.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.05832 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.89441772961385
+Fri 20 Mar 2026 16:01:08,1000.,290.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.06964 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.89602303503308
+Fri 20 Mar 2026 16:01:44,1000.,295.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.09691 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.89986379746827
+Fri 20 Mar 2026 16:02:20,1000.,300.,400.,                        20                            kt                   kt         kt
+fmt1[safeLog10[3.1004 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.90035299908297
+Fri 20 Mar 2026 16:02:57,1000.,305.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.10384 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.90083487888348
+Fri 20 Mar 2026 16:03:33,1000.,310.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.04608 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.89267694027414
+Fri 20 Mar 2026 16:04:09,1000.,315.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.03513 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.89111320016283
+Fri 20 Mar 2026 16:04:45,1000.,320.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.05995 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.89464943591029
+Fri 20 Mar 2026 16:05:21,1000.,325.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.06736 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.89570073242023
+Fri 20 Mar 2026 16:05:56,1000.,330.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.09003 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.89889777117848
+Fri 20 Mar 2026 16:06:33,1000.,335.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.09298 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.89931225994811
+Fri 20 Mar 2026 16:07:09,1000.,340.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.08321 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.89793869207489
+Fri 20 Mar 2026 16:07:45,1000.,345.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.13192 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.90474610865463
+Fri 20 Mar 2026 16:08:21,1000.,350.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.07619 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.89694901560584
+Fri 20 Mar 2026 16:08:57,1000.,355.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.04643 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.8927268823636
+Fri 20 Mar 2026 16:09:34,1000.,360.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.11705 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.90267896819054
+Fri 20 Mar 2026 16:10:10,1000.,365.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.12271 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.9034670759997
+Fri 20 Mar 2026 16:10:47,1000.,370.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.15294 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.90765100941075
+Fri 20 Mar 2026 16:11:23,1000.,375.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.09355 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.89939185237919
+Fri 20 Mar 2026 16:11:59,1000.,380.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.06889 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.89591622074584
+Fri 20 Mar 2026 16:12:35,1000.,385.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.10703 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.9012803890131
+Fri 20 Mar 2026 16:13:12,1000.,390.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.09316 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.8993382710355
+Fri 20 Mar 2026 16:13:48,1000.,395.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.05327 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.89370022248684
+Fri 20 Mar 2026 16:14:25,1000.,400.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.09479 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.89956607863402
+Fri 20 Mar 2026 16:15:01,1000.,405.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.10669 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.90123270928093
+Fri 20 Mar 2026 16:15:37,1000.,410.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.08376 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.89801553272489
+Fri 20 Mar 2026 16:16:14,1000.,415.,400.,                       20                            kt                   kt         kt
+fmt1[safeLog10[3.085 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.89819036800994
+Fri 20 Mar 2026 16:16:51,1000.,420.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.08974 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.89885682192951
+Fri 20 Mar 2026 16:17:27,1000.,425.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.07943 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.89740639886382
+Fri 20 Mar 2026 16:18:03,1000.,430.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.07309 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.89651019662108
+Fri 20 Mar 2026 16:18:40,1000.,435.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.10933 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.90160188385018
+Fri 20 Mar 2026 16:19:16,1000.,440.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.04072 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.89191156161444
+Fri 20 Mar 2026 16:19:52,1000.,445.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.06608 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.8955186584135
+Fri 20 Mar 2026 16:20:28,1000.,450.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.05159 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.89346191649161
+Fri 20 Mar 2026 16:21:04,1000.,455.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.08047 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.8975526335579
+Fri 20 Mar 2026 16:21:40,1000.,460.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.05648 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.89415693799781
+Fri 20 Mar 2026 16:22:17,1000.,465.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.05238 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.893574529865
+Fri 20 Mar 2026 16:22:53,1000.,470.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.07263 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.89644610955748
+Fri 20 Mar 2026 16:23:30,1000.,475.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.06596 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.89550244363717
+Fri 20 Mar 2026 16:24:06,1000.,480.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.08686 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.89845301185773
+Fri 20 Mar 2026 16:24:43,1000.,485.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.09158 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.8991153928108
+Fri 20 Mar 2026 16:25:19,1000.,490.,400.,                        20                            kt                   kt         kt
+fmt1[safeLog10[3.0261 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.88981803508748
+Fri 20 Mar 2026 16:25:56,1000.,495.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.07007 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.89608342763303
+Fri 20 Mar 2026 16:26:32,1000.,500.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.06995 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.8960660966659
+Fri 20 Mar 2026 16:27:05,1000.,505.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.09874 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.9001210847309
+Fri 20 Mar 2026 16:27:38,1000.,510.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.09278 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.89928478778936
+Fri 20 Mar 2026 16:28:12,1000.,515.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.01971 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.88889993786854
+Fri 20 Mar 2026 16:28:45,1000.,520.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.09179 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.89914553147335
+Fri 20 Mar 2026 16:29:19,1000.,525.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.03557 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.89117504050959
+Fri 20 Mar 2026 16:29:52,1000.,530.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.05798 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.89437060617403
+Fri 20 Mar 2026 16:30:25,1000.,535.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.07789 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.8971885788753
+Fri 20 Mar 2026 16:30:58,1000.,540.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.07941 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.89740348068153
+Fri 20 Mar 2026 16:31:31,1000.,545.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.08152 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.89770070037482
+Fri 20 Mar 2026 16:32:05,1000.,550.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.09086 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.89901451527601
+Fri 20 Mar 2026 16:32:38,1000.,555.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.10554 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.9010719713864
+Fri 20 Mar 2026 16:33:11,1000.,560.,400.,                        20                            kt                   kt         kt
+fmt1[safeLog10[3.0331 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.8908217714103
+Fri 20 Mar 2026 16:33:44,1000.,565.,400.,                        20                            kt                   kt         kt
+fmt1[safeLog10[3.1338 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.90500599097205
+Fri 20 Mar 2026 16:34:17,1000.,570.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.11743 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.90273206053434
+Fri 20 Mar 2026 16:34:50,1000.,575.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.06676 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.89561466315409
+Fri 20 Mar 2026 16:35:24,1000.,580.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.09859 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.90009995317054
+Fri 20 Mar 2026 16:35:57,1000.,585.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.07162 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.89630278031296
+Fri 20 Mar 2026 16:36:30,1000.,590.,400.,                        20                            kt                   kt         kt
+fmt1[safeLog10[3.0607 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.89475595392114
+Fri 20 Mar 2026 16:37:03,1000.,595.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.11866 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.90290313205502
+Fri 20 Mar 2026 16:37:37,1000.,600.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.08848 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.89868019853036
+Fri 20 Mar 2026 16:38:10,1000.,605.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.06029 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.89469739413359
+Fri 20 Mar 2026 16:38:43,1000.,610.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.03365 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.89090143954462
+Fri 20 Mar 2026 16:39:16,1000.,615.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.13735 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.90549865282445
+Fri 20 Mar 2026 16:39:48,1000.,620.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.06124 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.89483303998379
+Fri 20 Mar 2026 16:40:21,1000.,625.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.08742 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.8985318043923
+Fri 20 Mar 2026 16:40:55,1000.,630.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.00458 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.88671915175239
+Fri 20 Mar 2026 16:41:28,1000.,635.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.06332 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.89512710369604
+Fri 20 Mar 2026 16:42:01,1000.,640.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.12326 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.90354401096064
+Fri 20 Mar 2026 16:42:35,1000.,645.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.09146 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.89909966094692
+Fri 20 Mar 2026 16:43:08,1000.,650.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.06682 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.89562406636188
+Fri 20 Mar 2026 16:43:41,1000.,655.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.06714 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.89566901093001
+Fri 20 Mar 2026 16:44:14,1000.,660.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.08872 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.89871409987323
+Fri 20 Mar 2026 16:44:47,1000.,665.,400.,                       20                            kt                   kt         kt
+fmt1[safeLog10[3.093 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.89931522957825
+Fri 20 Mar 2026 16:45:20,1000.,670.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.09215 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.89919608255924
+Fri 20 Mar 2026 16:45:54,1000.,675.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.08425 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.89808532111404
+Fri 20 Mar 2026 16:46:28,1000.,680.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.03721 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.89140974200025
+Fri 20 Mar 2026 16:47:01,1000.,685.,400.,                        20                            kt                   kt         kt
+fmt1[safeLog10[3.0958 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.89970773122385
+Fri 20 Mar 2026 16:47:34,1000.,690.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.08653 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.89840572232607
+Fri 20 Mar 2026 16:48:07,1000.,695.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.10378 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.90082588020594
+Fri 20 Mar 2026 16:48:40,1000.,700.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.05307 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.89367194364751
+Fri 20 Mar 2026 16:49:13,1000.,705.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.06874 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.89589583707571
+Fri 20 Mar 2026 16:49:46,1000.,710.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.09505 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.89960324453617
+Fri 20 Mar 2026 16:50:19,1000.,715.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.06796 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.89578481983088
+Fri 20 Mar 2026 16:50:52,1000.,720.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.13043 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.90453958106966
+Fri 20 Mar 2026 16:51:25,1000.,725.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.08965 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.89884490707226
+Fri 20 Mar 2026 16:51:58,1000.,730.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.10699 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.90127483557533
+Fri 20 Mar 2026 16:52:31,1000.,735.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.07068 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.89616972809869
+Fri 20 Mar 2026 16:53:05,1000.,740.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.09999 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.90029531329834
+Fri 20 Mar 2026 16:53:38,1000.,745.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.05506 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.89395516670205
+Fri 20 Mar 2026 16:54:11,1000.,750.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.07045 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.89613785351906
+Fri 20 Mar 2026 16:54:44,1000.,755.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.08951 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.89882550570237
+Fri 20 Mar 2026 16:55:17,1000.,760.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.10012 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.90031366085762
+Fri 20 Mar 2026 16:55:49,1000.,765.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.07008 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.89608527518327
+Fri 20 Mar 2026 16:56:23,1000.,770.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.09619 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.89976285245373
+Fri 20 Mar 2026 16:56:56,1000.,775.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.06717 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.89567374057228
+Fri 20 Mar 2026 16:57:29,1000.,780.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.10487 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.90097945586456
+Fri 20 Mar 2026 16:58:02,1000.,785.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.08235 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.89781678998336
+Fri 20 Mar 2026 16:58:35,1000.,790.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.08681 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.89844505702125
+Fri 20 Mar 2026 16:59:09,1000.,795.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.05134 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.8934255395041
+Fri 20 Mar 2026 16:59:42,1000.,800.,400.,                         20                            kt                   kt         kt
+fmt1[safeLog10[3.13503 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.90517650990873
+Fri 20 Mar 2026 17:00:16,10000.,200.,400.,                         19                            kt                   kt         kt
+fmt1[safeLog10[7.40627 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.27853501484807
+Fri 20 Mar 2026 17:00:49,10000.,205.,400.,                         19                            kt                   kt         kt
+fmt1[safeLog10[7.33456 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.2743093561486
+Fri 20 Mar 2026 17:01:22,10000.,210.,400.,                         19                            kt                   kt         kt
+fmt1[safeLog10[7.16772 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.26431667270145
+Fri 20 Mar 2026 17:01:56,10000.,215.,400.,                        19                            kt                   kt         kt
+fmt1[safeLog10[7.4047 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.27844288509719
+Fri 20 Mar 2026 17:02:29,10000.,220.,400.,                         19                            kt                   kt         kt
+fmt1[safeLog10[7.32235 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.27358561742121
+Fri 20 Mar 2026 17:03:03,10000.,225.,400.,                         19                            kt                   kt         kt
+fmt1[safeLog10[7.25397 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.26951135110533
+Fri 20 Mar 2026 17:03:36,10000.,230.,400.,                         19                            kt                   kt         kt
+fmt1[safeLog10[7.35394 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.27545545993538
+Fri 20 Mar 2026 17:04:10,10000.,235.,400.,                         19                            kt                   kt         kt
+fmt1[safeLog10[7.28583 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.27141453855216
+Fri 20 Mar 2026 17:04:44,10000.,240.,400.,                         19                            kt                   kt         kt
+fmt1[safeLog10[7.38113 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.2770582459735
+Fri 20 Mar 2026 17:05:17,10000.,245.,400.,                         19                            kt                   kt         kt
+fmt1[safeLog10[7.21206 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.26699490447168
+Fri 20 Mar 2026 17:05:51,10000.,250.,400.,                         19                            kt                   kt         kt
+fmt1[safeLog10[7.29281 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.27183035468357
+Fri 20 Mar 2026 17:06:24,10000.,255.,400.,                         19                            kt                   kt         kt
+fmt1[safeLog10[7.22979 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.26806101455676
+Fri 20 Mar 2026 17:06:58,10000.,260.,400.,                         19                            kt                   kt         kt
+fmt1[safeLog10[7.34984 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.27521347186432
+Fri 20 Mar 2026 17:07:32,10000.,265.,400.,                         19                            kt                   kt         kt
+fmt1[safeLog10[7.28811 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.27155060845514
+Fri 20 Mar 2026 17:08:05,10000.,270.,400.,                         19                            kt                   kt         kt
+fmt1[safeLog10[7.31978 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.27343370737925
+Fri 20 Mar 2026 17:08:39,10000.,275.,400.,                         19                            kt                   kt         kt
+fmt1[safeLog10[7.24136 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.26875551164328
+Fri 20 Mar 2026 17:09:12,10000.,280.,400.,                         19                            kt                   kt         kt
+fmt1[safeLog10[7.38815 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.27747111579651
+Fri 20 Mar 2026 17:09:46,10000.,285.,400.,                         19                            kt                   kt         kt
+fmt1[safeLog10[7.35561 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.27555408136101
+Fri 20 Mar 2026 17:10:20,10000.,290.,400.,                        19                            kt                   kt         kt
+fmt1[safeLog10[7.2541 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.26951887721148
+Fri 20 Mar 2026 17:10:53,10000.,295.,400.,                        19                            kt                   kt         kt
+fmt1[safeLog10[7.2839 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.27129943982235
+Fri 20 Mar 2026 17:11:26,10000.,300.,400.,                         19                            kt                   kt         kt
+fmt1[safeLog10[7.35223 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.27535422467402
+Fri 20 Mar 2026 17:12:00,10000.,305.,400.,                         19                            kt                   kt         kt
+fmt1[safeLog10[7.40314 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.27835114466523
+Fri 20 Mar 2026 17:12:33,10000.,310.,400.,                         19                            kt                   kt         kt
+fmt1[safeLog10[7.34127 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.27470670626164
+Fri 20 Mar 2026 17:13:06,10000.,315.,400.,                         19                            kt                   kt         kt
+fmt1[safeLog10[7.25852 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.26978355292803
+Fri 20 Mar 2026 17:13:39,10000.,320.,400.,                         19                            kt                   kt         kt
+fmt1[safeLog10[7.20484 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.26656002980365
+Fri 20 Mar 2026 17:14:13,10000.,325.,400.,                         19                            kt                   kt         kt
+fmt1[safeLog10[7.39903 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.2781100448616
+Fri 20 Mar 2026 17:14:47,10000.,330.,400.,                         19                            kt                   kt         kt
+fmt1[safeLog10[7.31934 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.27340704129706
+Fri 20 Mar 2026 17:15:20,10000.,335.,400.,                         19                            kt                   kt         kt
+fmt1[safeLog10[7.30408 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.2725008661854
+Fri 20 Mar 2026 17:15:54,10000.,340.,400.,                        19                            kt                   kt         kt
+fmt1[safeLog10[7.3253 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.27376103004357
+Fri 20 Mar 2026 17:16:28,10000.,345.,400.,                         19                            kt                   kt         kt
+fmt1[safeLog10[7.21561 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.26720826113114
+Fri 20 Mar 2026 17:17:02,10000.,350.,400.,                         19                            kt                   kt         kt
+fmt1[safeLog10[7.33157 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.27413262177718
+Fri 20 Mar 2026 17:17:35,10000.,355.,400.,                         19                            kt                   kt         kt
+fmt1[safeLog10[7.41222 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.2788834933386
+Fri 20 Mar 2026 17:18:09,10000.,360.,400.,                         19                            kt                   kt         kt
+fmt1[safeLog10[7.28235 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.27120664579026
+Fri 20 Mar 2026 17:18:42,10000.,365.,400.,                         19                            kt                   kt         kt
+fmt1[safeLog10[7.29118 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.27173321069991
+Fri 20 Mar 2026 17:19:16,10000.,370.,400.,                         19                            kt                   kt         kt
+fmt1[safeLog10[7.19884 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.26619802503062
+Fri 20 Mar 2026 17:19:49,10000.,375.,400.,                         19                            kt                   kt         kt
+fmt1[safeLog10[7.31313 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.27303876529958
+Fri 20 Mar 2026 17:20:23,10000.,380.,400.,                         19                            kt                   kt         kt
+fmt1[safeLog10[7.18371 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.26528397182466
+Fri 20 Mar 2026 17:20:56,10000.,385.,400.,                         19                            kt                   kt         kt
+fmt1[safeLog10[7.29092 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.27171754434117
+Fri 20 Mar 2026 17:21:30,10000.,390.,400.,                        19                            kt                   kt         kt
+fmt1[safeLog10[7.3169 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.27326228956295
+Fri 20 Mar 2026 17:22:04,10000.,395.,400.,                         19                            kt                   kt         kt
+fmt1[safeLog10[7.25846 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.26977987141523
+Fri 20 Mar 2026 17:22:38,10000.,400.,400.,                         19                            kt                   kt         kt
+fmt1[safeLog10[7.25056 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.26930716913876
+Fri 20 Mar 2026 17:23:12,10000.,405.,400.,                         19                            kt                   kt         kt
+fmt1[safeLog10[7.23538 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.26839676341587
+Fri 20 Mar 2026 17:23:46,10000.,410.,400.,                         19                            kt                   kt         kt
+fmt1[safeLog10[7.27379 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.27069625711186
+Fri 20 Mar 2026 17:24:19,10000.,415.,400.,                         19                            kt                   kt         kt
+fmt1[safeLog10[7.24376 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.26889961333076
+Fri 20 Mar 2026 17:24:53,10000.,420.,400.,                         19                            kt                   kt         kt
+fmt1[safeLog10[7.24424 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.26892829064604
+Fri 20 Mar 2026 17:25:28,10000.,425.,400.,                         19                            kt                   kt         kt
+fmt1[safeLog10[7.31299 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.27303046364091
+Fri 20 Mar 2026 17:26:02,10000.,430.,400.,                         19                            kt                   kt         kt
+fmt1[safeLog10[7.37263 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.27655778941541
+Fri 20 Mar 2026 17:26:36,10000.,435.,400.,                         19                            kt                   kt         kt
+fmt1[safeLog10[7.30876 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.27277903074574
+Fri 20 Mar 2026 17:27:11,10000.,440.,400.,                         19                            kt                   kt         kt
+fmt1[safeLog10[7.37331 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.27659808313422
+Fri 20 Mar 2026 17:27:47,10000.,445.,400.,                         19                            kt                   kt         kt
+fmt1[safeLog10[7.23724 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.26850813461306
+Fri 20 Mar 2026 17:28:25,10000.,450.,400.,                         19                            kt                   kt         kt
+fmt1[safeLog10[7.30767 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.27271452536037
+Fri 20 Mar 2026 17:29:04,10000.,455.,400.,                         19                            kt                   kt         kt
+fmt1[safeLog10[7.33528 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.27435220956613
+Fri 20 Mar 2026 17:29:40,10000.,460.,400.,                         19                            kt                   kt         kt
+fmt1[safeLog10[7.35407 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.27546337365221
+Fri 20 Mar 2026 17:30:18,10000.,465.,400.,                         19                            kt                   kt         kt
+fmt1[safeLog10[7.13267 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.26218773849614
+Fri 20 Mar 2026 17:30:55,10000.,470.,400.,                         19                            kt                   kt         kt
+fmt1[safeLog10[7.31711 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.27327521689401
+Fri 20 Mar 2026 17:31:32,10000.,475.,400.,                         19                            kt                   kt         kt
+fmt1[safeLog10[7.24159 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.26876962263225
+Fri 20 Mar 2026 17:32:09,10000.,480.,400.,                         19                            kt                   kt         kt
+fmt1[safeLog10[7.40748 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.27860605444756
+Fri 20 Mar 2026 17:32:45,10000.,485.,400.,                         19                            kt                   kt         kt
+fmt1[safeLog10[7.34008 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.2746362972873
+Fri 20 Mar 2026 17:33:22,10000.,490.,400.,                        19                            kt                   kt         kt
+fmt1[safeLog10[7.2587 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.26979451633838
+Fri 20 Mar 2026 17:33:58,10000.,495.,400.,                         19                            kt                   kt         kt
+fmt1[safeLog10[7.36741 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.27625029841786
+Fri 20 Mar 2026 17:34:34,10000.,500.,400.,                         19                            kt                   kt         kt
+fmt1[safeLog10[7.29485 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.27195182169966
+Fri 20 Mar 2026 17:35:11,10000.,505.,400.,                         19                            kt                   kt         kt
+fmt1[safeLog10[7.39698 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.27798992652646
+Fri 20 Mar 2026 17:35:47,10000.,510.,400.,                         19                            kt                   kt         kt
+fmt1[safeLog10[7.26642 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.27025615877479
+Fri 20 Mar 2026 17:36:23,10000.,515.,400.,                         19                            kt                   kt         kt
+fmt1[safeLog10[7.29703 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.27208173207567
+Fri 20 Mar 2026 17:36:59,10000.,520.,400.,                        19                            kt                   kt         kt
+fmt1[safeLog10[7.4022 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.27829620889872
+Fri 20 Mar 2026 17:37:35,10000.,525.,400.,                         19                            kt                   kt         kt
+fmt1[safeLog10[7.32358 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.27365896668675
+Fri 20 Mar 2026 17:38:11,10000.,530.,400.,                         19                            kt                   kt         kt
+fmt1[safeLog10[7.21356 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.26708515629149
+Fri 20 Mar 2026 17:38:47,10000.,535.,400.,                         19                            kt                   kt         kt
+fmt1[safeLog10[7.34798 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.27510339450556
+Fri 20 Mar 2026 17:39:24,10000.,540.,400.,                         19                            kt                   kt         kt
+fmt1[safeLog10[7.34627 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.27500221885929
+Fri 20 Mar 2026 17:40:00,10000.,545.,400.,                         19                            kt                   kt         kt
+fmt1[safeLog10[7.22923 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.26802756477672
+Fri 20 Mar 2026 17:40:37,10000.,550.,400.,                         19                            kt                   kt         kt
+fmt1[safeLog10[7.26365 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.27009052493184
+Fri 20 Mar 2026 17:41:13,10000.,555.,400.,                         19                            kt                   kt         kt
+fmt1[safeLog10[7.15696 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.26366413203132
+Fri 20 Mar 2026 17:41:49,10000.,560.,400.,                         19                            kt                   kt         kt
+fmt1[safeLog10[7.35441 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.27548296471506
+Fri 20 Mar 2026 17:42:25,10000.,565.,400.,                         19                            kt                   kt         kt
+fmt1[safeLog10[7.41772 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.27920602385363
+Fri 20 Mar 2026 17:43:02,10000.,570.,400.,                        19                            kt                   kt         kt
+fmt1[safeLog10[7.1976 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.26612285129467
+Fri 20 Mar 2026 17:43:40,10000.,575.,400.,                         19                            kt                   kt         kt
+fmt1[safeLog10[7.32871 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.27396291155762
+Fri 20 Mar 2026 17:44:19,10000.,580.,400.,                         19                            kt                   kt         kt
+fmt1[safeLog10[7.30602 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.27261605634849
+Fri 20 Mar 2026 17:44:56,10000.,585.,400.,                         19                            kt                   kt         kt
+fmt1[safeLog10[7.41337 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.27895101080193
+Fri 20 Mar 2026 17:45:33,10000.,590.,400.,                         19                            kt                   kt         kt
+fmt1[safeLog10[7.26198 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.26999035569628
+Fri 20 Mar 2026 17:46:09,10000.,595.,400.,                         19                            kt                   kt         kt
+fmt1[safeLog10[7.28522 10   Abs[NIntegrate[Abs[f4[s0 10  ]] WidthCross[s0 10  ] Lexp[10  ] Log[10], {kt, Log10[xmin xmin], 0}, Method -> AdaptiveMonteCarlo]]]],-11.27137800286822

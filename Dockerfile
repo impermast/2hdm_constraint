@@ -167,33 +167,16 @@ RUN mkdir -p \
       /opt/lhapdf \
       /usr/share/Mathematica/Licensing
 
-RUN curl -L --fail https://github.com/FeynCalc/feyncalc/archive/hotfix-stable.zip \
-      -o /opt/dist/FeynCalc-hotfix-stable.zip && \
-    curl -L --fail https://github.com/FeynCalc/feynarts-mirror/archive/master.zip \
-      -o /opt/dist/FeynArts-master.zip && \
-    curl -L --fail https://feynarts.de/looptools/LoopTools-2.16.tar.gz \
-      -o /opt/dist/LoopTools-2.16.tar.gz && \
-    curl -L --fail "https://lhapdf.hepforge.org/downloads/?f=LHAPDF-${LHAPDF_VERSION}.tar.gz" \
-      -o /opt/dist/LHAPDF-${LHAPDF_VERSION}.tar.gz
 
-RUN unzip -q /opt/dist/FeynCalc-hotfix-stable.zip -d /opt/src && \
-    FC_MARKER="$(find /opt/src -type f \( -name 'FeynCalc.m' -o -path '*/FeynCalc/Kernel/init.m' \) | head -n 1)" && \
-    test -n "${FC_MARKER}" && \
-    if [[ "${FC_MARKER}" == */Kernel/init.m ]]; then \
-      FC_SRC="$(dirname "$(dirname "${FC_MARKER}")")"; \
-    else \
-      FC_SRC="$(dirname "${FC_MARKER}")"; \
-    fi && \
-    rm -rf /home/${USERNAME}/.Mathematica/Applications/FeynCalc && \
-    mkdir -p /home/${USERNAME}/.Mathematica/Applications/FeynCalc && \
-    cp -a "${FC_SRC}/." /home/${USERNAME}/.Mathematica/Applications/FeynCalc/ && \
-    unzip -q /opt/dist/FeynArts-master.zip -d /opt/src && \
-    FA_SRC="$(find /opt/src -maxdepth 2 -type d -name 'feynarts-mirror-*' | head -n 1)" && \
-    test -n "${FA_SRC}" && \
-    mkdir -p /home/${USERNAME}/.Mathematica/Applications/FeynCalc/FeynArts && \
-    cp -a "${FA_SRC}/." /home/${USERNAME}/.Mathematica/Applications/FeynCalc/FeynArts/ && \
-    chown -R ${USERNAME}:${USERNAME} /home/${USERNAME}/.Mathematica && \
-    rm -rf /opt/src/feyncalc-* /opt/src/feynarts-mirror-*
+COPY requirements.txt /tmp/requirements.txt
+
+RUN python3 -m pip install --upgrade pip setuptools wheel && \
+    grep -viE '^\s*lhapdf([<>=!~].*)?$' /tmp/requirements.txt | sed '/^\s*#/d;/^\s*$/d' > /tmp/requirements.docker.txt && \
+    python3 -m pip install -r /tmp/requirements.docker.txt && \
+    python3 -m pip install numpy pandas matplotlib python-telegram-bot
+
+
+COPY setup/LHAPDF-${LHAPDF_VERSION}.tar.gz /opt/dist/LHAPDF-${LHAPDF_VERSION}.tar.gz
 
 RUN tar -xzf /opt/dist/LHAPDF-${LHAPDF_VERSION}.tar.gz -C /opt/src && \
     cd /opt/src/LHAPDF-${LHAPDF_VERSION} && \
@@ -205,28 +188,22 @@ RUN tar -xzf /opt/dist/LHAPDF-${LHAPDF_VERSION}.tar.gz -C /opt/src && \
     for pdfset in ${LHAPDF_SETS}; do /opt/lhapdf/bin/lhapdf install "${pdfset}"; done && \
     rm -rf /opt/src/LHAPDF-${LHAPDF_VERSION}
 
-RUN set -euo pipefail && \
-    PREFIX="/home/${USERNAME}/.Mathematica/Applications/LoopTools" && \
-    WSTP_DIR="$(find "${WOLFRAM_INSTALL_DIR}/SystemFiles/Links/WSTP/DeveloperKit" \
-      -type d -name CompilerAdditions 2>/dev/null | head -n 1)" && \
-    test -n "${WSTP_DIR}" && export PATH="${WSTP_DIR}:${PATH}" && \
-    BUILD_DIR="$(mktemp -d)" && \
-    tar -xzf /opt/dist/LoopTools-2.16.tar.gz -C "${BUILD_DIR}" && \
-    SRC_DIR="$(find "${BUILD_DIR}" -maxdepth 1 -type d -name 'LoopTools-*' | head -n 1)" && \
-    test -n "${SRC_DIR}" && mkdir -p "${PREFIX}" && cd "${SRC_DIR}" && \
-    ./configure --prefix="${PREFIX}" && make -j"$(nproc)" && make install && \
-    test -x "${PREFIX}/bin/LoopTools" && \
-    printf '%s\n' 'Install[FileNameJoin[{DirectoryName[$InputFileName], "bin", "LoopTools"}]]' > "${PREFIX}/LoopTools.m" && \
-    printf '%s\n' 'Get[FileNameJoin[{DirectoryName[$InputFileName], "LoopTools", "LoopTools.m"}]]' > /home/${USERNAME}/.Mathematica/Applications/LoopTools.m && \
-    chown -R ${USERNAME}:${USERNAME} "${PREFIX}" /home/${USERNAME}/.Mathematica/Applications/LoopTools.m && \
-    rm -rf "${BUILD_DIR}"
+# Download Mathematica package sources once via curl.
+# FeynCalc installer below uses these local archives instead of downloading them from inside Mathematica.
+RUN curl -L --fail https://github.com/FeynCalc/feyncalc/archive/hotfix-stable.zip \
+      -o /opt/dist/FeynCalc-hotfix-stable.zip && \
+    curl -L --fail https://github.com/FeynCalc/feynarts-mirror/archive/master.zip \
+      -o /opt/dist/FeynArts-master.zip && \
+    curl -L --fail https://feynarts.de/looptools/LoopTools-2.16.tar.gz \
+      -o /opt/dist/LoopTools-2.16.tar.gz && \
+	curl -L --fail https://raw.githubusercontent.com/FeynCalc/feyncalc/hotfix-stable/install.m \
+	  -o /opt/dist/feyncalc-install.m
 
-COPY requirements.txt /tmp/requirements.txt
+COPY setup/install-feyncalc-looptools.sh /opt/2hdm-build/install-feyncalc-looptools.sh
 
-RUN python3 -m pip install --upgrade pip setuptools wheel && \
-    grep -viE '^\s*lhapdf([<>=!~].*)?$' /tmp/requirements.txt | sed '/^\s*#/d;/^\s*$/d' > /tmp/requirements.docker.txt && \
-    python3 -m pip install -r /tmp/requirements.docker.txt && \
-    python3 -m pip install numpy pandas matplotlib python-telegram-bot
+RUN chmod +x /opt/2hdm-build/install-feyncalc-looptools.sh && \
+    /opt/2hdm-build/install-feyncalc-looptools.sh
+
 
 COPY docker/entrypoint.sh /usr/local/sbin/entrypoint.sh
 COPY docker/setup-bashrc.sh /usr/local/bin/setup-bashrc.sh

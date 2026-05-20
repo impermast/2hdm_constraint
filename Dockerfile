@@ -190,26 +190,22 @@ RUN tar -xzf /opt/dist/LHAPDF-${LHAPDF_VERSION}.tar.gz -C /opt/src && \
 
 # Download Mathematica package sources once via curl.
 # FeynCalc installer below uses these local archives instead of downloading them from inside Mathematica.
-RUN curl -L --fail https://github.com/FeynCalc/feyncalc/archive/hotfix-stable.zip \
-      -o /opt/dist/FeynCalc-hotfix-stable.zip && \
-    curl -L --fail https://github.com/FeynCalc/feynarts-mirror/archive/master.zip \
-      -o /opt/dist/FeynArts-master.zip && \
-    curl -L --fail https://feynarts.de/looptools/LoopTools-2.16.tar.gz \
-      -o /opt/dist/LoopTools-2.16.tar.gz && \
-	curl -L --fail https://raw.githubusercontent.com/FeynCalc/feyncalc/hotfix-stable/install.m \
-	  -o /opt/dist/feyncalc-install.m
+RUN curl -L --fail https://feynarts.de/looptools/LoopTools-2.16.tar.gz \
+      -o /opt/dist/LoopTools-2.16.tar.gz 
 
 COPY setup/activate-mathematica.py /opt/dist/activate-mathematica.py
-COPY setup/install-feyncalc-looptools.sh /opt/dist/install-feyncalc-looptools.sh
 
 COPY docker/entrypoint.sh /usr/local/sbin/entrypoint.sh
 COPY docker/setup-bashrc.sh /usr/local/bin/setup-bashrc.sh
 
 RUN chmod +x \
-      /opt/dist/activate-mathematica.py \
-      /opt/dist/install-feyncalc-looptools.sh && \
-    ln -sf /opt/dist/install-feyncalc-looptools.sh /opt/dist/install-feyncalc-looptools.sh
-    
+      /opt/dist/activate-mathematica.py && \
+     chown -R ${USERNAME}:${USERNAME} \
+      /opt/src \
+      /opt/dist \
+      /home/${USERNAME} \
+      /usr/share/Mathematica/Licensing
+         
 RUN chmod +x /usr/local/sbin/entrypoint.sh /usr/local/bin/setup-bashrc.sh && \
     /usr/local/bin/setup-bashrc.sh "${USERNAME}" && \
     ln -sfn /home/${USERNAME}/2hdm /2hdm && \

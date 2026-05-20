@@ -22,16 +22,59 @@ export DISPLAY="${DISPLAY:-:1}"
 export WOLFRAM_USERBASE="${WOLFRAM_USERBASE:-${WORKER_HOME}/.Mathematica}"
 export MATHEMATICA_USERBASE="${MATHEMATICA_USERBASE:-${WORKER_HOME}/.Mathematica}"
 
-USERNAME="${USERNAME:-worker}"
+activate_mathematica() {
+  local kernel="/usr/local/bin/WolframKernel"
+  local key="${WOLFRAM_ACTIVATION_KEY:-3893-9258-K6XJLE}"
+  local sys_mathpass="/usr/share/Mathematica/Licensing/mathpass"
+  local user_mathpass="${WORKER_HOME}/.Mathematica/Licensing/mathpass"
 
-if [[ "${1:-start}" == "start" && "${AUTO_INSTALL_MATH_STACK:-1}" == "1" ]]; then
-  if [[ ! -f "/home/${USERNAME}/.Mathematica/.feyncalc-looptools-installed" ]]; then
-    echo "=== Auto install Mathematica stack ==="
-    /usr/local/bin/install-feyncalc-looptools || {
-      echo "WARNING: Mathematica stack install failed. Container will continue."
-    }
+  mkdir -p /usr/share/Mathematica/Licensing "${WORKER_HOME}/.Mathematica/Licensing"
+
+  if "${kernel}" -noprompt -run 'If[1+1===2, Quit[0], Quit[1]]; Quit[]' >/dev/null 2>&1; then
+    log "Mathematica already activated"
+    return 0
   fi
-fi
+
+  log "activating Mathematica"
+
+  local out machine_name mathid pass
+  out="$(timeout 20s bash -lc 'printf "\n\n\n\n\n" | /usr/local/bin/WolframKernel' 2>&1 || true)"
+
+  machine_name="$(printf '%s\n' "$out" | sed -n 's/.*Machine name:[[:space:]]*//p' | tail -n 1 | xargs)"
+  mathid="$(printf '%s\n' "$out" | sed -n 's/.*MathID:[[:space:]]*//p' | tail -n 1 | xargs)"
+
+  if [[ -z "${machine_name}" || -z "${mathid}" ]]; then
+    log "cannot extract Wolfram MathID"
+    printf '%s\n' "$out"
+    return 1
+  fi
+
+  log "Machine name: ${machine_name}"
+  log "MathID: ${mathid}"
+
+  pass="$(python3 /opt/dist/activate-mathematica.py --mid "${mathid}" | tr -d '\r' | tail -n 1 | xargs)"
+
+  if [[ -z "${pass}" ]]; then
+    log "activation script returned empty password"
+    return 1
+  fi
+
+  printf '%s\t%s\t%s\t%s\t\t\t\n' \
+    "${machine_name}" \
+    "${mathid}" \
+    "${key}" \
+    "${pass}" \
+    > "${user_mathpass}"
+
+  cp -f "${user_mathpass}" "${sys_mathpass}" 2>/dev/null || true
+  chmod 0644 "${user_mathpass}" "${sys_mathpass}" 2>/dev/null || true
+
+  if [[ "${EUID}" -eq 0 ]]; then
+    chown -R "${WORKER_USER}:${WORKER_USER}" "${WORKER_HOME}/.Mathematica"
+  fi
+
+  "${kernel}" -noprompt -run 'If[1+1===2, Print["Mathematica OK"], Quit[1]]; Quit[]'
+}
 
 ensure_layout() {
   mkdir -p \
@@ -43,7 +86,102 @@ ensure_layout() {
     "${WORKER_HOME}/.local/share/applications" \
     "${WORKER_HOME}/.config/xfce4/xfconf/xfce-perchannel-xml" \
     "${WORKER_HOME}/.Mathematica/Applications" \
-    "${WORKER_HOME}/.WolframEngine/Applications"
+    "${WORKER_HOME}/.Mathematica/Licensing" \
+    "${WORKER_HOME}/.WolframEngine/Applications" \
+    /opt/src
+}
+
+run_mma() {
+  /usr/local/bin/WolframKernel -noprompt -run "$1"
+}
+
+install_looptools() {
+  local ver="${LOOPTOOLS_VERSION:-2.16}"
+  local apps="${WORKER_HOME}/.Mathematica/Applications"
+  local lt="${apps}/LoopTools"
+  local src="/opt/src"
+  local archive="/opt/dist/LoopTools-${ver}.tar.gz"
+  local marker="${WORKER_HOME}/.Mathematica/.looptools-installed"
+
+  [[ -f "${marker}" && "${FORCE_LOOPTOOLS_INSTALL:-0}" != "1" ]] && {
+    log "LoopTools already installed; skip"
+    return 0
+  }
+
+  log "installing LoopTools ${ver}"
+
+  command -v tar >/dev/null
+  command -v make >/dev/null
+  command -v gcc >/dev/null
+  command -v gfortran >/dev/null
+  [[ -f "${archive}" ]] || { log "ERROR: missing ${archive}"; return 1; }
+
+  run_mma 'If[1+1===2, Print["Mathematica OK"], Quit[1]]; Quit[]'
+
+  rm -rf "${src}/LoopTools-${ver}" "${lt}"
+  mkdir -p "${src}" "${apps}"
+
+  tar -xzf "${archive}" -C "${src}"
+  cd "${src}/LoopTools-${ver}"
+
+  local cadds
+  cadds="$(run_mma 'Print[FileNameJoin[{$InstallationDirectory,"SystemFiles","Links","WSTP","DeveloperKit",$SystemID,"CompilerAdditions"}]]; Quit[]' \
+    2>/dev/null | tr -d '\r' | tail -n 1 | xargs)"
+
+  [[ -d "${cadds}" ]] || { log "ERROR: WSTP CompilerAdditions not found: ${cadds}"; return 1; }
+  log "WSTP CompilerAdditions: ${cadds}"
+
+  export PATH="${cadds}:${PATH}"
+  export FFLAGS="-O2 -fallow-argument-mismatch -std=legacy"
+  export FCFLAGS="${FFLAGS}"
+
+  ./configure --prefix="${lt}"
+  make -j1
+  make install
+
+  [[ -x "${lt}/bin/LoopTools" ]] || { log "ERROR: LoopTools binary not found"; return 1; }
+
+  cat > "${lt}/LoopTools.m" <<EOF
+BeginPackage["LoopTools\`"];
+LoopToolsInstall::usage="LoopToolsInstall[] installs the LoopTools WSTP executable.";
+Begin["\`Private\`"];
+LoopToolsInstall[] := Install["${lt}/bin/LoopTools"];
+End[];
+EndPackage[];
+EOF
+
+  cat > "${apps}/LoopTools.m" <<EOF
+Get[FileNameJoin[{"${apps}", "LoopTools", "LoopTools.m"}]]
+EOF
+
+  cat > /tmp/test-looptools.m <<EOF
+Get["${apps}/LoopTools.m"];
+
+link = LoopTools\`LoopToolsInstall[];
+
+b0ref = N[B0[0, 1, 1]];
+b0demo = N[B0[1000, 50, 80]];
+
+Print["LoopTools test:"];
+Print["  expected: B0(0,1,1) ~= 0"];
+Print["  obtained: B0(0,1,1) = ", b0ref];
+Print["  abs diff = ", Abs[b0ref]];
+Print["  diagnostic: B0(1000,50,80) = ", b0demo];
+
+ok = NumericQ[b0ref] && Abs[b0ref] < 10^-8 && NumericQ[b0demo];
+
+Uninstall[link];
+
+If[ok, Print["LoopTools OK"], Print["LoopTools FAILED"]; Quit[1]];
+Quit[]
+EOF
+
+  run_mma 'Get["/tmp/test-looptools.m"]'
+
+  touch "${marker}"
+  chown -R "${WORKER_USER}:${WORKER_USER}" "${WORKER_HOME}/.Mathematica" || true
+
+  log "LoopTools installed successfully"
 }
 
 write_xfce_defaults() {
@@ -165,6 +303,17 @@ main() {
   fi
 
   ensure_layout
+
+  activate_mathematica || {
+    log "WARNING: Mathematica activation failed; container will continue"
+  }
+
+  if [[ "${AUTO_INSTALL_LOOPTOOLS:-1}" == "1" ]]; then
+    install_looptools || {
+      log "WARNING: LoopTools install failed; container will continue"
+    }
+  fi
+
   write_xfce_defaults
   write_desktop_launchers
   write_vnc_config

@@ -153,7 +153,7 @@ RUN if ! id -u "${USERNAME}" >/dev/null 2>&1; then \
 
 RUN mkdir -p \
       /home/${USERNAME}/2hdm \
-      /opt/dist /opt/src /opt/bootstrap \
+      /opt/dist /opt/src \
       /opt/lhapdf/share/LHAPDF \
       /usr/share/Mathematica/Licensing \
       /home/${USERNAME}/Desktop \
@@ -199,15 +199,17 @@ RUN curl -L --fail https://github.com/FeynCalc/feyncalc/archive/hotfix-stable.zi
 	curl -L --fail https://raw.githubusercontent.com/FeynCalc/feyncalc/hotfix-stable/install.m \
 	  -o /opt/dist/feyncalc-install.m
 
-COPY setup/install-feyncalc-looptools.sh /opt/2hdm-build/install-feyncalc-looptools.sh
-
-RUN chmod +x /opt/2hdm-build/install-feyncalc-looptools.sh && \
-    /opt/2hdm-build/install-feyncalc-looptools.sh
-
+COPY setup/activate-mathematica.py /opt/dist/activate-mathematica.py
+COPY setup/install-feyncalc-looptools.sh /opt/dist/install-feyncalc-looptools.sh
 
 COPY docker/entrypoint.sh /usr/local/sbin/entrypoint.sh
 COPY docker/setup-bashrc.sh /usr/local/bin/setup-bashrc.sh
 
+RUN chmod +x \
+      /opt/dist/activate-mathematica.py \
+      /opt/dist/install-feyncalc-looptools.sh && \
+    ln -sf /opt/dist/install-feyncalc-looptools.sh /opt/dist/install-feyncalc-looptools.sh
+    
 RUN chmod +x /usr/local/sbin/entrypoint.sh /usr/local/bin/setup-bashrc.sh && \
     /usr/local/bin/setup-bashrc.sh "${USERNAME}" && \
     ln -sfn /home/${USERNAME}/2hdm /2hdm && \

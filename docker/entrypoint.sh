@@ -22,6 +22,17 @@ export DISPLAY="${DISPLAY:-:1}"
 export WOLFRAM_USERBASE="${WOLFRAM_USERBASE:-${WORKER_HOME}/.Mathematica}"
 export MATHEMATICA_USERBASE="${MATHEMATICA_USERBASE:-${WORKER_HOME}/.Mathematica}"
 
+USERNAME="${USERNAME:-worker}"
+
+if [[ "${1:-start}" == "start" && "${AUTO_INSTALL_MATH_STACK:-1}" == "1" ]]; then
+  if [[ ! -f "/home/${USERNAME}/.Mathematica/.feyncalc-looptools-installed" ]]; then
+    echo "=== Auto install Mathematica stack ==="
+    /usr/local/bin/install-feyncalc-looptools || {
+      echo "WARNING: Mathematica stack install failed. Container will continue."
+    }
+  fi
+fi
+
 ensure_layout() {
   mkdir -p \
     "${TWOHDM_ROOT}" \

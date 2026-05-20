@@ -11,8 +11,8 @@ __pycache__
 2hdm/.venv/
 
 # Do not send local license/state to Docker build context.
-setup/licensing/
-setup/wolfram-userbase/
+#setup/licensing/
+#setup/wolfram-userbase/
 .state/
 
 # Common runtime artifacts.

@@ -3,6 +3,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+      network: host
       args:
         USERNAME: ${WORKER_USER:-worker}
         USER_UID: ${WORKER_UID:-1000}

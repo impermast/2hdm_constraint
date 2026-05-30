@@ -103,6 +103,9 @@ xPDF[x_, Q_, id_] := Module[{result, output, wslScript},
 (* --------------------------------------------------------------------------- *)
 (* 4. Load FeynCalc                                                            *)
 (* --------------------------------------------------------------------------- *)
+Global`ApplicationsDir = FileNameJoin[{$UserBaseDirectory, "Applications"}];
+If[!MemberQ[$Path, Global`ApplicationsDir], PrependTo[$Path, Global`ApplicationsDir]];
+$LoadFeynArts = True;
 Check[
     <<"FeynCalc`",
     Print["FeynCalc not found. Attempting installation..."];
@@ -113,8 +116,8 @@ Check[
 (* --------------------------------------------------------------------------- *)
 (* 5. Load THDM model                                                          *)
 (* --------------------------------------------------------------------------- *)
-If[!MemberQ[$ModelPath, FeynartsModelsPath],
-   AppendTo[$ModelPath, FeynartsModelsPath]
+If[!MemberQ[$ModelPath, Global`FeynArtsModelsPath],
+   AppendTo[$ModelPath, Global`FeynArtsModelsPath]
 ];
 Check[LoadModel["THDMCPV"], Print["Warning: No 2HDM model found"]];
 $FAVerbose = 0;
@@ -123,10 +126,10 @@ $FAVerbose = 0;
 (* 6. Install LoopTools                                                        *)
 (* --------------------------------------------------------------------------- *)
 
-If[FileExistsQ[LoopToolsPath],
-    Install[LoopToolsPath];
-    Print["LoopTools installed from: ", LoopToolsPath],
-    Print["Warning: LoopTools not found at: ", LoopToolsPath]
+If[FileExistsQ[Global`LoopToolsPath],
+    Install[Global`LoopToolsPath];
+    Print["LoopTools installed from: ", Global`LoopToolsPath],
+    Print["Warning: LoopTools not found at: ", Global`LoopToolsPath]
 ];
 
 

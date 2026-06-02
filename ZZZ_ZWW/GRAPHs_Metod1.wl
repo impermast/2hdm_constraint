@@ -17,6 +17,7 @@ Print[Directory[]]
 
 
 SavePath="subgraphs/";
+
 str=Import["buffer/F4ZZZ.txt"];
 strZWW=Import["buffer/F4ZWW.txt"];
 
@@ -90,11 +91,12 @@ SavePDF=1;
 ReCalculateTable=0;
 
 
-Clear[base1DOpts, base2DcontOpts, shadowbox, legendLumi, base2DdensOpts];
+Clear[base1DOpts, base2DcontOpts, shadowbox, legendLumi, base2DdensOpts, legendMass];
 
 
 
 textscale = 20;
+labscale = textscale+2;
 imgSize = 600;
 fontFam = "Helvetica";
 fontWeight = "Plain";
@@ -110,22 +112,22 @@ FplotZZZ[s_,mh2_,mhc_]:=Abs[10^stepen*FZZZ[s,mh1,mh2,Sqrt[mh2^2+v^2],\[Alpha]1,\
 FplotZWW[s_,mh2_,mhc_]:=Abs[10^stepen*FZWW[s,mh1,mh2,Sqrt[mh2^2+v^2],mhc,\[Alpha]1,\[Alpha]2max,\[Alpha]3max]]//. SmpChanger//. Params;
 
 
-shadowbox[legend_] := Framed[legend, Background -> White, FrameStyle -> None, FrameMargins -> 0];
+shadowbox[legend_] := Framed[legend, Background -> None, FrameStyle -> None, FrameMargins -> 0];
 
 yLab = Style[
   TraditionalForm @ Row[{
     HoldForm @ Abs[Subsuperscript[Style["f", Italic], 4, Style["Z", Italic]]],
     "\[Times]",
-    Superscript[10, -stepen]
-  }], textscale
+    Superscript[10, stepen]
+  }], labscale
 ];
 
 zLab2D = Style[
   TraditionalForm @ Row[{
     HoldForm @ Abs[Subsuperscript[Style["f", Italic], 4, Style["Z", Italic]]],
     "\[Times]",
-    Superscript[10, -stepen]
-  }], textscale
+    Superscript[10, stepen]
+  }], labscale
 ];
 
 SciLbl[v_, nd_: 1] := Style[
@@ -134,23 +136,27 @@ SciLbl[v_, nd_: 1] := Style[
     {Infinity, nd},
     ExponentFunction -> (Null &)
   ],
-  textscale - 2, FontFamily -> fontFam, FontWeight -> fontWeight, Black
+  textscale+2, FontFamily -> fontFam, FontWeight -> fontWeight, Black
 ];
 
-plotH = 500;    
+plotH = 445;    
 legW  = 30;     
-legH  = plotH+50;  
-  base2DLegend := BarLegend[Automatic,
-	  LabelingFunction -> (SciLbl[#1, 1] &),
-	  LegendLabel -> Placed[Rotate[zLab2D, -Pi/2], Right],
-	  LegendMarkerSize -> {legW, legH},
-	  LabelStyle -> Directive[textscale - 2, FontFamily -> fontFam, FontWeight -> fontWeight, Black],
-	  Method -> {
-	    TicksStyle -> Directive[Black, AbsoluteThickness[frameThick-0.3], FontFamily -> fontFam, FontSize -> textscale - 2, FontWeight -> fontWeight],
-	    FrameStyle -> Directive[Black, AbsoluteThickness[frameThick-0.3]]
-	  },
-	  LegendFunction -> shadowbox
-	];
+legH  = plotH;  
+
+
+base2DLegend := BarLegend[Automatic,
+  LabelingFunction -> (SciLbl[#1, 1] &),
+  LegendLabel -> Placed[Rotate[zLab2D, Pi/2], Right],
+  LegendMarkerSize->{legW,legH},
+  LegendMargins->0,
+  LabelStyle -> Directive[labscale, FontFamily -> fontFam, FontWeight -> fontWeight, Black],
+  Method -> {
+    TicksStyle -> Directive[Black, AbsoluteThickness[frameThick-0.3], FontFamily -> fontFam, FontSize -> textscale+2, FontWeight -> fontWeight],
+    FrameStyle -> Directive[Black, AbsoluteThickness[frameThick-0.3]]
+  },
+  LegendFunction -> shadowbox
+];
+	
 	
 m2LegendLabel = Style[
   Row[{TraditionalForm @ HoldForm[Subscript[Style["m", Italic], 2]], " [GeV]"}],
@@ -158,26 +164,37 @@ m2LegendLabel = Style[
 ];
 
 legendLumi = SwatchLegend[
-  {Directive[Red], Directive[Blue]},
+  {
+    Directive[Red, Opacity[0.85], HatchFilling[Pi/4, 4]],
+    Directive[Blue, Opacity[0.85], HatchFilling[-Pi/4, 4]]
+  },
   {"300", "4000"},
   LegendLayout -> "Column",
   LegendFunction -> shadowbox,
   LabelStyle -> Directive[textscale, FontFamily -> fontFam, FontWeight -> fontWeight],
   LegendLabel -> Style[
-    Row[{"\[Integral] ", Style["L", Italic], Style["d", Italic], Style["t", Italic], ", ", Superscript["fb", -1]}],
+    Row[{"\[Integral] ", Style["L", Italic], Style["d", Italic], Style["t", Italic], " [", Superscript["fb", -1],"]"}],
     textscale
   ]
 ];
 
+legendMass[cs_,ms_] := LineLegend[
+  cs, ms,
+  LegendLayout -> "Row",
+  LabelStyle -> Directive[FontSize -> textscale, FontFamily -> "Helvetica"],
+  LegendLabel -> Style["\!\(\*SubscriptBox[StyleBox[\"m\",\"TI\"],\"2\"]\) [GeV]",textscale],
+  LegendFunction->shadowbox
+  ];
+
 
 base2DcontOpts := Sequence[
   Frame -> True,
-  LabelStyle -> Directive[textscale, FontFamily -> fontFam, FontWeight -> fontWeight],
-  BaseStyle -> Directive[textscale, FontFamily -> fontFam, FontWeight -> fontWeight],
+  LabelStyle -> Directive[textscale+2, FontFamily -> fontFam, FontWeight -> fontWeight],
+  BaseStyle -> Directive[textscale+2, FontFamily -> fontFam, FontWeight -> fontWeight],
   PlotRangePadding -> None,
   FrameLabel -> {xLab2D, yLab2D},
-  FrameStyle -> Directive[Black, AbsoluteThickness[frameThick-0.3]],
-  FrameTicksStyle -> Directive[Black, AbsoluteThickness[frameThick-0.3], FontFamily -> fontFam, FontSize -> textscale +2, FontWeight -> fontWeight],
+  FrameStyle -> Directive[Black, AbsoluteThickness[frameThick]],
+  FrameTicksStyle -> Directive[Black, AbsoluteThickness[frameThick], FontFamily -> fontFam, FontSize -> textscale +2, FontWeight -> fontWeight],
   Contours -> ContoursNumber,
   ColorFunction -> GraphTheme,
   PlotPoints -> PointNumber,
@@ -192,18 +209,18 @@ base2DdensOpts:= Sequence[
 	  BaseStyle -> Directive[textscale, FontFamily -> fontFam, FontWeight -> fontWeight],
 	  PlotRangePadding -> None,
 	  FrameLabel -> {xLab2D, yLab2D},
-	  FrameStyle -> Directive[Black, AbsoluteThickness[frameThick-0.3]],
-	  FrameTicksStyle -> Directive[Black, AbsoluteThickness[frameThick-0.3], FontFamily -> fontFam, FontSize -> textscale +2, FontWeight -> fontWeight],
+	  FrameStyle -> Directive[Black, AbsoluteThickness[frameThick]],
+	  FrameTicksStyle -> Directive[Black, AbsoluteThickness[frameThick], FontFamily -> fontFam, FontSize -> textscale+2, FontWeight -> fontWeight],
 	  PlotRange->All
 ];
 
 base1DOpts := Sequence[
   Frame -> True, Axes -> False, PlotMarkers -> None, Joined -> True,
   FrameStyle -> Directive[Black, AbsoluteThickness[frameThick]],
-  FrameTicksStyle -> Directive[textscale - 2, FontFamily -> fontFam, FontWeight -> fontWeight],
+  FrameTicksStyle -> Directive[textscale + 2, FontFamily -> fontFam, FontWeight -> fontWeight],
   FrameLabel -> {xLab, yLab},
-  LabelStyle -> Directive[textscale, FontFamily -> fontFam, FontWeight -> fontWeight],
-  BaseStyle -> Directive[textscale, FontFamily -> fontFam, FontWeight -> fontWeight],
+  LabelStyle -> Directive[textscale+2, FontFamily -> fontFam, FontWeight -> fontWeight],
+  BaseStyle -> Directive[textscale+2, FontFamily -> fontFam, FontWeight -> fontWeight],
   PlotRange -> {{xmin, xmax}, {ymin, ymax}},
   GridLines -> None,
   PlotRangePadding -> None
@@ -218,8 +235,8 @@ base1DOpts := Sequence[
 (*roots*)
 
 
-qList={200,225,250,275,300,325,350};
-mhcI=600;
+qList={200,250,300,500, 1000, 10000, 13000};
+mhcI=400;
 func[x_,y_,z_] := FplotZZZ[x^2,y,z];
 
 
@@ -227,7 +244,7 @@ Clear[FindAllRoots]
 FindAllRoots[q_?NumericQ,limit_?NumericQ]:=Quiet[
 		Check[Module[{f,ms,vals,segs,sol,roots},
 			f[m_?NumericQ]:=N[Abs[func[q,m,mhcI]]-limit];
-			ms=Range[187.,1500.,5.];
+			ms=Range[187.,1000.,10.];
 			vals=f/@ms;
 			segs=Select[Partition[Transpose[{ms,vals}],2,1],
 				Times@@Last/@#1<=0&];
@@ -246,10 +263,7 @@ formattedData=Map[Function[item,If[ListQ[item],Round[item,0.1],item]],data,{2}];
 OutputForm[TableForm[formattedData,TableHeadings->{None,header}]]
 
 
-dataPlots=Table[Module[{f},f[m_?NumericQ]:=N[Abs[func[q,m,mhcI]]];Table[{m,f[m]},{m,LogRange1[187.,700.,PointNumber]}]],{q,qList}];
-
-
-Show[ListLogPlot[dataPlots,PlotStyle->Table[{GraphTheme[i/Length[qList]],Thickness[0.005]},{i,Length[qList]}],PlotMarkers->None,Joined->True,PlotLegends->(StringForm["q = `1` GeV", #]&)/@qList,AxesLabel->{"m_{h2} [GeV]","|f_4^Z|"},PlotRange->{{Min[qList],Max[qList]},{1/10^6,3/10^4}},GridLines->{None,{{constraitF4Z300,Directive[Red,AbsoluteThickness[1.5],Dashed]},{constraitF4Z3000,Directive[Blue,AbsoluteThickness[1.5],Dashed]}}}]]
+SavePath
 
 
 (* ::Title:: *)
@@ -296,8 +310,8 @@ FplotZZZ[p^2,408.82,1]
 (*Start graph F4Z m2 for different q with cuts*)
 
 
-xmin = 190; xmax = 620; 
-ymin = 10^stepen/10^7; ymax = 0.7*10^stepen/10^3; 
+xmin = 192; xmax = 620; 
+ymin = 10^stepen/10^7; ymax = 0.2*10^stepen/10^3; 
 m2list = {200, 225, 250, 300, 500}; 
 plots = {}; 
 extr = {}; 
@@ -348,29 +362,31 @@ AppendTo[plots, LogLogPlot[{constraitF4Z300, constraitF4Z3000}, {x, xmin, xmax},
 
 m2Legend = LineLegend[
   colors, m2list,
-  LegendLayout -> "Column",
+  LegendLayout -> "Row",
   LegendLabel -> m2LegendLabel,
   LabelStyle -> Directive[textscale - 2, FontFamily -> fontFam, FontWeight -> fontWeight, Black],
-  LegendMarkerSize -> {20, 10},          (* \:043a\:043b\:044e\:0447\:0435\:0432\:043e\:0435: \:0443\:043c\:0435\:043d\:044c\:0448\:0430\:0435\:0442 "\:0438\:043a\:043e\:043d\:043a\:0438" \:043b\:0438\:043d\:0438\:0439 *)
+  LegendMarkerSize -> {20, 10},        
   LegendFunction -> shadowbox
 ];
-legAll = shadowbox @ Column[
-  {m2Legend, Spacer[6], legendLumi},
-  Spacings -> 0.15, Alignment -> Left
-];
-
-
-Sh = Legended[
-  Show[
-    plots,
-    ImageSize -> imgSize,
-    ImagePadding -> {{Automatic, 20}, {Automatic, Automatic}} 
-  ],
-  Placed[legAll, Right]
+legendLumiBox = shadowbox[legendLumi];
+legendMassBox = shadowbox[m2Legend];
+Sh = Show[
+  plots,
+  ImageSize -> imgSize,
+  Epilog -> {
+    Inset[
+      legendLumiBox,
+      Scaled[{0.12, 0.15}]
+    ],
+    Inset[
+      legendMassBox,
+      Scaled[{0.57, 0.12}]
+    ]
+  }
 ]
 
 
-If[SavePDF==1,Export[SavePath<>"ZZZ_f4_s.pdf",Sh]]
+If[SavePDF==1,Export[SavePath<>"ZZZ_f4_s_withcuts.pdf",Sh]]
 
 
 (* ::Subsection:: *)
@@ -379,8 +395,8 @@ If[SavePDF==1,Export[SavePath<>"ZZZ_f4_s.pdf",Sh]]
 
 PrintTG["Starting 2d plot for zzz"];
 Func[x_,y_]:=FplotZZZ[x^2,y,100];
-xmin=190;xmax=400;
-ymin=190;ymax=400;
+xmin=188;xmax=400;
+ymin=188;ymax=400;
 
 xLab2D=Style[Row[{Style["q",Italic]," [GeV]"}],1.2 textscale];
 yLab2D=Style[Row[{Subscript[m, 2]," [GeV]"}],1.2 textscale];
@@ -392,10 +408,13 @@ plot5 = DensityPlot[
   {x, xmin, xmax}, {y, ymin, ymax},
   ScalingFunctions -> "Log",
   Evaluate @ base2DdensOpts,
-  PlotLegends->Placed[base2DLegend,Right]
+  PlotLegends -> Placed[
+  base2DLegend,
+  {{1.0, 1.0}, {0.22, 1.022}}
+  ]
 ];
 conplot = ContourPlot[{Func[x, y] == constraitF4Z300, Func[x, y] == constraitF4Z3000}, {x, xmin, xmax}, 
-    {y, ymin, ymax}, ContourStyle -> {Directive[Red, Thickness[0.007]], Directive[Black, Dashed, Thickness[0.007]]}, 
+    {y, ymin, ymax}, ContourStyle -> {Directive[Black, Thickness[0.007]], Directive[Black, Dashed, Thickness[0.007]]}, 
     PlotLegends -> None]; 
 ShZZZ=Show[plot5,conplot,ImageSize -> imgSize]
 
@@ -410,8 +429,8 @@ If[SavePDF==1,Export[SavePath<>"ZZZ_f4_2d_qm2.pdf",ShZZZ]]
 PrintTG["Starting 2d plot for zzz mh2 mh3"];
 s = 320^2;
 Func[x_,y_]:=Abs[10^stepen*FZZZ[s,mh1,x,y,\[Alpha]1,\[Alpha]2max,\[Alpha]3max]]//. SmpChanger//. Params;
-xmin=190;xmax=800;
-ymin=190;ymax=800;
+xmin=195;xmax=800;
+ymin=195;ymax=800;
 
 xLab2D=Style[Row[{Subscript[m, 2]," [GeV]"}],1.2 textscale];
 yLab2D=Style[Row[{Subscript[m, 3]," [GeV]"}],1.2 textscale];
@@ -421,10 +440,13 @@ plot5 = DensityPlot[
   {x, xmin, xmax}, {y, ymin, ymax},
   ScalingFunctions -> "Linear",
   Evaluate @ base2DdensOpts,
-  PlotLegends->Placed[base2DLegend,Right]
+  PlotLegends -> Placed[
+  base2DLegend,
+  {{1.0, 1.0}, {0.22, 1.022}}
+  ]
 ];
 conplot = ContourPlot[{Func[x, y] == constraitF4Z300, Func[x, y] == constraitF4Z3000}, {x, xmin, xmax}, 
-    {y, ymin, ymax}, ContourStyle -> {Directive[Red, Thickness[0.007]], Directive[Black, Dashed, Thickness[0.007]]}, 
+    {y, ymin, ymax}, ContourStyle -> {Directive[Black, Thickness[0.007]], Directive[Black, Dashed, Thickness[0.007]]}, 
     PlotLegends -> None]; 
 ShZZZ=Show[plot5,conplot,ImageSize -> imgSize]
 
@@ -438,7 +460,7 @@ If[SavePDF==1,Export[SavePath<>"ZZZ_f4_2d_m2m3.pdf",ShZZZ]]
 
 mlist={160,200,230,300,500};
 plots={};
-xmin=200;xmax=800;
+xmin=195;xmax=650;
 ymin=10^stepen/10^7;ymax=6*10^stepen/10^4;
 colors=GraphTheme/@Rescale[Range[Length[mlist]],{1,Length[mlist]}];
 xLab=Style["q [GeV]",textscale];
@@ -456,33 +478,40 @@ limplot = LogLogPlot[{constraitF4Z300, constraitF4Z3000}, {x, xmin, xmax}, Filli
     PlotRange -> {{xmin, xmax}, {ymin, ymax}}]; 
 
 
-m2Legend = LineLegend[
-  colors, m2list,
-  LegendLayout -> "Column",
-  LegendLabel -> m2LegendLabel,
-  LabelStyle -> Directive[textscale - 2, FontFamily -> fontFam, FontWeight -> fontWeight, Black],
-  LegendMarkerSize -> {20, 10},          (* \:043a\:043b\:044e\:0447\:0435\:0432\:043e\:0435: \:0443\:043c\:0435\:043d\:044c\:0448\:0430\:0435\:0442 "\:0438\:043a\:043e\:043d\:043a\:0438" \:043b\:0438\:043d\:0438\:0439 *)
-  LegendFunction -> shadowbox
-];
-legAll = shadowbox @ Column[
-  {m2Legend, Spacer[6], legendLumi},
-  Spacings -> 0.15, Alignment -> Left
-];
+
+legendLumiBox = shadowbox[legendLumi];
+legendMassBox = shadowbox[legendMass[colors,mlist]];
 
 
-Sh=Legended[Show[Append[plots,limplot],ImageSize -> imgSize],legAll ]
+Sh2 = Show[
+  Append[plots, limplot],
+  ImageSize -> imgSize,
+  Epilog -> {
+    Inset[
+      legendLumiBox,
+      Scaled[{0.12, 0.15}]
+    ],
+    Inset[
+      legendMassBox,
+      Scaled[{0.57, 0.12}]
+    ]
+  }
+]
 
 
-If[SavePDF==1,Export[SavePath<>"ZZZ_f4_s.pdf",Sh]]
+If[SavePDF==1,Export[SavePath<>"ZZZ_f4_s.pdf",Sh2]]
 
 
 (* ::Subsection:: *)
 (*d graph ZZZ show scaling with alpha*)
 
 
+Abs[10^stepen*FZZZ[400^2,mh1,300,Sqrt[300^2+v^2],\[Alpha]1,\[Alpha]2max,\[Alpha]3max]//. SmpChanger//. Params]
+
+
 mlist={200,300,400};
-xmin=200;xmax=800;
-ymin=10^stepen/10^7;ymax=10^stepen/10^4;
+xmin=195;xmax=600;
+ymin=10^stepen/10^6.5; ymax=10^stepen/10^4;
 a2=0.5;
 colors=ColorData["Rainbow"]/@Rescale[Range[Length[mlist]]];
 xLab=Style["q [GeV]",textscale];
@@ -494,7 +523,7 @@ plotForMass[m_,color_]:=Module[
 	{x,Abs[10^stepen *FZZZ[x^2,mh1,m,Sqrt[m^2+v^2],\[Alpha]1,\[Alpha]2max,\[Alpha]3max]]//. SmpChanger//. Params},
 	{x,LogRange1[xmin,xmax,PointNumber]}];
 	dataA2 =Table[
-	{x,Abs[FZZZ[x^2,mh1,m,Sqrt[m^2+v^2],\[Alpha]1,a2,\[Alpha]3max]]//. SmpChanger//. Params},
+	{x,Abs[10^stepen *FZZZ[x^2,mh1,m,Sqrt[m^2+v^2],\[Alpha]1,a2,\[Alpha]3max]]//. SmpChanger//. Params},
 	{x,LogRange1[xmin,xmax,PointNumber]}];
 	
 	ListLogLogPlot[{dataMax,dataA2},
@@ -505,16 +534,14 @@ plotForMass[m_,color_]:=Module[
 plotsCurves=MapThread[plotForMass,{mlist,colors}];
 
 
-legendMass=SwatchLegend[colors,mlist,
-	LegendLayout->"Column",
-	LegendFunction->shadowbox,
-	LabelStyle->Directive[FontSize->textscale,FontFamily->"Helvetica"],
-	LegendLabel->Style["\!\(\*SubscriptBox[StyleBox[\"m\",\"TI\"],\"2\"]\), GeV",textscale]];
-legendStyle=LineLegend[{Directive[Black,Thick],Directive[Black,Dashed,Thick]},{Style["\!\(\*SubscriptBox[\(\[Alpha]\), \(2\)]\) = \!\(\*SubscriptBox[\(\[Alpha]\), \(2\)]\)\!\(\*StyleBox[\"max\", Plain]\)",textscale],Style["\!\(\*SubscriptBox[\(\[Alpha]\), \(2\)]\) = 0.5",textscale]},LabelStyle->Directive[FontSize->textscale,FontFamily->"Helvetica"],LegendFunction->shadowbox];
-fullLegend1=Placed[Column[{legendStyle,legendMass}, Right,Spacings->0.05],{Right,Top}];
+legendAlpha=LineLegend[{Directive[Black,Thick],Directive[Black,Dashed,Thick]},{Style[Subscript[\[Alpha], Row[{2, Style["max", Plain]}]],textscale],Style["\!\(\*SubscriptBox[\(\[Alpha]\), \(2\)]\) = 0.5",textscale]},LabelStyle->Directive[FontSize->textscale,FontFamily->"Helvetica"],LegendFunction->shadowbox,LegendMarkerSize -> {20, 10}];
 
 
-Sh2=Legended[Show[plotsCurves,ImageSize -> imgSize],fullLegend1]
+
+Sh2=Legended[
+	Show[plotsCurves,ImageSize -> imgSize, 
+	Epilog->Inset[legendMass[colors,mlist], Scaled[{0.5, 0.15}]]],
+	Legend1]
 
 
 (* ::InheritFromParent:: *)
@@ -646,7 +673,10 @@ yLab2D=Style[Row[{Subscript[m, 2]," [GeV]"}],1.2 textscale];
 plot5 = DensityPlot[Func[x, y], {x, xmin, xmax}, {y, ymin, ymax}, 
   ScalingFunctions -> "Log",
   Evaluate @ base2DdensOpts,
-  PlotLegends -> base2DLegend
+  PlotLegends -> Placed[
+  base2DLegend,
+  {{1.0, 1.0}, {0.22, 1.022}}
+  ]
 ];
        
 conplot = ContourPlot[{Func[x, y] == constraitF4Z300, Func[x, y] == constraitF4Z3000}, {x, xmin, xmax}, 
@@ -678,8 +708,11 @@ yLab2D=Style[Row[{Subscript[m, 2]," [GeV]"}],1.2 textscale];
 densplot = DensityPlot[Func[x, y], {x, xmin, xmax}, {y, ymin, ymax}, 
     ScalingFunctions -> "Log",  
     Evaluate[base2DdensOpts],
-    PlotLegends->base2DLegend
-]; 
+  PlotLegends -> Placed[
+  base2DLegend,
+  {{1.0, 1.0}, {0.22, 1.022}}
+  ]
+];
 
 line3000 = ContourPlot[Func[x, y] == constraitF4Z3000, {x, xmin, xmax}, {y, ymin, ymax}, 
     ContourStyle -> Directive[Black, Thickness[0.009]],
@@ -696,7 +729,3 @@ PrintTG["Finishing 2d plot for zww"];
 
 
 PrintTG["All plots are finished"];
-
-
-
-

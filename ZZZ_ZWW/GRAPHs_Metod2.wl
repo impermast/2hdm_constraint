@@ -10,7 +10,7 @@ SetDirectory[NotebookDirectory[]];
 Print[Directory[]]
 
 SavePath = "subgraphs/";
-SavePDF  = 0;
+SavePDF  = 1;
 
 dir     = "buffer";
 fileUU = "buffer/f4mean_uuZZZ.csv";
@@ -19,7 +19,7 @@ fileDD = "buffer/f4mean_ddZZZ.csv";
 yColumn = "log10_norma_pb";
 
 (* fixed benchmark selection *)
-sSel   = 1000;   (* sqrt(s0) in GeV *)
+sSel   = 500;   (* sqrt(s0) in GeV *)
 mhcSel = 400;    (* mH^\[PlusMinus] in GeV *)
 
 sigmaExpCurrentPB   = 1.0*10^-7;
@@ -76,17 +76,19 @@ base1DOpts := Sequence[
 ];
 
 
+
 xLabM2  = Style[
   Row[{Subscript[Style["m", Italic], "2"], " [GeV]"}],
   textscale, FontFamily -> fontFam, FontWeight -> fontWeight
 ];
 yLabF4Log = Style[Row[{Subscript["Log", 10], " |f\!\(\*SuperscriptBox[\(4\), \(\)]\)|"}], textscale];
 yLabF4Lin = Style["|f4|", textscale];
+
+stepen = 8;
+
 yLabZZZ = Style[
-  TraditionalForm @ Row[{
-    HoldForm @ Abs[Subsuperscript[Style["f", Italic], 4, Style["Z", Italic]]],
-    "\[Times]", Superscript[10, -stepen]
-  }], textscale
+  Row[{TraditionalForm @ HoldForm[\[Sigma]],
+    "\[Times]", Superscript[10, stepen], " [pb]"}], textscale
 ];
 makePlotLabel[sSel_, mhcSel_] := Style[
   Row[{
@@ -141,7 +143,7 @@ pSum = sumPairsLin[pUU, pDD];
 If[Length[pUU] == 0 || Length[pDD] == 0,
   Print["No data found for the chosen benchmark: sqrt(s0)=", sSel, ", mhc=", mhcSel, "."];
   Abort[];,
-  Print[First[pUU]]
+  Print[First[pSum]]
 ];
 
 xmin = Min[Join[pUU[[All, 1]], pDD[[All, 1]], pSum[[All, 1]]]];
@@ -152,6 +154,9 @@ ymax = 10.^Ceiling[Log10[Max[Join[pUU[[All, 2]], pDD[[All, 2]], pSum[[All, 2]], 
 
 
 Print[ymin, "   ",ymax]
+
+
+
 
 
 (* ::Section:: *)
@@ -172,9 +177,9 @@ legendLines = LineLegend[
   {
     Style["uu \[Rule] ZZZ", textscale - 2],
     Style["dd \[Rule] ZZZ", textscale - 2],
-    Style["total",         textscale - 2],
+    Style["total",         textscale - 2](*,
     Style["\[Sigma]_exp current",   textscale - 2],
-    Style["\[Sigma]_exp projected", textscale - 2]
+    Style["\[Sigma]_exp projected", textscale - 2]*)
   },
   LegendLayout     -> "Column",
   LegendFunction   -> shadowbox,
@@ -192,39 +197,48 @@ legendLines = LineLegend[
 yminPB = 0.0333;
 ymaxPB = 0.038;
 
+
+
+yLabSigma = Style[Row[{Style[\!\(TraditionalForm\`\[Sigma]\), Italic], ", pb"}], 
+      textscale, FontFamily -> fontFam, FontWeight -> fontWeight];
+plotLabel =  Style[Row[{
+    TraditionalForm @ HoldForm[Sqrt[Subscript["s", 0]]],
+    " = ", sSel, " GeV"}],
+  textscale, FontFamily -> fontFam, FontWeight -> fontWeight];
 limEpilog = {
-  styleLimCurrent,
+  (*styleLimCurrent,
   Line[{{xmin, Log[sigmaExpCurrentPB]}, {xmax, Log[sigmaExpCurrentPB]}}],
   styleLimProjected,
-  Line[{{xmin, Log[sigmaExpProjectedPB]}, {xmax, Log[sigmaExpProjectedPB]}}],
+  Line[{{xmin, Log[sigmaExpProjectedPB]}, {xmax, Log[sigmaExpProjectedPB]}}],*)
   Black,
-  Inset[legendLines, Scaled[{0.84, 0.76}]]
+  Inset[legendLines, Scaled[{0.82, 0.72}]]
 };
-
+mult = 10^stepen;
+scaleY[data_, mult_] := data /. {x_, y_} :> {x, mult y};
 pltSigmaZZZ = Show[
   (* total \:043b\:0443\:0447\:0448\:0435 \:0440\:0438\:0441\:043e\:0432\:0430\:0442\:044c \:041f\:0415\:0420\:0412\:042b\:041c, \:0447\:0442\:043e\:0431\:044b \:043d\:0435 \:0437\:0430\:043a\:0440\:044b\:0432\:0430\:043b uu \:0438 dd *)
   ListLogPlot[
-    pSum,
+    scaleY[pSum,mult],
     PlotStyle   -> stylesLines[[3]],
     Joined      -> True,
     PlotMarkers -> None
   ],
   ListLogPlot[
-    pUU,
+    scaleY[pUU,mult],
     PlotStyle   -> stylesLines[[1]],
     Joined      -> True,
     PlotMarkers -> None
   ],
   ListLogPlot[
-    pDD,
+    scaleY[pDD,mult],
     PlotStyle   -> stylesLines[[2]],
     Joined      -> True,
     PlotMarkers -> None
   ],
   Evaluate @ base1DOpts,
   Epilog     -> limEpilog,
-  FrameLabel -> {xLabM2, yLabSigma},
-  PlotRange  -> {{xmin, xmax}, {Log[yminPB], Log[ymaxPB]}},
+  FrameLabel -> {xLabM2, yLabZZZ},
+  PlotRange  -> Full,
   PlotLabel  -> plotLabel,
   ImageSize  -> imgSize
 ];

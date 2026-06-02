@@ -2,12 +2,12 @@
 (* ::Package:: *)
 
 Procs = {
-  <|"pid" -> "uu", "reaction" -> "ZZZ", "particleID" -> 2|>,
-  <|"pid" -> "dd", "reaction" -> "ZZZ", "particleID" -> 1|>
+  (*<|"pid" -> "dd", "reaction" -> "ZZZ", "particleID" -> 1|>*)
+  <|"pid" -> "uu", "reaction" -> "ZZZ", "particleID" -> 2|>
 };
 (* PDF d\[RightArrow]1,u\[RightArrow]2, d\:02c9\[RightArrow]\[Minus]1,u\:02c9\[RightArrow]\[Minus]2 *)
-GridSqrts0 = {320};
-GridMh2    = Range[200, 220, 5];
+GridSqrts0 = {13000};
+GridMh2    = Range[200, 600, 5];
 GridMhc    = {400};
 
 Alpha2Fixed = 0.955317;
@@ -206,7 +206,6 @@ Do[
   , {sqrts0v, GridSqrts0}];
 
 , {prc, Procs}];
-
 
 
 

@@ -1,5 +1,8 @@
 (* ::Package:: *)
 
+ 
+
+
 (* ::Section:: *)
 (*Setup*)
 
@@ -37,15 +40,15 @@ fontWeight = "Plain";
 frameThick = 2.2;
 lineThick = 2.6;
 
-styleLim300  = Directive[Red,  Dashed, AbsoluteThickness[2.2]];
-styleLim3000 = Directive[Blue, Dashed, AbsoluteThickness[2.2]];
+styleLim300  = Directive[Red,  AbsoluteThickness[2.2]];
+styleLim3000 = Directive[Blue, AbsoluteThickness[2.2]];
 
 PointNumber=50;
 ContoursNumber=6;
 GraphTheme=ColorData["Rainbow"];
 
 
-shadowbox[legend_] := Framed[legend, Background -> White, FrameStyle -> None, FrameMargins -> 0];
+shadowbox[legend_] := Framed[legend, Background -> None, FrameStyle -> None, FrameMargins -> 0];
 
 SciLbl[v_, nd_: 1] := Style[
   NumberForm[
@@ -53,7 +56,7 @@ SciLbl[v_, nd_: 1] := Style[
     {Infinity, nd},
     ExponentFunction -> (Null &)
   ],
-  textscale - 2, FontFamily -> fontFam, FontWeight -> fontWeight, Black
+  textscale +2, FontFamily -> fontFam, FontWeight -> fontWeight, Black
 ];
 
 legendLumi = SwatchLegend[
@@ -63,7 +66,7 @@ legendLumi = SwatchLegend[
   LegendFunction -> shadowbox,
   LabelStyle -> Directive[textscale, FontFamily -> fontFam, FontWeight -> fontWeight],
   LegendLabel -> Style[
-    Row[{"\[Integral] ", Style["L", Italic], Style["d", Italic], Style["t", Italic], ", ", Superscript["fb", -1]}],
+    Row[{"\[Integral] ", Style["L", Italic], Style["d", Italic], Style["t", Italic], " [", Superscript["fb", -1],"]"}],
     textscale
   ]
 ];
@@ -76,7 +79,7 @@ base1DOpts := Sequence[
   PlotMarkers -> None,
   FrameStyle -> Directive[Black, AbsoluteThickness[frameThick]],
   FrameTicksStyle -> Directive[
-    textscale - 2, FontFamily -> fontFam, FontWeight -> fontWeight
+    textscale + 2, FontFamily -> fontFam, FontWeight -> fontWeight
   ],
   LabelStyle -> Directive[textscale, FontFamily -> fontFam, FontWeight -> fontWeight],
   BaseStyle  -> Directive[textscale, FontFamily -> fontFam, FontWeight -> fontWeight],
@@ -95,18 +98,40 @@ yLabF4Lin = Style["|f4|", textscale];
 yLabZZZ = Style[
   TraditionalForm @ Row[{
     HoldForm @ Abs[Subsuperscript[Style["f", Italic], 4, Style["Z", Italic]]],
-    "\[Times]", Superscript[10, -stepen]
+    "\[Times]", Superscript[10, stepen]
   }], textscale
 ];
 makePlotLabel[sSel_, mhcSel_] := Style[
   Row[{
     TraditionalForm @ HoldForm[Sqrt[Subscript[s, 0]]],
-    " = ", sSel, " GeV,  ",
+    " = ", sSel, " [GeV]  ",
     TraditionalForm @ HoldForm[Subscript[m, Superscript[H, "\[PlusMinus]"]]],
-    " = ", mhcSel, " GeV"
+    " = ", mhcSel, " [GeV]"
   }],
   textscale, FontFamily -> fontFam, FontWeight -> fontWeight
 ];
+
+
+smoothLogPairs[pairs_, n_: 5] := Module[
+  {p, x, y, ly, sly},
+  
+  p = SortBy[pairs, First];
+  x = p[[All, 1]];
+  y = p[[All, 2]];
+  
+  (* \:0443\:0431\:0438\:0440\:0430\:0435\:043c \:043d\:0435\:0432\:0430\:043b\:0438\:0434\:043d\:044b\:0435 \:0442\:043e\:0447\:043a\:0438 \:0434\:043b\:044f \:043b\:043e\:0433\:0430\:0440\:0438\:0444\:043c\:0438\:0447\:0435\:0441\:043a\:043e\:0433\:043e \:0433\:0440\:0430\:0444\:0438\:043a\:0430 *)
+  p = Select[p, NumericQ[#[[2]]] && #[[2]] > 0 &];
+  x = p[[All, 1]];
+  y = p[[All, 2]];
+  
+  ly = Log[y];
+  sly = MovingAverage[ly, n];
+  
+  Transpose[{
+    x[[Ceiling[n/2] ;; -Floor[n/2] - 1]],
+    Exp[sly]
+  }]
+]
 
 
 (* ::Section:: *)
@@ -117,14 +142,15 @@ makePlotLabel[sSel_, mhcSel_] := Style[
 ds = SaveToCSVmodule`LoadF4Data[dir, pattern];
 rawUU = Import["buffer/f4mean_uuZZZ.csv", "Dataset", "HeaderLines" -> 1];
 rawDD = Import["buffer/f4mean_ddZZZ.csv", "Dataset", "HeaderLines" -> 1];
+{First  @ rawUU, First  @ rawDD, First @ ds}
 
 
 Clear[extractPairs, sumPairsLin];
 (* \:0418\:0437\:0432\:043b\:0435\:0447\:044c \:043e\:0442\:0441\:043e\:0440\:0442\:0438\:0440\:043e\:0432\:0430\:043d\:043d\:044b\:0435 \:043f\:0430\:0440\:044b {mh2, yKey} \:0438\:0437 \:0434\:0430\:0442\:0430\:0441\:0435\:0442\:0430 *)
-extractPairs[d_, yKey_] := Module[{rows},
-  rows = Normal @ raw[Select[#sqrts0 == sSel &]];
-  rows = Select[rows, NumericQ[#["mh2"]] && NumericQ[#["log10_f4mean"]] &];
-  SortBy[{#["mh2"], yNorm * 10.^#["log10_f4mean"]} & /@ rows, First]
+extractPairs[d_, sSel_, yKey_:"log10_f4mean"] := Module[{rows},
+  rows = Normal @ d[Select[#sqrts0 == sSel &]];
+  rows = Select[rows, NumericQ[#["mh2"]] && NumericQ[#[yKey]] &];
+  SortBy[{#["mh2"], yNorm * 10.^#[yKey]} & /@ rows, First]
 ];
 extractLog[raw_, sSel_] := Module[{rows},
   rows = Normal @ raw[Select[#sqrts0 == sSel &]];
@@ -168,8 +194,6 @@ detectYKey[dataset_] := If[
 
 stepen = 5;
 yNorm  = 10.^stepen;
-limZZZ300  = constraitF4Z300  *yNorm;   (* ~1.11  *)
-limZZZ3000 = constraitF4Z3000 *yNorm;
 toPairs[logPairs_] := {#[[1]], 10.^(stepen + #[[2]])} & /@ logPairs;
 shiftPairs[pairs_] := {#[[1]], #[[2]] + stepen} & /@ pairs;
 
@@ -178,7 +202,7 @@ shiftPairs[pairs_] := {#[[1]], #[[2]] + stepen} & /@ pairs;
 (*\:0433\:0440\:0430\:0444\:0438\:043a f4 (zzz) from mh2 (fix s0, mhc)*)
 
 
-sSel1   = 500;
+sSel1   = 1000;
 mhcSel1 = 400;
 
 dsCut1  = ds[Select[#sqrts0 == sSel1 &]];
@@ -187,21 +211,34 @@ useLog1 = (yKey1 === "log10_f4mean");
 
 
 (* ZZZ *)
-pUU1  = toPairs @ extractLog[rawUU, sSel1];
-pDD1  = toPairs @ extractLog[rawDD, sSel1];
-pSum1 = toPairs @ sumLog[
+pUU1  = shiftPairs @ extractLog[rawUU, sSel1];
+pDD1  = shiftPairs @  extractLog[rawDD, sSel1];
+pSum1 = shiftPairs @   sumLog[
   extractLog[rawUU, sSel1],
   extractLog[rawDD, sSel1]
 ];
-Print["pUU1 first: ", First[pUU1]];
-Print["pSum1 range y: ", Min[pSum1[[All,2]]], " .. ", Max[pSum1[[All,2]]]];
-Print["lim: ", limZZZ3000, "     f4ZZZlim: ", constraitF4Z300];
-xmin1 = 198;  xmax1 = 600;
-ymin1 = -1.5; ymax1 = 3.05;
+Print["UU length = ", Length[pUU1]];
+Print["DD length = ", Length[pDD1]];
+Print["SUM length = ", Length[pSum1]];
+
+Print["UU y range = ", MinMax[pUU1[[All, 2]]]];
+Print["DD y range = ", MinMax[pDD1[[All, 2]]]];
+Print["SUM y range = ", MinMax[pSum1[[All, 2]]]];
+
+Print["First UU = ", First[pUU1]];
+Print["First DD = ", First[pDD1]];
+Print["First SUM = ", First[pSum1]];
+Print["Constraint 300:  ", (Log10 @ constraitF4Z300) +stepen]
+Print["Constraint 3000: ", (Log10 @ constraitF4Z3000) +stepen]
 
 
-colorUU1 = Darker[Brown,  0.1];
-colorDD1 = Darker[Yellow, 0.2];
+
+
+
+xmin1 = 200;  xmax1 = 450;
+ymin1 = -3.4; ymax1 = 0.5;
+colorUU1 = Darker[Purple,  0.1];
+colorDD1 = Darker[Orange, 0.2];
 
 stylesLines1 = {
   Directive[colorUU1, Dashed, AbsoluteThickness[lineThick]],
@@ -221,23 +258,18 @@ legendLines1 = LineLegend[
   LegendMarkerSize -> {32, 2},
   LabelStyle       -> Directive[textscale - 2, FontFamily -> fontFam, FontWeight -> fontWeight]
 ];
-legAll = shadowbox @ Column[
-  {legendLines1, legendLumi},
-  Spacings -> 0.01, Alignment -> Left
-];
+
 
 
 (* Graph ZZZ-1 | Plot *)
 
 limEpilog1 = {
   styleLim300,
-  Line[{{xmin1, Log10@limZZZ300},
-        {xmax1, Log10@limZZZ300}}],
+  Line[{{xmin1, Log10@((Log10 @ constraitF4Z300) +stepen)},
+        {xmax1, Log10@((Log10 @ constraitF4Z300) +stepen)}}],
   styleLim3000,
-  Line[{{xmin1, Log10@limZZZ3000},
-        {xmax1, Log10@limZZZ3000}}],
-  Black,
-  Inset[Style[legAll, Black], Scaled[{0.89, 0.71}]]
+  Line[{{xmin1, Log10@((Log10 @ constraitF4Z3000) +stepen)},
+        {xmax1, Log10@((Log10 @ constraitF4Z3000) +stepen)}}]
 };
 
 pltZZZ1 = Show[
@@ -245,20 +277,13 @@ pltZZZ1 = Show[
   ListLogPlot[pDD1,  PlotStyle -> stylesLines1[[2]], Joined -> True, PlotMarkers -> None],
   ListLogPlot[pSum1, PlotStyle -> stylesLines1[[3]], Joined -> True, PlotMarkers -> None],
   Evaluate @ base1DOpts,
-  Epilog     -> limEpilog1,
+  Epilog     -> {limEpilog1, Inset[legendLumi, Scaled[{0.15, 0.2}]]},
   FrameLabel -> {xLabM2, yLabZZZ},
   PlotRange  -> {{xmin1, xmax1}, {ymin1, ymax1}},
-  PlotLabel -> Style[
-  Row[{
-    TraditionalForm @ HoldForm[Sqrt[Subscript[s, 0]]],
-    " = ", sSel1, " GeV"}],
-  textscale, FontFamily -> fontFam
-   ],
+  PlotLabel -> None,
+  (*Style[Row[{TraditionalForm @ HoldForm[Sqrt[Subscript[s, 0]]]," = ", sSel1, " GeV"}],textscale, FontFamily -> fontFam],*)
   ImageSize -> imgSize
 ];
-
-
-
 finalPlot1 = pltZZZ1
 
 
@@ -276,7 +301,7 @@ If[SavePDF == 1,
 (* Graph ZZZ-2|Data:ZZZ sum for s0=1000,10000,13000*)
 
 
-s0List2 = {320, 500, 1000, 10000, 13000};
+s0List2 = {320, 1000, 10000, 13000};
 mhcSel2 = 400;
 
 pSumByS0 = Association @ Table[
@@ -285,11 +310,11 @@ pSumByS0 = Association @ Table[
 ];
 
 
-xmin2 = 200;  xmax2 = 570;
-ymin2 = -7.2; ymax2 = 2.1;
+xmin2 = 200;  xmax2 = 450;
+ymin2 = -3.8; ymax2 = 0.3;
 
 
-cols2   = {Darker[Blue, 0.1], Darker[Green, 0.15], Darker[Red, 0.15], Darker[Yellow, 0.15], Darker[Purple, 0.15]};
+cols2 = GraphTheme /@ Rescale[Range[Length[s0List2]], {1, Length[s0List2]}];;
 styles2 = Directive[#, AbsoluteThickness[lineThick]] & /@ cols2;
 
 sLbl[v_] := Style[
@@ -303,24 +328,18 @@ sLbl[v_] := Style[
   Black
 ];
 
+
+
 legendLines2 = LineLegend[
   styles2,
   s0List2,
   LegendLayout     -> "Column",
   LegendFunction   -> shadowbox,
-  LegendMarkerSize -> {32, 2},
-  LabelStyle       -> Directive[
-    textscale - 2,
-    FontFamily -> fontFam,
-    FontWeight -> fontWeight,
-    Black
-  ],
+  LegendMarkerSize -> {20, 2},
+  LabelStyle -> Directive[FontSize -> textscale, FontFamily -> "Helvetica"],
   LegendLabel -> Style[
-    Row[{
-      TraditionalForm @ HoldForm[Sqrt[Subscript[s, 0]]],
-      " [GeV]"
-    }],
-    textscale - 1,
+    Row[{TraditionalForm @ HoldForm[Sqrt[Subscript[s, 0]]]," [GeV]"}],
+    textscale,
     FontFamily -> fontFam,
     FontWeight -> fontWeight,
     Black
@@ -332,36 +351,31 @@ legendLines2 = LineLegend[
 
 
 
-limPlot2 = Plot[
+(*limPlot2 = Plot[
   {limZZZ300, limZZZ3000},
   {x, xmin2, xmax2},
   PlotStyle -> {styleLim300, styleLim3000}
-];
+];*)
 
 pltZZZ2 = Show[
   MapThread[
-    ListLinePlot[#1, PlotStyle -> #2, Joined -> True, PlotMarkers -> None] &,
+    ListLogPlot[smoothLogPairs[#1, 2], PlotStyle -> #2, Joined -> True, PlotMarkers -> None] &,
     {Values[pSumByS0], styles2}
   ],
-  limPlot2,
+(*  limPlot2,*)
   Evaluate @ base1DOpts,
   Epilog -> {
     Black,
-    Inset[legendLines2,   Scaled[{0.12, 0.33}]],
-    Inset[legendLumi, Scaled[{0.89, 0.18}]]
+    Inset[legendLines2,   Scaled[{0.15, 0.33}]](*,
+    Inset[legendLumi, Scaled[{0.89, 0.18}]]*)
   },
   FrameLabel -> {xLabM2, yLabZZZ},
   PlotRange  -> {{xmin2, xmax2}, {ymin2, ymax2}},
-  PlotLabel  -> Style[
-    Row[{
-      "ZZZ sum,  ",
-      Subscript[Style["m", Italic], Superscript[Style["H", Italic], "\[PlusMinus]"]],
-      " = ", mhcSel2, " GeV"
-    }],
+  PlotLabel  -> None,
+  (*Style[Row[{"ZZZ sum,  ",Subscript[Style["m", Italic], Superscript[Style["H", Italic], "\[PlusMinus]"]]," = ", mhcSel2, " GeV"}],
     textscale,
     FontFamily -> fontFam,
-    FontWeight -> fontWeight
-  ],
+    FontWeight -> fontWeight],*)
   ImageSize -> imgSize
 ];
 
@@ -375,7 +389,7 @@ If[SavePDF == 1,
 ]
 
 
-(* ::Subsection::Closed:: *)
+(* ::Subsection:: *)
 (*ZWW*)
 
 

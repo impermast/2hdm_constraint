@@ -65,3 +65,4 @@ modules/pdfcode/pdf_*.csv
 # ⛔ Файлы операционной системы
 .DS_Store
 Thumbs.db
+IMPROVEMENT_PLAN.md

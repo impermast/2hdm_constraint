@@ -32,23 +32,45 @@ sigmaExpProjectedPB = 3.0*10^-8;
 
 Clear[base1DOpts, shadowbox];
 
-textscale   = 20;
-imgSize     = 600;
-fontFam     = "Helvetica";
-fontWeight  = "Plain";
-frameThick  = 2.2;
-lineThick   = 2.6;
+textscale = 20;
+imgSize = 600;
+fontFam = "Helvetica";
+fontWeight = "Plain";
+frameThick = 2.2;
+lineThick = 2.6;
+
+styleLim300  = Directive[Red,  AbsoluteThickness[2.2]];
+styleLim3000 = Directive[Blue, AbsoluteThickness[2.2]];
+
+PointNumber=50;
+ContoursNumber=6;
+GraphTheme=ColorData["Rainbow"];
 
 styleLimCurrent   = Directive[Red,  Dashed, AbsoluteThickness[2.2]];
 styleLimProjected = Directive[Blue, Dashed, AbsoluteThickness[2.2]];
 
-shadowbox[legend_] := Framed[
-  legend,
-  Background  -> White,
-  FrameStyle  -> None,
-  FrameMargins -> 0
+shadowbox[legend_] := Framed[legend, Background -> None, FrameStyle -> None, FrameMargins -> 0];
+
+SciLbl[v_, nd_: 1] := Style[
+  NumberForm[
+    N[v],
+    {Infinity, nd},
+    ExponentFunction -> (Null &)
+  ],
+  textscale +2, FontFamily -> fontFam, FontWeight -> fontWeight, Black
 ];
 
+legendLumi = SwatchLegend[
+  {Directive[Red], Directive[Blue]},
+  {"300", "4000"},
+  LegendLayout -> "Column",
+  LegendFunction -> shadowbox,
+  LabelStyle -> Directive[textscale, FontFamily -> fontFam, FontWeight -> fontWeight],
+  LegendLabel -> Style[
+    Row[{"\[Integral] ", Style["L", Italic], Style["d", Italic], Style["t", Italic], " [", Superscript["fb", -1],"]"}],
+    textscale
+  ]
+];
 base1DOpts := Sequence[
   Frame      -> True,
   Axes       -> False,
@@ -56,25 +78,14 @@ base1DOpts := Sequence[
   PlotMarkers -> None,
   FrameStyle -> Directive[Black, AbsoluteThickness[frameThick]],
   FrameTicksStyle -> Directive[
-    textscale - 2,
-    FontFamily -> fontFam,
-    FontWeight -> fontWeight
+    textscale + 2, FontFamily -> fontFam, FontWeight -> fontWeight
   ],
-  LabelStyle -> Directive[
-    textscale,
-    FontFamily -> fontFam,
-    FontWeight -> fontWeight
-  ],
-  BaseStyle  -> Directive[
-    textscale,
-    FontFamily -> fontFam,
-    FontWeight -> fontWeight
-  ],
+  LabelStyle -> Directive[textscale, FontFamily -> fontFam, FontWeight -> fontWeight],
+  BaseStyle  -> Directive[textscale, FontFamily -> fontFam, FontWeight -> fontWeight],
   GridLines  -> None,
   PlotRangePadding -> None,
   PlotRangeClipping -> True
 ];
-
 
 
 xLabM2  = Style[
@@ -83,30 +94,51 @@ xLabM2  = Style[
 ];
 yLabF4Log = Style[Row[{Subscript["Log", 10], " |f\!\(\*SuperscriptBox[\(4\), \(\)]\)|"}], textscale];
 yLabF4Lin = Style["|f4|", textscale];
-
-stepen = 8;
-
 yLabZZZ = Style[
-  Row[{TraditionalForm @ HoldForm[\[Sigma]],
-    "\[Times]", Superscript[10, stepen], " [pb]"}], textscale
+  TraditionalForm @ Row[{
+    HoldForm @ Abs[Subsuperscript[Style["f", Italic], 4, Style["Z", Italic]]],
+    "\[Times]", Superscript[10, stepen]
+  }], textscale
 ];
 makePlotLabel[sSel_, mhcSel_] := Style[
   Row[{
     TraditionalForm @ HoldForm[Sqrt[Subscript[s, 0]]],
-    " = ", sSel, " GeV,  ",
+    " = ", sSel, " [GeV]  ",
     TraditionalForm @ HoldForm[Subscript[m, Superscript[H, "\[PlusMinus]"]]],
-    " = ", mhcSel, " GeV"
+    " = ", mhcSel, " [GeV]"
   }],
   textscale, FontFamily -> fontFam, FontWeight -> fontWeight
 ];
+
+
+smoothLogPairs[pairs_, n_: 5] := Module[
+  {p, x, y, ly, sly},
+  
+  p = SortBy[pairs, First];
+  x = p[[All, 1]];
+  y = p[[All, 2]];
+  
+  (* \:0443\:0431\:0438\:0440\:0430\:0435\:043c \:043d\:0435\:0432\:0430\:043b\:0438\:0434\:043d\:044b\:0435 \:0442\:043e\:0447\:043a\:0438 \:0434\:043b\:044f \:043b\:043e\:0433\:0430\:0440\:0438\:0444\:043c\:0438\:0447\:0435\:0441\:043a\:043e\:0433\:043e \:0433\:0440\:0430\:0444\:0438\:043a\:0430 *)
+  p = Select[p, NumericQ[#[[2]]] && #[[2]] > 0 &];
+  x = p[[All, 1]];
+  y = p[[All, 2]];
+  
+  ly = Log[y];
+  sly = MovingAverage[ly, n];
+  
+  Transpose[{
+    x[[Ceiling[n/2] ;; -Floor[n/2] - 1]],
+    Exp[sly]
+  }]
+]
 
 
 (* ::Section:: *)
 (* Data loading*)
 
 
-rawUU = Import[fileUU, "Dataset", "HeaderLines" -> 1];
-rawDD = Import[fileDD, "Dataset", "HeaderLines" -> 1];
+rawUU = Import["buffer/f4mean_uuZZZ.csv", "Dataset", "HeaderLines" -> 1];
+rawDD = Import["buffer/f4mean_ddZZZ.csv", "Dataset", "HeaderLines" -> 1];
 
 Clear[extractSigmaPairs, sumPairsLin, detectIfLogColumn];
 
@@ -163,8 +195,8 @@ Print[ymin, "   ",ymax]
 (* Plot for ZZZ only *)
 
 
-colorUU = Darker[Brown,  0.10];
-colorDD = Darker[Yellow, 0.20];
+colorUU = Darker[Purple,  0.10];
+colorDD = Darker[Cyan, 0.20];
 
 stylesLines = {
   Directive[colorUU, Dashed, AbsoluteThickness[lineThick + 0.2]],
@@ -236,10 +268,8 @@ pltSigmaZZZ = Show[
     PlotMarkers -> None
   ],
   Evaluate @ base1DOpts,
-  Epilog     -> limEpilog,
   FrameLabel -> {xLabM2, yLabZZZ},
   PlotRange  -> Full,
-  PlotLabel  -> plotLabel,
   ImageSize  -> imgSize
 ];
 

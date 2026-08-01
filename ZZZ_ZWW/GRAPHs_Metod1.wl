@@ -139,11 +139,11 @@ SciLbl[v_, nd_: 1] := Style[
   textscale+2, FontFamily -> fontFam, FontWeight -> fontWeight, Black
 ];
 
-plotH = 445;    
-legW  = 30;     
-legH  = plotH;  
+plotH = 447;    
+legW  = 30;      
 
 
+legH = 450;
 base2DLegend := BarLegend[Automatic,
   LabelingFunction -> (SciLbl[#1, 1] &),
   LegendLabel -> Placed[Rotate[zLab2D, Pi/2], Right],
@@ -156,6 +156,9 @@ base2DLegend := BarLegend[Automatic,
   },
   LegendFunction -> shadowbox
 ];
+
+
+
 	
 	
 m2LegendLabel = Style[
@@ -410,7 +413,7 @@ plot5 = DensityPlot[
   Evaluate @ base2DdensOpts,
   PlotLegends -> Placed[
   base2DLegend,
-  {{1.0, 1.0}, {0.22, 1.022}}
+  {{1.0, 1.0}, {0.22, 1.015}}
   ]
 ];
 conplot = ContourPlot[{Func[x, y] == constraitF4Z300, Func[x, y] == constraitF4Z3000}, {x, xmin, xmax}, 
@@ -442,7 +445,7 @@ plot5 = DensityPlot[
   Evaluate @ base2DdensOpts,
   PlotLegends -> Placed[
   base2DLegend,
-  {{1.0, 1.0}, {0.22, 1.022}}
+  {{1.0, 1.0}, {0.22, 1.015}}
   ]
 ];
 conplot = ContourPlot[{Func[x, y] == constraitF4Z300, Func[x, y] == constraitF4Z3000}, {x, xmin, xmax}, 
@@ -538,10 +541,8 @@ legendAlpha=LineLegend[{Directive[Black,Thick],Directive[Black,Dashed,Thick]},{S
 
 
 
-Sh2=Legended[
-	Show[plotsCurves,ImageSize -> imgSize, 
-	Epilog->Inset[legendMass[colors,mlist], Scaled[{0.5, 0.15}]]],
-	Legend1]
+Sh2=Show[plotsCurves,ImageSize -> imgSize, 
+	Epilog->Inset[legendMass[colors,mlist], Scaled[{0.5, 0.15}]]]
 
 
 (* ::InheritFromParent:: *)
@@ -675,7 +676,7 @@ plot5 = DensityPlot[Func[x, y], {x, xmin, xmax}, {y, ymin, ymax},
   Evaluate @ base2DdensOpts,
   PlotLegends -> Placed[
   base2DLegend,
-  {{1.0, 1.0}, {0.22, 1.022}}
+  {{1.0, 1.0}, {0.22, 1.015}}
   ]
 ];
        

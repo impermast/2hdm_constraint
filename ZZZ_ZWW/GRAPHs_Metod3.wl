@@ -304,17 +304,16 @@ If[SavePDF == 1,
 s0List2 = {320, 1000, 10000, 13000};
 mhcSel2 = 400;
 
+
+xmin2 = 200;  xmax2 = 550;
+ymin2 = -2.8; ymax2 = 0.3;
 pSumByS0 = Association @ Table[
   s -> shiftPairs @ sumLog[extractLog[rawUU, s], extractLog[rawDD, s]],
   {s, s0List2}
 ];
 
 
-xmin2 = 200;  xmax2 = 450;
-ymin2 = -3.8; ymax2 = 0.3;
-
-
-cols2 = GraphTheme /@ Rescale[Range[Length[s0List2]], {1, Length[s0List2]}];;
+cols2 = GraphTheme /@ Rescale[Range[Length[s0List2]], {1, Length[s0List2]}];
 styles2 = Directive[#, AbsoluteThickness[lineThick]] & /@ cols2;
 
 sLbl[v_] := Style[
@@ -322,7 +321,7 @@ sLbl[v_] := Style[
     TraditionalForm @ HoldForm[Sqrt[Subscript[s, 0]]],
     " = ", Style[ToString[Round @ v], Bold], " GeV"
   }],
-  textscale - 2,
+  textscale,
   FontFamily -> fontFam,
   FontWeight -> fontWeight,
   Black
@@ -345,10 +344,6 @@ legendLines2 = LineLegend[
     Black
   ]
 ];
-
-
-
-
 
 
 (*limPlot2 = Plot[
